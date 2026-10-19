@@ -3,159 +3,135 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>zzq · AI 产品作品集（HR 30 秒版）</title>
+<title>zzq · AI 产品项目（6 个，都能点开看）</title>
 <style>
-:root{--ink:#1a1d21;--mid:#6b7280;--light:#9aa3af;--line:#e6e8ec;--bg:#f7f8fa;--accent:#2563eb;--ok:#0f9d58;--warn:#d97706}
+:root{--ink:#1a1d21;--mid:#6b7280;--light:#9aa3af;--line:#e6e8ec;--bg:#f7f8fa;--accent:#2563eb;--ok:#0f9d58}
 *{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.75 -apple-system,"Segoe UI","Microsoft YaHei",sans-serif;-webkit-font-smoothing:antialiased}
-.wrap{max-width:1000px;margin:0 auto;padding:0 22px}
-.hero{background:#fff;border-bottom:1px solid var(--line);padding:46px 0 40px}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.8 -apple-system,"Segoe UI","Microsoft YaHei",sans-serif;-webkit-font-smoothing:antialiased}
+.wrap{max-width:760px;margin:0 auto;padding:0 22px}
+.hero{background:#fff;border-bottom:1px solid var(--line);padding:44px 0 34px}
 .hero .tag{display:inline-block;font-size:13px;color:var(--accent);background:#eff5ff;border-radius:20px;padding:3px 12px;margin-bottom:14px}
-.hero h1{font-size:32px;line-height:1.35;margin:0 0 12px;letter-spacing:-.4px}
-.hero h1 b{color:var(--accent)}
-.hero p{margin:0 0 22px;color:var(--mid);font-size:16px;max-width:640px}
-.btns{display:flex;gap:12px;flex-wrap:wrap}
-.btns a{padding:12px 22px;border-radius:10px;text-decoration:none;font-size:15px;font-weight:600}
+.hero h1{font-size:27px;line-height:1.5;margin:0 0 14px;letter-spacing:-.2px;font-weight:700}
+.hero p{margin:0 0 14px;color:#3f4650;font-size:16px}
+.hero p.small{color:var(--mid);font-size:14.5px}
+.btns{display:flex;gap:12px;flex-wrap:wrap;margin:20px 0 0}
+.btns a{padding:11px 20px;border-radius:9px;text-decoration:none;font-size:15px;font-weight:600}
 .btns .p{background:var(--accent);color:#fff}
 .btns .g{background:#fff;color:var(--ink);border:1px solid var(--line)}
-.s30{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:30px 0 0}
-.s30 div{background:#fff;border:1px solid var(--line);border-radius:12px;padding:16px 18px}
-.s30 .n{font-size:28px;font-weight:700;line-height:1.1}
-.s30 .t{font-size:13.5px;color:var(--mid);margin-top:4px}
-section{padding:44px 0 0}
-.grp{margin-bottom:34px}
-.grp-hd{display:flex;align-items:baseline;gap:12px;margin-bottom:4px}
-.grp-hd .idx{font-size:13px;font-weight:700;color:#fff;background:var(--ink);border-radius:6px;padding:2px 9px}
-.grp-hd h2{font-size:21px;margin:0;letter-spacing:-.2px}
-.grp-sub{color:var(--mid);font-size:14.5px;margin:0 0 16px 42px}
-.cards{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-.card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:20px 22px;display:flex;flex-direction:column}
-.card .cap{font-size:12.5px;color:var(--light);margin-bottom:6px}
-.card h3{font-size:18px;margin:0 0 8px;line-height:1.45}
-.card .do{font-size:14.5px;color:#3f4650;margin:0 0 12px}
-.card .res{background:#f2f8f4;border:1px solid #d6ebdd;border-radius:9px;padding:10px 12px;font-size:14px;margin-bottom:14px}
-.card .res b{color:var(--ok)}
-.card .links{margin-top:auto;display:flex;gap:10px;flex-wrap:wrap}
-.card .links a{font-size:13.5px;text-decoration:none;color:var(--accent);border-bottom:1px solid #c7d9fb;padding-bottom:1px}
-.card .links a.plain{color:var(--mid);border-bottom-color:#d9dde3}
-.why{background:#fff;border:1px solid var(--line);border-radius:14px;padding:22px 24px;margin-top:8px}
-.why h2{font-size:19px;margin:0 0 12px}
-.why ol{margin:0;padding-left:22px}
-.why li{margin-bottom:8px;font-size:15px;color:#3f4650}
-.why li b{color:var(--ink)}
-.chain{background:#fff;border:1px solid var(--line);border-radius:14px;padding:20px 24px;margin-top:22px;font-size:15px;color:#3f4650}
-.chain b{color:var(--ink)}
-footer{padding:40px 0 60px;color:var(--light);font-size:13.5px;text-align:center}
+section{padding:38px 0 0}
+h2{font-size:20px;margin:0 0 6px;letter-spacing:-.2px}
+.lead{color:var(--mid);font-size:14.5px;margin:0 0 22px}
+.item{background:#fff;border:1px solid var(--line);border-radius:13px;padding:20px 22px;margin-bottom:14px}
+.item .meta{font-size:12.5px;color:var(--light);margin-bottom:4px}
+.item h3{font-size:18px;margin:0 0 10px;line-height:1.5}
+.item p{margin:0 0 12px;font-size:15px;color:#3f4650}
+.item .num{font-size:14.5px;color:#2f5d3f;background:#f2f8f4;border-left:3px solid #9ed0b0;padding:8px 12px;border-radius:0 7px 7px 0;margin:0 0 12px}
+.item .links{display:flex;gap:16px;flex-wrap:wrap;font-size:14px}
+.item .links a{color:var(--accent);text-decoration:none;border-bottom:1px solid #c7d9fb}
+.item .links a.q{color:var(--mid);border-bottom-color:#d9dde3}
+.groupnote{font-size:14px;color:var(--mid);margin:0 0 14px;padding-left:2px}
+.honest{background:#fff;border:1px solid var(--line);border-left:3px solid #f0c674;border-radius:13px;padding:20px 24px;margin-top:26px}
+.honest h2{font-size:18px;margin-bottom:10px}
+.honest p{font-size:15px;color:#3f4650;margin:0 0 12px}
+.honest p:last-child{margin-bottom:0}
+footer{padding:36px 0 56px;color:var(--light);font-size:13.5px}
 footer a{color:#9aa3af}
-@media(max-width:760px){.cards{grid-template-columns:1fr}.s30{grid-template-columns:1fr}.hero h1{font-size:25px}}
+@media(max-width:700px){.hero h1{font-size:22px}}
 </style>
 </head>
 <body>
 
 <div class="hero">
   <div class="wrap">
-    <span class="tag">AI 产品经理 / AI 产品运营 实习生 · 北京 · 2027 届</span>
-    <h1>我能把一句想法，<b>做成一个点开就能用的 AI 产品</b>，<br>并且用数据说明它到底好不好用。</h1>
-    <p>通信工程本科在读，大模型相关能力全部自学。下面 6 个项目不用懂技术也能看懂——每个都写清了"解决什么问题、我做了什么、结果多少"。</p>
+    <span class="tag">AI 产品 / AI 产品运营 实习 · 北京 · 2027 届</span>
+    <h1>我是 zzq，通信工程大三。<br>这半年自己做了 6 个 AI 相关的东西，都能点开看。</h1>
+    <p>我不是科班做产品的，大模型这些是自学的。下面尽量不用术语写，看不懂可以跳过，每个项目底下都有能点开的链接。</p>
+    <p class="small">代码大部分是用 AI 编程工具写的——我把这点先说清楚，省得你后面猜。方案、评分怎么定、测试用例怎么设计、哪些结论不能信，是我自己弄的。</p>
     <div class="btns">
-      <a class="p" href="https://jd-match-analyzer.app.workbuddy.host/" target="_blank">先玩一下最完整的那个 →</a>
-      <a class="g" href="#projects">看 6 个项目</a>
-    </div>
-    <div class="s30">
-      <div><div class="n">6 个</div><div class="t">做完的 AI 项目，其中 4 个能当场点开看</div></div>
-      <div><div class="n">108 次</div><div class="t">真实调用大模型做测试，不是拍脑袋估算</div></div>
-      <div><div class="n">1%</div><div class="t">AI 编造内容的比例（越低越好）</div></div>
+      <a class="p" href="https://jd-match-analyzer.app.workbuddy.host/" target="_blank">先点这个（最完整的）</a>
+      <a class="g" href="#p1">往下看</a>
     </div>
   </div>
 </div>
 
-<section id="projects">
+<section id="p1">
 <div class="wrap">
 
-  <p style="color:#6b7280;font-size:15px;margin:0 0 26px">6 个项目按<b style="color:#1a1d21">三种能力</b>分成三组。招聘方最常问的三个问题，正好一组回答一个。</p>
+  <h2>一、能不能把需求做成能用的东西</h2>
+  <p class="groupnote">招聘里 86% 的岗位写着"需求拆解"，54% 写着"写 PRD"，35% 写着"画原型"。这块我做了两个。</p>
 
-  <div class="grp">
-    <div class="grp-hd"><span class="idx">能力一</span><h2>能不能把需求做成产品？</h2></div>
-    <p class="grp-sub">对应 JD 里的「需求分析与拆解」「PRD 撰写」「原型设计」——出现在 86% 的岗位要求里</p>
-    <div class="cards">
-      <div class="card">
-        <div class="cap">项目 01 · 网页产品 · 可在线体验</div>
-        <h3>帮求职者看清"我和这个岗位差在哪一条"</h3>
-        <p class="do">把岗位要求和简历一起贴进去，它逐条告诉你：这条要求你满足了没有、依据是哪句原文、还差什么、接下来 7 天该补什么。</p>
-        <div class="res">结果：拿 12 条不同类型样本测过（跨行、信息不足、过度包装），AI 编造内容的比例压到 <b>1%</b>；"够不够好"的合格率从 <b>0% 提到 67%</b></div>
-        <div class="links"><a href="https://jd-match-analyzer.app.workbuddy.host/" target="_blank">直接体验 →</a><a class="plain" href="projects/01-jd-matcher/README.md">看它怎么做的</a></div>
-      </div>
-      <div class="card">
-        <div class="cap">项目 04 · 小工具 · 命令行</div>
-        <h3>需求文档改一句，页面草图自动重画</h3>
-        <p class="do">做产品最烦的是：需求改了，原型图得重画一遍。我做了个工具，把需求文档写清楚，一条命令就生成页面草图，改完再跑一次。</p>
-        <div class="res">结果：<b>200 行代码</b>、不依赖任何第三方库、支持 14 种常见页面元素；改完需求到出新图 <b>3 秒</b></div>
-        <div class="links"><a href="projects/04-prd2wireframe/examples/prd-jd-matcher.wireframe.html" target="_blank">看生成的草图 →</a><a class="plain" href="projects/04-prd2wireframe/README.md">看它怎么做的</a></div>
-      </div>
-    </div>
+  <div class="item">
+    <div class="meta">01 · 网页产品，现在就能用</div>
+    <h3>帮人看清自己的简历和岗位差在哪一条</h3>
+    <p>起因是我自己投实习，投了二十多份没什么回音，也说不清是哪里不对。后来想明白：问题不是被拒，是不知道差在哪一条。这个工具把岗位要求和简历一起读，逐条标"有依据 / 没依据 / 看不出来"，说"有依据"的必须把简历原话抄出来，抄不出来我就当它编的。</p>
+    <p>做的时候踩了个坑：第一版为了不让它乱编，把它管得太死，结果最接近岗位要求的两个样本被压到 26 分和 39 分。后来加了分数校准才拉回来，编造率没有反弹。</p>
+    <p class="num">现在的结果：编出来的内容占 1%；四版提示词改下来，"够不够好"的合格率从 0 到 67%。样本只有 12 条，样本小，这是我自己的短板。</p>
+    <div class="links"><a href="https://jd-match-analyzer.app.workbuddy.host/" target="_blank">点开试试 →</a><a class="q" href="projects/01-jd-matcher/README.md">做法和测试数据</a></div>
   </div>
 
-  <div class="grp">
-    <div class="grp-hd"><span class="idx">能力二</span><h2>能不能让 AI 好好说话、不乱编？</h2></div>
-    <p class="grp-sub">对应 JD 里的「Prompt 设计与调优」「AI Agent 搭建」——54% 和 38% 的岗位明确要求</p>
-    <div class="cards">
-      <div class="card">
-        <div class="cap">项目 02 · 可交互演示 · 带 20 条测试</div>
-        <h3>让 AI 客服"不知道就说不知道"</h3>
-        <p class="do">客服机器人最大的风险不是答不上来，是瞎编政策导致赔偿。我给它定了三条硬规矩：先查资料再回答、查不到就转人工、不许猜。页面上可以直接跑 20 条测试。</p>
-        <div class="res">结果：第一轮 20 条过 <b>17 条（85%）</b>，找出两个问题修完到 <b>19 条（95%）</b>；剩下 1 条我认为是标准写错了，写在文档里没改</div>
-        <div class="links"><a href="projects/02-faq-agent/index.html" target="_blank">自己跑测试 →</a><a class="plain" href="projects/02-faq-agent/README.md">看它怎么做的</a></div>
-      </div>
-      <div class="card">
-        <div class="cap">项目 05 · 设计资产 · Coze 平台</div>
-        <h3>让 AI 改简历，但不许替你编经历</h3>
-        <p class="do">AI 改简历最容易犯的错是"帮你加一段你没做过的经历"。我调了 50 多轮，定出一条边界：经历可以换个说法（"发推文"→"内容运营"），但动词强度不许升级（"参与"不能写成"主导"）。</p>
-        <div class="res">结果：<b>3 版提示词</b>的迭代记录 + 4 条验收标准 + 一套错误分类方法，后来直接用在了项目 01 和 03 上</div>
-        <div class="links"><a class="plain" href="projects/05-coze-resume-bot/README.md">看完整设计 →</a></div>
-      </div>
-    </div>
+  <div class="item">
+    <div class="meta">04 · 小工具，命令行跑</div>
+    <h3>需求文档改一句，页面草图跟着重画</h3>
+    <p>写完 PRD 还要画原型，需求一改就得重画，来回折腾。我干脆把草图当成文档的"输出"：文档按固定格式写，一条命令生成灰度草图。改完需求重跑一次，图就更新了，不用打开画图软件。</p>
+    <p class="num">200 行代码，没有依赖任何第三方库，支持 14 种页面元素。改完需求到出新图大概 3 秒。</p>
+    <div class="links"><a href="projects/04-prd2wireframe/examples/prd-jd-matcher.wireframe.html" target="_blank">看它生成的草图 →</a><a class="q" href="projects/04-prd2wireframe/README.md">怎么写的</a></div>
   </div>
 
-  <div class="grp">
-    <div class="grp-hd"><span class="idx">能力三</span><h2>能不能证明"AI 到底好不好用"？</h2></div>
-    <p class="grp-sub">对应 JD 里的「模型效果评测」「Badcase 归因」「竞品分析」——这是大部分实习生答不上来的一块</p>
-    <div class="cards">
-      <div class="card">
-        <div class="cap">项目 03 · 可视化看板 · 数据真实</div>
-        <h3>给 AI 的回答打分，而且不让 AI 自己打分</h3>
-        <p class="do">让 AI 给自己打分等于自己判卷子。我写了 4 条硬规则算分：数字必须有出处、该拒答的必须拒、格式要干净、建议要能执行。规则也会写错，三次改规则的过程我都留在仓库里。</p>
-        <div class="res">结果：同一批回答，3 版规则分别打出 <b>83.5 → 92.5 → 98.8 分</b>；其中两处失分是<b>我的规则本身写错了</b>，不是 AI 答错</div>
-        <div class="links"><a href="projects/03-eval-badcase/index.html" target="_blank">看归因看板 →</a><a class="plain" href="projects/03-eval-badcase/README.md">看它怎么做的</a></div>
-      </div>
-      <div class="card">
-        <div class="cap">项目 06 · 评测设计 · 方法资产</div>
-        <h3>豆包、通义、Kimi 到底该用哪个</h3>
-        <p class="do">不凭感觉说"我觉得谁好"。设计 3 类场景 × 每类 10 个任务，同一套题喂给三个产品，按 0/1/2 三档打分。结论不是"谁最强"，而是一张"什么任务用哪个"的对照表。</p>
-        <div class="res">结果：<b>90 次统一测试</b>的评测设计；编造来源链接的回答直接判 0 分——这条口径后来沿用到了项目 01</div>
-        <div class="links"><a class="plain" href="projects/06-competitor-teardown/README.md">看评测设计 →</a></div>
-      </div>
-    </div>
+  <h2 style="margin-top:34px">二、怎么让 AI 别乱说话</h2>
+  <p class="groupnote">做 AI 产品绕不开这件事：模型很会编。54% 的 JD 写"提示词调优"，38% 写"搭 Agent"。我在这上面花的时间最多。</p>
+
+  <div class="item">
+    <div class="meta">02 · 网页演示，能自己跑测试</div>
+    <h3>一个"不知道就说不知道"的客服机器人</h3>
+    <p>客服机器人最怕的不是答不上来，是瞎编政策。所以我给它定了三条规矩：先查资料再回答、查不到就转人工、不许猜。它还带三个工具——查知识库、查订单、转人工，都是真的会调。</p>
+    <p>测了 20 条，第一轮过 17 条。看失败的那三条，发现两个是我自己的问题：一是"如仍有疑问可转人工"这种话被我的判定程序当成了拒答；二是用户问"你是真人吗"，它直接转人工了，其实应该老实说自己是 AI。都改了，第二轮过 19 条。</p>
+    <p class="num">20 条测试：第一轮 85%，改完 95%。剩下那一条我到现在还觉得是我的标准写得太理想，不是它答错——这条我留在仓库里没改。</p>
+    <div class="links"><a href="projects/02-faq-agent/index.html" target="_blank">自己跑一遍 →</a><a class="q" href="projects/02-faq-agent/README.md">测试和踩的坑</a></div>
   </div>
 
-  <div class="why">
-    <h2>为什么这不是 6 个孤立的小作业</h2>
-    <ol>
-      <li><b>它们是一条线做下来的。</b>先在 06 学会怎么评产品，在 05 学会怎么调 AI 的说话方式，在 03 把这些变成能算分的规则，在 02 用到客服机器人上，最后在 01 全部合成一个能上线的产品。</li>
-      <li><b>每个项目都有"没做好的地方"。</b>项目 02 有一条测试我认为是 AI 答对了、我的标准写错了，保留了没改；项目 03 有一条规则我故意不修，因为再调就是在作弊。</li>
-      <li><b>数字都是真跑出来的。</b>共 108 次真实调用大模型，测试数据都在仓库里，会写代码的人可以自己跑一遍验证。</li>
-    </ol>
+  <div class="item">
+    <div class="meta">05 · Coze 上搭的，只留了设计</div>
+    <h3>帮人改简历，但不许替你编经历</h3>
+    <p>AI 改简历最讨厌的是它顺手帮你加一段你没干过的事。我调了五十多轮，最后摸到一条边界：经历可以换个说法（"发过推文"说成"内容运营"），但动词强度不能往上升（"参与"不能写成"主导"）。这条定下来之后，编造的情况基本没了。</p>
+    <p class="num">三版提示词、四条验收标准、一套把错误分类的办法。这套分类后来做 01 和 03 的时候直接拿来用了。</p>
+    <div class="links"><a class="q" href="projects/05-coze-resume-bot/README.md">三版提示词长什么样</a></div>
   </div>
 
-  <div class="chain">
-    <b>一句话总结：</b>我做完一个东西，会先想清楚"什么叫做好了"再动手；做完会老实说哪里没做到。这比"我会用 10 个工具"更难教。
+  <h2 style="margin-top:34px">三、怎么判断做得行不行</h2>
+  <p class="groupnote">这块是面试时最容易被问住的地方：你说你的东西好，好在哪、怎么证明。</p>
+
+  <div class="item">
+    <div class="meta">03 · 看板，数据是真的</div>
+    <h3>给 AI 的回答打分，但不用 AI 自己打</h3>
+    <p>让模型评价自己的答案，等于让它自己判卷子。所以我写了四条规则来算分：回答里的数字必须有出处、该拒答的必须拒、格式要干净、给的下一步要能执行。规则也是我写的，所以规则也会错——我把三次改规则的过程都留着，包括我自己错在哪。</p>
+    <p class="num">同一批回答，三版规则打出来是 83.5、92.5、98.8 分。分数变了不是模型变好了，是我的尺子在改。其中两处扣分是我的规则写错了，跟模型没关系。</p>
+    <div class="links"><a href="projects/03-eval-badcase/index.html" target="_blank">看归因看板 →</a><a class="q" href="projects/03-eval-badcase/README.md">规则怎么写的</a></div>
+  </div>
+
+  <div class="item">
+    <div class="meta">06 · 只有设计稿，没有代码</div>
+    <h3>豆包、通义、Kimi，到底该用哪个</h3>
+    <p>我不太信"我觉得谁更好"这种说法，所以设计了同一套题喂给三个产品：写作、总结、联网各 10 个任务，按 0 到 2 分打。评分口径里有两条是我特意定的：不给每个产品单独调提示词（测默认能力，不测调参水平），联网任务当天测完（隔周就失效了）。</p>
+    <p class="num">90 次测试的设计。结论不是谁最强，是一张"什么任务用哪个"的表。编造来源链接的回答，不管写得多顺，直接 0 分。</p>
+    <div class="links"><a class="q" href="projects/06-competitor-teardown/README.md">评测怎么设计的</a></div>
+  </div>
+
+  <div class="honest">
+    <h2>几句实话</h2>
+    <p><b>代码不是我一行行敲的。</b>AI 编程工具帮了大忙，我干的是定方案、定标准、判断结果对不对，以及出了问题去查是哪一环坏了。这半年我最大的收获其实是后者——能看出"这个分数不对"比会写代码难。</p>
+    <p><b>06 和 05 是设计稿，不是产品。</b>05 原始对话里有个人信息，06 的打分记录夹着账号截图，都没往仓库放，只留了方法和结构。这两个项目我讲得出过程，但你点开看到的不是能跑的东西。</p>
+    <p><b>没有真实用户。</b>只有我和一个同学用过。这是我目前最缺的一块，也没打算包装成"已有用户"。</p>
+    <p><b>有个地方我故意没修。</b>03 里还有一条规则不准，修了分数会更好看，但那就是拿 20 条样本凑分，所以留着。</p>
   </div>
 
 </div>
 </section>
 
 <footer>
-  zzq · 通信工程本科在读（2027 届）· 北京 · 每周到岗 5 天<br>
-  想看技术细节：<a href="https://github.com/Ab900879/jd-match-analyzer" target="_blank">GitHub 仓库</a> ｜ 每个项目目录下都有完整说明
+  <div class="wrap">
+    zzq ｜ 通信工程本科（2027 届）｜ 北京 ｜ 每周到岗 5 天，可实习 3 个月以上<br>
+    想看代码和技术细节：<a href="https://github.com/Ab900879/jd-match-analyzer">GitHub 仓库</a>
+  </div>
 </footer>
 </body>
 </html>
