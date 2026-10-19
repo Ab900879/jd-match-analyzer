@@ -3,113 +3,159 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>zzq · AI 产品作品集</title>
+<title>zzq · AI 产品作品集（HR 30 秒版）</title>
 <style>
-:root{--ink:#1f2328;--mid:#6b7280;--line:#e5e8ec;--bg:#f6f7f9;--accent:#2f6fed;--ok:#16a34a;--warn:#d97706}
+:root{--ink:#1a1d21;--mid:#6b7280;--light:#9aa3af;--line:#e6e8ec;--bg:#f7f8fa;--accent:#2563eb;--ok:#0f9d58;--warn:#d97706}
 *{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.7 -apple-system,"Segoe UI","Microsoft YaHei",sans-serif}
-header{background:#fff;border-bottom:1px solid var(--line);padding:34px 24px 30px;text-align:center}
-header .name{font-size:26px;font-weight:700;margin:0 0 6px}
-header .sub{color:var(--mid);font-size:14px;margin:0 0 18px}
-header .cta{display:inline-flex;gap:10px}
-header .cta a{display:inline-block;padding:9px 20px;border-radius:9px;font-size:14px;text-decoration:none;font-weight:600}
-.cta .p{background:var(--accent);color:#fff}
-.cta .g{background:#fff;color:var(--ink);border:1px solid var(--line)}
-main{max-width:1020px;margin:26px auto 70px;padding:0 20px}
-.chain{background:#fff;border:1px solid var(--line);border-radius:12px;padding:16px 20px;margin-bottom:22px;font-size:13.5px;color:var(--mid)}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.75 -apple-system,"Segoe UI","Microsoft YaHei",sans-serif;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1000px;margin:0 auto;padding:0 22px}
+.hero{background:#fff;border-bottom:1px solid var(--line);padding:46px 0 40px}
+.hero .tag{display:inline-block;font-size:13px;color:var(--accent);background:#eff5ff;border-radius:20px;padding:3px 12px;margin-bottom:14px}
+.hero h1{font-size:32px;line-height:1.35;margin:0 0 12px;letter-spacing:-.4px}
+.hero h1 b{color:var(--accent)}
+.hero p{margin:0 0 22px;color:var(--mid);font-size:16px;max-width:640px}
+.btns{display:flex;gap:12px;flex-wrap:wrap}
+.btns a{padding:12px 22px;border-radius:10px;text-decoration:none;font-size:15px;font-weight:600}
+.btns .p{background:var(--accent);color:#fff}
+.btns .g{background:#fff;color:var(--ink);border:1px solid var(--line)}
+.s30{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:30px 0 0}
+.s30 div{background:#fff;border:1px solid var(--line);border-radius:12px;padding:16px 18px}
+.s30 .n{font-size:28px;font-weight:700;line-height:1.1}
+.s30 .t{font-size:13.5px;color:var(--mid);margin-top:4px}
+section{padding:44px 0 0}
+.grp{margin-bottom:34px}
+.grp-hd{display:flex;align-items:baseline;gap:12px;margin-bottom:4px}
+.grp-hd .idx{font-size:13px;font-weight:700;color:#fff;background:var(--ink);border-radius:6px;padding:2px 9px}
+.grp-hd h2{font-size:21px;margin:0;letter-spacing:-.2px}
+.grp-sub{color:var(--mid);font-size:14.5px;margin:0 0 16px 42px}
+.cards{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:20px 22px;display:flex;flex-direction:column}
+.card .cap{font-size:12.5px;color:var(--light);margin-bottom:6px}
+.card h3{font-size:18px;margin:0 0 8px;line-height:1.45}
+.card .do{font-size:14.5px;color:#3f4650;margin:0 0 12px}
+.card .res{background:#f2f8f4;border:1px solid #d6ebdd;border-radius:9px;padding:10px 12px;font-size:14px;margin-bottom:14px}
+.card .res b{color:var(--ok)}
+.card .links{margin-top:auto;display:flex;gap:10px;flex-wrap:wrap}
+.card .links a{font-size:13.5px;text-decoration:none;color:var(--accent);border-bottom:1px solid #c7d9fb;padding-bottom:1px}
+.card .links a.plain{color:var(--mid);border-bottom-color:#d9dde3}
+.why{background:#fff;border:1px solid var(--line);border-radius:14px;padding:22px 24px;margin-top:8px}
+.why h2{font-size:19px;margin:0 0 12px}
+.why ol{margin:0;padding-left:22px}
+.why li{margin-bottom:8px;font-size:15px;color:#3f4650}
+.why li b{color:var(--ink)}
+.chain{background:#fff;border:1px solid var(--line);border-radius:14px;padding:20px 24px;margin-top:22px;font-size:15px;color:#3f4650}
 .chain b{color:var(--ink)}
-.grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-@media(max-width:820px){.grid{grid-template-columns:1fr}}
-.card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:20px;display:flex;flex-direction:column;transition:box-shadow .15s}
-.card:hover{box-shadow:0 6px 22px rgba(16,24,40,.08)}
-.card .no{font-size:12px;font-weight:700;color:#fff;background:var(--ink);border-radius:6px;padding:1px 8px;width:fit-content}
-.card.hero .no{background:var(--accent)}
-.card h3{margin:10px 0 4px;font-size:17px}
-.card h3 a{color:inherit;text-decoration:none}
-.card h3 a:hover{color:var(--accent)}
-.card p{margin:0 0 10px;color:var(--mid);font-size:13.5px}
-.metric{font-size:12.5px;background:#f0f6ff;color:#1d4ed8;border-radius:8px;padding:6px 10px;margin-bottom:12px}
-.links{margin-top:auto;display:flex;gap:8px;flex-wrap:wrap}
-.links a{font-size:12.5px;text-decoration:none;border:1px solid var(--line);border-radius:7px;padding:5px 11px;color:var(--ink);background:#fff}
-.links a:hover{border-color:var(--accent);color:var(--accent)}
-.badge{font-size:11px;border-radius:20px;padding:1px 8px;margin-left:8px;vertical-align:2px}
-.badge.run{background:#e8f7ee;color:var(--ok)}
-.badge.asset{background:#fff4e0;color:var(--warn)}
-.principles{background:#fff;border:1px solid var(--line);border-radius:12px;padding:18px 22px;margin-top:22px}
-.principles h2{font-size:15px;margin:0 0 10px}
-.principles li{margin-bottom:6px;font-size:13.5px;color:#374151}
-.shot{width:100%;border:1px solid var(--line);border-radius:12px;margin-bottom:22px;display:block}
-footer{text-align:center;color:#9aa3af;font-size:12px;padding-bottom:40px}
+footer{padding:40px 0 60px;color:var(--light);font-size:13.5px;text-align:center}
+footer a{color:#9aa3af}
+@media(max-width:760px){.cards{grid-template-columns:1fr}.s30{grid-template-columns:1fr}.hero h1{font-size:25px}}
 </style>
 </head>
 <body>
-<header>
-  <p class="name">zzq · AI 产品作品集</p>
-  <p class="sub">通信工程本科在读 · 目标 AI 产品经理 / AI 产品运营 · 6 个 AI 项目，全部真实可跑、数据可复现</p>
-  <div class="cta">
-    <a class="p" href="https://jd-match-analyzer.app.workbuddy.host/" target="_blank">体验重点项目 →</a>
-    <a class="g" href="https://github.com/Ab900879/jd-match-analyzer" target="_blank">GitHub 仓库</a>
+
+<div class="hero">
+  <div class="wrap">
+    <span class="tag">AI 产品经理 / AI 产品运营 实习生 · 北京 · 2027 届</span>
+    <h1>我能把一句想法，<b>做成一个点开就能用的 AI 产品</b>，<br>并且用数据说明它到底好不好用。</h1>
+    <p>通信工程本科在读，大模型相关能力全部自学。下面 6 个项目不用懂技术也能看懂——每个都写清了"解决什么问题、我做了什么、结果多少"。</p>
+    <div class="btns">
+      <a class="p" href="https://jd-match-analyzer.app.workbuddy.host/" target="_blank">先玩一下最完整的那个 →</a>
+      <a class="g" href="#projects">看 6 个项目</a>
+    </div>
+    <div class="s30">
+      <div><div class="n">6 个</div><div class="t">做完的 AI 项目，其中 4 个能当场点开看</div></div>
+      <div><div class="n">108 次</div><div class="t">真实调用大模型做测试，不是拍脑袋估算</div></div>
+      <div><div class="n">1%</div><div class="t">AI 编造内容的比例（越低越好）</div></div>
+    </div>
   </div>
-</header>
-<main>
-  <img class="shot" src="projects/01-jd-matcher/docs/img/screenshot.png" alt="JD 匹配诊断器界面">
+</div>
+
+<section id="projects">
+<div class="wrap">
+
+  <p style="color:#6b7280;font-size:15px;margin:0 0 26px">6 个项目按<b style="color:#1a1d21">三种能力</b>分成三组。招聘方最常问的三个问题，正好一组回答一个。</p>
+
+  <div class="grp">
+    <div class="grp-hd"><span class="idx">能力一</span><h2>能不能把需求做成产品？</h2></div>
+    <p class="grp-sub">对应 JD 里的「需求分析与拆解」「PRD 撰写」「原型设计」——出现在 86% 的岗位要求里</p>
+    <div class="cards">
+      <div class="card">
+        <div class="cap">项目 01 · 网页产品 · 可在线体验</div>
+        <h3>帮求职者看清"我和这个岗位差在哪一条"</h3>
+        <p class="do">把岗位要求和简历一起贴进去，它逐条告诉你：这条要求你满足了没有、依据是哪句原文、还差什么、接下来 7 天该补什么。</p>
+        <div class="res">结果：拿 12 条不同类型样本测过（跨行、信息不足、过度包装），AI 编造内容的比例压到 <b>1%</b>；"够不够好"的合格率从 <b>0% 提到 67%</b></div>
+        <div class="links"><a href="https://jd-match-analyzer.app.workbuddy.host/" target="_blank">直接体验 →</a><a class="plain" href="projects/01-jd-matcher/README.md">看它怎么做的</a></div>
+      </div>
+      <div class="card">
+        <div class="cap">项目 04 · 小工具 · 命令行</div>
+        <h3>需求文档改一句，页面草图自动重画</h3>
+        <p class="do">做产品最烦的是：需求改了，原型图得重画一遍。我做了个工具，把需求文档写清楚，一条命令就生成页面草图，改完再跑一次。</p>
+        <div class="res">结果：<b>200 行代码</b>、不依赖任何第三方库、支持 14 种常见页面元素；改完需求到出新图 <b>3 秒</b></div>
+        <div class="links"><a href="projects/04-prd2wireframe/examples/prd-jd-matcher.wireframe.html" target="_blank">看生成的草图 →</a><a class="plain" href="projects/04-prd2wireframe/README.md">看它怎么做的</a></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="grp">
+    <div class="grp-hd"><span class="idx">能力二</span><h2>能不能让 AI 好好说话、不乱编？</h2></div>
+    <p class="grp-sub">对应 JD 里的「Prompt 设计与调优」「AI Agent 搭建」——54% 和 38% 的岗位明确要求</p>
+    <div class="cards">
+      <div class="card">
+        <div class="cap">项目 02 · 可交互演示 · 带 20 条测试</div>
+        <h3>让 AI 客服"不知道就说不知道"</h3>
+        <p class="do">客服机器人最大的风险不是答不上来，是瞎编政策导致赔偿。我给它定了三条硬规矩：先查资料再回答、查不到就转人工、不许猜。页面上可以直接跑 20 条测试。</p>
+        <div class="res">结果：第一轮 20 条过 <b>17 条（85%）</b>，找出两个问题修完到 <b>19 条（95%）</b>；剩下 1 条我认为是标准写错了，写在文档里没改</div>
+        <div class="links"><a href="projects/02-faq-agent/index.html" target="_blank">自己跑测试 →</a><a class="plain" href="projects/02-faq-agent/README.md">看它怎么做的</a></div>
+      </div>
+      <div class="card">
+        <div class="cap">项目 05 · 设计资产 · Coze 平台</div>
+        <h3>让 AI 改简历，但不许替你编经历</h3>
+        <p class="do">AI 改简历最容易犯的错是"帮你加一段你没做过的经历"。我调了 50 多轮，定出一条边界：经历可以换个说法（"发推文"→"内容运营"），但动词强度不许升级（"参与"不能写成"主导"）。</p>
+        <div class="res">结果：<b>3 版提示词</b>的迭代记录 + 4 条验收标准 + 一套错误分类方法，后来直接用在了项目 01 和 03 上</div>
+        <div class="links"><a class="plain" href="projects/05-coze-resume-bot/README.md">看完整设计 →</a></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="grp">
+    <div class="grp-hd"><span class="idx">能力三</span><h2>能不能证明"AI 到底好不好用"？</h2></div>
+    <p class="grp-sub">对应 JD 里的「模型效果评测」「Badcase 归因」「竞品分析」——这是大部分实习生答不上来的一块</p>
+    <div class="cards">
+      <div class="card">
+        <div class="cap">项目 03 · 可视化看板 · 数据真实</div>
+        <h3>给 AI 的回答打分，而且不让 AI 自己打分</h3>
+        <p class="do">让 AI 给自己打分等于自己判卷子。我写了 4 条硬规则算分：数字必须有出处、该拒答的必须拒、格式要干净、建议要能执行。规则也会写错，三次改规则的过程我都留在仓库里。</p>
+        <div class="res">结果：同一批回答，3 版规则分别打出 <b>83.5 → 92.5 → 98.8 分</b>；其中两处失分是<b>我的规则本身写错了</b>，不是 AI 答错</div>
+        <div class="links"><a href="projects/03-eval-badcase/index.html" target="_blank">看归因看板 →</a><a class="plain" href="projects/03-eval-badcase/README.md">看它怎么做的</a></div>
+      </div>
+      <div class="card">
+        <div class="cap">项目 06 · 评测设计 · 方法资产</div>
+        <h3>豆包、通义、Kimi 到底该用哪个</h3>
+        <p class="do">不凭感觉说"我觉得谁好"。设计 3 类场景 × 每类 10 个任务，同一套题喂给三个产品，按 0/1/2 三档打分。结论不是"谁最强"，而是一张"什么任务用哪个"的对照表。</p>
+        <div class="res">结果：<b>90 次统一测试</b>的评测设计；编造来源链接的回答直接判 0 分——这条口径后来沿用到了项目 01</div>
+        <div class="links"><a class="plain" href="projects/06-competitor-teardown/README.md">看评测设计 →</a></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="why">
+    <h2>为什么这不是 6 个孤立的小作业</h2>
+    <ol>
+      <li><b>它们是一条线做下来的。</b>先在 06 学会怎么评产品，在 05 学会怎么调 AI 的说话方式，在 03 把这些变成能算分的规则，在 02 用到客服机器人上，最后在 01 全部合成一个能上线的产品。</li>
+      <li><b>每个项目都有"没做好的地方"。</b>项目 02 有一条测试我认为是 AI 答对了、我的标准写错了，保留了没改；项目 03 有一条规则我故意不修，因为再调就是在作弊。</li>
+      <li><b>数字都是真跑出来的。</b>共 108 次真实调用大模型，测试数据都在仓库里，会写代码的人可以自己跑一遍验证。</li>
+    </ol>
+  </div>
+
   <div class="chain">
-    <b>这套项目不是 6 个孤立 demo，而是一条能力链：</b>
-    06 竞品拆解（学会怎么评产品）→ 05 Coze 助手（学会调 Prompt）→ 03 评测归因（把感觉变成规则打分）→ 02 FAQ Agent（评测用到 Agent）→ <b>01 JD 匹配诊断器（全部能力合成完整产品）</b>；04 PRD 转线框图贯穿全程。
+    <b>一句话总结：</b>我做完一个东西，会先想清楚"什么叫做好了"再动手；做完会老实说哪里没做到。这比"我会用 10 个工具"更难教。
   </div>
-  <div class="grid">
-    <div class="card hero">
-      <span class="no">01</span>
-      <h3><a href="projects/01-jd-matcher/README.md">JD 匹配诊断器</a><span class="badge run">完整产品</span></h3>
-      <p>粘贴 JD + 简历，输出四维加权评分、逐条证据标注（命中必须引用原文）、简历改写和 7 天行动清单。核心是"证据三态"防编造机制。</p>
-      <div class="metric">4 版 Prompt × 12 分层样本 × 48 次真实调用 · 编造率 1% · 通过率 0% → 67%</div>
-      <div class="links"><a href="https://jd-match-analyzer.app.workbuddy.host/" target="_blank">在线体验</a><a href="projects/01-jd-matcher/README.md">项目详情</a><a href="projects/01-jd-matcher/docs/测试报告.md">测试报告</a></div>
-    </div>
-    <div class="card">
-      <span class="no">02</span>
-      <h3><a href="projects/02-faq-agent/README.md">FAQ Agent · 工具调用与拒答</a><span class="badge run">完整产品</span></h3>
-      <p>ReAct 客服 Agent：3 个工具 + "查不到就转人工"。20 条测试期望由人标注、判定由规则完成，含假命中陷阱样本。</p>
-      <div class="metric">命中率 85% → 95% · 1 条标注争议如实保留</div>
-      <div class="links"><a href="projects/02-faq-agent/index.html">在线演示</a><a href="projects/02-faq-agent/README.md">项目详情</a></div>
-    </div>
-    <div class="card">
-      <span class="no">03</span>
-      <h3><a href="projects/03-eval-badcase/README.md">评测与 Badcase 归因</a><span class="badge run">完整产品</span></h3>
-      <p>4 条规则给模型回答打分（事实一致/拒答正确/格式合规/可执行）。规则迭代三轮，抓出评测器自己的两个 bug。</p>
-      <div class="metric">3 版规则 83.5 → 92.5 → 98.8 分（20 条回答交叉验证，防过拟合）</div>
-      <div class="links"><a href="projects/03-eval-badcase/index.html">归因看板</a><a href="projects/03-eval-badcase/README.md">项目详情</a></div>
-    </div>
-    <div class="card">
-      <span class="no">04</span>
-      <h3><a href="projects/04-prd2wireframe/README.md">PRD 转线框图</a><span class="badge run">开发工具</span></h3>
-      <p>PRD 是唯一事实源：改需求重跑一次命令就得到新线框图。200 行零依赖，链路里没有模型，100% 可复现。</p>
-      <div class="metric">14 种组件 · 配套 3 版提示词对比实验</div>
-      <div class="links"><a href="projects/04-prd2wireframe/examples/prd-jd-matcher.wireframe.html">生成示例</a><a href="projects/04-prd2wireframe/README.md">项目详情</a></div>
-    </div>
-    <div class="card">
-      <span class="no">05</span>
-      <h3><a href="projects/05-coze-resume-bot/README.md">简历优化助手（Coze）</a><span class="badge asset">方法资产</span></h3>
-      <p>50 多轮对话调优沉淀的 Prompt 三版迭代、知识库结构、验收标准与 badcase 分类法。</p>
-      <div class="metric">最值钱的结论：改写"迁移可以、动词升级不行"</div>
-      <div class="links"><a href="projects/05-coze-resume-bot/README.md">设计资产</a></div>
-    </div>
-    <div class="card">
-      <span class="no">06</span>
-      <h3><a href="projects/06-competitor-teardown/README.md">AI 产品对比拆解</a><span class="badge asset">方法资产</span></h3>
-      <p>豆包 / 通义 / Kimi：3 产品 × 3 场景 × 30 任务的评测设计与口径决策，幻觉单独计 0 分。</p>
-      <div class="metric">产出"任务 → 推荐工具"对照表，而非"谁最好"</div>
-      <div class="links"><a href="projects/06-competitor-teardown/README.md">评测设计</a></div>
-    </div>
-  </div>
-  <div class="principles">
-    <h2>贯穿所有项目的三个原则</h2>
-    <ul>
-      <li><b>不让模型自评</b> —— 所有分数由规则计算：数字必须可追溯、拒答双向正确、格式硬校验。</li>
-      <li><b>评测集必须埋陷阱</b> —— 假命中、信息不足、过度包装、严重错配；只测正常样本会得到虚假的高分。</li>
-      <li><b>争议如实记录</b> —— 每个项目都有"没有修的问题"一节。改标注凑通过率的事，一件都没做。</li>
-    </ul>
-  </div>
-</main>
-<footer>zzq · 2026 · MIT License</footer>
+
+</div>
+</section>
+
+<footer>
+  zzq · 通信工程本科在读（2027 届）· 北京 · 每周到岗 5 天<br>
+  想看技术细节：<a href="https://github.com/Ab900879/jd-match-analyzer" target="_blank">GitHub 仓库</a> ｜ 每个项目目录下都有完整说明
+</footer>
 </body>
 </html>
