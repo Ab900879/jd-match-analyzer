@@ -1,0 +1,251 @@
+{
+  "generatedAt": "2026-10-19T05:18:29.591Z",
+  "model": "deepseek-v4-flash",
+  "summary": {
+    "passRate": 0.6666666666666666,
+    "evidenceRate": 0,
+    "fabricateRate": 0,
+    "schemaRate": 0,
+    "scoreReasonable": 0,
+    "actionQuality": 0,
+    "avgLatency": 9369
+  },
+  "detail": [
+    {
+      "case": 1,
+      "category": "高匹配基线",
+      "overall": 56,
+      "ev": 1,
+      "fab": 0,
+      "sc": 1,
+      "sr": 1,
+      "aq": 1,
+      "pass": true,
+      "bad": [],
+      "lat": 9631,
+      "evidenceCount": 15,
+      "rewriteCount": 3,
+      "actionCount": 4,
+      "rawHead": "{\n  \"overall_score\": 56,\n  \"verdict\": \"勉强可投\",\n  \"one_line\": \"有 Coze Bot 与调研、数据可视化基础，但缺真实客服场景与 badcase 运营闭环。\",\n  \"gap_focus\": \"无真实客服/知识库运营与 badcase 归因闭环经验\",\n  \"dimensions\": [\n    {\n      \"key\": \"skill\",\n      \"name\": \"技能匹配\",\n      \"weight\": 0.35,\n      \"score\": 58,\n      \"weighted\": 20.3,\n      \"evidence\": [\n        {\n          \"jd_quote\": \"有 Prompt 设计经验，能按场景拆分对话流程\",\n          \"resume_quote\": \"Coze"
+    },
+    {
+      "case": 2,
+      "category": "高匹配基线",
+      "overall": 47,
+      "ev": 0.9333333333333333,
+      "fab": 0.06666666666666667,
+      "sc": 1,
+      "sr": 1,
+      "aq": 0.6,
+      "pass": true,
+      "bad": [],
+      "lat": 10613,
+      "evidenceCount": 15,
+      "rewriteCount": 4,
+      "actionCount": 5,
+      "rawHead": "{\n  \"overall_score\": 47,\n  \"verdict\": \"勉强可投\",\n  \"one_line\": \"方向对但 AI 产品硬经历薄，需用 Coze/调研补出可验证的 Prompt 与 PRD 证据\",\n  \"gap_focus\": \"缺 Prompt 迭代与效果评测的可验证产出\",\n  \"dimensions\": [\n    {\n      \"key\": \"skill\",\n      \"name\": \"技能匹配\",\n      \"weight\": 0.35,\n      \"score\": 45,\n      \"weighted\": 15.8,\n      \"evidence\": [\n        {\n          \"jd_quote\": \"有 Prompt 工程实践，能独立设计、迭代、调优 Prompt\",\n          \"resume_quote\": \""
+    },
+    {
+      "case": 3,
+      "category": "跨行迁移",
+      "overall": 52,
+      "ev": 0.8666666666666667,
+      "fab": 0,
+      "sc": 1,
+      "sr": 1,
+      "aq": 0.8,
+      "pass": true,
+      "bad": [],
+      "lat": 9845,
+      "evidenceCount": 15,
+      "rewriteCount": 4,
+      "actionCount": 5,
+      "rawHead": "{\n  \"overall_score\": 52,\n  \"verdict\": \"勉强可投\",\n  \"one_line\": \"文字与社群底子对得上，Prompt 设计和数据能力是硬缺口。\",\n  \"gap_focus\": \"无 Prompt 设计经验，也无 SQL / 数据分析证据\",\n  \"dimensions\": [\n    {\n      \"key\": \"skill\",\n      \"name\": \"技能匹配\",\n      \"weight\": 0.35,\n      \"score\": 45,\n      \"weighted\": 15.8,\n      \"evidence\": [\n        {\n          \"jd_quote\": \"有 Prompt 设计经验，能按场景拆分对话流程\",\n          \"resume_quote\": \"用 ChatGPT 辅助写公众号推文"
+    },
+    {
+      "case": 4,
+      "category": "跨行迁移",
+      "overall": 26,
+      "ev": 0.9333333333333333,
+      "fab": 0,
+      "sc": 1,
+      "sr": 0,
+      "aq": 0.6,
+      "pass": false,
+      "bad": [
+        {
+          "dim": "分数口径",
+          "detail": "分数 26 落在预期区间 40-65 之外"
+        }
+      ],
+      "lat": 9337,
+      "evidenceCount": 15,
+      "rewriteCount": 2,
+      "actionCount": 5,
+      "rawHead": "{\n  \"overall_score\": 26,\n  \"verdict\": \"不建议投\",\n  \"one_line\": \"方向完全错配：无 Agent 平台实操、无产品输出，仅自学 LangChain 教程。\",\n  \"gap_focus\": \"无 Coze/Dify 实际搭建作品，且完全没有产品侧输出\",\n  \"dimensions\": [\n    {\n      \"key\": \"skill\",\n      \"name\": \"技能匹配\",\n      \"weight\": 0.35,\n      \"score\": 22,\n      \"weighted\": 7.7,\n      \"evidence\": [\n        {\n          \"jd_quote\": \"有 Coze / Dify 等平台的实际搭建经验（需提供作品）\",\n          \"resume_quote\": "
+    },
+    {
+      "case": 5,
+      "category": "过度包装",
+      "overall": 38,
+      "ev": 1,
+      "fab": 0,
+      "sc": 1,
+      "sr": 1,
+      "aq": 0.6,
+      "pass": true,
+      "bad": [],
+      "lat": 11445,
+      "evidenceCount": 16,
+      "rewriteCount": 4,
+      "actionCount": 5,
+      "rawHead": "{\"overall_score\": 38, \"verdict\": \"不建议投\", \"one_line\": \"简历词句几乎全中 JD，但证据仅来自小组课程作业，规模与独立度均撑不住\", \"gap_focus\": \"所有亮点均为课程小组分工，无独立主导与真实数据支撑\", \"dimensions\": [{\"key\": \"skill\", \"name\": \"技能匹配\", \"weight\": 0.35, \"score\": 40, \"weighted\": 14.0, \"evidence\": [{\"jd_quote\": \"有 Prompt 工程实践，能独立设计、迭代、调优 Prompt\", \"resume_quote\": \"独立完成该产品 3 个版本的 Prompt 迭代，使生成质量提升 40%\", \"state\": \"unclear\", \"note\": \"字面完全对应，但附注说明属课程小组分工，独立性与"
+    },
+    {
+      "case": 6,
+      "category": "过度包装",
+      "overall": 28,
+      "ev": 1,
+      "fab": 0,
+      "sc": 1,
+      "sr": 0,
+      "aq": 1,
+      "pass": false,
+      "bad": [
+        {
+          "dim": "分数口径",
+          "detail": "分数 28 落在预期区间 40-65 之外"
+        }
+      ],
+      "lat": 9343,
+      "evidenceCount": 13,
+      "rewriteCount": 3,
+      "actionCount": 4,
+      "rawHead": "{\n  \"overall_score\": 28,\n  \"verdict\": \"不建议投\",\n  \"one_line\": \"前端开发背景，AI 产品岗核心能力几乎无证据，方向不匹配\",\n  \"gap_focus\": \"无 PRD、Prompt 工程、需求拆解的实证\",\n  \"dimensions\": [\n    {\n      \"key\": \"skill\",\n      \"name\": \"技能匹配\",\n      \"weight\": 0.35,\n      \"score\": 22,\n      \"weighted\": 7.7,\n      \"evidence\": [\n        {\n          \"jd_quote\": \"有 Prompt 工程实践，能独立设计、迭代、调优 Prompt\",\n          \"resume_quote\": \"\",\n          \"state"
+    },
+    {
+      "case": 7,
+      "category": "陷阱：信息不足",
+      "overall": null,
+      "ev": 0,
+      "fab": 0,
+      "sc": 0.14285714285714285,
+      "sr": 0,
+      "aq": 0,
+      "pass": false,
+      "bad": [
+        {
+          "dim": "格式合规",
+          "detail": "输出未按 schema 返回"
+        },
+        {
+          "dim": "分数口径",
+          "detail": "分数 null 落在预期区间 5-32 之外"
+        },
+        {
+          "dim": "证据可追溯",
+          "detail": "证据缺少原文摘录"
+        },
+        {
+          "dim": "建议质量",
+          "detail": "建议不可执行（空话/无交付物）"
+        }
+      ],
+      "lat": 6822,
+      "evidenceCount": 0,
+      "rewriteCount": 0,
+      "actionCount": 0,
+      "rawHead": "{\"overall_score\": 9, \"verdict\": \"不建议投\", \"one_line\": \"简历只有兴趣表态，没有任何可验证的经历信息\", \"gap_focus\": \"无任何 AI 产品或项目经历证据\", \"dimensions\": [{\"key\": \"skill\", \"name\": \"技能匹配\", \"weight\": 0.35, \"score\": 8, \"weighted\": 2.8, \"evidence\": [{\"jd_quote\": \"有 Prompt 工程实践，能独立设计、迭代、调优 Prompt\", \"resume_quote\": \"做过一些 AI 相关的尝试\", \"state\": \"unclear\", \"note\": \"只提到「AI 相关的尝试」，没有说明做什么、怎么迭代、效果如何，无法判断深度\"}, {\"jd_quote\": \"会写 PRD，能独立画原型（Fig"
+    },
+    {
+      "case": 8,
+      "category": "陷阱：信息不足",
+      "overall": 58,
+      "ev": 0.9333333333333333,
+      "fab": 0,
+      "sc": 1,
+      "sr": 1,
+      "aq": 0.6666666666666666,
+      "pass": true,
+      "bad": [],
+      "lat": 8550,
+      "evidenceCount": 15,
+      "rewriteCount": 3,
+      "actionCount": 3,
+      "rawHead": "{\n  \"overall_score\": 58,\n  \"verdict\": \"勉强可投\",\n  \"one_line\": \"有项目推进、全栈课设和用户调研的可迁移经历，但缺少可验证的 AI 产品实战。\",\n  \"gap_focus\": \"无真实 AI 产品落地或运营数据，Coze Bot 仅一句带过且无细节。\",\n  \"dimensions\": [\n    {\n      \"key\": \"skill\",\n      \"name\": \"技能匹配\",\n      \"weight\": 0.35,\n      \"score\": 58,\n      \"weighted\": 20.3,\n      \"evidence\": [\n        {\n          \"jd_quote\": \"要求会 AI\",\n          \"resume_quote\": \"Coze 搭建过 1 个对话 Bot\",\n"
+    },
+    {
+      "case": 9,
+      "category": "严重错配",
+      "overall": 16,
+      "ev": 0.8461538461538461,
+      "fab": 0,
+      "sc": 1,
+      "sr": 1,
+      "aq": 0.6,
+      "pass": true,
+      "bad": [],
+      "lat": 8702,
+      "evidenceCount": 13,
+      "rewriteCount": 2,
+      "actionCount": 5,
+      "rawHead": "{\n  \"overall_score\": 16,\n  \"verdict\": \"不建议投\",\n  \"one_line\": \"会计背景，零 AI 产品与搭建经验，与 Agent 平台方向几乎不重合\",\n  \"gap_focus\": \"无任何 Agent/Coze/Dify 搭建作品与工具调用经验\",\n  \"dimensions\": [\n    {\n      \"key\": \"skill\",\n      \"name\": \"技能匹配\",\n      \"weight\": 0.35,\n      \"score\": 12,\n      \"weighted\": 4.2,\n      \"evidence\": [\n        {\n          \"jd_quote\": \"有 Coze / Dify 等平台的实际搭建经验（需提供作品）\",\n          \"resume_quote\": \"\",\n  "
+    },
+    {
+      "case": 10,
+      "category": "严重错配",
+      "overall": 24,
+      "ev": 0.6428571428571429,
+      "fab": 0,
+      "sc": 1,
+      "sr": 0.5,
+      "aq": 1,
+      "pass": false,
+      "bad": [
+        {
+          "dim": "证据可追溯",
+          "detail": "证据缺少原文摘录"
+        }
+      ],
+      "lat": 8219,
+      "evidenceCount": 14,
+      "rewriteCount": 3,
+      "actionCount": 3,
+      "rawHead": "{\n  \"overall_score\": 24,\n  \"verdict\": \"不建议投\",\n  \"one_line\": \"视觉设计背景，AI 产品/ Prompt/ PRD 能力无证据，方向不匹配\",\n  \"gap_focus\": \"无 AI 产品经理核心能力证据（PRD、Prompt、数据）\",\n  \"dimensions\": [\n    {\n      \"key\": \"skill\",\n      \"name\": \"技能匹配\",\n      \"weight\": 0.35,\n      \"score\": 18,\n      \"weighted\": 6.3,\n      \"evidence\": [\n        {\n          \"jd_quote\": \"有 Prompt 工程实践，能独立设计、迭代、调优 Prompt\",\n          \"resume_quote\": \"未接触"
+    },
+    {
+      "case": 11,
+      "category": "边缘样本",
+      "overall": 51,
+      "ev": 1,
+      "fab": 0,
+      "sc": 1,
+      "sr": 0.5,
+      "aq": 0.75,
+      "pass": true,
+      "bad": [],
+      "lat": 10751,
+      "evidenceCount": 15,
+      "rewriteCount": 3,
+      "actionCount": 4,
+      "rawHead": "{\"overall_score\": 51, \"verdict\": \"勉强可投\", \"one_line\": \"方向对口的初级候选人，但 Prompt 迭代缺效果评测，PRD 只碰过一角\", \"gap_focus\": \"缺 Prompt 迭代与效果评测闭环，PRD 只写过异常流程章节\", \"dimensions\": [{\"key\": \"skill\", \"name\": \"技能匹配\", \"weight\": 0.35, \"score\": 55, \"weighted\": 19.3, \"evidence\": [{\"jd_quote\": \"有 Prompt 工程实践，能独立设计、迭代、调优 Prompt\", \"resume_quote\": \"用 Coze 搭了一个\\\"论文摘要生成\\\"Bot，自己用了 20 多次，没给别人用过\", \"state\": \"unclear\", \"note\": \"确实动手搭建过 B"
+    },
+    {
+      "case": 12,
+      "category": "边缘样本",
+      "overall": 58,
+      "ev": 0.9090909090909091,
+      "fab": 0,
+      "sc": 1,
+      "sr": 1,
+      "aq": 0.8,
+      "pass": true,
+      "bad": [],
+      "lat": 9169,
+      "evidenceCount": 11,
+      "rewriteCount": 3,
+      "actionCount": 5,
+      "rawHead": "{\n  \"overall_score\": 58,\n  \"verdict\": \"勉强可投\",\n  \"one_line\": \"统计背景+真实Coze落地经验，数据能力扎实，但PRD与原型空白。\",\n  \"gap_focus\": \"无PRD撰写与原型设计经验\",\n  \"dimensions\": [\n    {\n      \"key\": \"skill\",\n      \"name\": \"技能匹配\",\n      \"weight\": 0.35,\n      \"score\": 55,\n      \"weighted\": 19.3,\n      \"evidence\": [\n        {\n          \"jd_quote\": \"有 Prompt 工程实践，能独立设计、迭代、调优 Prompt\",\n          \"resume_quote\": \"用 Coze 搭了 workflow，跑了 2"
+    }
+  ]
+}

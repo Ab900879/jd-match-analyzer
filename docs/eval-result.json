@@ -1,0 +1,1513 @@
+{
+  "generatedAt": "2026-10-19T05:15:38.914Z",
+  "model": "deepseek-v4-flash",
+  "cases": 12,
+  "summary": {
+    "v1": {
+      "passRate": 0,
+      "evidenceRate": 0,
+      "fabricateRate": 0,
+      "schemaRate": 1,
+      "scoreReasonable": 0,
+      "actionQuality": 0,
+      "avgLatency": 8284,
+      "avgTokens": 1632,
+      "passCount": 0
+    },
+    "v2": {
+      "passRate": 0,
+      "evidenceRate": 0,
+      "fabricateRate": 0,
+      "schemaRate": 0.5833333333333334,
+      "scoreReasonable": 0.2916666666666667,
+      "actionQuality": 0,
+      "avgLatency": 4949,
+      "avgTokens": 1216,
+      "passCount": 0
+    },
+    "v3": {
+      "passRate": 0.4166666666666667,
+      "evidenceRate": 0.8137286324786325,
+      "fabricateRate": 0.005555555555555556,
+      "schemaRate": 0.9285714285714285,
+      "scoreReasonable": 0.5,
+      "actionQuality": 0.6458333333333334,
+      "avgLatency": 9213,
+      "avgTokens": 3229,
+      "passCount": 5
+    }
+  },
+  "detail": {
+    "v1": [
+      {
+        "case": 1,
+        "category": "高匹配基线",
+        "difficulty": "易",
+        "parsed": false,
+        "overall": null,
+        "dims": [],
+        "evidenceCount": 0,
+        "rewriteCount": 0,
+        "actionCount": 0,
+        "actionQuality": 0,
+        "evidenceRate": 0,
+        "fabricateRate": 0,
+        "schemaRate": 1,
+        "scoreReasonable": 0,
+        "pass": false,
+        "badcases": [
+          {
+            "dim": "分数口径",
+            "detail": "分数 null 落在预期区间 55-80 之外"
+          },
+          {
+            "dim": "证据可追溯",
+            "detail": "证据缺少原文摘录"
+          }
+        ],
+        "latency": 8737,
+        "tokens": 1781,
+        "rawHead": "# 简历与JD匹配度分析\n\n## 一、总体匹配度评估：约 **55-60%**（中等偏上，有明显可包装空间）\n\n候选人具备\"AI产品运营\"方向的基本盘（AI工具使用经验、Coze搭过Bot、数据分析萌芽、文字产出能力），但**缺少智能客服场景的直接经验**，且多项JD要求处于\"沾边但未证明\"状态。作为实习生岗位，这个背景是**可以投递的**，关键在于简历改写和面试准备。\n\n\n## 二、逐条对照\n\n| JD要求 | 简历证据 | 匹配度 | 说明 |\n|---|---|---|---|\n| 本科在读，每周到岗4天 | 2027届本科在读 | ✅ 待确认 | 需明确可到岗天数与实习周期 |\n| Prompt设计经验，按场景拆分对话流程 | Coze搭建过1个对话Bot | ⚠️ 弱匹配 | 有实操但是\"1个\"，未体现\"按场景拆分\"的方法论，是最大短板 |\n| 数据敏感，Excel熟练，会SQL更佳 | SQL单表查询、Excel、MATLAB数据可视化、问卷统计分析 | ✅ 较好 | 有量化分析动作（96份问卷统计），SQL基础达标 |\n| 文字表达好，能写运营报告与用户手册 | 18页实训报告、2000字调研小结 | ✅ 较好 | 有文档产出，但缺\"运营报告/badcase分析\"类文本 |\n| 细致耐心，承担标注清洗 | 班长、实训组长、独立课设 | ⚠️ 间接 | 无直接标注/清洗"
+      },
+      {
+        "case": 2,
+        "category": "高匹配基线",
+        "difficulty": "中",
+        "parsed": false,
+        "overall": null,
+        "dims": [],
+        "evidenceCount": 0,
+        "rewriteCount": 0,
+        "actionCount": 0,
+        "actionQuality": 0,
+        "evidenceRate": 0,
+        "fabricateRate": 0,
+        "schemaRate": 1,
+        "scoreReasonable": 0,
+        "pass": false,
+        "badcases": [
+          {
+            "dim": "分数口径",
+            "detail": "分数 null 落在预期区间 40-70 之外"
+          },
+          {
+            "dim": "证据可追溯",
+            "detail": "证据缺少原文摘录"
+          }
+        ],
+        "latency": 9784,
+        "tokens": 1924,
+        "rawHead": "# 简历与JD匹配度分析\n\n## 一、总体匹配度评估：**中等偏下（约40-45%）**\n\n候选人的求职方向明确、学习意愿可见，但**在JD最核心的4项能力（需求/PRD、Prompt工程、数据分析、跨团队协同落地）上均缺乏直接证据**，且存在**时间线硬伤**。整体属于\"方向对、底子薄、证据弱\"的典型低年级简历。\n\n---\n\n## 二、逐条匹配分析\n\n| JD要求 | 简历证据 | 匹配度 | 说明 |\n|---|---|---|---|\n| 在读本科、可实习4天/周3个月+ | 2027届大三 | ⚠️ 待确认 | 简历**未注明可实习时间**，这是实习生筛选第一道硬门槛，缺失即减分 |\n| 熟悉大模型能力边界 | \"每周跟进AI动态\"、Coze搭过1个Bot | ❌ 弱 | 只有\"关注\"，无\"判断\"证据。JD要求\"能判断什么该用AI、什么不该用\"，简历无任何此类判断输出 |\n| Prompt工程实践 | Coze搭建1个对话Bot | ❌ 弱 | 搭建Bot ≠ Prompt设计与迭代。无迭代记录、无评测、无badcase归因 |\n| 写PRD、画原型（Figma等） | Figma\"初学\"；课设做过\"需求梳理\" | ❌ 弱 | \"初学\"是减分表述；无一份PRD样例，无原型作品 |\n| 数据分析（SQL/Excel定位问题） | SQL\"单表查询\"、Excel、问卷96份 |"
+      },
+      {
+        "case": 3,
+        "category": "跨行迁移",
+        "difficulty": "中",
+        "parsed": false,
+        "overall": null,
+        "dims": [],
+        "evidenceCount": 0,
+        "rewriteCount": 0,
+        "actionCount": 0,
+        "actionQuality": 0,
+        "evidenceRate": 0,
+        "fabricateRate": 0,
+        "schemaRate": 1,
+        "scoreReasonable": 0,
+        "pass": false,
+        "badcases": [
+          {
+            "dim": "分数口径",
+            "detail": "分数 null 落在预期区间 45-70 之外"
+          },
+          {
+            "dim": "证据可追溯",
+            "detail": "证据缺少原文摘录"
+          }
+        ],
+        "latency": 8462,
+        "tokens": 1664,
+        "rawHead": "# 简历与 JD 匹配度分析\n\n## 一、总体匹配度评估\n\n**综合匹配度：约 55–60%（中等偏上，属于“有潜力但需补短板”的候选人）**\n\n候选人强在文字表达、社群运营和内容生产，弱在 AI 产品运营的核心硬技能（Prompt 工程、知识库建设、数据分析）。属于“软技能达标、硬技能缺口明显”的类型，是否推进取决于团队是否愿意带教。\n\n---\n\n## 二、逐项对照分析\n\n| JD 要求 | 简历证据 | 匹配度 | 说明 |\n|---|---|---|---|\n| 本科在读，每周到岗 4 天 | 2027 届本科在读 | ⚠️ 待确认 | 简历未写可到岗时间与天数，**这是硬门槛，必须确认**。2027 届意味着还有较长时间，需确认实习周期 |\n| Prompt 设计经验，按场景拆分对话流程 | 仅“用 ChatGPT 辅助写推文 30+ 篇” | ❌ 弱 | 用 ChatGPT 写内容 ≠ Prompt 工程。无按场景拆解对话流程、设计 system prompt、多轮对话设计的证据 |\n| 数据敏感，Excel 熟练，会 SQL 更佳 | “办公软件熟练”，社群活跃率 60% | ⚠️ 部分 | 有基础的量化意识（发行量、活跃率、阅读量），但未体现 Excel 具体能力（如透视表、函数），无 SQL |\n| 文字表达好，能写运营报告与用户手册 | 校刊主编、30+ 推文、最"
+      },
+      {
+        "case": 4,
+        "category": "跨行迁移",
+        "difficulty": "中",
+        "parsed": false,
+        "overall": null,
+        "dims": [],
+        "evidenceCount": 0,
+        "rewriteCount": 0,
+        "actionCount": 0,
+        "actionQuality": 0,
+        "evidenceRate": 0,
+        "fabricateRate": 0,
+        "schemaRate": 1,
+        "scoreReasonable": 0,
+        "pass": false,
+        "badcases": [
+          {
+            "dim": "分数口径",
+            "detail": "分数 null 落在预期区间 40-65 之外"
+          },
+          {
+            "dim": "证据可追溯",
+            "detail": "证据缺少原文摘录"
+          }
+        ],
+        "latency": 6977,
+        "tokens": 1471,
+        "rawHead": "# 简历与 JD 匹配度分析\n\n## 一、总体结论\n\n**匹配度：约 35%（偏低，但有可挖掘的转化空间）**\n\n候选人的核心优势是\"动手做过 AI 技术 demo\"，但 JD 要的是\"做过 Agent 平台产品落地\"。两者在**技术底层**有交集，在**产品经验**上几乎空白。直接投递通过率低，但并非没有机会——关键在于能否在短期内补齐 1–2 个硬性可验证的作品。\n\n## 二、逐条对照\n\n| JD 要求 | 候选人情况 | 匹配度 |\n|---|---|---|\n| 理解 Agent「任务分解+工具调用」、知道 ReAct | 自学 LangChain/RAG 3 个月，有概念基础，但简历未体现对 ReAct/Function Call 的理解 | ⚠️ 部分 |\n| Coze/Dify 实际搭建经验（需提供作品） | **无**，只有本地知识库 demo 且未上线 | ❌ 硬伤 |\n| 读懂 API 文档、Postman 调试 | 简历未体现，Linux/Python 基础可支撑学习 | ⚠️ 未证明 |\n| Python 或 JSON 基础、拼装结构化数据 | **强项**，PyTorch 训练 + 数据标注证明工程能力 | ✅ 匹配 |\n| 逻辑清晰、模糊任务拆步骤 | 毕设独立完成 2000 张标注+训练流程，有一定体现，但无产品侧证据 | ⚠️ 部分 |\n| 职责：A"
+      },
+      {
+        "case": 5,
+        "category": "过度包装",
+        "difficulty": "难",
+        "parsed": false,
+        "overall": null,
+        "dims": [],
+        "evidenceCount": 0,
+        "rewriteCount": 0,
+        "actionCount": 0,
+        "actionQuality": 0,
+        "evidenceRate": 0,
+        "fabricateRate": 0,
+        "schemaRate": 1,
+        "scoreReasonable": 0,
+        "pass": false,
+        "badcases": [
+          {
+            "dim": "分数口径",
+            "detail": "分数 null 落在预期区间 30-55 之外"
+          },
+          {
+            "dim": "证据可追溯",
+            "detail": "证据缺少原文摘录"
+          }
+        ],
+        "latency": 9106,
+        "tokens": 1807,
+        "rawHead": "# 简历与 JD 匹配度分析\n\n## 一、总体结论\n\n**表面匹配度高（约 70%），但存在关键性“含金量”风险，实际可信匹配度约 40–50%。** 简历几乎逐条对应 JD 关键词，但附注“以上项目均为课程作业中的小组分工内容”大幅削弱了所有亮点的可信度。核心问题不是“会不会”，而是“做到什么程度、是否独立、是否有真实用户”。\n\n## 二、逐条匹配分析\n\n| JD 要求 | 简历证据 | 匹配度 | 说明 |\n|---|---|---|---|\n| 需求调研、拆解、PRD、流程图、验收标准 | “全流程需求分析与 PRD 撰写” | 中 | 有动作描述，但无 PRD 样例、无流程图/验收标准佐证；课程作业场景深度有限 |\n| Prompt 设计与迭代、评测标准、badcase 归因 | “3 个版本 Prompt 迭代，质量提升 40%” | 中偏高 | 有迭代意识，但“40%”无口径说明（谁评的、样本多少），badcase 归因未提及 |\n| 跨团队协同、排期到上线、复盘 | “与 5 人研发团队协同，2 个月上线” | 中 | 有协同经历，但小组作业的“研发团队”性质存疑，复盘未体现 |\n| 关注前沿、竞品分析 | 技能栏提及 RAG/多模态，无竞品分析 | 低 | 无任何竞品分析产出证据 |\n| 熟悉大模型能力边界 | 未体现“判断该不该用 AI” | 低 | 这是 JD "
+      },
+      {
+        "case": 6,
+        "category": "过度包装",
+        "difficulty": "难",
+        "parsed": false,
+        "overall": null,
+        "dims": [],
+        "evidenceCount": 0,
+        "rewriteCount": 0,
+        "actionCount": 0,
+        "actionQuality": 0,
+        "evidenceRate": 0,
+        "fabricateRate": 0,
+        "schemaRate": 1,
+        "scoreReasonable": 0,
+        "pass": false,
+        "badcases": [
+          {
+            "dim": "分数口径",
+            "detail": "分数 null 落在预期区间 40-65 之外"
+          },
+          {
+            "dim": "证据可追溯",
+            "detail": "证据缺少原文摘录"
+          }
+        ],
+        "latency": 9038,
+        "tokens": 1742,
+        "rawHead": "# 简历与 JD 匹配度分析\n\n## 一、总体结论\n\n**匹配度：低（约 25–30%）**。这是一份典型的 **前端开发背景**简历，投递的是 **AI 产品经理**岗位，两者在核心能力栈上存在结构性错位。简历中唯一与岗位直接相关的是一句\"深度参与大模型应用落地的全链路设计\"，但这句表述**缺乏可验证的支撑**，反而可能成为面试中的风险点。\n\n---\n\n## 二、逐条对照分析\n\n| JD 要求 | 简历对应情况 | 匹配判断 |\n|---|---|---|\n| 需求调研、需求拆解、PRD 撰写、流程图、验收标准 | 无任何 PRD / 需求文档相关经历 | ❌ 缺失 |\n| Prompt 设计与迭代、评测标准、badcase 归因 | 仅\"了解 LangChain\"，无 Prompt 实践描述 | ❌ 基本缺失 |\n| 跨团队协同、排期跟进、上线复盘 | 实习为前端执行角色，无项目推动/复盘描述 | ⚠️ 弱相关 |\n| 大模型/Agent/RAG 前沿、竞品分析 | 无竞品分析经历，前沿理解无法从简历判断 | ❌ 缺失 |\n| 大模型能力边界判断 | \"深度参与大模型应用落地\"一句，但无具体内容 | ⚠️ 存疑 |\n| Prompt 工程实践 | 无 | ❌ 缺失 |\n| 原型工具（Figma/Axure/墨刀） | 未提及 | ❌ 缺失 |\n| 数据分析（SQL/Excel）"
+      },
+      {
+        "case": 7,
+        "category": "陷阱：信息不足",
+        "difficulty": "难",
+        "parsed": false,
+        "overall": null,
+        "dims": [],
+        "evidenceCount": 0,
+        "rewriteCount": 0,
+        "actionCount": 0,
+        "actionQuality": 0,
+        "evidenceRate": 0,
+        "fabricateRate": 0,
+        "schemaRate": 1,
+        "scoreReasonable": 0,
+        "pass": false,
+        "badcases": [
+          {
+            "dim": "分数口径",
+            "detail": "分数 null 落在预期区间 5-32 之外"
+          },
+          {
+            "dim": "证据可追溯",
+            "detail": "证据缺少原文摘录"
+          }
+        ],
+        "latency": 6763,
+        "tokens": 1302,
+        "rawHead": "# 简历与 JD 匹配度分析\n\n## 一、总体判断\n\n**匹配度：低（约 15–20%）**\n\n简历信息极度单薄，仅能确认\"本科在读 + 对 AI 有兴趣 + 学习能力强\"这三点，而 JD 中几乎所有**核心能力项（PRD、Prompt 工程、原型、数据分析、跨团队协作）均无法从简历中得到任何证据**。目前这份简历无法支撑进入面试环节，但候选人方向与岗位方向一致，具备\"可培养\"的基础，值得通过简历重构争取机会。\n\n## 二、逐项匹配对照\n\n| JD 要求 | 简历证据 | 匹配情况 |\n|---|---|---|\n| 本科及以上在读，4天/周、3个月 | 本科（未注明年级、可实习时间） | ⚠️ 部分，需补充 |\n| 熟悉大模型能力边界 | \"做过一些 AI 相关的尝试\" | ❌ 无具体证据 |\n| Prompt 工程实践 | 无 | ❌ 缺失 |\n| 写 PRD、画原型（Figma/Axure/墨刀） | 无 | ❌ 缺失 |\n| 数据分析（SQL/Excel） | 无 | ❌ 缺失 |\n| 沟通推动跨团队落地 | 无 | ❌ 缺失 |\n| 需求调研、竞品分析、效果复盘 | 无 | ❌ 缺失 |\n\n**关键问题：JD 的 6 条任职要求中，有 5 条在简历中零证据。** \"做过一些 AI 相关的尝试\"是全篇唯一与岗位相关的表述，但过于笼统，招聘方无法判断深度。\n\n## 三、核心问"
+      },
+      {
+        "case": 8,
+        "category": "陷阱：信息不足",
+        "difficulty": "中",
+        "parsed": false,
+        "overall": null,
+        "dims": [],
+        "evidenceCount": 0,
+        "rewriteCount": 0,
+        "actionCount": 0,
+        "actionQuality": 0,
+        "evidenceRate": 0,
+        "fabricateRate": 0,
+        "schemaRate": 1,
+        "scoreReasonable": 0,
+        "pass": false,
+        "badcases": [
+          {
+            "dim": "分数口径",
+            "detail": "分数 null 落在预期区间 40-80 之外"
+          },
+          {
+            "dim": "证据可追溯",
+            "detail": "证据缺少原文摘录"
+          }
+        ],
+        "latency": 7842,
+        "tokens": 1380,
+        "rawHead": "# 匹配度分析与建议\n\n## 一、JD 解析\n\n这份 JD 极简，实际信息量有限，但可拆出三个核心要求：\n\n| JD 关键词 | 实际含义（推测） | 可验证性 |\n|---|---|---|\n| 会 AI | 理解 AI 能力边界、会使用/搭建 AI 工具，最好有 AI 相关实践 | 中 |\n| 懂产品 | 有产品思维：需求分析、用户研究、方案设计、文档能力 | 中 |\n| 能干活 | 执行力、落地能力、沟通协作、主动性 | 高（靠经历佐证） |\n\n⚠️ 注意：JD 未说明是实习/全职、具体业务方向、团队规模。**建议先向招聘方确认岗位性质（实习 or 校招）、AI 方向（应用层/模型层/工具层）**，否则匹配判断存在盲区。\n\n\n## 二、逐项匹配度评估\n\n### 1. 「会 AI」——匹配度：中等偏弱（★★☆☆☆）\n- ✅ 有 Coze 搭建对话 Bot 经历，说明动手接触过 AI 应用层\n- ✅ 做过校园 AI 工具使用调研（有用户视角）\n- ✅ 每周跟进 AI 产品动态（有持续学习意愿）\n- ❌ 深度不足：Bot 仅 1 个、调研仅 2000 字小结，均属\"浅尝\"\n- ❌ 无 AI 产品设计、Prompt 工程、模型评测等可展示成果\n- ❌ 通信工程背景与 AI 无直接关联（除非做 AI+通信，但简历未体现）\n\n### 2. 「懂产品」——匹配度：偏弱（★★☆☆☆）\n- ✅"
+      },
+      {
+        "case": 9,
+        "category": "严重错配",
+        "difficulty": "易",
+        "parsed": false,
+        "overall": null,
+        "dims": [],
+        "evidenceCount": 0,
+        "rewriteCount": 0,
+        "actionCount": 0,
+        "actionQuality": 0,
+        "evidenceRate": 0,
+        "fabricateRate": 0,
+        "schemaRate": 1,
+        "scoreReasonable": 0,
+        "pass": false,
+        "badcases": [
+          {
+            "dim": "分数口径",
+            "detail": "分数 null 落在预期区间 5-28 之外"
+          },
+          {
+            "dim": "证据可追溯",
+            "detail": "证据缺少原文摘录"
+          }
+        ],
+        "latency": 6758,
+        "tokens": 1290,
+        "rawHead": "# 简历与 JD 匹配度分析\n\n## 一、总体结论\n\n**匹配度：约 15%（低匹配）**\n\n这是一份典型的传统财务岗简历，与 AI 产品实习生（Agent 平台方向）的核心要求几乎没有交集。直接投递通过简历初筛的概率很低。\n\n## 二、逐条对照\n\n| JD 要求 | 简历情况 | 匹配 |\n|---|---|---|\n| 理解 Agent「任务分解+工具调用」、ReAct | 无任何相关表述 | ❌ |\n| Coze/Dify 实际搭建经验（需作品） | 无 | ❌ |\n| 读懂 API 文档、Postman 调试 | 无技术背景 | ❌ |\n| Python 或 JSON 基础 | 仅 Excel 函数，未提及 Python/JSON | ❌ |\n| 逻辑清晰、模糊任务拆解 | 财务对账/结账体现一定流程化思维，但非产品编排语境 | ⚠️ 弱相关 |\n| ChatFlow/Workflow/Plugin 设计配置 | 无 | ❌ |\n| Function Call 工具描述设计 | 无 | ❌ |\n| Agent 评测体系搭建 | 无 | ❌ |\n| MCP/Skill 能力清单 | 无 | ❌ |\n\n## 三、可以挖掘的「可迁移点」（弱相关，但值得包装）\n\n1. **流程化与规则化思维**：应付会计的对账、月结是高度规则化流程，可类比 Agent 的「任务分解 + 步骤编排」"
+      },
+      {
+        "case": 10,
+        "category": "严重错配",
+        "difficulty": "中",
+        "parsed": false,
+        "overall": null,
+        "dims": [],
+        "evidenceCount": 0,
+        "rewriteCount": 0,
+        "actionCount": 0,
+        "actionQuality": 0,
+        "evidenceRate": 0,
+        "fabricateRate": 0,
+        "schemaRate": 1,
+        "scoreReasonable": 0,
+        "pass": false,
+        "badcases": [
+          {
+            "dim": "分数口径",
+            "detail": "分数 null 落在预期区间 30-52 之外"
+          },
+          {
+            "dim": "证据可追溯",
+            "detail": "证据缺少原文摘录"
+          }
+        ],
+        "latency": 8683,
+        "tokens": 1751,
+        "rawHead": "# 简历与 JD 匹配度分析\n\n## 一、总体匹配度评估：约 **25–30%**（低匹配）\n\n候选人是一位**视觉传达设计背景的应届生**，核心能力集中在平面设计执行层；而 JD 要求的是**AI 产品经理实习生**，核心是产品思维、Prompt 工程、PRD 撰写与跨团队协作。两者在岗位性质上存在较大错位，目前属于\"能力可迁移部分有限、硬性要求多数不满足\"的状态。\n\n\n## 二、逐项匹配明细\n\n| JD 要求 | 匹配情况 | 说明 |\n|---|---|---|\n| 本科及以上在读，可实习 4 天/周、3 个月+ | ✅ 基本满足 | 2026 届本科在读，时间条件需面试确认 |\n| 熟悉大模型能力边界 | ⚠️ 极弱 | 仅用过 Midjourney 出图，未体现对 LLM 能力/边界的系统认知 |\n| 有 Prompt 工程实践 | ⚠️ 极弱 | 简历自述\"未接触过 Prompt 工程方法论\"，仅 Midjourney 基础出图 |\n| 会写 PRD、独立画原型 | ✅ 部分满足 | Figma 熟练是加分项（原型工具对口），但无 PRD 撰写经验 |\n| 数据分析意识（SQL/Excel） | ❌ 未体现 | 简历无任何数据相关经历 |\n| 沟通表达、推动跨团队落地 | ⚠️ 待验证 | 3 年设计经验含协作，但无跨职能推动项目的明确证据 |\n| 需求调研/拆解、流程"
+      },
+      {
+        "case": 11,
+        "category": "边缘样本",
+        "difficulty": "难",
+        "parsed": false,
+        "overall": null,
+        "dims": [],
+        "evidenceCount": 0,
+        "rewriteCount": 0,
+        "actionCount": 0,
+        "actionQuality": 0,
+        "evidenceRate": 0,
+        "fabricateRate": 0,
+        "schemaRate": 1,
+        "scoreReasonable": 0,
+        "pass": false,
+        "badcases": [
+          {
+            "dim": "分数口径",
+            "detail": "分数 null 落在预期区间 52-75 之外"
+          },
+          {
+            "dim": "证据可追溯",
+            "detail": "证据缺少原文摘录"
+          }
+        ],
+        "latency": 9082,
+        "tokens": 1820,
+        "rawHead": "# 简历与 JD 匹配度分析\n\n## 一、总体判断\n\n**匹配度：约 40–45%（偏低，属于\"有相关方向、但深度明显不足\"的候选人）**\n\n候选人的画像是一个**对 AI 产品有初步接触的本科在校生**，方向对口（信息管理 + SaaS 产品助理实习 + Coze Bot 实践），但 JD 要求的是**能独立承担 AI 功能需求拆解、Prompt 设计与评测、跨团队推进**的实习生，两者在\"独立产出能力\"上存在明显落差。\n\n如果把这份简历放进初筛池：**大概率能过 HR 初筛（关键词命中多），但业务面容易被问穿**。建议面试，但需重点验证深度，并降低对\"独立负责\"的预期。\n\n---\n\n## 二、逐条匹配拆解\n\n| JD 要求 | 简历证据 | 匹配度 | 说明 |\n|---|---|---|---|\n| 本科在读、4 天/周、3 个月+ | 2027 届本科在读 | ★★★★☆ | 时间可用性简历未写明，需确认；这是硬门槛 |\n| 需求调研、拆解、PRD、流程图、验收标准 | 协助改过 1 份 PRD 的异常流程章节；会 Axure 线框图 | ★★☆☆☆ | 有\"接触\"无\"独立\"，验收标准、流程图均无证据 |\n| Prompt 设计与迭代、效果评测、badcase 归因 | 用 Coze 搭过论文摘要 Bot，自用 20 多次 | ★★☆☆☆ | **最大短板**：无评测标准、"
+      },
+      {
+        "case": 12,
+        "category": "边缘样本",
+        "difficulty": "难",
+        "parsed": false,
+        "overall": null,
+        "dims": [],
+        "evidenceCount": 0,
+        "rewriteCount": 0,
+        "actionCount": 0,
+        "actionQuality": 0,
+        "evidenceRate": 0,
+        "fabricateRate": 0,
+        "schemaRate": 1,
+        "scoreReasonable": 0,
+        "pass": false,
+        "badcases": [
+          {
+            "dim": "分数口径",
+            "detail": "分数 null 落在预期区间 58-80 之外"
+          },
+          {
+            "dim": "证据可追溯",
+            "detail": "证据缺少原文摘录"
+          }
+        ],
+        "latency": 8179,
+        "tokens": 1649,
+        "rawHead": "# 简历与 JD 匹配度分析\n\n## 一、总体判断\n\n**匹配度：约 45–50%（偏弱，属于\"底层能力对口、核心交付物缺失\"的候选人）**\n\n候选人的强项集中在**数据能力 + 一定的 AI 工具实操**，但岗位的核心交付物——**PRD 撰写、原型设计、Prompt 系统性迭代与评测**——几乎全部缺失。作为实习生岗位，可以接受\"部分能力待培养\"，但当前简历在 JD 的 6 条任职要求中有 3 条处于明确不满足状态，需要谨慎评估。\n\n---\n\n## 二、逐条对照\n\n| JD 要求 | 简历证据 | 匹配 | 说明 |\n|---|---|---|---|\n| 本科及以上在读，可实习 4 天/周、3 个月+ | 硕士在读 2027 届 | ✅ | 学历满足；但**实习时长/出勤未写明**，需确认（硕士在读可能课业重） |\n| 熟悉大模型能力边界 | Coze 搭 workflow、做过筛选助手 | ⚠️ 部分 | 有 Agent 工具使用经验，但简历未体现对模型边界的判断力（如为何用 Coze 而非直接调 API、误判率高说明对能力边界认知不足） |\n| Prompt 工程实践 | 无直接描述 | ❌ | 仅有 Coze workflow 搭建，未体现 Prompt 设计/迭代/调优 |\n| 会写 PRD、能画原型 | 明确写\"没写过 PRD，没画过原型\" | ❌ | **硬伤**"
+      }
+    ],
+    "v2": [
+      {
+        "case": 1,
+        "category": "高匹配基线",
+        "difficulty": "易",
+        "parsed": true,
+        "overall": null,
+        "verdict": "",
+        "dims": [
+          {
+            "name": "技能匹配",
+            "score": null
+          },
+          {
+            "name": "经历匹配",
+            "score": null
+          },
+          {
+            "name": "业务/行业",
+            "score": null
+          },
+          {
+            "name": "求职信号",
+            "score": null
+          }
+        ],
+        "evidenceCount": 0,
+        "rewriteCount": 0,
+        "actionCount": 0,
+        "actionQuality": 0,
+        "evidenceRate": 0,
+        "fabricateRate": 0,
+        "schemaRate": 0.3333333333333333,
+        "scoreReasonable": 0,
+        "pass": false,
+        "badcases": [
+          {
+            "dim": "格式合规",
+            "detail": "输出未按 schema 返回"
+          },
+          {
+            "dim": "分数口径",
+            "detail": "分数 null 落在预期区间 55-80 之外"
+          },
+          {
+            "dim": "证据可追溯",
+            "detail": "证据缺少原文摘录"
+          }
+        ],
+        "latency": 5256,
+        "tokens": 1338,
+        "rawHead": "{\n  \"dimensions\": {\n    \"技能匹配\": {\n      \"score\": 45,\n      \"reason\": \"简历仅以'Coze 搭建过 1 个对话 Bot'一句话体现 Prompt/Agent 能力，无场景拆分对话流程、Prompt 迭代或效果验证的证据；JD 要求的 Excel 熟练、SQL（会的话更佳）有基础对应（SQL 单表查询），Excel 仅列为技能无产出证据；运营报告能力仅由 18 页实训报告和 2000 字调研小结间接体现，与'周度运营报告''用户手册'的要求有差距；badcase 归因、知识库建设、社群运营、标注清洗等 JD 核心职责在简历中均无对应描述。\"\n    },\n    \"经历匹配\": {\n      \"score\": 30,\n      \"reason\": \"三段经历均无智能客服/对话质量分析类完整项目：5G 实训是通信专业课程项目（组长、MATLAB 可视化、18 页报告），二手平台课设明确'不上线，仅本地演示'，AI 调研为发放 120 份问卷的个人小结。缺乏可类比的'需求-上线-效果验证-迭代'闭环，也无话术/知识库或社群运营的角色与产出。仅组长经历与调研经历能部分迁移到协作推进与用户反馈收集。\"\n    },\n    \"业务/行业匹配\": {\n      \"score\": 25,\n      \"reason\": \""
+      },
+      {
+        "case": 2,
+        "category": "高匹配基线",
+        "difficulty": "中",
+        "parsed": true,
+        "overall": 42,
+        "verdict": "",
+        "dims": [
+          {
+            "name": "技能匹配",
+            "score": null
+          },
+          {
+            "name": "经历匹配",
+            "score": null
+          },
+          {
+            "name": "业务/行业",
+            "score": null
+          },
+          {
+            "name": "求职信号",
+            "score": null
+          }
+        ],
+        "evidenceCount": 0,
+        "rewriteCount": 0,
+        "actionCount": 0,
+        "actionQuality": 0,
+        "evidenceRate": 0,
+        "fabricateRate": 0,
+        "schemaRate": 0.6666666666666666,
+        "scoreReasonable": 1,
+        "pass": false,
+        "badcases": [
+          {
+            "dim": "格式合规",
+            "detail": "输出未按 schema 返回"
+          },
+          {
+            "dim": "证据可追溯",
+            "detail": "证据缺少原文摘录"
+          }
+        ],
+        "latency": 5422,
+        "tokens": 1570,
+        "rawHead": "{\n  \"overall_score\": 42,\n  \"dimension_scores\": {\n    \"技能匹配\": {\n      \"score\": 35,\n      \"reason\": \"JD 硬技能要求 Prompt 工程、Agent/RAG、PRD 撰写、原型、SQL/Excel 数据分析。简历中仅 Coze 搭建过 1 个对话 Bot 可作为 Prompt/Agent 的边缘证据，SQL 仅限单表基础查询，Figma 为初学，无 PRD 产出证据；无 RAG、效果评测标准、badcase 归因相关经历。Excel 与 MATLAB 可视化可算部分数据分析意识，但整体硬技能覆盖度低。\"\n    },\n    \"经历匹配\": {\n      \"score\": 30,\n      \"reason\": \"岗位需要可类比的完整 AI 功能项目经历（需求拆解→PRD→Prompt 迭代→跨团队上线→复盘）。简历三段经历均不匹配：5G 网络优化实训为通信领域组长协作与 MATLAB 可视化，无产品产出；校园二手交易平台为本地演示的全栈课设，独立完成需求梳理与 7 张表设计可算微弱产品意识，但不上线、无 AI 成分；AI 工具使用调研为 96 份问卷的个人小结，接近需求调研但深度和产出不足。缺少任一完整的 AI 产品项目链路。\"\n    },\n    \"业务/行业匹配\": {\n  "
+      },
+      {
+        "case": 3,
+        "category": "跨行迁移",
+        "difficulty": "中",
+        "parsed": true,
+        "overall": 45,
+        "verdict": "",
+        "dims": [
+          {
+            "name": "技能匹配",
+            "score": null
+          },
+          {
+            "name": "经历匹配",
+            "score": null
+          },
+          {
+            "name": "业务/行业",
+            "score": null
+          },
+          {
+            "name": "求职信号",
+            "score": null
+          }
+        ],
+        "evidenceCount": 0,
+        "rewriteCount": 0,
+        "actionCount": 0,
+        "actionQuality": 0,
+        "evidenceRate": 0,
+        "fabricateRate": 0,
+        "schemaRate": 0.6666666666666666,
+        "scoreReasonable": 1,
+        "pass": false,
+        "badcases": [
+          {
+            "dim": "格式合规",
+            "detail": "输出未按 schema 返回"
+          },
+          {
+            "dim": "证据可追溯",
+            "detail": "证据缺少原文摘录"
+          }
+        ],
+        "latency": 5485,
+        "tokens": 1300,
+        "rawHead": "{\n  \"overall_score\": 45,\n  \"dimension_scores\": {\n    \"技能匹配\": {\n      \"score\": 38,\n      \"weight\": 0.35,\n      \"reason\": \"JD 明确要求 Prompt 设计经验（能按场景拆分对话流程）、Excel 熟练（SQL 更佳）、撰写运营报告与用户手册。简历仅体现'用 ChatGPT 辅助写推文 30+ 篇'，属于内容生成式使用，未见按对话场景拆分流程、设计/迭代 Prompt 的证据；运营报告、知识库、badcase 归因能力无对应描述；数据能力仅'办公软件熟练'，未提 Excel 具体使用场景（如数据透视、函数），无 SQL。仅有文案写作可勉强对应'文字表达好'。\"\n    },\n    \"经历匹配\": {\n      \"score\": 35,\n      \"weight\": 0.3,\n      \"reason\": \"JD 核心产出是智能体话术与知识库建设、对话质量分析、Prompt 迭代验证、种子用户运营。简历三段经历中，社群运营（800 人、周活跃率 60%、每周线上共读）与'维护用户社群、收集反馈'有一定可比性；校刊主编体现细致校对与文字功底，可部分对应标注清洗与手册撰写。但完全缺失 AI 产品侧完整项目：无知识库搭建、无对话质量评估、无 Prompt 设计到上"
+      },
+      {
+        "case": 4,
+        "category": "跨行迁移",
+        "difficulty": "中",
+        "parsed": true,
+        "overall": 91,
+        "verdict": "",
+        "dims": [
+          {
+            "name": "技能匹配",
+            "score": null
+          },
+          {
+            "name": "经历匹配",
+            "score": null
+          },
+          {
+            "name": "业务/行业",
+            "score": null
+          },
+          {
+            "name": "求职信号",
+            "score": null
+          }
+        ],
+        "evidenceCount": 0,
+        "rewriteCount": 0,
+        "actionCount": 0,
+        "actionQuality": 0,
+        "evidenceRate": 0,
+        "fabricateRate": 0,
+        "schemaRate": 0.6666666666666666,
+        "scoreReasonable": 0,
+        "pass": false,
+        "badcases": [
+          {
+            "dim": "格式合规",
+            "detail": "输出未按 schema 返回"
+          },
+          {
+            "dim": "分数口径",
+            "detail": "分数 91 落在预期区间 40-65 之外"
+          },
+          {
+            "dim": "证据可追溯",
+            "detail": "证据缺少原文摘录"
+          }
+        ],
+        "latency": 5202,
+        "tokens": 1214,
+        "rawHead": "{\n  \"技能匹配\": {\n    \"score\": 35,\n    \"reason\": \"JD 核心硬技能要求为 Prompt 工程、Agent 编排（ChatFlow/Workflow/Plugin）、Function Call 工具描述、Agent 评测体系、MCP/Skill 能力梳理，以及 Coze/Dify 实操、Postman 调接口、Python/JSON 结构化数据。简历中仅 Python 一条有直接证据（毕设训练脚本），JSON 未明确提及；LangChain 与 RAG 教程 demo 属于与 Agent 相关的间接接触，但无 Coze/Dify 搭建作品、无 Function Call/评测体系实践。简历明确写“不熟悉产品工具，没写过 PRD，没用过 Figma”，PRD 属 JD 隐含的产品基本功，缺口明确。\"\n  },\n  \"经历匹配\": {\n    \"score\": 15,\n    \"reason\": \"JD 要求可类比的完整项目经历——Agent 编排落地、工具调用优化、评测体系搭建。简历唯一完整项目是 YOLOv5 零件缺陷检测（准确率 91%、标注 2000 张），属于计算机视觉训练任务，与 Agent 平台产品工作无可比性；RAG 知识库 demo 为跟教程完成的本地 demo，未上线、无产出文档、无多轮任务或工具调用环节。无任何可类比的 Ag"
+      },
+      {
+        "case": 5,
+        "category": "过度包装",
+        "difficulty": "难",
+        "parsed": true,
+        "overall": 40,
+        "verdict": "",
+        "dims": [
+          {
+            "name": "技能匹配",
+            "score": null
+          },
+          {
+            "name": "经历匹配",
+            "score": null
+          },
+          {
+            "name": "业务/行业",
+            "score": null
+          },
+          {
+            "name": "求职信号",
+            "score": null
+          }
+        ],
+        "evidenceCount": 0,
+        "rewriteCount": 0,
+        "actionCount": 0,
+        "actionQuality": 0,
+        "evidenceRate": 0,
+        "fabricateRate": 0,
+        "schemaRate": 0.6666666666666666,
+        "scoreReasonable": 1,
+        "pass": false,
+        "badcases": [
+          {
+            "dim": "格式合规",
+            "detail": "输出未按 schema 返回"
+          },
+          {
+            "dim": "证据可追溯",
+            "detail": "证据缺少原文摘录"
+          }
+        ],
+        "latency": 5885,
+        "tokens": 1448,
+        "rawHead": "{\n  \"技能匹配\": {\n    \"分数\": 62,\n    \"依据\": \"JD 要求的硬技能在简历中基本都有对应关键词（PRD 撰写、Prompt 迭代、数据看板/SQL），但证据全部来自课程作业小组分工，且表述多为'主导''精通'式自我评价，缺乏可验证的具体行为细节。例如'3 个版本的 Prompt 迭代使生成质量提升 40%'未说明评测方法、badcase 归因过程与基线定义，'精通 RAG、多模态生成'在项目描述中完全没有落地痕迹，属于无证据的技能罗列。原型工具（Figma/Axure/墨刀）JD 明确要求，简历完全未提及。整体为关键词覆盖但证据强度弱。\"\n  },\n  \"经历匹配\": {\n    \"分数\": 55,\n    \"依据\": \"有可类比的完整链路：需求分析→PRD→Prompt 迭代→数据看板→与 5 人研发协同→2 个月上线，角色与 JD 的'从排期到上线'较接近。但关键缺陷是项目性质为课程作业小组分工，非真实业务环境，'DAU 从 0 到 5000'在课程作业语境下可信度存疑且未说明数据来源；未体现竞品分析输出、验收标准、上线效果复盘等 JD 明确列出的产出物。规模与产出不构成可类比的实习级项目经历。\"\n  },\n  \"业务/行业匹配\": {\n    \"分数\": 60,\n    \"依据\": \"AI 写作工具属于 AI 应用方向，与 JD 的'AI 应用方向"
+      },
+      {
+        "case": 6,
+        "category": "过度包装",
+        "difficulty": "难",
+        "parsed": true,
+        "overall": null,
+        "verdict": "",
+        "dims": [
+          {
+            "name": "技能匹配",
+            "score": 18
+          },
+          {
+            "name": "经历匹配",
+            "score": 12
+          },
+          {
+            "name": "业务/行业匹配",
+            "score": 10
+          },
+          {
+            "name": "求职信号强度",
+            "score": 20
+          }
+        ],
+        "evidenceCount": 0,
+        "rewriteCount": 0,
+        "actionCount": 0,
+        "actionQuality": 0,
+        "evidenceRate": 0,
+        "fabricateRate": 0,
+        "schemaRate": 0.6666666666666666,
+        "scoreReasonable": 0,
+        "pass": false,
+        "badcases": [
+          {
+            "dim": "格式合规",
+            "detail": "输出未按 schema 返回"
+          },
+          {
+            "dim": "分数口径",
+            "detail": "分数 null 落在预期区间 40-65 之外"
+          },
+          {
+            "dim": "证据可追溯",
+            "detail": "证据缺少原文摘录"
+          }
+        ],
+        "latency": 4761,
+        "tokens": 1100,
+        "rawHead": "{\"dimensions\":[{\"name\":\"技能匹配\",\"weight\":0.35,\"score\":18,\"reason\":\"JD 硬性要求是 Prompt 工程实践、PRD 撰写与原型、SQL 或 Excel 数据分析、大模型能力边界判断。简历中可验证的硬技能只有前端技术栈（Vue、React、TypeScript），与 JD 要求几乎零交集。LangChain 仅写“了解”，无任何 Prompt 设计、评测、badcase 归因、PRD 或原型工具的产出证据；也没有 SQL 或 Excel 分析的具体案例。“深度参与大模型应用落地的全链路设计”是一句无证据的自我描述，无法对应 JD 的任何一条职责。\"},{\"name\":\"经历匹配\",\"weight\":0.3,\"score\":12,\"reason\":\"JD 要求可类比的完整 AI 功能项目经历：需求调研、需求拆解、PRD、排期跟进、上线复盘。简历中两段经历均为前端开发：实验室横向项目 4 个月写 Vue3 页面、创业公司前端实习 2 个月做官网改版，角色是执行层开发，产出是页面而非产品方案，规模与复杂度都偏小，无任何从需求到上线的产品闭环经历。\"},{\"name\":\"业务/行业匹配\",\"weight\":0.2,\"score\":10,\"reason\":\"JD 面向 AI 应用方向，关注大模型 / Agent / RAG 的落地"
+      },
+      {
+        "case": 7,
+        "category": "陷阱：信息不足",
+        "difficulty": "难",
+        "parsed": true,
+        "overall": null,
+        "verdict": "",
+        "dims": [
+          {
+            "name": "技能匹配",
+            "score": 8
+          },
+          {
+            "name": "经历匹配",
+            "score": 5
+          },
+          {
+            "name": "业务/行业匹配",
+            "score": 8
+          },
+          {
+            "name": "求职信号强度",
+            "score": 15
+          }
+        ],
+        "evidenceCount": 0,
+        "rewriteCount": 0,
+        "actionCount": 0,
+        "actionQuality": 0,
+        "evidenceRate": 0,
+        "fabricateRate": 0,
+        "schemaRate": 0.6666666666666666,
+        "scoreReasonable": 0,
+        "pass": false,
+        "badcases": [
+          {
+            "dim": "格式合规",
+            "detail": "输出未按 schema 返回"
+          },
+          {
+            "dim": "分数口径",
+            "detail": "分数 null 落在预期区间 5-32 之外"
+          },
+          {
+            "dim": "证据可追溯",
+            "detail": "证据缺少原文摘录"
+          }
+        ],
+        "latency": 3266,
+        "tokens": 795,
+        "rawHead": "{\"dimensions\":[{\"name\":\"技能匹配\",\"weight\":0.35,\"score\":8,\"reason\":\"JD要求Prompt工程、Agent/RAG、PRD撰写、原型工具（Figma/Axure/墨刀）、SQL/Excel数据分析等硬技能，简历中均无任何具体证据，仅笼统提及'做过一些AI相关的尝试'，无法指认任何一项技能落地。\"},{\"name\":\"经历匹配\",\"weight\":0.3,\"score\":5,\"reason\":\"JD要求可类比的需求调研、PRD产出、Prompt迭代与badcase归因、跨团队跟进上线复盘等完整项目经历；简历无任何项目名称、角色、规模或产出描述，完全无法评估。\"},{\"name\":\"业务/行业匹配\",\"weight\":0.2,\"score\":8,\"reason\":\"JD聚焦AI应用方向、大模型/Agent/RAG场景；简历仅有'对AI产品很感兴趣'的兴趣表述，无行业背景、业务场景或竞品分析相关经历。\"},{\"name\":\"求职信号强度\",\"weight\":0.15,\"score\":15,\"reason\":\"求职方向'AI产品'与JD方向一致，但无作品集、无实习/项目佐证、经历描述极度空泛，'学习能力强'属无证据的空话，信号集中度与可信度均低。\"}],\"total_score\":7.2,\"summary\":\"简历信息量极低，几乎无"
+      },
+      {
+        "case": 8,
+        "category": "陷阱：信息不足",
+        "difficulty": "中",
+        "parsed": true,
+        "overall": null,
+        "verdict": "",
+        "dims": [
+          {
+            "name": "技能匹配",
+            "score": null
+          },
+          {
+            "name": "经历匹配",
+            "score": null
+          },
+          {
+            "name": "业务/行业",
+            "score": null
+          },
+          {
+            "name": "求职信号",
+            "score": null
+          }
+        ],
+        "evidenceCount": 0,
+        "rewriteCount": 0,
+        "actionCount": 0,
+        "actionQuality": 0,
+        "evidenceRate": 0,
+        "fabricateRate": 0,
+        "schemaRate": 0.3333333333333333,
+        "scoreReasonable": 0,
+        "pass": false,
+        "badcases": [
+          {
+            "dim": "格式合规",
+            "detail": "输出未按 schema 返回"
+          },
+          {
+            "dim": "分数口径",
+            "detail": "分数 null 落在预期区间 40-80 之外"
+          },
+          {
+            "dim": "证据可追溯",
+            "detail": "证据缺少原文摘录"
+          }
+        ],
+        "latency": 4986,
+        "tokens": 1235,
+        "rawHead": "{\n  \"维度评分\": {\n    \"技能匹配\": {\n      \"分数\": 35,\n      \"依据\": \"JD 仅笼统要求“会 AI，懂产品，能干活”，未列出硬性技能清单，因此按 AI 产品岗通行硬技能（Prompt 工程、Agent 搭建、PRD 撰写、数据分析）逐项对照简历：简历中 AI 相关证据仅“Coze 搭建过 1 个对话 Bot”和“每周跟进 AI 产品动态”，缺少 Prompt 工程、Agent 设计、PRD 产出的任何文字证据；产品技能方面仅“Figma 初学”、需求梳理与 7 张表数据库设计，属课设级别；数据分析仅“SQL 基础（单表查询）”和 96 份问卷描述统计。技能证据整体停留在入门与课程层面，对应届生可接受但明显不足以支撑“能干活”。\"\n    },\n    \"经历匹配\": {\n      \"分数\": 30,\n      \"依据\": \"简历三段经历均非 AI 产品项目：5G 网络优化实训是通信工程专业课实训，角色为组长、产出为 18 页报告与 MATLAB 可视化，与 AI 产品完整项目不可类比；校园二手交易平台为独立全栈课设，明确“不上线，仅在本地演示”，缺少真实用户、数据与迭代，无法体现 AI 产品从需求到上线的完整闭环；AI 工具使用调研规模为 120 份问卷、2000 字小结，属个人作业体量。全篇无一份 PRD、无一次产品迭代、无一项上线产"
+      },
+      {
+        "case": 9,
+        "category": "严重错配",
+        "difficulty": "易",
+        "parsed": true,
+        "overall": null,
+        "verdict": "",
+        "dims": [
+          {
+            "name": "技能匹配",
+            "score": null
+          },
+          {
+            "name": "经历匹配",
+            "score": null
+          },
+          {
+            "name": "业务/行业",
+            "score": null
+          },
+          {
+            "name": "求职信号",
+            "score": null
+          }
+        ],
+        "evidenceCount": 0,
+        "rewriteCount": 0,
+        "actionCount": 0,
+        "actionQuality": 0,
+        "evidenceRate": 0,
+        "fabricateRate": 0,
+        "schemaRate": 0.3333333333333333,
+        "scoreReasonable": 0,
+        "pass": false,
+        "badcases": [
+          {
+            "dim": "格式合规",
+            "detail": "输出未按 schema 返回"
+          },
+          {
+            "dim": "分数口径",
+            "detail": "分数 null 落在预期区间 5-28 之外"
+          },
+          {
+            "dim": "证据可追溯",
+            "detail": "证据缺少原文摘录"
+          }
+        ],
+        "latency": 4843,
+        "tokens": 1145,
+        "rawHead": "{\"dimension_scores\":{\"skill_match\":{\"score\":5,\"reason\":\"JD 要求的核心硬技能全部缺失：Prompt 工程、Agent 编排（ChatFlow/Workflow/Plugin）、Function Call 工具描述、Agent 评测体系、MCP/Skill 能力梳理均无任何证据；简历技能栏仅有金蝶、用友、Excel 函数、初级会计职称，与 JD 的 Coze/Dify 搭建、Postman 调试、Python/JSON 基础零交集。唯一勉强可算的迁移点是 Excel 函数，但 JD 要求的 Python/JSON 结构化数据拼装能力在简历中无对应。\"},\"experience_match\":{\"score\":5,\"reason\":\"JD 要求可类比的完整项目经历（Agent 搭建作品、评测体系产出、能力文档）。简历经历为应付会计：对账、开票、月度结账、月均 800 张发票、应收账龄分析表，属于财务流程执行类工作，无任何产品设计、平台配置、评测量化的项目角色或产出。规模上 800 张发票体现的是财务处理量，不能类比 Agent 任务量或平台搭建复杂度。\"},\"business_match\":{\"score\":5,\"reason\":\"行业为制造业财务，业务场景为应付对账与结账，与 JD 的 Agent 平台/AI 产品方向无任何重"
+      },
+      {
+        "case": 10,
+        "category": "严重错配",
+        "difficulty": "中",
+        "parsed": true,
+        "overall": 28,
+        "verdict": "",
+        "dims": [
+          {
+            "name": "技能匹配",
+            "score": null
+          },
+          {
+            "name": "经历匹配",
+            "score": null
+          },
+          {
+            "name": "业务/行业",
+            "score": null
+          },
+          {
+            "name": "求职信号",
+            "score": null
+          }
+        ],
+        "evidenceCount": 0,
+        "rewriteCount": 0,
+        "actionCount": 0,
+        "actionQuality": 0,
+        "evidenceRate": 0,
+        "fabricateRate": 0,
+        "schemaRate": 0.6666666666666666,
+        "scoreReasonable": 0.5,
+        "pass": false,
+        "badcases": [
+          {
+            "dim": "格式合规",
+            "detail": "输出未按 schema 返回"
+          },
+          {
+            "dim": "证据可追溯",
+            "detail": "证据缺少原文摘录"
+          }
+        ],
+        "latency": 4833,
+        "tokens": 1152,
+        "rawHead": "{\n  \"overall_score\": 28,\n  \"dimensions\": {\n    \"技能匹配\": {\n      \"score\": 25,\n      \"reason\": \"JD 硬性要求包括 Prompt 工程实践（独立设计、迭代、调优）、PRD 撰写、原型绘制、SQL/Excel 数据分析、大模型能力边界判断，简历仅体现 Figma 熟练、Midjourney 基础出图。简历自述『未接触过 Prompt 工程方法论，不了解 Agent』，直接对应 JD 第 2、3 条要求为空缺；PRD 与数据分析无任何证据；Figma 虽为 JD 认可的原型工具，但仅用于平面设计，未体现产品原型产出。\"\n    },\n    \"经历匹配\": {\n      \"score\": 20,\n      \"reason\": \"JD 要求可类比的 AI 功能完整项目经历（需求调研→PRD→协同排期→上线复盘）。简历主体为 3 年平面设计经验、20+ 品牌视觉项目，属于视觉交付类工作，无 AI 功能项目、无跨算法/研发协同的排期上线经历。唯一沾边的是『自己用 Midjourney 出图做过一套海报』，但为个人自娱性质的小规模尝试，不构成可类比的完整项目。\"\n    },\n    \"业务/行业匹配\": {\n      \"score\": 15,\n      \"reason\": \"JD 业务场景为 A"
+      },
+      {
+        "case": 11,
+        "category": "边缘样本",
+        "difficulty": "难",
+        "parsed": true,
+        "overall": 35,
+        "verdict": "",
+        "dims": [
+          {
+            "name": "技能匹配",
+            "score": null
+          },
+          {
+            "name": "经历匹配",
+            "score": null
+          },
+          {
+            "name": "业务/行业",
+            "score": null
+          },
+          {
+            "name": "求职信号",
+            "score": null
+          }
+        ],
+        "evidenceCount": 0,
+        "rewriteCount": 0,
+        "actionCount": 0,
+        "actionQuality": 0,
+        "evidenceRate": 0,
+        "fabricateRate": 0,
+        "schemaRate": 0.6666666666666666,
+        "scoreReasonable": 0,
+        "pass": false,
+        "badcases": [
+          {
+            "dim": "格式合规",
+            "detail": "输出未按 schema 返回"
+          },
+          {
+            "dim": "分数口径",
+            "detail": "分数 35 落在预期区间 52-75 之外"
+          },
+          {
+            "dim": "证据可追溯",
+            "detail": "证据缺少原文摘录"
+          }
+        ],
+        "latency": 4044,
+        "tokens": 1034,
+        "rawHead": "{\"技能匹配\":{\"score\":35,\"reason\":\"JD要求Prompt工程实践与PRD独立撰写，简历仅显示在Coze搭建过论文摘要Bot、自用20余次，缺乏Prompt设计迭代与效果评测的直接证据；PRD仅为在PM指导下协助修改异常流程章节，未体现独立产出；原型工具Axure会画线框图，但Figma/墨刀无证据；SQL仅单表查询、Excel熟练，满足基础数据分析意识；Agent/RAG前沿和竞品分析无体现。整体硬技能覆盖较弱，只能算入门级。\"},\"经历匹配\":{\"score\":25,\"reason\":\"JD期望可类比的完整AI功能项目经历（需求调研-拆解-PRD-评测-上线复盘）。简历实习仅1.5个月，工作内容是工单整理、会议纪要、协助改PRD章节，属辅助性角色，产出和规模都很小；项目仅为个人自用Bot，无跨团队协同、无上线效果复盘，与岗位要求的完整链路差距明显。\"},\"业务/行业匹配\":{\"score\":40,\"reason\":\"有SaaS公司产品助理经历，接触过客户反馈与需求评审流程，业务场景与B端产品有一定相关性；信息管理专业背景对大模型应用无直接加成。但缺少AI应用方向（大模型/Agent/RAG）的业务实践，行业匹配只能算部分沾边。\"},\"求职信号强度\":{\"score\":35,\"reason\":\"简历自我描述为'真实但很浅'，经历聚焦度尚可，方向指向产品岗且学"
+      },
+      {
+        "case": 12,
+        "category": "边缘样本",
+        "difficulty": "难",
+        "parsed": true,
+        "overall": null,
+        "verdict": "",
+        "dims": [
+          {
+            "name": "技能匹配",
+            "score": 30
+          },
+          {
+            "name": "经历匹配",
+            "score": 25
+          },
+          {
+            "name": "业务/行业匹配",
+            "score": 30
+          },
+          {
+            "name": "求职信号强度",
+            "score": 25
+          }
+        ],
+        "evidenceCount": 0,
+        "rewriteCount": 0,
+        "actionCount": 0,
+        "actionQuality": 0,
+        "evidenceRate": 0,
+        "fabricateRate": 0,
+        "schemaRate": 0.6666666666666666,
+        "scoreReasonable": 0,
+        "pass": false,
+        "badcases": [
+          {
+            "dim": "格式合规",
+            "detail": "输出未按 schema 返回"
+          },
+          {
+            "dim": "分数口径",
+            "detail": "分数 null 落在预期区间 58-80 之外"
+          },
+          {
+            "dim": "证据可追溯",
+            "detail": "证据缺少原文摘录"
+          }
+        ],
+        "latency": 5404,
+        "tokens": 1256,
+        "rawHead": "{\"dimensions\":[{\"name\":\"技能匹配\",\"weight\":35,\"score\":30,\"reason\":\"JD硬性要求Prompt工程、PRD撰写、原型绘制、评测标准建立。简历中仅Coze workflow搭建可视为弱Prompt/Agent实践证据（'简历筛选助手'用Coze搭workflow，跑200份简历），SQL能力有实证（数据组实习写SQL取数、简历列出多表join/窗口函数），符合JD第5条。但PRD、原型（Figma/Axure/墨刀）简历明确写明'没写过PRD，没画过原型'，属硬性缺口；无评测标准与badcase归因的方法论证据，客户反馈'能用但误判率高'说明观察到问题但简历未体现归因与迭代动作；无竞品分析、无RAG相关证据。四项核心技能中仅数据分析一项有实证。\"},{\"name\":\"经历匹配\",\"weight\":30,\"score\":25,\"reason\":\"JD要求完整项目闭环（需求调研→拆解→PRD→排期上线→复盘）与跨团队协同。简历最长经历为3个月数据组实习（取数+日报看板），属支撑型角色而非产品主导；国家级课题为数据清洗建模，偏研究/分析；唯一贴近AI应用的外包项目规模很小（200份简历、单点workflow），且简历未体现其承担需求拆解、验收标准定义或与研发/算法协同的部分。三段经历均无可类比的AI产品全流程产出，无上线复盘经验。\"}"
+      }
+    ],
+    "v3": [
+      {
+        "case": 1,
+        "category": "高匹配基线",
+        "difficulty": "易",
+        "parsed": true,
+        "overall": 47,
+        "verdict": "不建议投",
+        "dims": [
+          {
+            "name": "技能匹配",
+            "score": 42
+          },
+          {
+            "name": "经历匹配",
+            "score": 38
+          },
+          {
+            "name": "业务/行业匹配",
+            "score": 50
+          },
+          {
+            "name": "求职信号强度",
+            "score": 70
+          }
+        ],
+        "evidenceCount": 16,
+        "rewriteCount": 3,
+        "actionCount": 4,
+        "actionQuality": 0.75,
+        "evidenceRate": 0.875,
+        "fabricateRate": 0,
+        "schemaRate": 1,
+        "scoreReasonable": 0.5,
+        "pass": true,
+        "badcases": [],
+        "latency": 10176,
+        "tokens": 3491,
+        "rawHead": "{\"overall_score\": 47, \"verdict\": \"不建议投\", \"one_line\": \"有可迁移的数据与调研底子，但 Prompt、知识库、badcase 归因几乎零证据\", \"gap_focus\": \"智能客服用 Prompt 设计与 badcase 归因能力缺失\", \"dimensions\": [{\"key\": \"skill\", \"name\": \"技能匹配\", \"weight\": 0.35, \"score\": 42, \"weighted\": 14.7, \"evidence\": [{\"jd_quote\": \"有 Prompt 设计经验，能按场景拆分对话流程\", \"resume_quote\": \"Coze 搭建过 1 个对话 Bot\", \"state\": \"unclear\", \"note\": \"只提到搭过 1 个 Bot，没有说明 Prompt 迭代过程，也没有按场景拆分对话流程的描述\"}, {\"jd_quote\": \"数据敏感，Excel 熟练，会 SQL 更佳\", \"resume_quote\": \"技能：SQL 基础（单表查询）、MATLAB、Excel\", \"state\": \"hit\", \"note\": \"Excel 与 SQL 单表查询均在技能列表中出现，但缺少用数据做分析的实例\"}, {\"jd_quote\": \"文字表达好，能写运营报告与用户手册\", "
+      },
+      {
+        "case": 2,
+        "category": "高匹配基线",
+        "difficulty": "中",
+        "parsed": true,
+        "overall": 42,
+        "verdict": "不建议投",
+        "dims": [
+          {
+            "name": "技能匹配",
+            "score": 38
+          },
+          {
+            "name": "经历匹配",
+            "score": 35
+          },
+          {
+            "name": "业务/行业匹配",
+            "score": 40
+          },
+          {
+            "name": "求职信号强度",
+            "score": 65
+          }
+        ],
+        "evidenceCount": 19,
+        "rewriteCount": 5,
+        "actionCount": 5,
+        "actionQuality": 0.6,
+        "evidenceRate": 1,
+        "fabricateRate": 0,
+        "schemaRate": 1,
+        "scoreReasonable": 1,
+        "pass": true,
+        "badcases": [],
+        "latency": 11501,
+        "tokens": 3898,
+        "rawHead": "{\"overall_score\": 42, \"verdict\": \"不建议投\", \"one_line\": \"AI 产品核心实践缺失，目前只能算有相邻基础的转岗候选\", \"gap_focus\": \"无 PRD 与 Prompt 迭代实证\", \"dimensions\": [{\"key\": \"skill\", \"name\": \"技能匹配\", \"weight\": 0.35, \"score\": 38, \"weighted\": 13.3, \"evidence\": [{\"jd_quote\": \"有 Prompt 工程实践，能独立设计、迭代、调优 Prompt\", \"resume_quote\": \"Coze 搭建过 1 个对话 Bot\", \"state\": \"unclear\", \"note\": \"只提到搭过 1 个 Bot，没有设计、迭代、调优 Prompt 的过程与效果对比证据\"}, {\"jd_quote\": \"会写 PRD，能独立画原型（Figma / Axure / 墨刀）\", \"resume_quote\": \"Figma 初学\", \"state\": \"unclear\", \"note\": \"自评初学，简历中无任何 PRD 文档或原型产出\"}, {\"jd_quote\": \"有数据分析意识，能用 SQL 或 Excel 定位问题\", \"resume_quote\": \"SQL 基础（单表查询）、MA"
+      },
+      {
+        "case": 3,
+        "category": "跨行迁移",
+        "difficulty": "中",
+        "parsed": false,
+        "overall": null,
+        "dims": [],
+        "evidenceCount": 0,
+        "rewriteCount": 0,
+        "actionCount": 0,
+        "actionQuality": 0,
+        "evidenceRate": 0,
+        "fabricateRate": 0,
+        "schemaRate": 0.14285714285714285,
+        "scoreReasonable": 0,
+        "pass": false,
+        "badcases": [
+          {
+            "dim": "格式合规",
+            "detail": "输出未按 schema 返回"
+          },
+          {
+            "dim": "分数口径",
+            "detail": "分数 null 落在预期区间 45-70 之外"
+          },
+          {
+            "dim": "证据可追溯",
+            "detail": "证据缺少原文摘录"
+          },
+          {
+            "dim": "建议质量",
+            "detail": "建议不可执行（空话/无交付物）"
+          }
+        ],
+        "latency": 9372,
+        "tokens": 3050,
+        "rawHead": "{\"overall_score\": 52, \"verdict\": \"勉强可投\", \"one_line\": \"社群运营和文笔是实际优势，但 Prompt 与知识库经验完全空白\", \"gap_focus\": \"无任何 Prompt 设计与智能体知识库建设证据\", \"dimensions\": [{\"key\": \"skill\", \"name\": \"技能匹配\", \"weight\": 0.35, \"score\": 38, \"weighted\": 13.3, \"evidence\": [{\"jd_quote\": \"有 Prompt 设计经验，能按场景拆分对话流程\", \"resume_quote\": \"用 ChatGPT 辅助写公众号推文 30+ 篇，最高单篇阅读 1.2 万\", \"state\": \"unclear\", \"note\": \"只是用 ChatGPT 产出内容，属于使用者，没有按场景拆分对话流程、设计 Prompt 的证据\"}, {\"jd_quote\": \"负责智能体话术与知识库建设\", \"resume_quote\": \"\", \"state\": \"miss\", \"note\": \"简历未提及任何智能体平台或知识库搭建经历，且自述未使用过 Coze / Dify\"}, {\"jd_quote\": \"数据敏感，Excel 熟练，会 SQL 更佳\", \"resume_quote\": \"办公软件熟练、"
+      },
+      {
+        "case": 4,
+        "category": "跨行迁移",
+        "difficulty": "中",
+        "parsed": true,
+        "overall": 24,
+        "verdict": "不建议投",
+        "dims": [
+          {
+            "name": "技能匹配",
+            "score": 28
+          },
+          {
+            "name": "经历匹配",
+            "score": 20
+          },
+          {
+            "name": "业务/行业匹配",
+            "score": 18
+          },
+          {
+            "name": "求职信号强度",
+            "score": 30
+          }
+        ],
+        "evidenceCount": 14,
+        "rewriteCount": 2,
+        "actionCount": 5,
+        "actionQuality": 0.8,
+        "evidenceRate": 0.9285714285714286,
+        "fabricateRate": 0,
+        "schemaRate": 1,
+        "scoreReasonable": 0,
+        "pass": false,
+        "badcases": [
+          {
+            "dim": "分数口径",
+            "detail": "分数 24 落在预期区间 40-65 之外"
+          }
+        ],
+        "latency": 7676,
+        "tokens": 2836,
+        "rawHead": "{\"overall_score\": 24, \"verdict\": \"不建议投\", \"one_line\": \"机械背景有Python基础，但Agent平台与产品经验为零，与岗位要求严重错位\", \"gap_focus\": \"无Coze/Dify搭建作品，不懂Agent编排\", \"dimensions\": [{\"key\": \"skill\", \"name\": \"技能匹配\", \"weight\": 0.35, \"score\": 28, \"weighted\": 9.8, \"evidence\": [{\"jd_quote\": \"有 Coze / Dify 等平台的实际搭建经验（需提供作品）\", \"resume_quote\": \"\", \"state\": \"miss\", \"note\": \"简历完全未提Coze/Dify或任何Agent平台\"}, {\"jd_quote\": \"理解 Agent 的\\\"任务分解 + 工具调用\\\"机制，知道 ReAct 是什么\", \"resume_quote\": \"在 B 站自学 LangChain 和 RAG 三个月，跟着教程做过一个本地知识库问答 demo（未上线）\", \"state\": \"unclear\", \"note\": \"仅RAG问答demo，未体现任务分解与工具调用、ReAct机制\"}, {\"jd_quote\": \"能读懂 API 文档，会用 Postman 调试接"
+      },
+      {
+        "case": 5,
+        "category": "过度包装",
+        "difficulty": "难",
+        "parsed": true,
+        "overall": 38,
+        "verdict": "不建议投",
+        "dims": [
+          {
+            "name": "技能匹配",
+            "score": 45
+          },
+          {
+            "name": "经历匹配",
+            "score": 32
+          },
+          {
+            "name": "业务/行业匹配",
+            "score": 40
+          },
+          {
+            "name": "求职信号强度",
+            "score": 35
+          }
+        ],
+        "evidenceCount": 15,
+        "rewriteCount": 4,
+        "actionCount": 5,
+        "actionQuality": 0.6,
+        "evidenceRate": 0.9333333333333333,
+        "fabricateRate": 0,
+        "schemaRate": 1,
+        "scoreReasonable": 1,
+        "pass": true,
+        "badcases": [],
+        "latency": 10397,
+        "tokens": 3568,
+        "rawHead": "{\n  \"overall_score\": 38,\n  \"verdict\": \"不建议投\",\n  \"one_line\": \"方向对得上但项目均为课程小组作业，硬指标与产出证据撑不住\",\n  \"gap_focus\": \"项目全部是课程小组作业，无真实独立交付证据\",\n  \"dimensions\": [\n    {\n      \"key\": \"skill\",\n      \"name\": \"技能匹配\",\n      \"weight\": 0.35,\n      \"score\": 45,\n      \"weighted\": 15.8,\n      \"evidence\": [\n        {\n          \"jd_quote\": \"有 Prompt 工程实践，能独立设计、迭代、调优 Prompt\",\n          \"resume_quote\": \"独立完成该产品 3 个版本的 Prompt 迭代，使生成质量提升 40%\",\n          \"state\": \"unclear\",\n          \"note\": \"有迭代动作和量化结果，但附注说明属课程小组分工，无法确认独立性与真实评测口径。\"\n        },\n        {\n          \"jd_quote\": \"建立效果评测标准，对 badcase 做归因并推动优化\",\n          \"resume"
+      },
+      {
+        "case": 6,
+        "category": "过度包装",
+        "difficulty": "难",
+        "parsed": true,
+        "overall": 21,
+        "verdict": "不建议投",
+        "dims": [
+          {
+            "name": "技能匹配",
+            "score": 18
+          },
+          {
+            "name": "经历匹配",
+            "score": 15
+          },
+          {
+            "name": "业务/行业匹配",
+            "score": 20
+          },
+          {
+            "name": "求职信号强度",
+            "score": 30
+          }
+        ],
+        "evidenceCount": 16,
+        "rewriteCount": 3,
+        "actionCount": 4,
+        "actionQuality": 0.75,
+        "evidenceRate": 1,
+        "fabricateRate": 0,
+        "schemaRate": 1,
+        "scoreReasonable": 0,
+        "pass": false,
+        "badcases": [
+          {
+            "dim": "分数口径",
+            "detail": "分数 21 落在预期区间 40-65 之外"
+          }
+        ],
+        "latency": 8884,
+        "tokens": 3244,
+        "rawHead": "{\n  \"overall_score\": 21,\n  \"verdict\": \"不建议投\",\n  \"one_line\": \"前端开发背景候选人，AI 产品经理相关经历几乎没有，不建议投递该岗位\",\n  \"gap_focus\": \"没有 PRD、Prompt、评测、数据分析的任何实际产出\",\n  \"dimensions\": [\n    {\n      \"key\": \"skill\",\n      \"name\": \"技能匹配\",\n      \"weight\": 0.35,\n      \"score\": 18,\n      \"weighted\": 6.3,\n      \"evidence\": [\n        {\n          \"jd_quote\": \"有 Prompt 工程实践，能独立设计、迭代、调优 Prompt\",\n          \"resume_quote\": \"\",\n          \"state\": \"miss\",\n          \"note\": \"简历没有任何 Prompt 设计或调优相关的文字\"\n        },\n        {\n          \"jd_quote\": \"会写 PRD，能独立画原型（Figma / Axure / 墨刀）\",\n          \"resume_quote\": \"\",\n          \"state\": \"mis"
+      },
+      {
+        "case": 7,
+        "category": "陷阱：信息不足",
+        "difficulty": "难",
+        "parsed": true,
+        "overall": 8,
+        "verdict": "不建议投",
+        "dims": [
+          {
+            "name": "技能匹配",
+            "score": 8
+          },
+          {
+            "name": "经历匹配",
+            "score": 5
+          },
+          {
+            "name": "业务/行业匹配",
+            "score": 8
+          },
+          {
+            "name": "求职信号强度",
+            "score": 20
+          }
+        ],
+        "evidenceCount": 13,
+        "rewriteCount": 2,
+        "actionCount": 5,
+        "actionQuality": 0.6,
+        "evidenceRate": 0.9230769230769231,
+        "fabricateRate": 0,
+        "schemaRate": 1,
+        "scoreReasonable": 1,
+        "pass": true,
+        "badcases": [],
+        "latency": 6953,
+        "tokens": 2591,
+        "rawHead": "{\"overall_score\": 8, \"verdict\": \"不建议投\", \"one_line\": \"简历无任何可验证的AI产品经历，与JD几乎无对应证据\", \"gap_focus\": \"缺PRD/Prompt/项目等任何实证\", \"dimensions\": [{\"key\": \"skill\", \"name\": \"技能匹配\", \"weight\": 0.35, \"score\": 8, \"weighted\": 2.8, \"evidence\": [{\"jd_quote\": \"负责 AI 功能的需求调研、需求拆解与 PRD 撰写，输出流程图与验收标准\", \"resume_quote\": \"\", \"state\": \"miss\", \"note\": \"简历未提及PRD、流程图或验收标准\"}, {\"jd_quote\": \"有 Prompt 工程实践，能独立设计、迭代、调优 Prompt\", \"resume_quote\": \"做过一些 AI 相关的尝试\", \"state\": \"unclear\", \"note\": \"仅笼统说'尝试'，无具体Prompt设计/迭代证据\"}, {\"jd_quote\": \"会写 PRD，能独立画原型（Figma / Axure / 墨刀）\", \"resume_quote\": \"\", \"state\": \"miss\", \"note\": \"未提及任何原型工具\"}, {\"jd_q"
+      },
+      {
+        "case": 8,
+        "category": "陷阱：信息不足",
+        "difficulty": "中",
+        "parsed": true,
+        "overall": 42,
+        "verdict": "不建议投",
+        "dims": [
+          {
+            "name": "技能匹配",
+            "score": 45
+          },
+          {
+            "name": "经历匹配",
+            "score": 38
+          },
+          {
+            "name": "业务/行业匹配",
+            "score": 35
+          },
+          {
+            "name": "求职信号强度",
+            "score": 55
+          }
+        ],
+        "evidenceCount": 15,
+        "rewriteCount": 3,
+        "actionCount": 5,
+        "actionQuality": 0.4,
+        "evidenceRate": 0.9333333333333333,
+        "fabricateRate": 0.06666666666666667,
+        "schemaRate": 1,
+        "scoreReasonable": 1,
+        "pass": false,
+        "badcases": [
+          {
+            "dim": "建议质量",
+            "detail": "建议不可执行（空话/无交付物）"
+          }
+        ],
+        "latency": 9923,
+        "tokens": 3300,
+        "rawHead": "{\n  \"overall_score\": 42,\n  \"verdict\": \"不建议投\",\n  \"one_line\": \"有 AI 工具使用痕迹，但没有 AI 产品经历，也没有商业场景。\",\n  \"gap_focus\": \"没有一个真实的 AI 产品需求，也没有其落地成果\",\n  \"dimensions\": [\n    {\n      \"key\": \"skill\",\n      \"name\": \"技能匹配\",\n      \"weight\": 0.35,\n      \"score\": 45,\n      \"weighted\": 15.8,\n      \"evidence\": [\n        {\n          \"jd_quote\": \"要求会 AI\",\n          \"resume_quote\": \"Coze 搭建过 1 个对话 Bot\",\n          \"state\": \"unclear\",\n          \"note\": \"有搭建行为，但没有说明 Bot 解决什么问题、效果如何，深度不明。\"\n        },\n        {\n          \"jd_quote\": \"懂产品\",\n          \"resume_quote\": \"使用 Vue + Node.js 完成商品发布、搜索、私信三个模块，不上线，仅在本地演示\",\n          "
+      },
+      {
+        "case": 9,
+        "category": "严重错配",
+        "difficulty": "易",
+        "parsed": true,
+        "overall": 8,
+        "verdict": "不建议投",
+        "dims": [
+          {
+            "name": "技能匹配",
+            "score": 5
+          },
+          {
+            "name": "经历匹配",
+            "score": 3
+          },
+          {
+            "name": "业务/行业匹配",
+            "score": 3
+          },
+          {
+            "name": "求职信号强度",
+            "score": 20
+          }
+        ],
+        "evidenceCount": 14,
+        "rewriteCount": 3,
+        "actionCount": 4,
+        "actionQuality": 1,
+        "evidenceRate": 0.7857142857142857,
+        "fabricateRate": 0,
+        "schemaRate": 1,
+        "scoreReasonable": 1,
+        "pass": true,
+        "badcases": [],
+        "latency": 7722,
+        "tokens": 2751,
+        "rawHead": "{\"overall_score\": 8, \"verdict\": \"不建议投\", \"one_line\": \"会计背景，简历无任何 AI 产品或技术证据，与 Agent 平台岗位基本不匹配\", \"gap_focus\": \"完全没有 Agent 平台实操与工具调用经验\", \"dimensions\": [{\"key\": \"skill\", \"name\": \"技能匹配\", \"weight\": 0.35, \"score\": 5, \"weighted\": 1.8, \"evidence\": [{\"jd_quote\": \"理解 Agent 的\\\"任务分解 + 工具调用\\\"机制，知道 ReAct 是什么\", \"resume_quote\": \"\", \"state\": \"miss\", \"note\": \"简历完全未提及 Agent、任务分解、工具调用或 ReAct\"}, {\"jd_quote\": \"有 Coze / Dify 等平台的实际搭建经验（需提供作品）\", \"resume_quote\": \"\", \"state\": \"miss\", \"note\": \"简历无任何 Coze/Dify 或作品信息\"}, {\"jd_quote\": \"能读懂 API 文档，会用 Postman 调试接口\", \"resume_quote\": \"\", \"state\": \"miss\", \"note\": \"简历未提 API 或 Post"
+      },
+      {
+        "case": 10,
+        "category": "严重错配",
+        "difficulty": "中",
+        "parsed": true,
+        "overall": 24,
+        "verdict": "不建议投",
+        "dims": [
+          {
+            "name": "技能匹配",
+            "score": 22
+          },
+          {
+            "name": "经历匹配",
+            "score": 20
+          },
+          {
+            "name": "业务/行业匹配",
+            "score": 25
+          },
+          {
+            "name": "求职信号强度",
+            "score": 35
+          }
+        ],
+        "evidenceCount": 15,
+        "rewriteCount": 3,
+        "actionCount": 4,
+        "actionQuality": 0.75,
+        "evidenceRate": 0.6,
+        "fabricateRate": 0,
+        "schemaRate": 1,
+        "scoreReasonable": 0.5,
+        "pass": false,
+        "badcases": [
+          {
+            "dim": "证据可追溯",
+            "detail": "证据缺少原文摘录"
+          }
+        ],
+        "latency": 8613,
+        "tokens": 3090,
+        "rawHead": "{\n  \"overall_score\": 24,\n  \"verdict\": \"不建议投\",\n  \"one_line\": \"设计背景扎实，但 AI 产品核心能力证据几乎为零\",\n  \"gap_focus\": \"无 PRD、无 Prompt 工程实践、无大模型认知\",\n  \"dimensions\": [\n    {\n      \"key\": \"skill\",\n      \"name\": \"技能匹配\",\n      \"weight\": 0.35,\n      \"score\": 22,\n      \"weighted\": 7.7,\n      \"evidence\": [\n        { \"jd_quote\": \"会写 PRD，能独立画原型（Figma / Axure / 墨刀）\", \"resume_quote\": \"熟练 PS / AI / Figma\", \"state\": \"unclear\", \"note\": \"会 Figma 只说明能画图，简历没有 PRD 或原型产出证据\" },\n        { \"jd_quote\": \"有 Prompt 工程实践，能独立设计、迭代、调优 Prompt\", \"resume_quote\": \"未接触过 Prompt 工程方法论\", \"state\": \"miss\", \"note\": \"候选人自己明确写了未接触\" },\n        { \"jd_q"
+      },
+      {
+        "case": 11,
+        "category": "边缘样本",
+        "difficulty": "难",
+        "parsed": true,
+        "overall": 26,
+        "verdict": "不建议投",
+        "dims": [
+          {
+            "name": "技能匹配",
+            "score": 30
+          },
+          {
+            "name": "经历匹配",
+            "score": 22
+          },
+          {
+            "name": "业务/行业匹配",
+            "score": 28
+          },
+          {
+            "name": "求职信号强度",
+            "score": 20
+          }
+        ],
+        "evidenceCount": 15,
+        "rewriteCount": 4,
+        "actionCount": 4,
+        "actionQuality": 0.5,
+        "evidenceRate": 1,
+        "fabricateRate": 0,
+        "schemaRate": 1,
+        "scoreReasonable": 0,
+        "pass": false,
+        "badcases": [
+          {
+            "dim": "分数口径",
+            "detail": "分数 26 落在预期区间 52-75 之外"
+          }
+        ],
+        "latency": 9156,
+        "tokens": 3476,
+        "rawHead": "{\n  \"overall_score\": 26,\n  \"verdict\": \"不建议投\",\n  \"one_line\": \"有 AI 工具尝鲜和产品助理基础，但 Prompt 工程、PRD 独立产出、AI 评测均无证据\",\n  \"gap_focus\": \"无任何 AI 功能从需求到上线的完整闭环经历\",\n  \"dimensions\": [\n    {\n      \"key\": \"skill\",\n      \"name\": \"技能匹配\",\n      \"weight\": 0.35,\n      \"score\": 30,\n      \"weighted\": 10.5,\n      \"evidence\": [\n        {\n          \"jd_quote\": \"有 Prompt 工程实践，能独立设计、迭代、调优 Prompt\",\n          \"resume_quote\": \"用 Coze 搭了一个\\\"论文摘要生成\\\"Bot，自己用了 20 多次，没给别人用过\",\n          \"state\": \"unclear\",\n          \"note\": \"有搭建动作但无 Prompt 迭代记录、无评测标准、无他人使用验证，深度不足\"\n        },\n        {\n          \"jd_quote\": \"会写 PRD，能独立画原型（Figma / "
+      },
+      {
+        "case": 12,
+        "category": "边缘样本",
+        "difficulty": "难",
+        "parsed": true,
+        "overall": 39,
+        "verdict": "不建议投",
+        "dims": [
+          {
+            "name": "技能匹配",
+            "score": 35
+          },
+          {
+            "name": "经历匹配",
+            "score": 30
+          },
+          {
+            "name": "业务/行业匹配",
+            "score": 40
+          },
+          {
+            "name": "求职信号强度",
+            "score": 45
+          }
+        ],
+        "evidenceCount": 14,
+        "rewriteCount": 3,
+        "actionCount": 4,
+        "actionQuality": 1,
+        "evidenceRate": 0.7857142857142857,
+        "fabricateRate": 0,
+        "schemaRate": 1,
+        "scoreReasonable": 0,
+        "pass": false,
+        "badcases": [
+          {
+            "dim": "分数口径",
+            "detail": "分数 39 落在预期区间 58-80 之外"
+          }
+        ],
+        "latency": 10179,
+        "tokens": 3457,
+        "rawHead": "{\n  \"overall_score\": 39,\n  \"verdict\": \"不建议投\",\n  \"one_line\": \"数据分析底子扎实，但AI产品核心动作几乎全缺\",\n  \"gap_focus\": \"PRD与原型零经验，AI产品岗关键动作缺位\",\n  \"dimensions\": [\n    {\n      \"key\": \"skill\",\n      \"name\": \"技能匹配\",\n      \"weight\": 0.35,\n      \"score\": 35,\n      \"weighted\": 12.3,\n      \"evidence\": [\n        {\n          \"jd_quote\": \"有 Prompt 工程实践，能独立设计、迭代、调优 Prompt\",\n          \"resume_quote\": \"用 Coze 搭了 workflow，跑了 200 份简历\",\n          \"state\": \"unclear\",\n          \"note\": \"有 Coze workflow 搭建，但简历未体现 Prompt 设计迭代与调优过程\"\n        },\n        {\n          \"jd_quote\": \"会写 PRD，能独立画原型（Figma / Axure / 墨刀）\",\n          \"resume_quo"
+      }
+    ]
+  }
+}

@@ -1,0 +1,126 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 520" width="900" height="520" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif">
+  <rect width="900" height="520" fill="#ffffff"/>
+
+  <text x="24" y="34" font-size="15" font-weight="650" fill="#16181d">JD 匹配诊断器 · 系统结构</text>
+  <text x="24" y="54" font-size="11.5" fill="#8a90a0">从输入到可核验结论的完整链路。标注「规则」的环节不经过模型，是产品可信度的来源。</text>
+
+  <!-- 用户输入层 -->
+  <rect x="24" y="76" width="196" height="86" rx="10" fill="#f6f7f9" stroke="#e4e7ec"/>
+  <text x="40" y="100" font-size="12" font-weight="600" fill="#16181d">输入</text>
+  <text x="40" y="120" font-size="11" fill="#4a5060">岗位 JD 原文</text>
+  <text x="40" y="138" font-size="11" fill="#4a5060">候选人简历全文</text>
+  <text x="40" y="154" font-size="10.5" fill="#8a90a0">最多 5 条 JD 做排序</text>
+
+  <!-- 输入校验 -->
+  <rect x="252" y="76" width="150" height="86" rx="10" fill="#ffffff" stroke="#e4e7ec"/>
+  <text x="268" y="100" font-size="12" font-weight="600" fill="#16181d">输入校验</text>
+  <text x="268" y="120" font-size="10.5" fill="#4a5060">长度 / 条数</text>
+  <text x="268" y="136" font-size="10.5" fill="#4a5060">隐私提示</text>
+  <text x="268" y="152" font-size="10" fill="#2f5bea">规则</text>
+
+  <!-- Prompt 版本库 -->
+  <rect x="434" y="76" width="196" height="86" rx="10" fill="#eef2ff" stroke="#c7d4ff"/>
+  <text x="450" y="100" font-size="12" font-weight="600" fill="#16181d">Prompt 版本库</text>
+  <text x="450" y="120" font-size="10.5" fill="#4a5060">v1 裸提示 · v2 结构化</text>
+  <text x="450" y="136" font-size="10.5" fill="#4a5060">v3 证据约束 + 校准</text>
+  <text x="450" y="152" font-size="10" fill="#2f5bea">版本化 · 可切换 · 可对比</text>
+
+  <!-- 模型调用 -->
+  <rect x="662" y="76" width="214" height="86" rx="10" fill="#ffffff" stroke="#e4e7ec"/>
+  <text x="678" y="100" font-size="12" font-weight="600" fill="#16181d">大模型调用</text>
+  <text x="678" y="120" font-size="10.5" fill="#4a5060">流式输出（SSE）</text>
+  <text x="678" y="136" font-size="10.5" fill="#4a5060">浏览器直连，无后端中转</text>
+  <text x="678" y="152" font-size="10" fill="#8a90a0">可切换模型 · 显示倍率</text>
+
+  <!-- 箭头 -->
+  <defs>
+    <marker id="a" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+      <path d="M0,0 L7,3.5 L0,7 z" fill="#c9ced8"/>
+    </marker>
+  </defs>
+  <line x1="220" y1="119" x2="250" y2="119" stroke="#c9ced8" stroke-width="1.2" marker-end="url(#a)"/>
+  <line x1="402" y1="119" x2="432" y2="119" stroke="#c9ced8" stroke-width="1.2" marker-end="url(#a)"/>
+  <line x1="630" y1="119" x2="660" y2="119" stroke="#c9ced8" stroke-width="1.2" marker-end="url(#a)"/>
+
+  <!-- 第二行：解析 -->
+  <path d="M769 162 L769 196" stroke="#c9ced8" stroke-width="1.2" marker-end="url(#a)"/>
+
+  <rect x="662" y="200" width="214" height="86" rx="10" fill="#ffffff" stroke="#e4e7ec"/>
+  <text x="678" y="224" font-size="12" font-weight="600" fill="#16181d">结构化解析</text>
+  <text x="678" y="244" font-size="10.5" fill="#4a5060">JSON 解析 + 截断修复</text>
+  <text x="678" y="260" font-size="10.5" fill="#4a5060">括号栈回退到安全逗号</text>
+  <text x="678" y="276" font-size="10" fill="#2f5bea">规则</text>
+
+  <line x1="660" y1="243" x2="616" y2="243" stroke="#c9ced8" stroke-width="1.2" marker-end="url(#a)"/>
+
+  <!-- 规则校验（核心） -->
+  <rect x="404" y="196" width="210" height="94" rx="10" fill="#eaf7f0" stroke="#b9e2ce" stroke-width="1.4"/>
+  <text x="420" y="220" font-size="12" font-weight="650" fill="#1f8a5b">规则校验层（核心）</text>
+  <text x="420" y="240" font-size="10.5" fill="#4a5060">证据可追溯率 · 编造率</text>
+  <text x="420" y="256" font-size="10.5" fill="#4a5060">格式合规 · 分数合理性</text>
+  <text x="420" y="272" font-size="10.5" fill="#4a5060">建议可执行度</text>
+  <text x="420" y="286" font-size="9.5" fill="#1f8a5b">不信任模型自评，全部字符串/正则判定</text>
+
+  <line x1="402" y1="243" x2="352" y2="243" stroke="#c9ced8" stroke-width="1.2" marker-end="url(#a)"/>
+
+  <!-- 结果渲染 -->
+  <rect x="150" y="196" width="200" height="94" rx="10" fill="#ffffff" stroke="#e4e7ec"/>
+  <text x="166" y="220" font-size="12" font-weight="600" fill="#16181d">分层结果展示</text>
+  <text x="166" y="240" font-size="10.5" fill="#4a5060">结论 / 四维评分</text>
+  <text x="166" y="256" font-size="10.5" fill="#4a5060">逐条证据对照（JD ↔ 简历）</text>
+  <text x="166" y="272" font-size="10.5" fill="#4a5060">简历改写 / 7 天行动 / 风险</text>
+
+  <line x1="148" y1="243" x2="104" y2="243" stroke="#c9ced8" stroke-width="1.2" marker-end="url(#a)"/>
+
+  <!-- 输出 -->
+  <rect x="24" y="196" width="78" height="94" rx="10" fill="#f6f7f9" stroke="#e4e7ec"/>
+  <text x="38" y="222" font-size="12" font-weight="600" fill="#16181d">产出</text>
+  <text x="38" y="242" font-size="10.5" fill="#4a5060">页面</text>
+  <text x="38" y="258" font-size="10.5" fill="#4a5060">导出</text>
+  <text x="38" y="274" font-size="10.5" fill="#4a5060">Markdown</text>
+
+  <!-- 数据落库 -->
+  <rect x="150" y="320" width="200" height="76" rx="10" fill="#ffffff" stroke="#e4e7ec" stroke-dasharray="4 3"/>
+  <text x="166" y="344" font-size="12" font-weight="600" fill="#16181d">落库（云端 PostgreSQL）</text>
+  <text x="166" y="363" font-size="10.5" fill="#4a5060">jd_diagnoses · eval_runs</text>
+  <text x="166" y="379" font-size="10.5" fill="#4a5060">eval_cases</text>
+  <text x="166" y="392" font-size="9.5" fill="#8a90a0">RLS 行级权限，用户之间隔离</text>
+  <line x1="250" y1="292" x2="250" y2="318" stroke="#c9ced8" stroke-width="1.2" stroke-dasharray="3 3" marker-end="url(#a)"/>
+
+  <!-- 评测闭环 -->
+  <rect x="404" y="320" width="472" height="132" rx="10" fill="#fdf9f2" stroke="#f0dcc0"/>
+  <text x="420" y="344" font-size="12" font-weight="650" fill="#c5791a">评测闭环（改 Prompt 之前先跑一遍）</text>
+
+  <rect x="420" y="356" width="132" height="52" rx="8" fill="#ffffff" stroke="#f0dcc0"/>
+  <text x="432" y="374" font-size="10.5" font-weight="600" fill="#16181d">12 条评测集</text>
+  <text x="432" y="389" font-size="9.5" fill="#8a90a0">4 类用户 × 陷阱</text>
+  <text x="432" y="401" font-size="9.5" fill="#8a90a0">人工标注预期区间</text>
+
+  <line x1="554" y1="382" x2="576" y2="382" stroke="#c9ced8" stroke-width="1.2" marker-end="url(#a)"/>
+
+  <rect x="578" y="356" width="132" height="52" rx="8" fill="#ffffff" stroke="#f0dcc0"/>
+  <text x="590" y="374" font-size="10.5" font-weight="600" fill="#16181d">跑 N 版 Prompt</text>
+  <text x="590" y="389" font-size="9.5" fill="#8a90a0">同通道 · 同模型</text>
+  <text x="590" y="401" font-size="9.5" fill="#8a90a0">同规则引擎</text>
+
+  <line x1="712" y1="382" x2="734" y2="382" stroke="#c9ced8" stroke-width="1.2" marker-end="url(#a)"/>
+
+  <rect x="736" y="356" width="124" height="52" rx="8" fill="#ffffff" stroke="#f0dcc0"/>
+  <text x="748" y="374" font-size="10.5" font-weight="600" fill="#16181d">指标对比</text>
+  <text x="748" y="389" font-size="9.5" fill="#8a90a0">通过率 / 编造率</text>
+  <text x="748" y="401" font-size="9.5" fill="#8a90a0">证据可追溯率</text>
+
+  <text x="420" y="434" font-size="10.5" fill="#8a90a0">实测：v1 0% → v2 0% → v3 42% → v3 校准版 67%（12 条 × 4 版，48 次真实调用）</text>
+
+  <!-- 底部说明 -->
+  <rect x="24" y="320" width="106" height="132" rx="10" fill="#f6f7f9" stroke="#e4e7ec"/>
+  <text x="38" y="344" font-size="11.5" font-weight="600" fill="#16181d">三层防线</text>
+  <text x="38" y="366" font-size="10" fill="#4a5060">① Prompt</text>
+  <text x="38" y="381" font-size="9.5" fill="#8a90a0">证据三态</text>
+  <text x="38" y="399" font-size="10" fill="#4a5060">② 规则</text>
+  <text x="38" y="414" font-size="9.5" fill="#8a90a0">字符串校验</text>
+  <text x="38" y="432" font-size="10" fill="#4a5060">③ 评测</text>
+  <text x="38" y="446" font-size="9.5" fill="#8a90a0">固定样本集</text>
+
+  <text x="24" y="492" font-size="10" fill="#8a90a0">绿底 = 不经过模型的判定环节 · 橙底 = 迭代验证环节 · 虚线 = 数据持久化</text>
+</svg>

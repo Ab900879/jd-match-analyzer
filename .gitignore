@@ -1,0 +1,26 @@
+# 依赖与构建产物
+node_modules/
+dist/
+build/
+
+# 本地环境与密钥
+.env
+.env.*
+!.env.example
+
+# 编辑器与系统
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+
+# 临时文件
+*.log
+npm-debug.log*
+tmp/
+.cache/
+
+# 评测临时产物（保留 docs/ 下的正式结果）
+tools/eval-log.txt
+tools/eval-v3-log.txt
