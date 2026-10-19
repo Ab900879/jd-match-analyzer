@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>JD 匹配诊断器 · 结果页原型 · 线框图</title>
+<style>
+:root{--ink:#1f2328;--mid:#6b7280;--line:#c9ced6;--bg:#f6f7f9;--paper:#fff;--accent:#2f6fed}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:14px/1.6 -apple-system,"Segoe UI","Microsoft YaHei",sans-serif}
+.wf-wrap{max-width:960px;margin:28px auto 60px;padding:0 20px}
+.wf-head{margin-bottom:18px}
+.wf-head h1{font-size:20px;margin:0 0 6px}
+.wf-head p{margin:0;color:var(--mid);font-size:13px}
+.wf-canvas{background:var(--paper);border:1px solid var(--line);border-radius:12px;overflow:hidden;box-shadow:0 2px 14px rgba(16,24,40,.06)}
+.wf-tabs{display:flex;gap:4px;padding:10px 14px;border-bottom:1px solid var(--line);background:#fbfcfd}
+.wf-tabs span{padding:6px 12px;border-radius:7px;color:var(--mid);font-size:13px;cursor:pointer}
+.wf-tabs span.on{background:#e8f0ff;color:var(--accent);font-weight:600}
+.wf-page{padding:18px 20px}
+.wf-section{border:1px dashed var(--line);border-radius:10px;padding:14px;margin-bottom:16px}
+.wf-section h4{margin:0 0 12px;font-size:12px;color:var(--mid);font-weight:600;letter-spacing:.04em}
+.wf-navbar{display:flex;align-items:center;gap:12px;border-bottom:1px solid var(--line);padding:12px 4px;margin-bottom:14px}
+.wf-logo{font-weight:700;background:#e8f0ff;color:var(--accent);border-radius:6px;padding:2px 6px;font-size:12px}
+.wf-title{font-weight:600}
+.wf-right{margin-left:auto;color:var(--mid);font-size:12px;border:1px solid var(--line);border-radius:6px;padding:4px 10px}
+.wf-field{margin-bottom:12px}
+.wf-label{font-size:12px;color:var(--mid);margin-bottom:5px}
+.wf-textarea{border:1px solid var(--line);border-radius:8px;padding:10px;color:#9aa3af;font-size:13px;background:#fcfcfd}
+.wf-input{border:1px solid var(--line);border-radius:8px;padding:9px 10px;color:#9aa3af;font-size:13px;background:#fcfcfd}
+.wf-btn{display:inline-block;border:1px solid var(--line);border-radius:8px;padding:8px 16px;font-size:13px;margin-right:8px;background:#fff}
+.wf-btn.primary{background:var(--ink);color:#fff;border-color:var(--ink)}
+.wf-card{border:1px solid var(--line);border-radius:10px;padding:12px;margin-bottom:10px;background:#fcfcfd}
+.wf-card-title{font-weight:600;margin-bottom:6px;font-size:13px}
+.wf-card-body{color:#9aa3af;font-size:13px;min-height:28px}
+.wf-note{font-size:12px;color:var(--mid);margin-top:6px}
+.wf-list{border:1px solid var(--line);border-radius:10px;padding:10px 12px}
+.wf-li{display:flex;align-items:center;gap:8px;padding:6px 0;border-bottom:1px dashed #e5e8ec;color:#7b8494;font-size:13px}
+.wf-li:last-child{border-bottom:0}
+.wf-li i{width:8px;height:8px;border-radius:50%;background:#d5dae2;flex:none}
+.wf-table{width:100%;border-collapse:collapse;font-size:13px}
+.wf-table th,.wf-table td{border:1px solid var(--line);padding:8px;text-align:left}
+.wf-table th{background:#f7f8fa;color:var(--mid);font-weight:600;font-size:12px}
+.wf-table td{height:26px}
+.wf-chart{border:1px solid var(--line);border-radius:10px;padding:12px;color:var(--mid);font-size:12px}
+.wf-bars{display:flex;align-items:flex-end;gap:8px;height:84px;margin-top:10px}
+.wf-bars span{flex:1;background:#e3e8f0;border-radius:4px 4px 0 0}
+.wf-tags span{display:inline-block;border:1px solid var(--line);border-radius:20px;padding:3px 10px;margin:0 6px 6px 0;font-size:12px;color:var(--mid)}
+.wf-hr{border:0;border-top:1px dashed var(--line);margin:14px 0}
+.wf-footer{text-align:center;color:#9aa3af;font-size:12px;padding:14px 0}
+.wf-note-box{background:#fff8e6;border:1px solid #f2dfae;border-radius:8px;padding:10px;font-size:12px;color:#8a6d1f}
+.wf-foot{margin-top:14px;color:#9aa3af;font-size:12px;text-align:right}
+</style></head>
+<body><div class="wf-wrap">
+<div class="wf-head"><h1>JD 匹配诊断器 · 结果页原型</h1><p>这是项目 01 结果页的 PRD 片段，用来演示 prd2wire：改 PRD 就能重生成线框图，不用重画。</p></div>
+<div class="wf-canvas"><div class="wf-tabs" id="tabs"><span class="on">诊断页</span><span class="">投递排序</span></div><div class="wf-page" data-page="0" style="display:block"><section class="wf-section"><h4>section 输入区</h4><div class="wf-navbar"><span class="wf-logo">JD</span><span class="wf-title">JD 匹配诊断器</span><span class="wf-right">登录以保存记录</span></div>
+<div class="wf-tabs"><span class="on">匹配诊断</span><span class="">投递排序</span><span class="">Prompt 实验室</span><span class="">评测报告</span></div>
+<div class="wf-field"><div class="wf-label">岗位 JD</div><div class="wf-textarea" style="height:90px">把招聘要求原文粘进来，建议整段复制</div></div>
+<div class="wf-field"><div class="wf-label">你的简历</div><div class="wf-textarea" style="height:90px">把简历正文粘进来，信息越具体诊断越准</div></div>
+<div class="wf-btn primary">开始诊断</div></section>
+<section class="wf-section"><h4>section 结果区</h4><div class="wf-card"><div class="wf-card-title">综合分 67 / 100</div><div class="wf-card-body">技能 35 分制得分 24｜经历 30 分制得分 18</div><div class="wf-note">分数是证据覆盖度，不是对人的评价</div></div>
+<table class="wf-table"><thead><tr><th>要求</th><th>状态</th><th>证据</th></tr></thead><tbody><tr><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td></tr></tbody></table>
+<div class="wf-list"><div class="wf-li"><i></i>命中：会用 SQL 做多表查询</div><div class="wf-li"><i></i>缺失：没有 AB 实验经历</div><div class="wf-li"><i></i>存疑：竞品分析只写过一次</div></div>
+<div class="wf-tags"><span>技能 35</span><span>经历 30</span><span>业务 20</span><span>信号 15</span></div>
+<hr class="wf-hr"></section>
+<section class="wf-section"><h4>section 行动区</h4><div class="wf-card"><div class="wf-card-title">简历改写建议</div><div class="wf-card-body">把「参与数据分析」改成「用 SQL 独立完成 3 张表的漏斗分析，定位到注册环节流失 12%」</div></div>
+<div class="wf-list"><div class="wf-li"><i></i>第 1 天：补一条可量化经历</div><div class="wf-li"><i></i>第 2-3 天：做一个 AB 实验案例</div><div class="wf-li"><i></i>第 4 天：把结论写成一页纸</div></div>
+<div class="wf-btn ">导出 Markdown 报告</div>
+<div class="wf-btn ">查看历史记录</div>
+<div class="wf-note-box">所有建议必须带具体工具名或交付物，否则不计为合格建议</div></section></div>
+<div class="wf-page" data-page="1" style="display:none"><section class="wf-section"><h4>section 批量输入</h4><div class="wf-field"><div class="wf-label">一次最多 5 条 JD（用 --- 分隔）</div><div class="wf-textarea" style="height:108px">第一条 JD…… --- 第二条 JD……</div></div>
+<div class="wf-btn primary">粗筛排序</div></section>
+<section class="wf-section"><h4>section 排序结果</h4><table class="wf-table"><thead><tr><th>排名</th><th>岗位</th><th>快速匹配度</th><th>建议</th></tr></thead><tbody><tr><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td></tr></tbody></table>
+<div class="wf-note-box">先用一次轻量调用粗筛，只对 Top 2 跑完整诊断，控制成本</div>
+<div class="wf-footer">prd2wire demo</div></section></div></div>
+<div class="wf-foot">prd2wire 生成 · 灰度块仅表达结构，不含视觉设计</div>
+</div>
+<script>
+var tabs=[].slice.call(document.querySelectorAll('#tabs span'));
+var pages=[].slice.call(document.querySelectorAll('.wf-page'));
+tabs.forEach(function(t,i){t.onclick=function(){tabs.forEach(function(x){x.className=''});t.className='on';pages.forEach(function(p,j){p.style.display=i===j?'block':'none';});};});
+</script>
+</body></html>

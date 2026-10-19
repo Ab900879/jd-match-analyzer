@@ -21,6 +21,8 @@ npm-debug.log*
 tmp/
 .cache/
 
-# 评测临时产物（保留 docs/ 下的正式结果）
-tools/eval-log.txt
-tools/eval-v3-log.txt
+# 评测/测试临时日志（保留正式结果 JSON 与报告）
+**/eval-log.txt
+**/eval-v3-log.txt
+**/test-log*.txt
+**/run-log*.txt

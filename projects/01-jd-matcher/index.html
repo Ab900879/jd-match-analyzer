@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>JD 匹配诊断器 · Prompt 迭代与评测</title>
+<style>
+  :root{
+    --bg:#f6f7f9;
+    --panel:#ffffff;
+    --ink:#16181d;
+    --ink-2:#4a5060;
+    --ink-3:#8a90a0;
+    --line:#e4e7ec;
+    --line-2:#eef0f4;
+    --brand:#2f5bea;
+    --brand-soft:#eef2ff;
+    --red:#d93a3a;
+    --red-soft:#fdeceb;
+    --amber:#c5791a;
+    --amber-soft:#fdf4e6;
+    --green:#1f8a5b;
+    --green-soft:#eaf7f0;
+    --radius:14px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{height:100%}
+  body{
+    background:var(--bg);
+    color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+    font-size:14px;line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:var(--brand);text-decoration:none}
+  code{font-family:"SF Mono",Menlo,Consolas,monospace;font-size:12px}
+
+  /* ---------- header ---------- */
+  header{
+    position:sticky;top:0;z-index:50;
+    background:rgba(255,255,255,.92);backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .hd{max-width:1180px;margin:0 auto;padding:0 24px;height:58px;display:flex;align-items:center;gap:20px}
+  .brand{display:flex;align-items:center;gap:9px;font-weight:650;letter-spacing:-.2px;font-size:15px}
+  .logo{width:24px;height:24px;border-radius:7px;background:linear-gradient(135deg,#2f5bea,#6f8dff);display:grid;place-items:center;color:#fff;font-size:12px;font-weight:700}
+  nav{display:flex;gap:2px;margin-left:8px}
+  nav button{
+    border:0;background:transparent;color:var(--ink-2);font:inherit;font-size:13.5px;
+    padding:7px 13px;border-radius:8px;cursor:pointer;transition:.15s;
+  }
+  nav button:hover{background:var(--line-2);color:var(--ink)}
+  nav button.on{background:var(--ink);color:#fff}
+  .hd-right{margin-left:auto;display:flex;align-items:center;gap:10px;font-size:13px;color:var(--ink-3)}
+
+  /* ---------- layout ---------- */
+  main{max-width:1180px;margin:0 auto;padding:26px 24px 80px}
+  .view{display:none}
+  .view.on{display:block;animation:fade .22s ease}
+  @keyframes fade{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
+
+  h1{font-size:21px;font-weight:650;letter-spacing:-.3px}
+  .sub{color:var(--ink-3);margin-top:4px;font-size:13px}
+  .row{display:flex;gap:16px}
+  .col{flex:1;min-width:0}
+
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:18px}
+  .card + .card{margin-top:16px}
+  .card-h{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px}
+  .card-t{font-weight:620;font-size:14px;display:flex;align-items:center;gap:7px}
+  .hint{color:var(--ink-3);font-size:12.5px}
+
+  label.f{display:block;font-size:12.5px;color:var(--ink-2);margin-bottom:6px;font-weight:550}
+  textarea,input[type=text],select{
+    width:100%;border:1px solid var(--line);border-radius:10px;padding:11px 12px;
+    font:inherit;font-size:13px;color:var(--ink);background:#fff;resize:vertical;
+    transition:.15s;
+  }
+  textarea:focus,input[type=text]:focus,select:focus{outline:0;border-color:var(--brand);box-shadow:0 0 0 3px var(--brand-soft)}
+  textarea{min-height:150px;line-height:1.7}
+
+  button.primary{
+    background:var(--ink);color:#fff;border:0;border-radius:10px;
+    padding:11px 20px;font:inherit;font-size:13.5px;font-weight:560;cursor:pointer;transition:.15s;
+  }
+  button.primary:hover{background:#000}
+  button.primary:disabled{opacity:.45;cursor:not-allowed}
+  button.ghost{
+    background:#fff;border:1px solid var(--line);color:var(--ink);
+    border-radius:9px;padding:8px 14px;font:inherit;font-size:13px;cursor:pointer;transition:.15s;
+  }
+  button.ghost:hover{border-color:#c9ced8;background:#fafbfc}
+  button.tiny{font-size:12px;padding:5px 10px;border-radius:7px}
+
+  .pills{display:flex;gap:8px;flex-wrap:wrap}
+  .pill{
+    border:1px solid var(--line);background:#fff;border-radius:9px;padding:9px 12px;
+    font-size:12.5px;cursor:pointer;transition:.15s;display:flex;flex-direction:column;gap:2px;min-width:150px;
+    text-align:left;
+  }
+  .pill:hover{border-color:#c9ced8}
+  .pill.on{border-color:var(--brand);background:var(--brand-soft)}
+  .pill b{font-weight:600;font-size:12.5px}
+  .pill span{color:var(--ink-3);font-size:11.5px}
+
+  /* ---------- result ---------- */
+  .score-wrap{display:flex;gap:20px;align-items:center}
+  .ring{position:relative;width:104px;height:104px;flex:none}
+  .ring svg{transform:rotate(-90deg)}
+  .ring .val{position:absolute;inset:0;display:grid;place-items:center;font-size:27px;font-weight:680;letter-spacing:-1px}
+  .ring .val small{font-size:11px;font-weight:500;color:var(--ink-3);margin-left:1px}
+
+  .dim{margin-top:12px}
+  .dim-h{display:flex;justify-content:space-between;font-size:12.5px;margin-bottom:5px}
+  .dim-h .n{color:var(--ink-2)}
+  .dim-h .s{font-weight:600;font-variant-numeric:tabular-nums}
+  .bar{height:6px;background:var(--line-2);border-radius:4px;overflow:hidden}
+  .bar i{display:block;height:100%;border-radius:4px;transition:width .5s cubic-bezier(.2,.8,.2,1)}
+
+  .ev{border:1px solid var(--line);border-radius:10px;padding:10px 12px;margin-top:8px;font-size:12.5px}
+  .ev-top{display:flex;align-items:center;gap:8px;margin-bottom:6px}
+  .tag{font-size:11px;padding:2px 8px;border-radius:20px;font-weight:600;letter-spacing:.2px}
+  .tag.hit{background:var(--green-soft);color:var(--green)}
+  .tag.miss{background:var(--red-soft);color:var(--red)}
+  .tag.unclear{background:var(--amber-soft);color:var(--amber)}
+  .q{color:var(--ink-3);font-size:12px}
+  .q b{color:var(--ink-2);font-weight:550}
+  .ev .quote{margin-top:4px}
+  .ev .jd{color:var(--ink-3)}
+  .ev .rs{color:var(--ink)}
+
+  .rw{border-left:2px solid var(--line);padding-left:12px;margin-top:14px}
+  .rw .before{color:var(--ink-3);font-size:12.5px;text-decoration:line-through;text-decoration-color:#dcdfe6}
+  .rw .after{font-size:13px;margin-top:4px}
+  .rw .why{color:var(--ink-3);font-size:12px;margin-top:4px}
+
+  ol.acts{padding-left:18px;font-size:13px}
+  ol.acts li{margin:7px 0}
+
+  .risk{background:var(--red-soft);border:1px solid #f7d6d4;border-radius:10px;padding:10px 12px;font-size:12.5px;color:#a3302f}
+
+  /* ---------- table ---------- */
+  table{width:100%;border-collapse:collapse;font-size:12.5px}
+  th,td{padding:8px 10px;text-align:left;border-bottom:1px solid var(--line-2);vertical-align:top}
+  th{font-weight:600;color:var(--ink-2);font-size:12px;background:#fafbfc;position:sticky;top:58px}
+  td.num{font-variant-numeric:tabular-nums}
+  .dot{display:inline-block;width:7px;height:7px;border-radius:50%;margin-right:6px}
+  .dot.ok{background:var(--green)}.dot.no{background:var(--red)}
+
+  /* ---------- misc ---------- */
+  .kpi{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+  .kpi .k{background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px}
+  .kpi .k .l{font-size:11.5px;color:var(--ink-3);margin-bottom:6px}
+  .kpi .k .v{font-size:22px;font-weight:660;letter-spacing:-.5px;font-variant-numeric:tabular-nums}
+  .kpi .k .d{font-size:11.5px;color:var(--ink-3);margin-top:2px}
+  .up{color:var(--green)}.down{color:var(--red)}
+
+  .empty{
+    text-align:center;padding:46px 20px;color:var(--ink-3);font-size:13px;
+  }
+  .empty b{display:block;color:var(--ink-2);font-size:14px;font-weight:600;margin-bottom:6px}
+
+  .toast{
+    position:fixed;left:50%;bottom:26px;transform:translate(-50%,20px);
+    background:var(--ink);color:#fff;padding:10px 18px;border-radius:10px;font-size:13px;
+    opacity:0;pointer-events:none;transition:.25s;z-index:99;max-width:80vw;
+  }
+  .toast.on{opacity:1;transform:translate(-50%,0)}
+
+  .spinner{width:13px;height:13px;border:2px solid rgba(255,255,255,.35);border-top-color:#fff;border-radius:50%;display:inline-block;animation:spin .7s linear infinite;vertical-align:-2px;margin-right:6px}
+  @keyframes spin{to{transform:rotate(360deg)}}
+
+  .raw{margin-top:10px;background:#fafbfc;border:1px solid var(--line-2);border-radius:10px;padding:12px;font-family:"SF Mono",Menlo,Consolas,monospace;font-size:11.5px;white-space:pre-wrap;max-height:280px;overflow:auto;color:var(--ink-2)}
+
+  .stepper{display:flex;gap:0;margin:14px 0 20px;border:1px solid var(--line);border-radius:11px;overflow:hidden;background:#fff}
+  .step{flex:1;padding:11px 14px;font-size:12.5px;border-right:1px solid var(--line);display:flex;gap:9px;align-items:center;color:var(--ink-3)}
+  .step:last-child{border-right:0}
+  .step .no{width:19px;height:19px;border-radius:50%;background:var(--line-2);color:var(--ink-3);display:grid;place-items:center;font-size:11px;font-weight:600;flex:none}
+  .step.on{color:var(--ink);background:var(--brand-soft)}
+  .step.on .no{background:var(--brand);color:#fff}
+  .step.done{color:var(--ink-2)}
+  .step.done .no{background:var(--green-soft);color:var(--green)}
+
+  .faq dt{font-weight:600;font-size:13px;margin-top:14px}
+  .faq dd{color:var(--ink-2);font-size:12.5px;margin-top:4px}
+  .note{border-left:3px solid var(--brand);background:var(--brand-soft);padding:12px 14px;border-radius:0 10px 10px 0;font-size:12.5px;color:var(--ink-2);line-height:1.75}
+
+  @media(max-width:900px){
+    .row{flex-direction:column}
+    .kpi{grid-template-columns:repeat(2,1fr)}
+    nav{display:none}
+    .stepper{flex-direction:column}
+    .step{border-right:0;border-bottom:1px solid var(--line)}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="hd">
+    <div class="brand"><span class="logo">JD</span>JD 匹配诊断器</div>
+    <nav>
+      <button data-view="diagnose" class="on">匹配诊断</button>
+      <button data-view="scan">投递排序</button>
+      <button data-view="lab">Prompt 实验室</button>
+      <button data-view="eval">评测报告</button>
+      <button data-view="about">产品说明</button>
+    </nav>
+    <div class="hd-right">
+      <select id="modelSelect" style="width:auto;padding:6px 10px;font-size:12.5px;border-radius:8px" title="切换模型">
+        <option>加载中…</option>
+      </select>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <!-- ==================== 诊断 ==================== -->
+  <section id="v-diagnose" class="view on">
+    <div class="stepper">
+      <div class="step on"><span class="no">1</span>贴 JD + 简历</div>
+      <div class="step"><span class="no">2</span>出诊断结果（分数/证据/改写）</div>
+      <div class="step"><span class="no">3</span>落库 → 进评测集累计证据</div>
+    </div>
+
+    <div class="row">
+      <div class="col">
+        <div class="card">
+          <div class="card-h">
+            <div class="card-t">岗位 JD</div>
+            <button class="ghost tiny" id="fillJd">填入示例 JD</button>
+          </div>
+          <textarea id="jd" placeholder="把招聘要求原文粘进来。建议整段复制，包括职责和任职要求。"></textarea>
+        </div>
+
+        <div class="card">
+          <div class="card-h">
+            <div class="card-t">你的简历</div>
+            <button class="ghost tiny" id="fillResume">填入示例简历</button>
+          </div>
+          <textarea id="resume" placeholder="把简历正文粘进来（教育、经历、技能）。信息越具体，诊断越准。"></textarea>
+        </div>
+
+        <div class="card">
+          <div class="card-h"><div class="card-t">使用哪一版 Prompt</div></div>
+          <div class="pills" id="promptPicker"></div>
+          <div style="margin-top:14px;display:flex;gap:10px;align-items:center">
+            <button class="primary" id="runBtn">开始诊断</button>
+            <span class="hint" id="runHint">默认 v3 上线版；想看迭代效果就到「Prompt 实验室」</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="col" id="resultPane">
+        <div class="card">
+          <div class="empty">
+            <b>诊断结果会出现在这里</b>
+            左边粘好 JD 和简历，点「开始诊断」。<br />
+            首次使用请在页面底部登录，诊断记录才能存下来。
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 投递排序 ==================== -->
+  <section id="v-scan" class="view">
+    <h1>投递排序</h1>
+    <p class="sub">
+      一份简历 + 最多 5 条 JD，先用低成本方式排出「先投哪个」。排序出来后，对 Top 2 再跑完整诊断。
+    </p>
+
+    <div class="card" style="margin-top:18px">
+      <div class="card-h">
+        <div class="card-t">你的简历</div>
+        <button class="ghost tiny" id="scanFillResume">填入示例简历</button>
+      </div>
+      <textarea id="scanResume" style="min-height:120px" placeholder="粘贴简历正文"></textarea>
+    </div>
+
+    <div class="card">
+      <div class="card-h">
+        <div class="card-t">待比较的 JD</div>
+        <span class="hint">每条 JD 之间用 <code>---</code> 单独一行分隔，最多 5 条</span>
+      </div>
+      <textarea
+        id="scanJds"
+        style="min-height:220px"
+        placeholder="第一条 JD 原文……
+
+---
+
+第二条 JD 原文……
+
+---
+
+第三条 JD 原文……"
+      ></textarea>
+      <div style="margin-top:12px;display:flex;gap:10px;align-items:center;flex-wrap:wrap">
+        <button class="primary" id="scanBtn">开始排序</button>
+        <button class="ghost" id="scanFillJds">填入 3 条示例 JD</button>
+        <span class="hint" id="scanCount"></span>
+      </div>
+    </div>
+
+    <div id="scanResult">
+      <div class="card">
+        <div class="empty">
+          <b>排序结果会出现在这里</b>
+          贴好简历和几条 JD，点「开始排序」。<br />
+          这一步只做粗筛，成本低、出结果快；确定优先级后再去「匹配诊断」深挖。
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 实验室 ==================== -->
+  <section id="v-lab" class="view">
+    <h1>Prompt 实验室</h1>
+    <p class="sub">同一份 JD + 简历，三版 Prompt 跑同一套评测集。这不是"我觉得 v3 更好"，是用同一把尺子量出来的。</p>
+
+    <div class="card" style="margin-top:18px">
+      <div class="card-h">
+        <div class="card-t">评测集 <span class="hint" id="caseCount"></span></div>
+        <div style="display:flex;gap:8px">
+          <select id="caseFilter" style="width:auto;padding:7px 10px;font-size:12.5px">
+            <option value="all">全部样本</option>
+            <option value="12">只跑 12 条（快）</option>
+            <option value="6">只跑前 6 条</option>
+            <option value="3">只跑 3 条（冒烟）</option>
+          </select>
+          <button class="primary" id="runEval">跑评测</button>
+        </div>
+      </div>
+      <div class="hint" style="margin-bottom:10px">
+        12 条样本覆盖 4 类用户：跨行迁移、过度包装、信息不足、严重错配。每一条都埋了陷阱，看模型会不会掉进去。
+      </div>
+      <div style="max-height:300px;overflow:auto;border:1px solid var(--line-2);border-radius:10px">
+        <table id="caseTable">
+          <thead><tr><th style="width:36px">#</th><th style="width:92px">类型</th><th style="width:48px">难度</th><th>样本</th><th>预期表现</th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-h">
+        <div class="card-t">运行进度</div>
+        <span class="hint" id="evalProgress"></span>
+      </div>
+      <div id="evalLog" class="raw" style="max-height:200px;font-size:12px">等待开始…</div>
+    </div>
+
+    <div class="card">
+      <div class="card-h"><div class="card-t">三版对比</div><span class="hint">指标均由规则计算，模型不参与打分</span></div>
+      <div id="compareWrap"><div class="empty"><b>还没有对比数据</b>先点上面的「跑评测」。</div></div>
+    </div>
+
+    <div class="card">
+      <div class="card-h"><div class="card-t">Prompt 版本正文</div><span class="hint">这就是作品集里的「Prompt 迭代记录」</span></div>
+      <div class="pills" id="promptViewPicker" style="margin-bottom:12px"></div>
+      <div class="raw" id="promptBody" style="max-height:360px"></div>
+    </div>
+  </section>
+
+  <!-- ==================== 评测报告 ==================== -->
+  <section id="v-eval" class="view">
+    <h1>评测报告</h1>
+    <p class="sub">诊断次数、badcase 分布、Prompt 版本效果。面试时可以直接翻这一页。</p>
+    <div class="kpi" id="kpi" style="margin-top:18px"></div>
+
+    <div class="card" style="margin-top:16px">
+      <div class="card-h"><div class="card-t">诊断记录</div><button class="ghost tiny" id="refreshDiag">刷新</button></div>
+      <div id="diagTable"><div class="empty"><b>还没有记录</b>去「匹配诊断」跑一次，记录会自动落库。</div></div>
+    </div>
+
+    <div class="card">
+      <div class="card-h"><div class="card-t">评测运行记录</div><button class="ghost tiny" id="refreshRuns">刷新</button></div>
+      <div id="runTable"><div class="empty"><b>还没有评测</b>去「Prompt 实验室」跑一轮。</div></div>
+    </div>
+  </section>
+
+  <!-- ==================== 说明 ==================== -->
+  <section id="v-about" class="view">
+    <h1>产品说明</h1>
+    <p class="sub">这一页是给面试官看的，也是给你自己讲故事的底稿。</p>
+
+    <div class="card" style="margin-top:18px">
+      <div class="card-t" style="margin-bottom:10px">一句话定位</div>
+      <div class="note">
+        把「JD 匹配」从一句感觉，变成一份可追溯的诊断：每个分数都有原文依据，每个差距都对应一个 7 天内能做完的动作。
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-t" style="margin-bottom:12px">为什么做这个（需求拆解）</div>
+      <table>
+        <thead><tr><th style="width:88px">环节</th><th>内容</th></tr></thead>
+        <tbody>
+          <tr><td><b>场景</b></td><td>应届生在 BOSS 上一天刷 30 个岗位，每个都要判断"我配不配、该不该投"。</td></tr>
+          <tr><td><b>痛点</b></td><td>判断依赖感觉：觉得"差不多能投"，结果简历石沉大海；或者自我否定，错过本来能拿的岗位。真正的问题是不知道自己差在哪一条。</td></tr>
+          <tr><td><b>方案</b></td><td>用 LLM 做结构化诊断：4 维加权评分 + 每条证据必须引用 JD 与简历原文 + 给出可直接替换的简历改写句 + 3 条 7 天行动。</td></tr>
+          <tr><td><b>指标</b></td><td>核心 = 诊断结论被采纳率（看完愿意按建议改简历并投递）；护栏 = 编造率（把没有的能力说成有）、证据可追溯率、单次生成耗时。</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="card">
+      <div class="card-t" style="margin-bottom:12px">关键产品决策（面试最常被追问的部分）</div>
+      <table>
+        <thead><tr><th style="width:150px">决策</th><th style="width:88px">选择</th><th>为什么</th></tr></thead>
+        <tbody>
+          <tr>
+            <td>分数怎么算</td><td>固定权重</td>
+            <td>不让模型自由给分。4 维权重写死在 Prompt 里（技能 35 / 经历 30 / 业务 20 / 信号 15），模型只负责在每维里找证据。这样做的好处是分数可复现、可解释、可跨版本比较。</td>
+          </tr>
+          <tr>
+            <td>怎么防编造</td><td>证据三态</td>
+            <td>强制模型对每条要求标注 hit / miss / unclear，且 hit 必须逐字摘录简历原文。评测时用规则校验：声称 hit 但摘录不出原文的，直接算一次编造。这是本产品最核心的设计。</td>
+          </tr>
+          <tr>
+            <td>评分区间的来源</td><td>人工标注</td>
+            <td>每条评测样本的"预期分数区间"是人工标的，不是模型自评。否则就成了用感觉验证感觉。</td>
+          </tr>
+          <tr>
+            <td>为什么需要评测集</td><td>分层设计</td>
+            <td>12 条样本按「用户类型 × 难度 × 陷阱」分层：跨行迁移、过度包装、信息不足、严重错配。只测"正常简历"会得出虚假的 95% 通过率。</td>
+          </tr>
+          <tr>
+            <td>信息不足怎么办</td><td>明确说不知道</td>
+            <td>样本 7 是几乎空白的简历。产品上宁可给 20 分并提示"信息不足"，也不能编造经历凑到 60 分——后者会让用户带着错误的自信去投递。</td>
+          </tr>
+          <tr>
+            <td>为什么分两层</td><td>轻诊断 + 重诊断</td>
+            <td>用户一天要刷 30 个岗，每条都跑完整诊断既贵又慢。所以先跑「投递排序」做粗筛（一次调用、十几秒），只对 Top 2 跑完整诊断。用低成本动作做筛选，用高成本动作做深挖——这是所有 AI 产品都必须面对的成本结构问题。</td>
+          </tr>
+          <tr>
+            <td>为什么是"判断"而不是"代笔"</td><td>给判断</td>
+            <td>一键改简历是「给答案」，用户不知道答案为什么对，用完就走；诊断是「给判断」，用户能学会自己判断，会复用。而且一键改简历的失败模式是灾难性的——改完投出去被拒，用户会怪产品。</td>
+          </tr>
+          <tr>
+            <td>建议怎么算可用</td><td>必须带交付物</td>
+            <td>"提升 AI 能力"不是建议。评测里用规则筛：如果建议句里没有具体工具名或交付物（Coze / PRD / 评测集 / 截图…），就不算合格建议。</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="card">
+      <div class="card-t" style="margin-bottom:12px">技术结构（够你和技术同学对话）</div>
+      <table>
+        <thead><tr><th style="width:120px">层</th><th>是什么</th><th>为什么这样做</th></tr></thead>
+        <tbody>
+          <tr><td>模型层</td><td>浏览器直连大模型，流式返回</td><td>不搭后端，产品经理可以一个人把想法变成能跑的东西</td></tr>
+          <tr><td>约束层</td><td>System Prompt + JSON Schema</td><td>约束输出结构，让结果可以被程序进一步校验</td></tr>
+          <tr><td>校验层</td><td>规则引擎</td><td>证据可追溯、编造检测、建议质量全部用规则算，不信任模型自评</td></tr>
+          <tr><td>数据层</td><td>云端数据库 + 用户隔离</td><td>每次诊断落库，才能积累 badcase 做归因</td></tr>
+          <tr><td>评测层</td><td>固定评测集 + 4 项指标</td><td>改 Prompt 前先跑一遍，用数字证明改好了</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="card">
+      <div class="card-t" style="margin-bottom:10px">已知边界（主动说出局限，比被问出来强）</div>
+      <dl class="faq">
+        <dt>1. 没法验证经历真伪</dt>
+        <dd>模型只能判断"简历里有没有证据"，判断不了"这段经历是不是真的"。所以风险标记里会写明"面试可能被追问"。</dd>
+        <dt>2. 分数不带绝对意义</dt>
+        <dd>65 分不代表"你这个人 65 分"，只代表"在这条 JD 的口径下，你的证据覆盖度是 65"。跨 JD 比较没有意义。</dd>
+        <dt>3. 评测集只有 12 条</dt>
+        <dd>样本量小，只能发现明显退化，不能做统计显著性检验。下一步应该扩到 100 条并做人工双标。</dd>
+        <dt>4. 没做真实用户验证</dt>
+        <dd>这是这个作品最需要补的一块：找 10 个同学各跑一次，收 3 条反馈，改一版。这件事必须真的做，不能编。</dd>
+      </dl>
+    </div>
+  </section>
+
+</main>
+
+<!-- 登录弹层 -->
+<div id="authModal" style="display:none;position:fixed;inset:0;background:rgba(16,18,22,.42);z-index:200;align-items:center;justify-content:center;padding:20px">
+  <div style="background:#fff;border-radius:16px;width:100%;max-width:380px;padding:26px 24px;box-shadow:0 20px 60px rgba(0,0,0,.18)">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px">
+      <div style="font-weight:650;font-size:16px">登录</div>
+      <button id="authClose" style="border:0;background:transparent;font-size:19px;color:#8a90a0;cursor:pointer;line-height:1">×</button>
+    </div>
+    <div class="hint" style="margin-bottom:16px">登录后诊断记录会保存，才能在「评测报告」里看到自己的数据。</div>
+
+    <div class="pills" id="authTabs" style="margin-bottom:16px">
+      <button class="pill on" data-tab="phone" style="min-width:0;padding:8px 14px"><b>手机号</b></button>
+      <button class="pill" data-tab="email" style="min-width:0;padding:8px 14px"><b>邮箱</b></button>
+    </div>
+
+    <div id="tab-phone">
+      <label class="f">手机号</label>
+      <input type="text" id="phoneInput" placeholder="11 位手机号" autocomplete="tel" />
+      <div id="phoneErr" style="color:#d93a3a;font-size:12px;margin-top:5px;display:none">请输入正确的 11 位手机号</div>
+      <div style="display:flex;gap:8px;margin-top:10px">
+        <input type="text" id="phoneCode" placeholder="6 位验证码" style="flex:1" />
+        <button class="ghost" id="sendPhoneCode" style="white-space:nowrap">获取验证码</button>
+      </div>
+    </div>
+
+    <div id="tab-email" style="display:none">
+      <label class="f">邮箱</label>
+      <input type="text" id="emailInput" placeholder="you@example.com" autocomplete="email" />
+      <div style="display:flex;gap:8px;margin-top:10px">
+        <input type="text" id="emailCode" placeholder="6 位验证码" style="flex:1" />
+        <button class="ghost" id="sendEmailCode" style="white-space:nowrap">获取验证码</button>
+      </div>
+    </div>
+
+    <button class="primary" id="authSubmit" style="width:100%;margin-top:16px">登录 / 注册</button>
+
+    <div style="display:flex;align-items:center;gap:10px;margin:18px 0 12px;color:#8a90a0;font-size:12px">
+      <span style="flex:1;height:1px;background:#eef0f4"></span>或<span style="flex:1;height:1px;background:#eef0f4"></span>
+    </div>
+    <button class="ghost" id="wbLogin" style="width:100%">使用 WorkBuddy 登录</button>
+    <div class="hint" id="authMsg" style="margin-top:12px;min-height:16px"></div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<!-- SDK 内置到本地，不依赖外网 CDN（jsdelivr 在国内常不可达） -->
+<script src="./assets/vendor/workbuddy-cloud-sdk.global.js"></script>
+<script type="module" src="./assets/app.js"></script>
+</body>
+</html>

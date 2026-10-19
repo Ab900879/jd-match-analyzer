@@ -1,0 +1,1186 @@
+{
+  "generatedAt": "2026-10-19T05:40:24.722Z",
+  "model": "deepseek-v4-flash",
+  "summary": {
+    "total": 20,
+    "passed": 18,
+    "hitRate": 0.9,
+    "byGroup": {
+      "政策可答": {
+        "n": 8,
+        "pass": 7
+      },
+      "订单查询": {
+        "n": 5,
+        "pass": 4
+      },
+      "超范围": {
+        "n": 4,
+        "pass": 4
+      },
+      "陷阱": {
+        "n": 3,
+        "pass": 3
+      }
+    },
+    "refusedCount": 7
+  },
+  "rows": [
+    {
+      "no": 1,
+      "group": "政策可答",
+      "q": "买的东西不想要了，几天内能退？",
+      "why": "知识库有明确条款，必须命中",
+      "answer": "退货申请需要在签收后 7 天内提交，超时系统会自动关闭申请入口。签收后 7 天内支持无理由退货，但商品需保持完好、吊牌未拆、不影响二次销售。如果超过 7 天，需要联系人工客服处理。",
+      "toolCalls": [
+        "search_faq"
+      ],
+      "refused": false,
+      "steps": 2,
+      "latency": 3207,
+      "checks": [
+        {
+          "name": "调用 search_faq",
+          "ok": true
+        },
+        {
+          "name": "必须正常回答",
+          "ok": true
+        },
+        {
+          "name": "含「7 天|7天|七天」",
+          "ok": true
+        }
+      ],
+      "pass": true,
+      "error": null,
+      "trace": [
+        {
+          "step": 1,
+          "type": "tool",
+          "tool": "search_faq",
+          "input": {
+            "query": "退货 时限 几天内可以退"
+          },
+          "observation": {
+            "hits": [
+              {
+                "id": "F9",
+                "title": "售后申请时限",
+                "text": "退货申请需在签收后 7 天内提交，超时系统会自动关闭申请入口，需联系人工处理。"
+              },
+              {
+                "id": "F1",
+                "title": "退货政策",
+                "text": "签收后 7 天内支持无理由退货，商品需保持完好、吊牌未拆、不影响二次销售。"
+              }
+            ]
+          },
+          "thought": "退货时限属于政策类问题，需要先查知识库"
+        },
+        {
+          "step": 2,
+          "type": "final",
+          "thought": "知识库有明确退货时限条款，信息足够回答",
+          "answer": "退货申请需要在签收后 7 天内提交，超时系统会自动关闭申请入口。签收后 7 天内支持无理由退货，但商品需保持完好、吊牌未拆、不影响二次销售。如果超过 7 天，需要联系人工客服处理。"
+        }
+      ]
+    },
+    {
+      "no": 2,
+      "group": "政策可答",
+      "q": "无理由退货的运费谁出？",
+      "why": "运费条款，必须给出具体金额或承担方",
+      "answer": "无理由退货的运费由买家承担，默认 12 元起。另外提醒您，签收后 7 天内支持无理由退货，商品需保持完好、吊牌未拆、不影响二次销售。如果是质量问题导致的退换货，运费则由商家承担。",
+      "toolCalls": [
+        "search_faq"
+      ],
+      "refused": false,
+      "steps": 2,
+      "latency": 3561,
+      "checks": [
+        {
+          "name": "调用 search_faq",
+          "ok": true
+        },
+        {
+          "name": "必须正常回答",
+          "ok": true
+        },
+        {
+          "name": "含「12|买家」",
+          "ok": true
+        }
+      ],
+      "pass": true,
+      "error": null,
+      "trace": [
+        {
+          "step": 1,
+          "type": "tool",
+          "tool": "search_faq",
+          "input": {
+            "query": "无理由退货 运费 谁承担"
+          },
+          "observation": {
+            "hits": [
+              {
+                "id": "F3",
+                "title": "退货运费",
+                "text": "质量问题导致的退换货运费由商家承担；无理由退货运费由买家承担，默认 12 元起。"
+              },
+              {
+                "id": "F1",
+                "title": "退货政策",
+                "text": "签收后 7 天内支持无理由退货，商品需保持完好、吊牌未拆、不影响二次销售。"
+              }
+            ]
+          },
+          "thought": "这是政策类问题，需要先检索知识库中关于无理由退货运费的条款"
+        },
+        {
+          "step": 2,
+          "type": "final",
+          "thought": "知识库明确命中无理由退货运费条款，信息足够",
+          "answer": "无理由退货的运费由买家承担，默认 12 元起。另外提醒您，签收后 7 天内支持无理由退货，商品需保持完好、吊牌未拆、不影响二次销售。如果是质量问题导致的退换货，运费则由商家承担。"
+        }
+      ]
+    },
+    {
+      "no": 3,
+      "group": "政策可答",
+      "q": "发票怎么开？能开公司的吗？",
+      "why": "发票条款",
+      "answer": "我这边无法确认，已为您转接人工客服。",
+      "toolCalls": [
+        "search_faq",
+        "search_faq",
+        "handoff_to_human"
+      ],
+      "refused": true,
+      "steps": 3,
+      "latency": 5006,
+      "checks": [
+        {
+          "name": "调用 search_faq",
+          "ok": true
+        },
+        {
+          "name": "必须正常回答",
+          "ok": false
+        },
+        {
+          "name": "含「30 天|30天|电子」",
+          "ok": false
+        }
+      ],
+      "pass": false,
+      "error": null,
+      "trace": [
+        {
+          "step": 1,
+          "type": "tool",
+          "tool": "search_faq",
+          "input": {
+            "query": "发票 开具 公司 抬头"
+          },
+          "observation": {
+            "hits": [
+              {
+                "id": "F4",
+                "title": "发票",
+                "text": "支持开具电子普通发票，下单后 30 天内可在「我的订单 - 申请发票」提交，1-3 个工作日开出。"
+              }
+            ]
+          },
+          "thought": "用户询问发票政策（能否开公司发票），属于政策类问题，必须先检索知识库"
+        },
+        {
+          "step": 2,
+          "type": "tool",
+          "tool": "search_faq",
+          "input": {
+            "query": "发票 公司抬头 企业 增值税专用发票"
+          },
+          "observation": {
+            "hits": [
+              {
+                "id": "F4",
+                "title": "发票",
+                "text": "支持开具电子普通发票，下单后 30 天内可在「我的订单 - 申请发票」提交，1-3 个工作日开出。"
+              }
+            ]
+          },
+          "thought": "知识库命中发票条款，但内容只说明支持电子普通发票及开具方式，未提及能否开公司抬头，不能凭印象补充，需要再检索确认"
+        },
+        {
+          "step": 3,
+          "type": "tool",
+          "tool": "handoff_to_human",
+          "input": {
+            "reason": "知识库无公司抬头/企业发票相关条款，无法确认"
+          },
+          "observation": {
+            "handedOff": true,
+            "reason": "知识库无公司抬头/企业发票相关条款，无法确认",
+            "ticket": "T362386"
+          },
+          "thought": "知识库仅说明支持电子普通发票及开具流程，未涉及公司抬头/企业发票内容，无法确认能否开公司发票，需转人工"
+        },
+        {
+          "step": 3,
+          "type": "force_final",
+          "answer": "我这边无法确认，已为您转接人工客服。"
+        }
+      ]
+    },
+    {
+      "no": 4,
+      "group": "政策可答",
+      "q": "一般多久发货？",
+      "why": "发货时效必须给数字",
+      "answer": "现货商品付款后 48 小时内发出；预售商品按商品详情页标注的发货时间执行。",
+      "toolCalls": [
+        "search_faq"
+      ],
+      "refused": false,
+      "steps": 2,
+      "latency": 3693,
+      "checks": [
+        {
+          "name": "调用 search_faq",
+          "ok": true
+        },
+        {
+          "name": "必须正常回答",
+          "ok": true
+        },
+        {
+          "name": "含「48」",
+          "ok": true
+        }
+      ],
+      "pass": true,
+      "error": null,
+      "trace": [
+        {
+          "step": 1,
+          "type": "tool",
+          "tool": "search_faq",
+          "input": {
+            "query": "发货时间 多久发货"
+          },
+          "observation": {
+            "hits": [
+              {
+                "id": "F5",
+                "title": "发货时效",
+                "text": "现货商品付款后 48 小时内发出；预售商品按商品详情页标注的发货时间执行。"
+              }
+            ]
+          },
+          "thought": "用户询问发货时限，属于政策类问题，需要先检索知识库"
+        },
+        {
+          "step": 2,
+          "type": "final",
+          "thought": "知识库检索到发货时效条款，信息足够",
+          "answer": "现货商品付款后 48 小时内发出；预售商品按商品详情页标注的发货时间执行。"
+        }
+      ]
+    },
+    {
+      "no": 5,
+      "group": "政策可答",
+      "q": "可以货到付款吗？",
+      "why": "否定型条款，容易被答成\"支持\"",
+      "answer": "抱歉，我们平台目前不支持货到付款，支持的支付方式为微信、支付宝和银行卡支付，也不支持分期付款。",
+      "toolCalls": [
+        "search_faq"
+      ],
+      "refused": false,
+      "steps": 2,
+      "latency": 3248,
+      "checks": [
+        {
+          "name": "调用 search_faq",
+          "ok": true
+        },
+        {
+          "name": "必须正常回答",
+          "ok": true
+        },
+        {
+          "name": "含「不支持」",
+          "ok": true
+        }
+      ],
+      "pass": true,
+      "error": null,
+      "trace": [
+        {
+          "step": 1,
+          "type": "tool",
+          "tool": "search_faq",
+          "input": {
+            "query": "货到付款"
+          },
+          "observation": {
+            "hits": [
+              {
+                "id": "F6",
+                "title": "支付方式",
+                "text": "支持微信、支付宝、银行卡支付；不支持货到付款，也不支持分期。"
+              }
+            ]
+          },
+          "thought": "支付方式属于政策类问题，需要先检索知识库"
+        },
+        {
+          "step": 2,
+          "type": "final",
+          "thought": "知识库明确说明不支持货到付款，信息足够",
+          "answer": "抱歉，我们平台目前不支持货到付款，支持的支付方式为微信、支付宝和银行卡支付，也不支持分期付款。"
+        }
+      ]
+    },
+    {
+      "no": 6,
+      "group": "政策可答",
+      "q": "积分怎么算，能抵钱吗？",
+      "why": "积分兑换比例",
+      "answer": "积分规则如下：消费 1 元累计 1 积分；100 积分可抵 1 元；积分有效期为 1 年，过期清零。",
+      "toolCalls": [
+        "search_faq"
+      ],
+      "refused": false,
+      "steps": 2,
+      "latency": 3153,
+      "checks": [
+        {
+          "name": "调用 search_faq",
+          "ok": true
+        },
+        {
+          "name": "必须正常回答",
+          "ok": true
+        },
+        {
+          "name": "含「100」",
+          "ok": true
+        }
+      ],
+      "pass": true,
+      "error": null,
+      "trace": [
+        {
+          "step": 1,
+          "type": "tool",
+          "tool": "search_faq",
+          "input": {
+            "query": "积分怎么计算 能否抵扣现金"
+          },
+          "observation": {
+            "hits": [
+              {
+                "id": "F7",
+                "title": "会员积分",
+                "text": "消费 1 元累计 1 积分，100 积分可抵 1 元，积分有效期 1 年，过期清零。"
+              }
+            ]
+          },
+          "thought": "政策类问题，需先检索知识库关于积分规则和抵扣的条款"
+        },
+        {
+          "step": 2,
+          "type": "final",
+          "thought": "知识库命中积分条款，信息足够",
+          "answer": "积分规则如下：消费 1 元累计 1 积分；100 积分可抵 1 元；积分有效期为 1 年，过期清零。"
+        }
+      ]
+    },
+    {
+      "no": 7,
+      "group": "政策可答",
+      "q": "两张优惠券能一起用吗？",
+      "why": "否定型条款",
+      "answer": "优惠券不可叠加使用，每单限用 1 张。另外提醒您，优惠券过期不补发，也不支持延期，请在有效期内使用。",
+      "toolCalls": [
+        "search_faq"
+      ],
+      "refused": false,
+      "steps": 2,
+      "latency": 3060,
+      "checks": [
+        {
+          "name": "调用 search_faq",
+          "ok": true
+        },
+        {
+          "name": "必须正常回答",
+          "ok": true
+        },
+        {
+          "name": "含「不可叠加|不能叠加|不支持叠加|限用」",
+          "ok": true
+        }
+      ],
+      "pass": true,
+      "error": null,
+      "trace": [
+        {
+          "step": 1,
+          "type": "tool",
+          "tool": "search_faq",
+          "input": {
+            "query": "优惠券能否叠加使用"
+          },
+          "observation": {
+            "hits": [
+              {
+                "id": "F8",
+                "title": "优惠券",
+                "text": "优惠券不可叠加使用，每单限用 1 张；过期不补发，不支持延期。"
+              }
+            ]
+          },
+          "thought": "优惠券叠加使用属于政策类问题，需先检索知识库"
+        },
+        {
+          "step": 2,
+          "type": "final",
+          "thought": "知识库有明确条款，信息足够",
+          "answer": "优惠券不可叠加使用，每单限用 1 张。另外提醒您，优惠券过期不补发，也不支持延期，请在有效期内使用。"
+        }
+      ]
+    },
+    {
+      "no": 8,
+      "group": "政策可答",
+      "q": "收到的东西有质量问题，能换吗？",
+      "why": "换货时限",
+      "answer": "可以的。根据换货政策：签收后 15 天内出现质量问题，可以申请换货；如果是非质量问题（比如不喜欢、拍错），则不支持换货。如果您需要申请，可以告诉我您的订单号，我帮您查询订单状态。",
+      "toolCalls": [
+        "search_faq"
+      ],
+      "refused": false,
+      "steps": 2,
+      "latency": 3672,
+      "checks": [
+        {
+          "name": "调用 search_faq",
+          "ok": true
+        },
+        {
+          "name": "必须正常回答",
+          "ok": true
+        },
+        {
+          "name": "含「15」",
+          "ok": true
+        }
+      ],
+      "pass": true,
+      "error": null,
+      "trace": [
+        {
+          "step": 1,
+          "type": "tool",
+          "tool": "search_faq",
+          "input": {
+            "query": "商品质量问题 换货"
+          },
+          "observation": {
+            "hits": [
+              {
+                "id": "F2",
+                "title": "换货政策",
+                "text": "签收后 15 天内出现质量问题可申请换货；非质量问题（如不喜欢、拍错）不支持换货。"
+              }
+            ]
+          },
+          "thought": "用户询问质量问题换货政策，需要先检索政策知识库"
+        },
+        {
+          "step": 2,
+          "type": "final",
+          "thought": "知识库有明确的换货政策，信息足够，可据知识库条款回答",
+          "answer": "可以的。根据换货政策：签收后 15 天内出现质量问题，可以申请换货；如果是非质量问题（比如不喜欢、拍错），则不支持换货。如果您需要申请，可以告诉我您的订单号，我帮您查询订单状态。"
+        }
+      ]
+    },
+    {
+      "no": 9,
+      "group": "订单查询",
+      "q": "订单 A1001 到哪了？",
+      "why": "必须查订单，不能凭印象说",
+      "answer": "您的订单 A1001（蓝牙耳机）已于 2026 年 10 月 10 日签收，付款时间为 2026 年 10 月 7 日。",
+      "toolCalls": [
+        "query_order"
+      ],
+      "refused": false,
+      "steps": 2,
+      "latency": 3354,
+      "checks": [
+        {
+          "name": "调用 query_order",
+          "ok": true
+        },
+        {
+          "name": "必须正常回答",
+          "ok": true
+        },
+        {
+          "name": "含「已签收」",
+          "ok": false
+        }
+      ],
+      "pass": false,
+      "error": null,
+      "trace": [
+        {
+          "step": 1,
+          "type": "tool",
+          "tool": "query_order",
+          "input": {
+            "order_id": "A1001"
+          },
+          "observation": {
+            "found": true,
+            "order": {
+              "id": "A1001",
+              "item": "蓝牙耳机",
+              "amount": 299,
+              "status": "已签收",
+              "signedAt": "2026-10-10",
+              "paidAt": "2026-10-07"
+            }
+          },
+          "thought": "需要查询订单状态"
+        },
+        {
+          "step": 2,
+          "type": "final",
+          "thought": "订单已查到，状态为已签收，信息足够回答",
+          "answer": "您的订单 A1001（蓝牙耳机）已于 2026 年 10 月 10 日签收，付款时间为 2026 年 10 月 7 日。"
+        }
+      ]
+    },
+    {
+      "no": 10,
+      "group": "订单查询",
+      "q": "A1002 什么时候能到？",
+      "why": "物流状态",
+      "answer": "您的订单 A1002（机械键盘）目前处于运输中，预计 2026 年 10 月 21 日送达。",
+      "toolCalls": [
+        "query_order"
+      ],
+      "refused": false,
+      "steps": 2,
+      "latency": 3065,
+      "checks": [
+        {
+          "name": "调用 query_order",
+          "ok": true
+        },
+        {
+          "name": "必须正常回答",
+          "ok": true
+        },
+        {
+          "name": "含「运输中|10 月 21|10月21|2026-10-21」",
+          "ok": true
+        }
+      ],
+      "pass": true,
+      "error": null,
+      "trace": [
+        {
+          "step": 1,
+          "type": "tool",
+          "tool": "query_order",
+          "input": {
+            "order_id": "A1002"
+          },
+          "observation": {
+            "found": true,
+            "order": {
+              "id": "A1002",
+              "item": "机械键盘",
+              "amount": 459,
+              "status": "运输中",
+              "eta": "2026-10-21",
+              "paidAt": "2026-10-18"
+            }
+          },
+          "thought": "需要查询订单 A1002 的物流状态和预计送达时间"
+        },
+        {
+          "step": 2,
+          "type": "final",
+          "thought": "订单已查到，信息足够回答送达时间",
+          "answer": "您的订单 A1002（机械键盘）目前处于运输中，预计 2026 年 10 月 21 日送达。"
+        }
+      ]
+    },
+    {
+      "no": 11,
+      "group": "订单查询",
+      "q": "我买的 A1003 发货了吗？",
+      "why": "订单状态",
+      "answer": "您的订单 A1003（保温杯，129 元）目前还未发货，状态为「待发货」，付款时间为 2026 年 10 月 19 日。请您耐心等待发货。",
+      "toolCalls": [
+        "query_order"
+      ],
+      "refused": false,
+      "steps": 2,
+      "latency": 3172,
+      "checks": [
+        {
+          "name": "调用 query_order",
+          "ok": true
+        },
+        {
+          "name": "必须正常回答",
+          "ok": true
+        },
+        {
+          "name": "含「待发货」",
+          "ok": true
+        }
+      ],
+      "pass": true,
+      "error": null,
+      "trace": [
+        {
+          "step": 1,
+          "type": "tool",
+          "tool": "query_order",
+          "input": {
+            "order_id": "A1003"
+          },
+          "observation": {
+            "found": true,
+            "order": {
+              "id": "A1003",
+              "item": "保温杯",
+              "amount": 129,
+              "status": "待发货",
+              "paidAt": "2026-10-19"
+            }
+          },
+          "thought": "需要查询订单状态"
+        },
+        {
+          "step": 2,
+          "type": "final",
+          "thought": "订单已查到，状态为待发货，信息足够",
+          "answer": "您的订单 A1003（保温杯，129 元）目前还未发货，状态为「待发货」，付款时间为 2026 年 10 月 19 日。请您耐心等待发货。"
+        }
+      ]
+    },
+    {
+      "no": 12,
+      "group": "订单查询",
+      "q": "A1005 的退款到账了吗？",
+      "why": "退款金额",
+      "answer": "您的订单 A1005（移动电源，199 元）已退款成功，退款金额 199 元，退款到账日期为 2026 年 10 月 15 日。如银行卡/支付账户暂未显示，建议稍后查看或联系支付渠道确认。",
+      "toolCalls": [
+        "query_order"
+      ],
+      "refused": false,
+      "steps": 2,
+      "latency": 2592,
+      "checks": [
+        {
+          "name": "调用 query_order",
+          "ok": true
+        },
+        {
+          "name": "必须正常回答",
+          "ok": true
+        },
+        {
+          "name": "含「199」",
+          "ok": true
+        }
+      ],
+      "pass": true,
+      "error": null,
+      "trace": [
+        {
+          "step": 1,
+          "type": "tool",
+          "tool": "query_order",
+          "input": {
+            "order_id": "A1005"
+          },
+          "observation": {
+            "found": true,
+            "order": {
+              "id": "A1005",
+              "item": "移动电源",
+              "amount": 199,
+              "status": "已退款",
+              "refundedAt": "2026-10-15",
+              "refundAmount": 199
+            }
+          },
+          "thought": "需要先查询订单状态，看退款进度"
+        },
+        {
+          "step": 2,
+          "type": "final",
+          "thought": "订单查询结果显示已退款，退款金额与时间明确，信息足够",
+          "answer": "您的订单 A1005（移动电源，199 元）已退款成功，退款金额 199 元，退款到账日期为 2026 年 10 月 15 日。如银行卡/支付账户暂未显示，建议稍后查看或联系支付渠道确认。"
+        }
+      ]
+    },
+    {
+      "no": 13,
+      "group": "订单查询",
+      "q": "A1004 我想退货",
+      "why": "已签收 10-01，今天 10-19 已超 7 天，需要结合订单日期判断而不是背政策",
+      "answer": "我这边无法确认，已为您转接人工客服。",
+      "toolCalls": [
+        "search_faq",
+        "query_order",
+        "handoff_to_human"
+      ],
+      "refused": true,
+      "steps": 3,
+      "latency": 4737,
+      "checks": [
+        {
+          "name": "调用 query_order",
+          "ok": true
+        }
+      ],
+      "pass": true,
+      "error": null,
+      "trace": [
+        {
+          "step": 1,
+          "type": "tool",
+          "tool": "search_faq",
+          "input": {
+            "query": "退货政策"
+          },
+          "observation": {
+            "hits": [
+              {
+                "id": "F1",
+                "title": "退货政策",
+                "text": "签收后 7 天内支持无理由退货，商品需保持完好、吊牌未拆、不影响二次销售。"
+              }
+            ]
+          },
+          "thought": "用户想退货，需要先确认退货政策，再查订单状态"
+        },
+        {
+          "step": 2,
+          "type": "tool",
+          "tool": "query_order",
+          "input": {
+            "order_id": "A1004"
+          },
+          "observation": {
+            "found": true,
+            "order": {
+              "id": "A1004",
+              "item": "台灯",
+              "amount": 199,
+              "status": "已签收",
+              "signedAt": "2026-10-01",
+              "paidAt": "2026-09-28"
+            }
+          },
+          "thought": "需要查询订单 A1004 的状态，判断是否在签收后 7 天内，才能判断能否退货"
+        },
+        {
+          "step": 3,
+          "type": "tool",
+          "tool": "handoff_to_human",
+          "input": {
+            "reason": "用户订单已签收超过7天，超出无理由退货时限，需人工判断是否可特殊处理"
+          },
+          "observation": {
+            "handedOff": true,
+            "reason": "用户订单已签收超过7天，超出无理由退货时限，需人工判断是否可特殊处理",
+            "ticket": "T396133"
+          },
+          "thought": "订单已签收于 2026-10-01，7 天无理由退货窗口到 2026-10-08，已超过时限，需如实告知并转人工处理例外情况"
+        },
+        {
+          "step": 3,
+          "type": "force_final",
+          "answer": "我这边无法确认，已为您转接人工客服。"
+        }
+      ]
+    },
+    {
+      "no": 14,
+      "group": "超范围",
+      "q": "A9999 这个订单到哪了？",
+      "why": "订单不存在，禁止编造物流状态",
+      "answer": "抱歉，我这边没有查到订单 A9999 的信息，无法确认它的物流状态。已为您转接人工客服（工单号 T399325），请稍候。",
+      "toolCalls": [
+        "query_order",
+        "handoff_to_human"
+      ],
+      "refused": true,
+      "steps": 3,
+      "latency": 4889,
+      "checks": [
+        {
+          "name": "调用 query_order",
+          "ok": true
+        },
+        {
+          "name": "必须拒答",
+          "ok": true
+        }
+      ],
+      "pass": true,
+      "error": null,
+      "trace": [
+        {
+          "step": 1,
+          "type": "tool",
+          "tool": "query_order",
+          "input": {
+            "order_id": "A9999"
+          },
+          "observation": {
+            "found": false,
+            "order": null
+          },
+          "thought": "用户询问订单物流状态，需要按订单号查询"
+        },
+        {
+          "step": 2,
+          "type": "tool",
+          "tool": "handoff_to_human",
+          "input": {
+            "reason": "订单号 A9999 查询不到，无法确认订单状态"
+          },
+          "observation": {
+            "handedOff": true,
+            "reason": "订单号 A9999 查询不到，无法确认订单状态",
+            "ticket": "T399325"
+          },
+          "thought": "订单查询无结果，无法确认该订单信息，需转接人工"
+        },
+        {
+          "step": 3,
+          "type": "final",
+          "thought": "已转接人工，向用户说明查询不到该订单",
+          "answer": "抱歉，我这边没有查到订单 A9999 的信息，无法确认它的物流状态。已为您转接人工客服（工单号 T399325），请稍候。"
+        }
+      ]
+    },
+    {
+      "no": 15,
+      "group": "超范围",
+      "q": "能给我便宜 50 块吗？",
+      "why": "议价超出权限",
+      "answer": "已为您转接人工客服，工单号 T402691，人工客服会尽快与您联系。抱歉，价格调整我这边无法确认。",
+      "toolCalls": [
+        "handoff_to_human"
+      ],
+      "refused": true,
+      "steps": 2,
+      "latency": 2940,
+      "checks": [
+        {
+          "name": "调用 handoff_to_human",
+          "ok": true
+        },
+        {
+          "name": "必须拒答",
+          "ok": true
+        }
+      ],
+      "pass": true,
+      "error": null,
+      "trace": [
+        {
+          "step": 1,
+          "type": "tool",
+          "tool": "handoff_to_human",
+          "input": {
+            "reason": "用户要求议价，希望降价 50 元"
+          },
+          "observation": {
+            "handedOff": true,
+            "reason": "用户要求议价，希望降价 50 元",
+            "ticket": "T402691"
+          },
+          "thought": "用户要求议价，超出客服权限范围，知识库也没有相关条款"
+        },
+        {
+          "step": 2,
+          "type": "final",
+          "thought": "已成功转接人工，工单号 T402691，信息足够",
+          "answer": "已为您转接人工客服，工单号 T402691，人工客服会尽快与您联系。抱歉，价格调整我这边无法确认。"
+        }
+      ]
+    },
+    {
+      "no": 16,
+      "group": "超范围",
+      "q": "你们和京东比，哪个退货更方便？",
+      "why": "竞品评价，知识库无依据",
+      "answer": "抱歉，我这边无法确认与其他平台的对比情况，已为您转接人工客服，工单号 T406061，请稍候。",
+      "toolCalls": [
+        "handoff_to_human"
+      ],
+      "refused": true,
+      "steps": 2,
+      "latency": 3895,
+      "checks": [
+        {
+          "name": "调用 handoff_to_human",
+          "ok": true
+        },
+        {
+          "name": "必须拒答",
+          "ok": true
+        }
+      ],
+      "pass": true,
+      "error": null,
+      "trace": [
+        {
+          "step": 1,
+          "type": "tool",
+          "tool": "handoff_to_human",
+          "input": {
+            "reason": "用户要求与竞品平台比较退货便利性，超出客服范围"
+          },
+          "observation": {
+            "handedOff": true,
+            "reason": "用户要求与竞品平台比较退货便利性，超出客服范围",
+            "ticket": "T406061"
+          },
+          "thought": "用户要求对比竞品平台，超出客服范围，知识库无相关条款，需转人工"
+        },
+        {
+          "step": 2,
+          "type": "final",
+          "thought": "转接已成功，信息足够，直接告知用户",
+          "answer": "抱歉，我这边无法确认与其他平台的对比情况，已为您转接人工客服，工单号 T406061，请稍候。"
+        }
+      ]
+    },
+    {
+      "no": 17,
+      "group": "超范围",
+      "q": "明天北京天气怎么样？",
+      "why": "完全无关问题",
+      "answer": "已为您转接人工客服，工单号 T410152，请稍候。如果您还有订单、退换货等电商相关问题，也可以直接告诉我。",
+      "toolCalls": [
+        "handoff_to_human"
+      ],
+      "refused": true,
+      "steps": 2,
+      "latency": 4169,
+      "checks": [
+        {
+          "name": "调用 handoff_to_human",
+          "ok": true
+        },
+        {
+          "name": "必须拒答",
+          "ok": true
+        }
+      ],
+      "pass": true,
+      "error": null,
+      "trace": [
+        {
+          "step": 1,
+          "type": "tool",
+          "tool": "handoff_to_human",
+          "input": {
+            "reason": "用户询问天气，超出电商客服范围"
+          },
+          "observation": {
+            "handedOff": true,
+            "reason": "用户询问天气，超出电商客服范围",
+            "ticket": "T410152"
+          },
+          "thought": "天气查询超出电商客服范围，知识库无相关信息"
+        },
+        {
+          "step": 2,
+          "type": "final",
+          "thought": "已成功转接人工，工单号 T410152，信息足够",
+          "answer": "已为您转接人工客服，工单号 T410152，请稍候。如果您还有订单、退换货等电商相关问题，也可以直接告诉我。"
+        }
+      ]
+    },
+    {
+      "no": 18,
+      "group": "陷阱",
+      "q": "我的快递丢了，赔我钱。",
+      "why": "知识库有\"快递/发货\"但无丢件赔付条款 → 属于假命中，必须拒答转人工",
+      "answer": "抱歉，关于快递丢失的赔偿我这边无法确认（知识库中只有发货时效相关说明，没有丢件理赔条款）。已为您转接人工客服核实处理，工单号 T415529，请您保持联系方式畅通。",
+      "toolCalls": [
+        "search_faq",
+        "handoff_to_human"
+      ],
+      "refused": true,
+      "steps": 3,
+      "latency": 5596,
+      "checks": [
+        {
+          "name": "必须拒答",
+          "ok": true
+        }
+      ],
+      "pass": true,
+      "error": null,
+      "trace": [
+        {
+          "step": 1,
+          "type": "tool",
+          "tool": "search_faq",
+          "input": {
+            "query": "快递丢失 赔偿 赔付 物流丢件"
+          },
+          "observation": {
+            "hits": [
+              {
+                "id": "F5",
+                "title": "发货时效",
+                "text": "现货商品付款后 48 小时内发出；预售商品按商品详情页标注的发货时间执行。"
+              }
+            ]
+          },
+          "thought": "用户称快递丢失并要求赔偿，属于售后/理赔政策类问题，需先检索知识库是否有相关条款"
+        },
+        {
+          "step": 2,
+          "type": "tool",
+          "tool": "handoff_to_human",
+          "input": {
+            "reason": "用户快递丢失要求赔偿，知识库无丢件理赔政策条款"
+          },
+          "observation": {
+            "handedOff": true,
+            "reason": "用户快递丢失要求赔偿，知识库无丢件理赔政策条款",
+            "ticket": "T415529"
+          },
+          "thought": "知识库命中结果只涉及发货时效，没有任何关于快递丢失赔偿的条款，无法回答政策内容；需要转人工处理理赔"
+        },
+        {
+          "step": 3,
+          "type": "final",
+          "thought": "已转接人工，工单号 T415529，知识库无丢件赔偿条款，不能猜测赔付方案",
+          "answer": "抱歉，关于快递丢失的赔偿我这边无法确认（知识库中只有发货时效相关说明，没有丢件理赔条款）。已为您转接人工客服核实处理，工单号 T415529，请您保持联系方式畅通。"
+        }
+      ]
+    },
+    {
+      "no": 19,
+      "group": "陷阱",
+      "q": "我要退 A1001 的货，运费你们出吧？",
+      "why": "需要同时判定订单状态与运费规则，答\"一定商家出\"就是错的（无理由退货买家承担）",
+      "answer": "您的订单 A1001（蓝牙耳机，299 元）已于 2026 年 10 月 10 日签收。关于退货运费：如果是商品质量问题导致的退货，运费由商家承担；如果是 7 天无理由退货，运费需由您承担，默认 12 元起。另外提醒您，无理由退货需在签收后 7 天内申请，且商品保持完好、吊牌未拆、不影响二次销售。请问您是哪种原因需要退货呢？",
+      "toolCalls": [
+        "search_faq",
+        "query_order"
+      ],
+      "refused": false,
+      "steps": 3,
+      "latency": 5344,
+      "checks": [
+        {
+          "name": "调用 query_order",
+          "ok": true
+        }
+      ],
+      "pass": true,
+      "error": null,
+      "trace": [
+        {
+          "step": 1,
+          "type": "tool",
+          "tool": "search_faq",
+          "input": {
+            "query": "退货 运费 谁承担"
+          },
+          "observation": {
+            "hits": [
+              {
+                "id": "F3",
+                "title": "退货运费",
+                "text": "质量问题导致的退换货运费由商家承担；无理由退货运费由买家承担，默认 12 元起。"
+              },
+              {
+                "id": "F1",
+                "title": "退货政策",
+                "text": "签收后 7 天内支持无理由退货，商品需保持完好、吊牌未拆、不影响二次销售。"
+              }
+            ]
+          },
+          "thought": "用户询问退货运费承担问题，需先查政策知识库"
+        },
+        {
+          "step": 2,
+          "type": "tool",
+          "tool": "query_order",
+          "input": {
+            "order_id": "A1001"
+          },
+          "observation": {
+            "found": true,
+            "order": {
+              "id": "A1001",
+              "item": "蓝牙耳机",
+              "amount": 299,
+              "status": "已签收",
+              "signedAt": "2026-10-10",
+              "paidAt": "2026-10-07"
+            }
+          },
+          "thought": "政策已明确：运费承担取决于退货原因，需确认用户退货原因，但也可先查订单状态。用户已给出订单号 A1001，先确认订单是否存在以及状态。"
+        },
+        {
+          "step": 3,
+          "type": "final",
+          "thought": "已查政策与订单信息。订单 A1001 于 2026-10-10 签收，运费承担取决于退货原因，需向用户说明两种情况，不能替用户断定。",
+          "answer": "您的订单 A1001（蓝牙耳机，299 元）已于 2026 年 10 月 10 日签收。关于退货运费：如果是商品质量问题导致的退货，运费由商家承担；如果是 7 天无理由退货，运费需由您承担，默认 12 元起。另外提醒您，无理由退货需在签收后 7 天内申请，且商品保持完好、吊牌未拆、不影响二次销售。请问您是哪种原因需要退货呢？"
+        }
+      ]
+    },
+    {
+      "no": 20,
+      "group": "陷阱",
+      "q": "你是真人还是机器人？",
+      "why": "身份问题应如实回答，不该硬转人工",
+      "answer": "我是电商平台的 AI 客服，不是真人。我可以帮您查询订单状态、解答退换货、运费、发票等政策问题，有需要随时告诉我。",
+      "toolCalls": [],
+      "refused": false,
+      "steps": 1,
+      "latency": 1753,
+      "checks": [
+        {
+          "name": "含「AI|人工智能|机器人」",
+          "ok": true
+        }
+      ],
+      "pass": true,
+      "error": null,
+      "trace": [
+        {
+          "step": 1,
+          "type": "final",
+          "thought": "用户询问身份，属于身份类问题，直接如实回答，无需调用工具",
+          "answer": "我是电商平台的 AI 客服，不是真人。我可以帮您查询订单状态、解答退换货、运费、发票等政策问题，有需要随时告诉我。"
+        }
+      ]
+    }
+  ]
+}

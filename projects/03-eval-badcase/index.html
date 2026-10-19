@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>大模型效果评测与 Badcase 归因看板</title>
+<style>
+:root{--ink:#1f2328;--mid:#6b7280;--line:#e5e8ec;--bg:#f6f7f9;--accent:#2f6fed;--ok:#16a34a;--bad:#dc2626;--warn:#d97706}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:14px/1.65 -apple-system,"Segoe UI","Microsoft YaHei",sans-serif}
+header{background:#fff;border-bottom:1px solid var(--line);padding:14px 24px;display:flex;align-items:center;gap:14px}
+header .logo{width:30px;height:30px;border-radius:8px;background:var(--warn);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:15px}
+header h1{font-size:16px;margin:0}
+header p{margin:0;color:var(--mid);font-size:12px}
+main{max-width:1080px;margin:24px auto 60px;padding:0 20px}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:18px}
+@media(max-width:800px){.cards{grid-template-columns:1fr}}
+.kpi{background:#fff;border:1px solid var(--line);border-radius:12px;padding:16px}
+.kpi .v{font-size:30px;font-weight:700}
+.kpi .l{color:var(--mid);font-size:12px;margin-top:2px}
+.kpi .sub{font-size:12px;margin-top:6px}
+.panel{background:#fff;border:1px solid var(--line);border-radius:12px;padding:16px;margin-bottom:18px}
+.panel h2{font-size:14px;margin:0 0 12px}
+.bar-row{display:flex;align-items:center;gap:10px;margin-bottom:10px;font-size:13px}
+.bar-row .name{width:170px;color:var(--mid)}
+.bar-row .track{flex:1;height:22px;background:#f1f3f6;border-radius:6px;overflow:hidden}
+.bar-row .fill{height:100%;border-radius:6px;display:flex;align-items:center;justify-content:flex-end;padding-right:8px;color:#fff;font-size:12px;font-weight:600}
+.case{border:1px solid var(--line);border-radius:10px;padding:11px 13px;margin-bottom:10px;font-size:13px}
+.case .hd{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.case .tag{font-size:11px;color:var(--mid);background:#f3f4f6;border-radius:5px;padding:1px 6px}
+.case .ans{color:var(--mid);font-size:12.5px;margin-top:6px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.check{display:inline-block;font-size:11.5px;margin:2px 6px 0 0;padding:1px 8px;border-radius:20px;background:#e8f7ee;color:var(--ok)}
+.check.no{background:#fdeaea;color:var(--bad)}
+.note{font-size:12px;color:var(--mid);background:#f6f8fb;border:1px solid var(--line);border-radius:8px;padding:10px 12px;margin-bottom:14px}
+</style>
+</head>
+<body>
+<header>
+  <div class="logo">评</div>
+  <div><h1>大模型效果评测与 Badcase 归因看板</h1><p>10 条用例 × 4 条规则 × 2 批独立回答 × 3 版规则迭代 —— 全部真实调用，判定不依赖模型自评</p></div>
+</header>
+<main>
+  <div class="note" id="note"></div>
+  <div class="cards" id="kpis"></div>
+  <div class="panel">
+    <h2>规则迭代：同一批回答，规则不同，分数不同</h2>
+    <div id="bars"></div>
+    <p style="font-size:12.5px;color:var(--mid);margin:8px 0 0">v1 的主要失分来自「事实一致」误判：证据池只有知识库，把引用订单数据（金额、日期、状态）的正确回答判成编造 —— 这是评测器自己的 bug，不是模型的问题。</p>
+  </div>
+  <div class="panel">
+    <h2>逐条明细（可展开回答原文）</h2>
+    <div id="cases"></div>
+  </div>
+</main>
+<script type="module">
+const r = await (await fetch('./report.json')).json();
+document.getElementById('note').textContent = r.note;
+
+const names = { v1: 'v1 证据源仅知识库', v2: 'v2 并入订单库与问题', v3: 'v3 拒答看第一句主结论' };
+const colors = { v1: '#dc2626', v2: '#d97706', v3: '#16a34a' };
+document.getElementById('kpis').innerHTML = ['v1', 'v2', 'v3'].map((v) => `
+  <div class="kpi">
+    <div class="v" style="color:${colors[v]}">${r.summary[v].avgScore}</div>
+    <div class="l">${names[v]} · 平均分</div>
+    <div class="sub">满分 ${r.summary[v].passCount}/${r.summary[v].total} 条</div>
+  </div>`).join('');
+
+document.getElementById('bars').innerHTML = ['v1', 'v2', 'v3'].map((v) => `
+  <div class="bar-row"><span class="name">${names[v]}</span>
+  <div class="track"><div class="fill" style="width:${r.summary[v].avgScore}%;background:${colors[v]}">${r.summary[v].avgScore}</div></div></div>`).join('');
+
+const pill = (ok) => `<span class="check ${ok ? '' : 'no'}">${ok ? '✓' : '✗'}</span>`;
+document.getElementById('cases').innerHTML = r.rows.map((row) => {
+  const v3ok = row.v3.score === 100;
+  const checks = row.v3.checks.map((c) => `<span class="check ${c.ok ? '' : 'no'}">${c.name}：${c.detail}</span>`).join('');
+  return `<div class="case" style="border-left:3px solid ${v3ok ? 'var(--ok)' : 'var(--bad)'}">
+    <div class="hd"><b>#${row.no}</b><span class="tag">${row.type}</span><span>${row.q}</span>
+      <span style="margin-left:auto;font-size:12px;color:var(--mid)">v1 ${row.v1.score} → v2 ${row.v2.score} → v3 ${row.v3.score}</span></div>
+    <div class="ans">答：${row.answer}</div>
+    <div style="margin-top:6px">${checks}</div>
+  </div>`;
+}).join('');
+</script>
+</body>
+</html>

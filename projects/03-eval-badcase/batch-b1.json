@@ -1,0 +1,764 @@
+{
+  "generatedAt": "2026-10-19T05:38:19.169Z",
+  "model": "deepseek-v4-flash",
+  "ruleVersion": "v1=证据源仅知识库；v2=证据源含订单库与用户问题",
+  "summary": {
+    "v1": {
+      "avgScore": 86,
+      "passCount": 5,
+      "badcase": 5
+    },
+    "v2": {
+      "avgScore": 95,
+      "passCount": 8,
+      "badcase": 2
+    }
+  },
+  "causeStat": {
+    "通过": 8,
+    "拒答正确": 1,
+    "可执行": 1
+  },
+  "rows": [
+    {
+      "no": 1,
+      "q": "买的东西不想要了，几天内能退？",
+      "expectRefuse": false,
+      "type": "政策可答",
+      "answer": "签收后 7 天内可无理由退货，商品需完好、吊牌未拆、不影响二次销售；运费由您承担，默认 12 元起。请在签收后 7 天内在“我的订单”提交退货申请，超时入口会关闭，需转人工。",
+      "latency": 1740,
+      "v1": {
+        "checks": [
+          {
+            "name": "事实一致",
+            "weight": 30,
+            "ok": true,
+            "detail": "所有数字均可追溯",
+            "hard": true
+          },
+          {
+            "name": "拒答正确",
+            "weight": 25,
+            "ok": true,
+            "detail": "正确地给出了答案",
+            "hard": true
+          },
+          {
+            "name": "格式合规",
+            "weight": 20,
+            "ok": true,
+            "detail": "格式干净"
+          },
+          {
+            "name": "可执行",
+            "weight": 25,
+            "ok": true,
+            "detail": "给出了下一步：7 天"
+          }
+        ],
+        "score": 100,
+        "cause": "通过",
+        "failedCount": 0
+      },
+      "v2": {
+        "checks": [
+          {
+            "name": "事实一致",
+            "weight": 30,
+            "ok": true,
+            "detail": "所有数字均可追溯",
+            "hard": true
+          },
+          {
+            "name": "拒答正确",
+            "weight": 25,
+            "ok": true,
+            "detail": "正确地给出了答案",
+            "hard": true
+          },
+          {
+            "name": "格式合规",
+            "weight": 20,
+            "ok": true,
+            "detail": "格式干净"
+          },
+          {
+            "name": "可执行",
+            "weight": 25,
+            "ok": true,
+            "detail": "给出了下一步：7 天"
+          }
+        ],
+        "score": 100,
+        "cause": "通过",
+        "failedCount": 0
+      }
+    },
+    {
+      "no": 2,
+      "q": "无理由退货的运费谁出？",
+      "expectRefuse": false,
+      "type": "政策可答",
+      "answer": "无理由退货的运费由买家承担，默认 12 元起。依据是退货运费政策：质量问题由商家承担，无理由退货由买家承担。下一步可在签收后 7 天内于「我的订单」提交退货申请。",
+      "latency": 1914,
+      "v1": {
+        "checks": [
+          {
+            "name": "事实一致",
+            "weight": 30,
+            "ok": true,
+            "detail": "所有数字均可追溯",
+            "hard": true
+          },
+          {
+            "name": "拒答正确",
+            "weight": 25,
+            "ok": true,
+            "detail": "正确地给出了答案",
+            "hard": true
+          },
+          {
+            "name": "格式合规",
+            "weight": 20,
+            "ok": true,
+            "detail": "格式干净"
+          },
+          {
+            "name": "可执行",
+            "weight": 25,
+            "ok": true,
+            "detail": "给出了下一步：12 元"
+          }
+        ],
+        "score": 100,
+        "cause": "通过",
+        "failedCount": 0
+      },
+      "v2": {
+        "checks": [
+          {
+            "name": "事实一致",
+            "weight": 30,
+            "ok": true,
+            "detail": "所有数字均可追溯",
+            "hard": true
+          },
+          {
+            "name": "拒答正确",
+            "weight": 25,
+            "ok": true,
+            "detail": "正确地给出了答案",
+            "hard": true
+          },
+          {
+            "name": "格式合规",
+            "weight": 20,
+            "ok": true,
+            "detail": "格式干净"
+          },
+          {
+            "name": "可执行",
+            "weight": 25,
+            "ok": true,
+            "detail": "给出了下一步：12 元"
+          }
+        ],
+        "score": 100,
+        "cause": "通过",
+        "failedCount": 0
+      }
+    },
+    {
+      "no": 3,
+      "q": "发票怎么开？",
+      "expectRefuse": false,
+      "type": "政策可答",
+      "answer": "支持开具电子普通发票。下单后30天内，在「我的订单 - 申请发票」提交，1-3个工作日开出。如订单已超30天，我这边无法确认能否补开，建议转人工。",
+      "latency": 1856,
+      "v1": {
+        "checks": [
+          {
+            "name": "事实一致",
+            "weight": 30,
+            "ok": true,
+            "detail": "所有数字均可追溯",
+            "hard": true
+          },
+          {
+            "name": "拒答正确",
+            "weight": 25,
+            "ok": false,
+            "detail": "该回答却拒答了（过度保守）",
+            "hard": true
+          },
+          {
+            "name": "格式合规",
+            "weight": 20,
+            "ok": true,
+            "detail": "格式干净"
+          },
+          {
+            "name": "可执行",
+            "weight": 25,
+            "ok": true,
+            "detail": "给出了下一步：30天"
+          }
+        ],
+        "score": 75,
+        "cause": "拒答正确",
+        "failedCount": 1
+      },
+      "v2": {
+        "checks": [
+          {
+            "name": "事实一致",
+            "weight": 30,
+            "ok": true,
+            "detail": "所有数字均可追溯",
+            "hard": true
+          },
+          {
+            "name": "拒答正确",
+            "weight": 25,
+            "ok": false,
+            "detail": "该回答却拒答了（过度保守）",
+            "hard": true
+          },
+          {
+            "name": "格式合规",
+            "weight": 20,
+            "ok": true,
+            "detail": "格式干净"
+          },
+          {
+            "name": "可执行",
+            "weight": 25,
+            "ok": true,
+            "detail": "给出了下一步：30天"
+          }
+        ],
+        "score": 75,
+        "cause": "拒答正确",
+        "failedCount": 1
+      }
+    },
+    {
+      "no": 4,
+      "q": "一般多久发货？",
+      "expectRefuse": false,
+      "type": "政策可答",
+      "answer": "现货商品付款后48小时内发出；预售商品按商品详情页标注的发货时间执行。您可查看订单详情页确认发货时间，若超时未发，建议联系人工客服核实。",
+      "latency": 1674,
+      "v1": {
+        "checks": [
+          {
+            "name": "事实一致",
+            "weight": 30,
+            "ok": true,
+            "detail": "所有数字均可追溯",
+            "hard": true
+          },
+          {
+            "name": "拒答正确",
+            "weight": 25,
+            "ok": true,
+            "detail": "正确地给出了答案",
+            "hard": true
+          },
+          {
+            "name": "格式合规",
+            "weight": 20,
+            "ok": true,
+            "detail": "格式干净"
+          },
+          {
+            "name": "可执行",
+            "weight": 25,
+            "ok": true,
+            "detail": "给出了下一步：48小时"
+          }
+        ],
+        "score": 100,
+        "cause": "通过",
+        "failedCount": 0
+      },
+      "v2": {
+        "checks": [
+          {
+            "name": "事实一致",
+            "weight": 30,
+            "ok": true,
+            "detail": "所有数字均可追溯",
+            "hard": true
+          },
+          {
+            "name": "拒答正确",
+            "weight": 25,
+            "ok": true,
+            "detail": "正确地给出了答案",
+            "hard": true
+          },
+          {
+            "name": "格式合规",
+            "weight": 20,
+            "ok": true,
+            "detail": "格式干净"
+          },
+          {
+            "name": "可执行",
+            "weight": 25,
+            "ok": true,
+            "detail": "给出了下一步：48小时"
+          }
+        ],
+        "score": 100,
+        "cause": "通过",
+        "failedCount": 0
+      }
+    },
+    {
+      "no": 5,
+      "q": "可以货到付款吗？",
+      "expectRefuse": false,
+      "type": "否定条款",
+      "answer": "不可以。依据：平台支持微信、支付宝、银行卡支付，不支持货到付款。下一步：请下单时选择微信、支付宝或银行卡完成支付。",
+      "latency": 1567,
+      "v1": {
+        "checks": [
+          {
+            "name": "事实一致",
+            "weight": 30,
+            "ok": true,
+            "detail": "所有数字均可追溯",
+            "hard": true
+          },
+          {
+            "name": "拒答正确",
+            "weight": 25,
+            "ok": true,
+            "detail": "正确地给出了答案",
+            "hard": true
+          },
+          {
+            "name": "格式合规",
+            "weight": 20,
+            "ok": true,
+            "detail": "格式干净"
+          },
+          {
+            "name": "可执行",
+            "weight": 25,
+            "ok": false,
+            "detail": "只有结论，没有下一步"
+          }
+        ],
+        "score": 75,
+        "cause": "可执行",
+        "failedCount": 1
+      },
+      "v2": {
+        "checks": [
+          {
+            "name": "事实一致",
+            "weight": 30,
+            "ok": true,
+            "detail": "所有数字均可追溯",
+            "hard": true
+          },
+          {
+            "name": "拒答正确",
+            "weight": 25,
+            "ok": true,
+            "detail": "正确地给出了答案",
+            "hard": true
+          },
+          {
+            "name": "格式合规",
+            "weight": 20,
+            "ok": true,
+            "detail": "格式干净"
+          },
+          {
+            "name": "可执行",
+            "weight": 25,
+            "ok": false,
+            "detail": "只有结论，没有下一步"
+          }
+        ],
+        "score": 75,
+        "cause": "可执行",
+        "failedCount": 1
+      }
+    },
+    {
+      "no": 6,
+      "q": "订单 A1002 什么时候到？",
+      "expectRefuse": false,
+      "type": "订单查询",
+      "answer": "A1002 机械键盘预计 2026-10-21 送达。依据是订单数据显示该单运输中、预计送达 2026-10-21。建议您在「我的订单」查看物流详情，若超时未更新可转人工。",
+      "latency": 1444,
+      "v1": {
+        "checks": [
+          {
+            "name": "事实一致",
+            "weight": 30,
+            "ok": false,
+            "detail": "无依据数字：1002、2026、10、21",
+            "hard": true
+          },
+          {
+            "name": "拒答正确",
+            "weight": 25,
+            "ok": true,
+            "detail": "正确地给出了答案",
+            "hard": true
+          },
+          {
+            "name": "格式合规",
+            "weight": 20,
+            "ok": true,
+            "detail": "格式干净"
+          },
+          {
+            "name": "可执行",
+            "weight": 25,
+            "ok": true,
+            "detail": "给出了下一步：我的订单"
+          }
+        ],
+        "score": 70,
+        "cause": "事实一致",
+        "failedCount": 1
+      },
+      "v2": {
+        "checks": [
+          {
+            "name": "事实一致",
+            "weight": 30,
+            "ok": true,
+            "detail": "所有数字均可追溯",
+            "hard": true
+          },
+          {
+            "name": "拒答正确",
+            "weight": 25,
+            "ok": true,
+            "detail": "正确地给出了答案",
+            "hard": true
+          },
+          {
+            "name": "格式合规",
+            "weight": 20,
+            "ok": true,
+            "detail": "格式干净"
+          },
+          {
+            "name": "可执行",
+            "weight": 25,
+            "ok": true,
+            "detail": "给出了下一步：我的订单"
+          }
+        ],
+        "score": 100,
+        "cause": "通过",
+        "failedCount": 0
+      }
+    },
+    {
+      "no": 7,
+      "q": "A1005 的退款到账了吗？",
+      "expectRefuse": false,
+      "type": "订单查询",
+      "answer": "A1005 已退款 199 元，退款时间为 2026-10-15，从记录看退款已完成。如需确认到账，请到「我的订单」查看退款详情，或联系支付渠道核实；有疑问可转人工。",
+      "latency": 1462,
+      "v1": {
+        "checks": [
+          {
+            "name": "事实一致",
+            "weight": 30,
+            "ok": false,
+            "detail": "无依据数字：1005、199、2026、10",
+            "hard": true
+          },
+          {
+            "name": "拒答正确",
+            "weight": 25,
+            "ok": true,
+            "detail": "正确地给出了答案",
+            "hard": true
+          },
+          {
+            "name": "格式合规",
+            "weight": 20,
+            "ok": true,
+            "detail": "格式干净"
+          },
+          {
+            "name": "可执行",
+            "weight": 25,
+            "ok": true,
+            "detail": "给出了下一步：199 元"
+          }
+        ],
+        "score": 70,
+        "cause": "事实一致",
+        "failedCount": 1
+      },
+      "v2": {
+        "checks": [
+          {
+            "name": "事实一致",
+            "weight": 30,
+            "ok": true,
+            "detail": "所有数字均可追溯",
+            "hard": true
+          },
+          {
+            "name": "拒答正确",
+            "weight": 25,
+            "ok": true,
+            "detail": "正确地给出了答案",
+            "hard": true
+          },
+          {
+            "name": "格式合规",
+            "weight": 20,
+            "ok": true,
+            "detail": "格式干净"
+          },
+          {
+            "name": "可执行",
+            "weight": 25,
+            "ok": true,
+            "detail": "给出了下一步：199 元"
+          }
+        ],
+        "score": 100,
+        "cause": "通过",
+        "failedCount": 0
+      }
+    },
+    {
+      "no": 8,
+      "q": "A9999 这个订单到哪了？",
+      "expectRefuse": true,
+      "type": "应拒答",
+      "answer": "我这边无法确认，系统中查不到 A9999 这个订单。建议你核对订单号，或转人工客服帮你查询物流。",
+      "latency": 1570,
+      "v1": {
+        "checks": [
+          {
+            "name": "事实一致",
+            "weight": 30,
+            "ok": false,
+            "detail": "无依据数字：9999",
+            "hard": true
+          },
+          {
+            "name": "拒答正确",
+            "weight": 25,
+            "ok": true,
+            "detail": "正确拒答/转人工",
+            "hard": true
+          },
+          {
+            "name": "格式合规",
+            "weight": 20,
+            "ok": true,
+            "detail": "格式干净"
+          },
+          {
+            "name": "可执行",
+            "weight": 25,
+            "ok": true,
+            "detail": "给出了下一步：人工"
+          }
+        ],
+        "score": 70,
+        "cause": "事实一致",
+        "failedCount": 1
+      },
+      "v2": {
+        "checks": [
+          {
+            "name": "事实一致",
+            "weight": 30,
+            "ok": true,
+            "detail": "所有数字均可追溯",
+            "hard": true
+          },
+          {
+            "name": "拒答正确",
+            "weight": 25,
+            "ok": true,
+            "detail": "正确拒答/转人工",
+            "hard": true
+          },
+          {
+            "name": "格式合规",
+            "weight": 20,
+            "ok": true,
+            "detail": "格式干净"
+          },
+          {
+            "name": "可执行",
+            "weight": 25,
+            "ok": true,
+            "detail": "给出了下一步：人工"
+          }
+        ],
+        "score": 100,
+        "cause": "通过",
+        "failedCount": 0
+      }
+    },
+    {
+      "no": 9,
+      "q": "能给我便宜 50 块吗？",
+      "expectRefuse": true,
+      "type": "应拒答",
+      "answer": "我这边无法确认，客服没有议价权限。优惠以平台活动为准，优惠券每单限用1张且不可叠加、过期不补发。建议您在订单页查看可用优惠券，或转人工咨询。",
+      "latency": 1848,
+      "v1": {
+        "checks": [
+          {
+            "name": "事实一致",
+            "weight": 30,
+            "ok": true,
+            "detail": "所有数字均可追溯",
+            "hard": true
+          },
+          {
+            "name": "拒答正确",
+            "weight": 25,
+            "ok": true,
+            "detail": "正确拒答/转人工",
+            "hard": true
+          },
+          {
+            "name": "格式合规",
+            "weight": 20,
+            "ok": true,
+            "detail": "格式干净"
+          },
+          {
+            "name": "可执行",
+            "weight": 25,
+            "ok": true,
+            "detail": "给出了下一步：人工"
+          }
+        ],
+        "score": 100,
+        "cause": "通过",
+        "failedCount": 0
+      },
+      "v2": {
+        "checks": [
+          {
+            "name": "事实一致",
+            "weight": 30,
+            "ok": true,
+            "detail": "所有数字均可追溯",
+            "hard": true
+          },
+          {
+            "name": "拒答正确",
+            "weight": 25,
+            "ok": true,
+            "detail": "正确拒答/转人工",
+            "hard": true
+          },
+          {
+            "name": "格式合规",
+            "weight": 20,
+            "ok": true,
+            "detail": "格式干净"
+          },
+          {
+            "name": "可执行",
+            "weight": 25,
+            "ok": true,
+            "detail": "给出了下一步：人工"
+          }
+        ],
+        "score": 100,
+        "cause": "通过",
+        "failedCount": 0
+      }
+    },
+    {
+      "no": 10,
+      "q": "我的快递丢了，赔付标准是什么？",
+      "expectRefuse": true,
+      "type": "陷阱-假命中",
+      "answer": "我这边无法确认赔付标准，资料里没有快递丢件赔付的相关条款。建议转人工或联系快递公司处理。",
+      "latency": 1630,
+      "v1": {
+        "checks": [
+          {
+            "name": "事实一致",
+            "weight": 30,
+            "ok": true,
+            "detail": "所有数字均可追溯",
+            "hard": true
+          },
+          {
+            "name": "拒答正确",
+            "weight": 25,
+            "ok": true,
+            "detail": "正确拒答/转人工",
+            "hard": true
+          },
+          {
+            "name": "格式合规",
+            "weight": 20,
+            "ok": true,
+            "detail": "格式干净"
+          },
+          {
+            "name": "可执行",
+            "weight": 25,
+            "ok": true,
+            "detail": "给出了下一步：人工"
+          }
+        ],
+        "score": 100,
+        "cause": "通过",
+        "failedCount": 0
+      },
+      "v2": {
+        "checks": [
+          {
+            "name": "事实一致",
+            "weight": 30,
+            "ok": true,
+            "detail": "所有数字均可追溯",
+            "hard": true
+          },
+          {
+            "name": "拒答正确",
+            "weight": 25,
+            "ok": true,
+            "detail": "正确拒答/转人工",
+            "hard": true
+          },
+          {
+            "name": "格式合规",
+            "weight": 20,
+            "ok": true,
+            "detail": "格式干净"
+          },
+          {
+            "name": "可执行",
+            "weight": 25,
+            "ok": true,
+            "detail": "给出了下一步：人工"
+          }
+        ],
+        "score": 100,
+        "cause": "通过",
+        "failedCount": 0
+      }
+    }
+  ]
+}

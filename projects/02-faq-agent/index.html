@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>FAQ Agent · 工具调用与拒答演示</title>
+<script src="../01-jd-matcher/assets/vendor/workbuddy-cloud-sdk.global.js"></script>
+<style>
+:root{--ink:#1f2328;--mid:#6b7280;--line:#e5e8ec;--bg:#f6f7f9;--accent:#2f6fed;--ok:#16a34a;--bad:#dc2626}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:14px/1.65 -apple-system,"Segoe UI","Microsoft YaHei",sans-serif}
+header{background:#fff;border-bottom:1px solid var(--line);padding:14px 24px;display:flex;align-items:center;gap:14px}
+header .logo{width:30px;height:30px;border-radius:8px;background:var(--accent);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:13px}
+header h1{font-size:16px;margin:0}
+header p{margin:0;color:var(--mid);font-size:12px}
+main{max-width:1080px;margin:24px auto 60px;padding:0 20px;display:grid;grid-template-columns:1fr 1fr;gap:18px}
+@media(max-width:900px){main{grid-template-columns:1fr}}
+.panel{background:#fff;border:1px solid var(--line);border-radius:12px;overflow:hidden;display:flex;flex-direction:column;min-height:560px}
+.panel h2{font-size:14px;margin:0;padding:12px 16px;border-bottom:1px solid var(--line);background:#fbfcfd}
+#chat{flex:1;overflow-y:auto;padding:16px;max-height:420px}
+.msg{margin-bottom:12px;max-width:88%}
+.msg.user{margin-left:auto}
+.msg .bubble{border-radius:10px;padding:9px 12px;white-space:pre-wrap;font-size:13px}
+.msg.user .bubble{background:var(--accent);color:#fff}
+.msg.bot .bubble{background:#f3f4f6}
+.msg .trace{font-size:11px;color:var(--mid);margin-top:4px}
+.msg .trace b{color:var(--accent)}
+#composer{display:flex;gap:8px;padding:12px;border-top:1px solid var(--line)}
+#q{flex:1;border:1px solid var(--line);border-radius:8px;padding:9px 11px;font-size:13px;outline:none}
+#q:focus{border-color:var(--accent)}
+button{border:0;border-radius:8px;padding:9px 16px;font-size:13px;cursor:pointer;background:var(--ink);color:#fff}
+button:disabled{opacity:.5;cursor:not-allowed}
+button.ghost{background:#fff;color:var(--ink);border:1px solid var(--line)}
+#testBody{flex:1;overflow-y:auto;padding:12px 16px;max-height:470px}
+.bar{display:flex;align-items:center;gap:10px;padding:12px 16px;border-bottom:1px solid var(--line)}
+#summary{font-size:13px;color:var(--mid)}
+#summary b{font-size:18px;color:var(--ink)}
+.case{border:1px solid var(--line);border-radius:9px;padding:9px 11px;margin-bottom:8px;font-size:12.5px}
+.case.pass{border-left:3px solid var(--ok)}
+.case.fail{border-left:3px solid var(--bad)}
+.case .hd{display:flex;gap:8px;align-items:center}
+.case .tag{font-size:11px;color:var(--mid);background:#f3f4f6;border-radius:5px;padding:1px 6px}
+.case .ans{color:var(--mid);margin-top:4px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.pill{font-size:11px;padding:1px 7px;border-radius:20px}
+.pill.ok{background:#e8f7ee;color:var(--ok)}
+.pill.no{background:#fdeaea;color:var(--bad)}
+footer{max-width:1080px;margin:0 auto 40px;padding:0 20px;color:var(--mid);font-size:12px}
+</style>
+</head>
+<body>
+<header>
+  <div class="logo">FAQ</div>
+  <div><h1>FAQ Agent · 工具调用与拒答</h1><p>ReAct 循环 · 3 个工具 · 查不到就拒答 —— 与 Node 测试（run-test.mjs）共用同一份 agent.mjs</p></div>
+</header>
+<main>
+  <div class="panel">
+    <h2>对话演示</h2>
+    <div id="chat"></div>
+    <div id="composer">
+      <input id="q" placeholder="试试：A1002 什么时候到？ / 能便宜 50 吗？ / 明天天气怎么样？" value="A1004 我想退货">
+      <button id="send">发送</button>
+    </div>
+  </div>
+  <div class="panel">
+    <h2>20 条自动化测试（期望由人标注，判定由规则完成）</h2>
+    <div class="bar">
+      <button id="run">跑全部 20 条</button>
+      <span id="summary">尚未运行</span>
+    </div>
+    <div id="testBody"><p style="color:var(--mid)">点击「跑全部 20 条」开始。每条用例会真实调用模型并走完 ReAct 循环，预计 1-2 分钟。</p></div>
+  </div>
+</main>
+<footer>证据来源：知识库 9 条政策 + 订单库 5 条（mock）。判定规则：工具调用是否符合期望 / 是否该拒不拒、不该拒乱拒 / 关键事实是否出现在回答里。</footer>
+
+<script type="module">
+import { runAgent } from './agent.mjs';
+import { CASES, matchAny } from './cases.mjs';
+
+const CONFIG = {
+  endpoint: 'https://jd-match-analyzer.app.workbuddy.host',
+  publishableKey: 'wbpk_wL6Ac81XPO3S0EeHRzcGEJ_x6tGGNVEdiUWn9o7XdO9RkAE6Q7C5j9q',
+};
+const MODEL = 'deepseek-v4-flash';
+const api = WorkBuddyCloud.createWorkBuddyCloud(CONFIG);
+
+async function chat(messages) {
+  let text = '';
+  for await (const ch of api.llm.chat.completions.create({
+    model: MODEL, messages, stream: true, temperature: 0.2, response_format: { type: 'json_object' },
+  })) {
+    const d = ch.choices && ch.choices[0] && ch.choices[0].delta;
+    if (d && d.content) text += d.content;
+  }
+  return text;
+}
+
+const chatEl = document.getElementById('chat');
+function addMsg(cls, html) {
+  const div = document.createElement('div');
+  div.className = 'msg ' + cls;
+  div.innerHTML = html;
+  chatEl.appendChild(div);
+  chatEl.scrollTop = chatEl.scrollHeight;
+  return div;
+}
+
+async function send() {
+  const q = document.getElementById('q').value.trim();
+  if (!q) return;
+  document.getElementById('send').disabled = true;
+  addMsg('user', '<div class="bubble"></div>');
+  chatEl.lastChild.querySelector('.bubble').textContent = q;
+  const holder = addMsg('bot', '<div class="bubble">思考中…</div>');
+  const bubble = holder.querySelector('.bubble');
+  try {
+    const r = await runAgent(q, { chat, maxSteps: 3 });
+    const steps = r.trace.filter((t) => t.type === 'tool')
+      .map((t) => `<b>${t.tool}</b>(${JSON.stringify(t.input || {})}) → ${JSON.stringify(t.observation).slice(0, 90)}…`)
+      .join('<br>') || '（未调用工具）';
+    holder.innerHTML = `<div class="bubble"></div><div class="trace">调用链（${r.steps} 步）：${steps}</div>`;
+    holder.querySelector('.bubble').textContent = r.answer;
+  } catch (e) {
+    bubble.textContent = '调用失败：' + (e && e.message);
+  }
+  document.getElementById('send').disabled = false;
+}
+document.getElementById('send').onclick = send;
+document.getElementById('q').addEventListener('keydown', (e) => { if (e.key === 'Enter') send(); });
+
+// ---------- 测试面板 ----------
+const summaryEl = document.getElementById('summary');
+const bodyEl = document.getElementById('testBody');
+document.getElementById('run').onclick = async () => {
+  const btn = document.getElementById('run');
+  btn.disabled = true;
+  bodyEl.innerHTML = '';
+  let pass = 0;
+  const t0 = Date.now();
+  for (const c of CASES) {
+    let r;
+    try { r = await runAgent(c.q, { chat, maxSteps: 3 }); }
+    catch (e) { r = { answer: '调用失败', toolCalls: [], refused: false }; }
+    const checks = [];
+    if (c.tools) for (const t of c.tools) checks.push({ name: '调用 ' + t, ok: r.toolCalls.includes(t) });
+    if (c.refuse !== undefined) checks.push({ name: c.refuse ? '必须拒答' : '必须正常回答', ok: r.refused === c.refuse });
+    if (c.includes && c.includes.length) for (const inc of c.includes) checks.push({ name: '含关键词', ok: matchAny(r.answer, inc) });
+    const ok = checks.every((x) => x.ok);
+    if (ok) pass += 1;
+    summaryEl.innerHTML = `进行中 ${c.no}/20 · 通过 <b>${pass}</b> · ${Math.round((Date.now() - t0) / 1000)}s`;
+    bodyEl.insertAdjacentHTML('beforeend', `
+      <div class="case ${ok ? 'pass' : 'fail'}">
+        <div class="hd"><b>#${c.no}</b><span class="tag">${c.group}</span><span>${c.q}</span>
+          <span class="pill ${ok ? 'ok' : 'no'}" style="margin-left:auto">${ok ? 'PASS' : 'FAIL'}</span></div>
+        <div class="ans">工具：${r.toolCalls.join(' → ') || '无'} ｜ 答：${(r.answer || '').slice(0, 90)}</div>
+        ${ok ? '' : `<div class="ans">未过：${checks.filter((x) => !x.ok).map((x) => x.name).join('、')}</div>`}
+      </div>`);
+  }
+  summaryEl.innerHTML = `命中率 <b>${pass}/20 = ${Math.round((pass / 20) * 100)}%</b> · 耗时 ${Math.round((Date.now() - t0) / 1000)}s`;
+  btn.disabled = false;
+};
+</script>
+</body>
+</html>
