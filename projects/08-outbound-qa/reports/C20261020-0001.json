@@ -1,0 +1,198 @@
+{
+  "call_id": "C20261020-0001",
+  "campaign": "教育课程邀约",
+  "score": {
+    "total": 100.0,
+    "verdict": "优秀",
+    "vetoed": false,
+    "full_mark": 100,
+    "tagging_used": true,
+    "sections": {
+      "合规流程": 40.0,
+      "沟通质量": 35.0,
+      "业务完成度": 25.0
+    },
+    "deductions": [],
+    "bonus": [
+      {
+        "section": "合规流程",
+        "item": "开场自报公司与身份"
+      },
+      {
+        "section": "合规流程",
+        "item": "确认对方是否为本人"
+      },
+      {
+        "section": "合规流程",
+        "item": "告知通话录音"
+      },
+      {
+        "section": "沟通质量",
+        "item": "没有打断客户"
+      },
+      {
+        "section": "沟通质量",
+        "item": "单次说话不过长"
+      },
+      {
+        "section": "沟通质量",
+        "item": "有礼貌的结束语"
+      }
+    ]
+  },
+  "redline": {
+    "confirmed_count": 0,
+    "suspected_count": 0,
+    "skipped_customer_mentions": 0,
+    "blocked": false,
+    "hits": []
+  },
+  "compliance": {
+    "checks": [
+      {
+        "id": "opening_selfid",
+        "name": "开场自报公司与身份",
+        "section": "合规流程",
+        "weight": 10,
+        "status": "pass",
+        "detail": "在 0.0s 说清了身份",
+        "evidence": [
+          {
+            "turn_index": 0,
+            "t": 0.0,
+            "role": "agent",
+            "text": "您好，打扰一下，我这边是启明教育的课程顾问，我姓李。本次通话会被录音，只用于服务质量检查。请问是张先生本人吗？",
+            "note": ""
+          }
+        ],
+        "estimated": false
+      },
+      {
+        "id": "confirm_identity",
+        "name": "确认对方是否为本人",
+        "section": "合规流程",
+        "weight": 10,
+        "status": "pass",
+        "detail": "开场确认了接听人身份",
+        "evidence": [
+          {
+            "turn_index": 0,
+            "t": 0.0,
+            "role": "agent",
+            "text": "您好，打扰一下，我这边是启明教育的课程顾问，我姓李。本次通话会被录音，只用于服务质量检查。请问是张先生本人吗？",
+            "note": ""
+          }
+        ],
+        "estimated": false
+      },
+      {
+        "id": "record_notice",
+        "name": "告知通话录音",
+        "section": "合规流程",
+        "weight": 5,
+        "status": "pass",
+        "detail": "已告知录音",
+        "evidence": [
+          {
+            "turn_index": 0,
+            "t": 0.0,
+            "role": "agent",
+            "text": "您好，打扰一下，我这边是启明教育的课程顾问，我姓李。本次通话会被录音，只用于服务质量检查。请问是张先生本人吗？",
+            "note": ""
+          }
+        ],
+        "estimated": false
+      },
+      {
+        "id": "stop_after_decline",
+        "name": "客户拒绝后停止推销",
+        "section": "合规流程",
+        "weight": 15,
+        "status": "na",
+        "detail": "客户全程未明确拒绝，不适用",
+        "evidence": [],
+        "estimated": false
+      },
+      {
+        "id": "interrupt",
+        "name": "没有打断客户",
+        "section": "沟通质量",
+        "weight": 15,
+        "status": "pass",
+        "detail": "没有检测到抢话",
+        "evidence": [],
+        "estimated": true
+      },
+      {
+        "id": "no_monologue",
+        "name": "单次说话不过长",
+        "section": "沟通质量",
+        "weight": 10,
+        "status": "pass",
+        "detail": "没有超长独白",
+        "evidence": [],
+        "estimated": true
+      },
+      {
+        "id": "talk_balance",
+        "name": "说话配比（参考）",
+        "section": "参考指标",
+        "weight": 0,
+        "status": "pass",
+        "detail": "坐席占 85%",
+        "evidence": [],
+        "estimated": true
+      },
+      {
+        "id": "closing",
+        "name": "有礼貌的结束语",
+        "section": "沟通质量",
+        "weight": 5,
+        "status": "pass",
+        "detail": "结尾有结束语",
+        "evidence": [
+          {
+            "turn_index": 12,
+            "t": 72.5,
+            "role": "agent",
+            "text": "好的张先生。那今天就不多打扰您了，祝您工作顺利，再见。",
+            "note": ""
+          }
+        ],
+        "estimated": false
+      }
+    ],
+    "talk_ratio": 0.853,
+    "agent_chars": 400,
+    "customer_chars": 69,
+    "interruptions": 0
+  },
+  "tagging": {
+    "available": true,
+    "tagging": {
+      "customer_intent": "有需求但犹豫",
+      "intent_evidence": "嗯，那我先看看大纲吧。",
+      "customer_sentiment": "中性",
+      "sentiment_evidence": "行，那你发吧。",
+      "objections": [
+        {
+          "type": "价格",
+          "quote": "五千二不便宜啊",
+          "handled": "有效回应",
+          "handle_quote": "不过我不建议您现在就定，您可以先看看课程大纲，觉得合适再说。"
+        },
+        {
+          "type": "时间",
+          "quote": "我现在工作挺忙的",
+          "handled": "有效回应",
+          "handle_quote": "如果说您这周完全抽不出时间，那我建议先别报，等下一期节奏松一点再看。"
+        }
+      ],
+      "next_step": "有明确下一步",
+      "next_step_evidence": "好的，我一会儿把大纲和往期学员的作品集发到您这个手机号对应的微信上",
+      "summary": "客户官网留资咨询数据分析课，坐席介绍课程价格与时间安排，客户表示先看大纲，坐席答应发送大纲和作品集。"
+    },
+    "fabricated_dropped": 0,
+    "error": ""
+  }
+}

@@ -1,0 +1,64 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>质检汇总</title><style>
+:root{--ink:#1a1d21;--mid:#6b7280;--light:#9aa3af;--line:#e6e8ec;--bg:#f7f8fa;
+--accent:#2563eb;--ok:#0f9d58;--bad:#d93025;--warn:#e8a33d}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+font:15px/1.75 -apple-system,"Segoe UI","Microsoft YaHei",sans-serif}
+.wrap{max-width:900px;margin:0 auto;padding:28px 20px 60px}
+.card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:20px 22px;margin-bottom:16px}
+h1{font-size:21px;margin:0 0 4px}
+h2{font-size:16px;margin:0 0 12px;padding-bottom:8px;border-bottom:1px solid var(--line)}
+.sub{color:var(--mid);font-size:13.5px}
+.scorebar{display:flex;align-items:center;gap:22px;flex-wrap:wrap}
+.score{font-size:44px;font-weight:700;line-height:1;letter-spacing:-1px}
+.score small{font-size:15px;color:var(--light);font-weight:400}
+.verdict{font-size:15px;font-weight:600;padding:4px 12px;border-radius:20px;background:#eff5ff;color:var(--accent)}
+.verdict.veto{background:#fdecea;color:var(--bad)}
+.sec{display:flex;gap:14px;flex-wrap:wrap;margin-top:14px}
+.sec div{background:var(--bg);border-radius:8px;padding:8px 14px;font-size:13.5px;color:var(--mid)}
+.sec b{display:block;color:var(--ink);font-size:17px;font-weight:600}
+table{width:100%;border-collapse:collapse;font-size:14px}
+th,td{text-align:left;padding:9px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+th{color:var(--mid);font-weight:500;font-size:13px;background:#fafbfc}
+td.num{font-variant-numeric:tabular-nums;white-space:nowrap}
+.q{color:#3f4650;background:#fafbfc;border-left:2px solid var(--line);
+padding:2px 8px;margin-top:4px;display:inline-block;font-size:13.5px}
+.hit{background:#fdecea;border:1px solid #f5c6c2;border-radius:10px;padding:14px 16px;margin-bottom:10px}
+.hit.negt{background:#fff8e8;border-color:#f3d9a4}
+.hit .tag{font-size:12px;font-weight:600;color:var(--bad);letter-spacing:.3px}
+.hit.negt .tag{color:#a8721a}
+.hit .why{font-size:13.5px;color:var(--mid);margin-top:4px}
+.badge{display:inline-block;font-size:12px;padding:1px 8px;border-radius:10px;
+background:#eef1f4;color:var(--mid);margin-left:6px}
+.badge.est{background:#fff4e0;color:#a8721a}
+.dlg{font-size:14px;line-height:1.9}
+.dlg .row{display:flex;gap:10px;padding:3px 0}
+.dlg .t{color:var(--light);font-size:12px;min-width:44px;text-align:right;font-variant-numeric:tabular-nums}
+.dlg .who{min-width:34px;color:var(--mid);font-size:13px}
+.dlg .row.agent .who{color:var(--accent)}
+.dlg .row.hit-line{background:#fdecea;border-radius:5px}
+.note{font-size:13px;color:var(--mid);background:#fafbfc;border-left:3px solid var(--line);
+padding:10px 14px;border-radius:0 6px 6px 0}
+.veto-box{background:#fdecea;border:1px solid #f5c6c2;border-radius:10px;padding:14px 16px;margin-bottom:14px}
+.veto-box b{color:var(--bad)}
+.empty{color:var(--light);font-size:14px;padding:6px 0}
+footer{color:var(--light);font-size:12.5px;text-align:center;margin-top:26px}
+</style></head><body><div class="wrap">
+<div class="card">
+<h1>外呼质检汇总</h1>
+<div class="sub">共 5 通 · 平均 34 分（归一化） · 红线违规 3 通</div>
+<div class="sec">
+  <div><b>5</b>抽检通数</div>
+  <div><b>3</b>需人工复核</div>
+  <div><b>34</b>平均得分</div>
+</div></div>
+<div class="card"><h2>明细（按分数从低到高）</h2>
+<table><tr><th style="width:52px">分数</th><th style="width:150px">通话</th>
+<th>活动</th><th style="width:60px">坐席</th><th style="width:120px">判定</th>
+<th>红线</th><th style="width:90px">客户意图</th></tr>
+<tr><td class="num">0</td><td><a href="C20261020-0002.html">C20261020-0002</a></td><td>理财回访</td><td>A12</td><td><span class="verdict veto">违规</span> 违规·需人工复核</td><td>承诺收益 / 保本、绝对化用语</td><td>有需求但犹豫</td></tr><tr><td class="num">0</td><td><a href="C20261020-0004.html">C20261020-0004</a></td><td>会员续费</td><td>A05</td><td><span class="verdict veto">违规</span> 违规·需人工复核</td><td>冒充官方 / 公检法、索取敏感信息</td><td>已在别处解决</td></tr><tr><td class="num">0</td><td><a href="C20261020-0005.html">C20261020-0005</a></td><td>保险回访</td><td>A18</td><td><span class="verdict veto">违规</span> 违规·需人工复核</td><td>索取敏感信息、绝对化用语</td><td>明确拒绝</td></tr><tr><td class="num">72</td><td><a href="C20261020-0003.html">C20261020-0003</a></td><td>汽车试驾邀约</td><td>A23</td><td> 合格</td><td>—</td><td>已在别处解决</td></tr><tr><td class="num">100</td><td><a href="C20261020-0001.html">C20261020-0001</a></td><td>教育课程邀约</td><td>A07</td><td> 优秀</td><td>—</td><td>有需求但犹豫</td></tr></table>
+<div class="note" style="margin-top:14px">红线违规的通话分数显示为 0，这是设计如此：
+合规项不是扣分项，是一票否决。若要看这些电话在流程和沟通上得多少分，点进单通报告看分板块得分。</div>
+</div></div></body></html>

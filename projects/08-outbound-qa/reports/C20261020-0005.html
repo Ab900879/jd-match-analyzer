@@ -1,0 +1,74 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>质检报告 · C20261020-0005</title><style>
+:root{--ink:#1a1d21;--mid:#6b7280;--light:#9aa3af;--line:#e6e8ec;--bg:#f7f8fa;
+--accent:#2563eb;--ok:#0f9d58;--bad:#d93025;--warn:#e8a33d}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+font:15px/1.75 -apple-system,"Segoe UI","Microsoft YaHei",sans-serif}
+.wrap{max-width:900px;margin:0 auto;padding:28px 20px 60px}
+.card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:20px 22px;margin-bottom:16px}
+h1{font-size:21px;margin:0 0 4px}
+h2{font-size:16px;margin:0 0 12px;padding-bottom:8px;border-bottom:1px solid var(--line)}
+.sub{color:var(--mid);font-size:13.5px}
+.scorebar{display:flex;align-items:center;gap:22px;flex-wrap:wrap}
+.score{font-size:44px;font-weight:700;line-height:1;letter-spacing:-1px}
+.score small{font-size:15px;color:var(--light);font-weight:400}
+.verdict{font-size:15px;font-weight:600;padding:4px 12px;border-radius:20px;background:#eff5ff;color:var(--accent)}
+.verdict.veto{background:#fdecea;color:var(--bad)}
+.sec{display:flex;gap:14px;flex-wrap:wrap;margin-top:14px}
+.sec div{background:var(--bg);border-radius:8px;padding:8px 14px;font-size:13.5px;color:var(--mid)}
+.sec b{display:block;color:var(--ink);font-size:17px;font-weight:600}
+table{width:100%;border-collapse:collapse;font-size:14px}
+th,td{text-align:left;padding:9px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+th{color:var(--mid);font-weight:500;font-size:13px;background:#fafbfc}
+td.num{font-variant-numeric:tabular-nums;white-space:nowrap}
+.q{color:#3f4650;background:#fafbfc;border-left:2px solid var(--line);
+padding:2px 8px;margin-top:4px;display:inline-block;font-size:13.5px}
+.hit{background:#fdecea;border:1px solid #f5c6c2;border-radius:10px;padding:14px 16px;margin-bottom:10px}
+.hit.negt{background:#fff8e8;border-color:#f3d9a4}
+.hit .tag{font-size:12px;font-weight:600;color:var(--bad);letter-spacing:.3px}
+.hit.negt .tag{color:#a8721a}
+.hit .why{font-size:13.5px;color:var(--mid);margin-top:4px}
+.badge{display:inline-block;font-size:12px;padding:1px 8px;border-radius:10px;
+background:#eef1f4;color:var(--mid);margin-left:6px}
+.badge.est{background:#fff4e0;color:#a8721a}
+.dlg{font-size:14px;line-height:1.9}
+.dlg .row{display:flex;gap:10px;padding:3px 0}
+.dlg .t{color:var(--light);font-size:12px;min-width:44px;text-align:right;font-variant-numeric:tabular-nums}
+.dlg .who{min-width:34px;color:var(--mid);font-size:13px}
+.dlg .row.agent .who{color:var(--accent)}
+.dlg .row.hit-line{background:#fdecea;border-radius:5px}
+.note{font-size:13px;color:var(--mid);background:#fafbfc;border-left:3px solid var(--line);
+padding:10px 14px;border-radius:0 6px 6px 0}
+.veto-box{background:#fdecea;border:1px solid #f5c6c2;border-radius:10px;padding:14px 16px;margin-bottom:14px}
+.veto-box b{color:var(--bad)}
+.empty{color:var(--light);font-size:14px;padding:6px 0}
+footer{color:var(--light);font-size:12.5px;text-align:center;margin-top:26px}
+</style></head><body><div class="wrap"><div class="card">
+<h1>C20261020-0005 · 保险回访</h1>
+<div class="sub">2026-10-20 18:05:48 ｜ 时长 68 秒 ｜ 坐席 A18 ｜ 外呼</div>
+<div class="scorebar" style="margin-top:16px">
+  <div class="score">0<small> / 100</small></div>
+  <div class="verdict veto">违规·需人工复核</div>
+</div>
+<div class="sec"></div></div><div class="card"><h2>红线违规（一票否决）</h2>
+<div class="veto-box"><b>本通判定为违规，必须转人工复核。</b>
+<div class="sub" style="margin-top:6px">红线项不做分数折中：漏放一次，代价是处罚和诉讼；误拦一次，代价只是人工看一眼。</div>
+<div style="margin-top:6px">47.0s 命中「身份证号」：电话中索要验证码 / 密码 / 完整证件号，是电诈的典型特征，正规业务不应如此<div class="q">…，为了核实身份，您把身份证号后六位跟我说一下，我…</div></div></div></div><div class="card"><h2>红线检测明细</h2><div class="hit"><span class="tag">违规</span>
+<span class="badge">绝对化用语</span><span class="badge">35.0s</span>
+<div style="margin-top:6px">命中「<b>最好的</b>」</div>
+<div class="q">…上，现在这款是行业里最好的，别家都没有这个保障…</div>
+<div class="why">广告法禁用『第一 / 最好 / 唯一』这类无法证实的表述</div></div><div class="hit"><span class="tag">违规</span>
+<span class="badge">索取敏感信息</span><span class="badge">47.0s</span><span class="badge">同句 2 次</span>
+<div style="margin-top:6px">命中「<b>身份证号</b>」</div>
+<div class="q">…，为了核实身份，您把身份证号后六位跟我说一下，我…</div>
+<div class="why">电话中索要验证码 / 密码 / 完整证件号，是电诈的典型特征，正规业务不应如此</div></div></div><div class="card"><h2>扣分明细</h2><div class="empty">本通没有扣分项。</div></div><div class="card"><h2>合规与沟通检查</h2><table><tr><th style='width:38px'></th><th style='width:180px'>项目</th><th style='width:70px'>权重</th><th>结果</th></tr><tr><td style='color:var(--ok);font-weight:700'>✓</td><td>开场自报公司与身份</td><td class='num'>10</td><td>在 5.1s 说清了身份<div class="q">我这边是保险公司的，跟您做一个回访。</div></td></tr><tr><td style='color:var(--ok);font-weight:700'>✓</td><td>确认对方是否为本人</td><td class='num'>10</td><td>开场确认了接听人身份<div class="q">您好，请问是王女士吗？</div></td></tr><tr><td style='color:var(--bad);font-weight:700'>✗</td><td>告知通话录音</td><td class='num'>5</td><td>这通电话被录音，但坐席全程没有告知</td></tr><tr><td style='color:var(--bad);font-weight:700'>✗</td><td>客户拒绝后停止推销</td><td class='num'>15</td><td>客户在 32.5s 明确拒绝，之后坐席仍有 1 次推销动作<div class="q">不用了，我现在这份挺好的。</div><div class="q">那好吧，那我们下次再联系。</div></td></tr><tr><td style='color:var(--ok);font-weight:700'>✓</td><td>没有打断客户<span class="badge est">估算</span></td><td class='num'>15</td><td>没有检测到抢话</td></tr><tr><td style='color:var(--ok);font-weight:700'>✓</td><td>单次说话不过长<span class="badge est">估算</span></td><td class='num'>10</td><td>没有超长独白</td></tr><tr><td style='color:var(--ok);font-weight:700'>✓</td><td>说话配比（参考）<span class="badge est">估算</span></td><td class='num'>参考</td><td>坐席占 82%</td></tr><tr><td style='color:var(--bad);font-weight:700'>✗</td><td>有礼貌的结束语</td><td class='num'>5</td><td>结尾没有结束语，直接挂断</td></tr></table><div class="note" style="margin-top:12px">坐席说话 82%（坐席 236 字 / 客户 51 字）。这个数字只作参考，不参与打分——外呼场景坐席本来话就多，拿它扣分会把好电话也判差。</div></div><div class="card"><h2>语义打标</h2><table>
+<tr><th style="width:120px">客户意图</th><td>明确拒绝
+<div class="q">不用了，我现在这份挺好的。</div></td></tr>
+<tr><th>客户情绪</th><td>负向
+<div class="q">我说了不用。</div></td></tr>
+<tr><th>下一步</th><td>模糊
+<div class="q">那好吧，那我们下次再联系。</div></td></tr>
+</table><h2 style='margin-top:18px;font-size:14px;border:none;padding:0'>客户异议与坐席处理</h2><table><tr><th style='width:90px'>类型</th><th>客户原话</th><th style='width:90px'>处理</th><th>坐席原话</th></tr><tr><td>已有替代方案</td><td><div class='q' style='margin:0'>不用了，我现在这份挺好的。</div></td><td>反被说服</td><td><div class='q' style='margin:0'>您原来那份是老产品了，条款跟不上，现在这款是行业里最好的，别家都没有这个保障范围。</div></td></tr><tr><td>身份顾虑</td><td><div class='q' style='margin:0'>这个我不能给你。</div></td><td>敷衍带过</td><td><div class='q' style='margin:0'>那好吧，那我们下次再联系。</div></td></tr></table><div class="note" style="margin-top:12px">坐席回访并推销重疾加保，客户拒绝，索要身份证号被拒后结束通话。</div></div><div class="card"><h2>对话全文</h2><div class="dlg"><div class="row agent"><div class="t">0.0s</div><div class="who">坐席</div><div>您好，请问是王女士吗？</div></div><div class="row"><div class="t">3.2s</div><div class="who">客户</div><div>我是，你哪位？</div></div><div class="row agent"><div class="t">5.1s</div><div class="who">坐席</div><div>我这边是保险公司的，跟您做一个回访。</div></div><div class="row"><div class="t">9.4s</div><div class="who">客户</div><div>哪个保险公司？</div></div><div class="row agent"><div class="t">11.0s</div><div class="who">坐席</div><div>就是您之前投保的那家。我问几个问题就好，您这份保单现在还在缴费期内，如果中断的话保障就没了。</div></div><div class="row"><div class="t">20.6s</div><div class="who">客户</div><div>我知道，我一直在交。</div></div><div class="row agent"><div class="t">22.8s</div><div class="who">坐席</div><div>好的。那您这边有没有考虑过加保？我们现在有一款重疾，保费比您原来那份低，保障额度还高，很多客户都转过去了。</div></div><div class="row"><div class="t">32.5s</div><div class="who">客户</div><div>不用了，我现在这份挺好的。</div></div><div class="row agent hit-line"><div class="t">35.0s</div><div class="who">坐席</div><div>您原来那份是老产品了，条款跟不上，现在这款是行业里最好的，别家都没有这个保障范围。</div></div><div class="row"><div class="t">45.2s</div><div class="who">客户</div><div>我说了不用。</div></div><div class="row agent hit-line"><div class="t">47.0s</div><div class="who">坐席</div><div>好的，那我不勉强。不过有一件事您得配合一下，为了核实身份，您把身份证号后六位跟我说一下，我这边系统里对一下。</div></div><div class="row"><div class="t">57.6s</div><div class="who">客户</div><div>这个我不能给你。</div></div><div class="row agent"><div class="t">60.0s</div><div class="who">坐席</div><div>那好吧，那我们下次再联系。</div></div></div></div><footer>由外呼质检器生成 · 红线段为确定性规则，打标段由模型产出并已做原文校验</footer>
+</div></body></html>

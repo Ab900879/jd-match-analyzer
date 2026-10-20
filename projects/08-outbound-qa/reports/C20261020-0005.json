@@ -1,0 +1,207 @@
+{
+  "call_id": "C20261020-0005",
+  "campaign": "保险回访",
+  "score": {
+    "total": 0.0,
+    "verdict": "违规·需人工复核",
+    "vetoed": true,
+    "full_mark": 100,
+    "tagging_used": true,
+    "sections": {},
+    "deductions": [
+      {
+        "section": "红线",
+        "item": "索取敏感信息",
+        "weight": 100,
+        "reason": "47.0s 命中「身份证号」：电话中索要验证码 / 密码 / 完整证件号，是电诈的典型特征，正规业务不应如此",
+        "quote": "…，为了核实身份，您把身份证号后六位跟我说一下，我…"
+      }
+    ],
+    "bonus": []
+  },
+  "redline": {
+    "confirmed_count": 2,
+    "suspected_count": 0,
+    "skipped_customer_mentions": 0,
+    "blocked": true,
+    "hits": [
+      {
+        "rule_id": "absolute_claim",
+        "category": "绝对化用语",
+        "severity": "warn",
+        "why": "广告法禁用『第一 / 最好 / 唯一』这类无法证实的表述",
+        "turn_index": 8,
+        "t": 35.0,
+        "role": "agent",
+        "matched": "最好的",
+        "negated": false,
+        "confirmed": true,
+        "context": "…上，现在这款是行业里最好的，别家都没有这个保障…",
+        "count": 1,
+        "text": "您原来那份是老产品了，条款跟不上，现在这款是行业里最好的，别家都没有这个保障范围。"
+      },
+      {
+        "rule_id": "sensitive_info",
+        "category": "索取敏感信息",
+        "severity": "block",
+        "why": "电话中索要验证码 / 密码 / 完整证件号，是电诈的典型特征，正规业务不应如此",
+        "turn_index": 10,
+        "t": 47.0,
+        "role": "agent",
+        "matched": "身份证号",
+        "negated": false,
+        "confirmed": true,
+        "context": "…，为了核实身份，您把身份证号后六位跟我说一下，我…",
+        "count": 2,
+        "text": "好的，那我不勉强。不过有一件事您得配合一下，为了核实身份，您把身份证号后六位跟我说一下，我这边系统里对一下。"
+      }
+    ]
+  },
+  "compliance": {
+    "checks": [
+      {
+        "id": "opening_selfid",
+        "name": "开场自报公司与身份",
+        "section": "合规流程",
+        "weight": 10,
+        "status": "pass",
+        "detail": "在 5.1s 说清了身份",
+        "evidence": [
+          {
+            "turn_index": 2,
+            "t": 5.1,
+            "role": "agent",
+            "text": "我这边是保险公司的，跟您做一个回访。",
+            "note": ""
+          }
+        ],
+        "estimated": false
+      },
+      {
+        "id": "confirm_identity",
+        "name": "确认对方是否为本人",
+        "section": "合规流程",
+        "weight": 10,
+        "status": "pass",
+        "detail": "开场确认了接听人身份",
+        "evidence": [
+          {
+            "turn_index": 0,
+            "t": 0.0,
+            "role": "agent",
+            "text": "您好，请问是王女士吗？",
+            "note": ""
+          }
+        ],
+        "estimated": false
+      },
+      {
+        "id": "record_notice",
+        "name": "告知通话录音",
+        "section": "合规流程",
+        "weight": 5,
+        "status": "fail",
+        "detail": "这通电话被录音，但坐席全程没有告知",
+        "evidence": [],
+        "estimated": false
+      },
+      {
+        "id": "stop_after_decline",
+        "name": "客户拒绝后停止推销",
+        "section": "合规流程",
+        "weight": 15,
+        "status": "fail",
+        "detail": "客户在 32.5s 明确拒绝，之后坐席仍有 1 次推销动作",
+        "evidence": [
+          {
+            "turn_index": 7,
+            "t": 32.5,
+            "role": "customer",
+            "text": "不用了，我现在这份挺好的。",
+            "note": "客户拒绝处"
+          },
+          {
+            "turn_index": 12,
+            "t": 60.0,
+            "role": "agent",
+            "text": "那好吧，那我们下次再联系。",
+            "note": "之后仍继续推销"
+          }
+        ],
+        "estimated": false
+      },
+      {
+        "id": "interrupt",
+        "name": "没有打断客户",
+        "section": "沟通质量",
+        "weight": 15,
+        "status": "pass",
+        "detail": "没有检测到抢话",
+        "evidence": [],
+        "estimated": true
+      },
+      {
+        "id": "no_monologue",
+        "name": "单次说话不过长",
+        "section": "沟通质量",
+        "weight": 10,
+        "status": "pass",
+        "detail": "没有超长独白",
+        "evidence": [],
+        "estimated": true
+      },
+      {
+        "id": "talk_balance",
+        "name": "说话配比（参考）",
+        "section": "参考指标",
+        "weight": 0,
+        "status": "pass",
+        "detail": "坐席占 82%",
+        "evidence": [],
+        "estimated": true
+      },
+      {
+        "id": "closing",
+        "name": "有礼貌的结束语",
+        "section": "沟通质量",
+        "weight": 5,
+        "status": "fail",
+        "detail": "结尾没有结束语，直接挂断",
+        "evidence": [],
+        "estimated": false
+      }
+    ],
+    "talk_ratio": 0.822,
+    "agent_chars": 236,
+    "customer_chars": 51,
+    "interruptions": 0
+  },
+  "tagging": {
+    "available": true,
+    "tagging": {
+      "customer_intent": "明确拒绝",
+      "intent_evidence": "不用了，我现在这份挺好的。",
+      "customer_sentiment": "负向",
+      "sentiment_evidence": "我说了不用。",
+      "objections": [
+        {
+          "type": "已有替代方案",
+          "quote": "不用了，我现在这份挺好的。",
+          "handled": "反被说服",
+          "handle_quote": "您原来那份是老产品了，条款跟不上，现在这款是行业里最好的，别家都没有这个保障范围。"
+        },
+        {
+          "type": "身份顾虑",
+          "quote": "这个我不能给你。",
+          "handled": "敷衍带过",
+          "handle_quote": "那好吧，那我们下次再联系。"
+        }
+      ],
+      "next_step": "模糊",
+      "next_step_evidence": "那好吧，那我们下次再联系。",
+      "summary": "坐席回访并推销重疾加保，客户拒绝，索要身份证号被拒后结束通话。"
+    },
+    "fabricated_dropped": 0,
+    "error": ""
+  }
+}

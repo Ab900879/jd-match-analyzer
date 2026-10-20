@@ -1,0 +1,223 @@
+{
+  "call_id": "C20261020-0003",
+  "campaign": "汽车试驾邀约",
+  "score": {
+    "total": 72.0,
+    "verdict": "合格",
+    "vetoed": false,
+    "full_mark": 100,
+    "tagging_used": true,
+    "sections": {
+      "合规流程": 20.0,
+      "沟通质量": 35.0,
+      "业务完成度": 17.0
+    },
+    "deductions": [
+      {
+        "section": "合规流程",
+        "item": "告知通话录音",
+        "weight": 5.0,
+        "reason": "这通电话被录音，但坐席全程没有告知",
+        "quote": ""
+      },
+      {
+        "section": "合规流程",
+        "item": "客户拒绝后停止推销",
+        "weight": 15.0,
+        "reason": "客户在 15.8s 明确拒绝，之后坐席仍有 1 次推销动作",
+        "quote": "不用了，我已经买车了。"
+      },
+      {
+        "section": "业务完成度",
+        "item": "是否有明确下一步",
+        "weight": 8,
+        "reason": "通话结束时下一步是「无」",
+        "quote": "好的李先生，那就不打扰您了，祝您用车愉快，再见。"
+      }
+    ],
+    "bonus": [
+      {
+        "section": "合规流程",
+        "item": "开场自报公司与身份"
+      },
+      {
+        "section": "合规流程",
+        "item": "确认对方是否为本人"
+      },
+      {
+        "section": "沟通质量",
+        "item": "没有打断客户"
+      },
+      {
+        "section": "沟通质量",
+        "item": "单次说话不过长"
+      },
+      {
+        "section": "沟通质量",
+        "item": "有礼貌的结束语"
+      }
+    ]
+  },
+  "redline": {
+    "confirmed_count": 0,
+    "suspected_count": 0,
+    "skipped_customer_mentions": 0,
+    "blocked": false,
+    "hits": []
+  },
+  "compliance": {
+    "checks": [
+      {
+        "id": "opening_selfid",
+        "name": "开场自报公司与身份",
+        "section": "合规流程",
+        "weight": 10,
+        "status": "pass",
+        "detail": "在 0.0s 说清了身份",
+        "evidence": [
+          {
+            "turn_index": 0,
+            "t": 0.0,
+            "role": "agent",
+            "text": "您好，我是瑞驰汽车城门店的销售顾问，工号二三。请问是李先生吗？",
+            "note": ""
+          }
+        ],
+        "estimated": false
+      },
+      {
+        "id": "confirm_identity",
+        "name": "确认对方是否为本人",
+        "section": "合规流程",
+        "weight": 10,
+        "status": "pass",
+        "detail": "开场确认了接听人身份",
+        "evidence": [
+          {
+            "turn_index": 0,
+            "t": 0.0,
+            "role": "agent",
+            "text": "您好，我是瑞驰汽车城门店的销售顾问，工号二三。请问是李先生吗？",
+            "note": ""
+          }
+        ],
+        "estimated": false
+      },
+      {
+        "id": "record_notice",
+        "name": "告知通话录音",
+        "section": "合规流程",
+        "weight": 5,
+        "status": "fail",
+        "detail": "这通电话被录音，但坐席全程没有告知",
+        "evidence": [],
+        "estimated": false
+      },
+      {
+        "id": "stop_after_decline",
+        "name": "客户拒绝后停止推销",
+        "section": "合规流程",
+        "weight": 15,
+        "status": "fail",
+        "detail": "客户在 15.8s 明确拒绝，之后坐席仍有 1 次推销动作",
+        "evidence": [
+          {
+            "turn_index": 3,
+            "t": 15.8,
+            "role": "customer",
+            "text": "不用了，我已经买车了。",
+            "note": "客户拒绝处"
+          },
+          {
+            "turn_index": 8,
+            "t": 34.0,
+            "role": "agent",
+            "text": "那这样，加个微信可以吗？后面有活动我发您，不打扰您。",
+            "note": "之后仍继续推销"
+          }
+        ],
+        "estimated": false
+      },
+      {
+        "id": "interrupt",
+        "name": "没有打断客户",
+        "section": "沟通质量",
+        "weight": 15,
+        "status": "pass",
+        "detail": "没有检测到抢话",
+        "evidence": [],
+        "estimated": true
+      },
+      {
+        "id": "no_monologue",
+        "name": "单次说话不过长",
+        "section": "沟通质量",
+        "weight": 10,
+        "status": "pass",
+        "detail": "没有超长独白",
+        "evidence": [],
+        "estimated": true
+      },
+      {
+        "id": "talk_balance",
+        "name": "说话配比（参考）",
+        "section": "参考指标",
+        "weight": 0,
+        "status": "pass",
+        "detail": "坐席占 83%",
+        "evidence": [],
+        "estimated": true
+      },
+      {
+        "id": "closing",
+        "name": "有礼貌的结束语",
+        "section": "沟通质量",
+        "weight": 5,
+        "status": "pass",
+        "detail": "结尾有结束语",
+        "evidence": [
+          {
+            "turn_index": 8,
+            "t": 34.0,
+            "role": "agent",
+            "text": "那这样，加个微信可以吗？后面有活动我发您，不打扰您。",
+            "note": ""
+          }
+        ],
+        "estimated": false
+      }
+    ],
+    "talk_ratio": 0.833,
+    "agent_chars": 199,
+    "customer_chars": 40,
+    "interruptions": 0
+  },
+  "tagging": {
+    "available": true,
+    "tagging": {
+      "customer_intent": "已在别处解决",
+      "intent_evidence": "不用了，我已经买车了。",
+      "customer_sentiment": "中性",
+      "sentiment_evidence": "这个就不用说了吧。",
+      "objections": [
+        {
+          "type": "已有替代方案",
+          "quote": "不用了，我已经买车了。",
+          "handled": "有效回应",
+          "handle_quote": "已经买了呀，那恭喜您。买的是哪一款？"
+        },
+        {
+          "type": "不需要",
+          "quote": "暂时不需要。",
+          "handled": "有效回应",
+          "handle_quote": "那这样，加个微信可以吗？后面有活动我发您，不打扰您。"
+        }
+      ],
+      "next_step": "无",
+      "next_step_evidence": "好的李先生，那就不打扰您了，祝您用车愉快，再见。",
+      "summary": "坐席邀约已购车客户参加试驾活动，客户拒绝后坐席结束通话。"
+    },
+    "fabricated_dropped": 0,
+    "error": ""
+  }
+}

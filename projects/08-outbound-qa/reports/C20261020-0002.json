@@ -1,0 +1,242 @@
+{
+  "call_id": "C20261020-0002",
+  "campaign": "理财回访",
+  "score": {
+    "total": 0.0,
+    "verdict": "违规·需人工复核",
+    "vetoed": true,
+    "full_mark": 100,
+    "tagging_used": true,
+    "sections": {},
+    "deductions": [
+      {
+        "section": "红线",
+        "item": "承诺收益 / 保本",
+        "weight": 100,
+        "reason": "5.9s 命中「保本」：金融产品不得承诺保本保收益（资管新规后属明令禁止）",
+        "quote": "…到六点五，这个是可以保本的，基本上没有任何风…"
+      },
+      {
+        "section": "红线",
+        "item": "承诺收益 / 保本",
+        "weight": 100,
+        "reason": "18.4s 命中「不会亏」：金融产品不得承诺保本保收益（资管新规后属明令禁止）",
+        "quote": "…的，您放心，钱放进来不会亏。"
+      },
+      {
+        "section": "红线",
+        "item": "承诺收益 / 保本",
+        "weight": 100,
+        "reason": "32.8s 命中「稳赚不赔」：金融产品不得承诺保本保收益（资管新规后属明令禁止）",
+        "quote": "…，您先投个五万试试，稳赚不赔的。"
+      }
+    ],
+    "bonus": []
+  },
+  "redline": {
+    "confirmed_count": 4,
+    "suspected_count": 0,
+    "skipped_customer_mentions": 2,
+    "blocked": true,
+    "hits": [
+      {
+        "rule_id": "guarantee_return",
+        "category": "承诺收益 / 保本",
+        "severity": "block",
+        "why": "金融产品不得承诺保本保收益（资管新规后属明令禁止）",
+        "turn_index": 2,
+        "t": 5.9,
+        "role": "agent",
+        "matched": "保本",
+        "negated": false,
+        "confirmed": true,
+        "context": "…到六点五，这个是可以保本的，基本上没有任何风…",
+        "count": 1,
+        "text": "是这样的，我们最近有一款新的稳健型产品，年化收益能到六点五，这个是可以保本的，基本上没有任何风险。"
+      },
+      {
+        "rule_id": "guarantee_return",
+        "category": "承诺收益 / 保本",
+        "severity": "block",
+        "why": "金融产品不得承诺保本保收益（资管新规后属明令禁止）",
+        "turn_index": 4,
+        "t": 18.4,
+        "role": "agent",
+        "matched": "不会亏",
+        "negated": false,
+        "confirmed": true,
+        "context": "…的，您放心，钱放进来不会亏。",
+        "count": 1,
+        "text": "对，我们这个是有保障的，您放心，钱放进来不会亏。"
+      },
+      {
+        "rule_id": "absolute_claim",
+        "category": "绝对化用语",
+        "severity": "warn",
+        "why": "广告法禁用『第一 / 最好 / 唯一』这类无法证实的表述",
+        "turn_index": 6,
+        "t": 25.0,
+        "role": "agent",
+        "matched": "排名第一",
+        "negated": false,
+        "confirmed": true,
+        "context": "…十几年了，在行业里是排名第一的机构。",
+        "count": 1,
+        "text": "恒信财富，我们做这行十几年了，在行业里是排名第一的机构。"
+      },
+      {
+        "rule_id": "guarantee_return",
+        "category": "承诺收益 / 保本",
+        "severity": "block",
+        "why": "金融产品不得承诺保本保收益（资管新规后属明令禁止）",
+        "turn_index": 8,
+        "t": 32.8,
+        "role": "agent",
+        "matched": "稳赚不赔",
+        "negated": false,
+        "confirmed": true,
+        "context": "…，您先投个五万试试，稳赚不赔的。",
+        "count": 1,
+        "text": "我们主要做高净值客户，所以宣传比较少。这样，您先投个五万试试，稳赚不赔的。"
+      }
+    ]
+  },
+  "compliance": {
+    "checks": [
+      {
+        "id": "opening_selfid",
+        "name": "开场自报公司与身份",
+        "section": "合规流程",
+        "weight": 10,
+        "status": "pass",
+        "detail": "在 0.0s 说清了身份",
+        "evidence": [
+          {
+            "turn_index": 0,
+            "t": 0.0,
+            "role": "agent",
+            "text": "喂，您好，我这边是恒信财富的理财顾问小王。",
+            "note": ""
+          }
+        ],
+        "estimated": false
+      },
+      {
+        "id": "confirm_identity",
+        "name": "确认对方是否为本人",
+        "section": "合规流程",
+        "weight": 10,
+        "status": "fail",
+        "detail": "没有确认接听人是否为本人，存在骚扰非目标人的风险",
+        "evidence": [],
+        "estimated": false
+      },
+      {
+        "id": "record_notice",
+        "name": "告知通话录音",
+        "section": "合规流程",
+        "weight": 5,
+        "status": "fail",
+        "detail": "这通电话被录音，但坐席全程没有告知",
+        "evidence": [],
+        "estimated": false
+      },
+      {
+        "id": "stop_after_decline",
+        "name": "客户拒绝后停止推销",
+        "section": "合规流程",
+        "weight": 15,
+        "status": "na",
+        "detail": "客户全程未明确拒绝，不适用",
+        "evidence": [],
+        "estimated": false
+      },
+      {
+        "id": "interrupt",
+        "name": "没有打断客户",
+        "section": "沟通质量",
+        "weight": 15,
+        "status": "pass",
+        "detail": "没有检测到抢话",
+        "evidence": [],
+        "estimated": true
+      },
+      {
+        "id": "no_monologue",
+        "name": "单次说话不过长",
+        "section": "沟通质量",
+        "weight": 10,
+        "status": "pass",
+        "detail": "没有超长独白",
+        "evidence": [],
+        "estimated": true
+      },
+      {
+        "id": "talk_balance",
+        "name": "说话配比（参考）",
+        "section": "参考指标",
+        "weight": 0,
+        "status": "pass",
+        "detail": "坐席占 80%",
+        "evidence": [],
+        "estimated": true
+      },
+      {
+        "id": "closing",
+        "name": "有礼貌的结束语",
+        "section": "沟通质量",
+        "weight": 5,
+        "status": "pass",
+        "detail": "结尾有结束语",
+        "evidence": [
+          {
+            "turn_index": 12,
+            "t": 51.2,
+            "role": "agent",
+            "text": "好的好的，那您考虑，我明天再给您打电话。祝您生活愉快。",
+            "note": ""
+          }
+        ],
+        "estimated": false
+      }
+    ],
+    "talk_ratio": 0.805,
+    "agent_chars": 214,
+    "customer_chars": 52,
+    "interruptions": 0
+  },
+  "tagging": {
+    "available": true,
+    "tagging": {
+      "customer_intent": "有需求但犹豫",
+      "intent_evidence": "我需要考虑一下。",
+      "customer_sentiment": "负向",
+      "sentiment_evidence": "我没有听过。",
+      "objections": [
+        {
+          "type": "信任",
+          "quote": "你们是哪家公司来着？",
+          "handled": "敷衍带过",
+          "handle_quote": "恒信财富，我们做这行十几年了，在行业里是排名第一的机构。"
+        },
+        {
+          "type": "信任",
+          "quote": "我没有听过。",
+          "handled": "敷衍带过",
+          "handle_quote": "我们主要做高净值客户，所以宣传比较少。"
+        },
+        {
+          "type": "其他",
+          "quote": "保本？现在还有保本的产品吗？",
+          "handled": "敷衍带过",
+          "handle_quote": "对，我们这个是有保障的，您放心，钱放进来不会亏。"
+        }
+      ],
+      "next_step": "有明确下一步",
+      "next_step_evidence": "好的好的，那您考虑，我明天再给您打电话。",
+      "summary": "坐席推销保本理财产品，客户表示未听过公司并称需考虑，坐席约定次日回电。"
+    },
+    "fabricated_dropped": 0,
+    "error": ""
+  }
+}

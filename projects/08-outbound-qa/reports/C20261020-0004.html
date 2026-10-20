@@ -1,0 +1,74 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>质检报告 · C20261020-0004</title><style>
+:root{--ink:#1a1d21;--mid:#6b7280;--light:#9aa3af;--line:#e6e8ec;--bg:#f7f8fa;
+--accent:#2563eb;--ok:#0f9d58;--bad:#d93025;--warn:#e8a33d}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+font:15px/1.75 -apple-system,"Segoe UI","Microsoft YaHei",sans-serif}
+.wrap{max-width:900px;margin:0 auto;padding:28px 20px 60px}
+.card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:20px 22px;margin-bottom:16px}
+h1{font-size:21px;margin:0 0 4px}
+h2{font-size:16px;margin:0 0 12px;padding-bottom:8px;border-bottom:1px solid var(--line)}
+.sub{color:var(--mid);font-size:13.5px}
+.scorebar{display:flex;align-items:center;gap:22px;flex-wrap:wrap}
+.score{font-size:44px;font-weight:700;line-height:1;letter-spacing:-1px}
+.score small{font-size:15px;color:var(--light);font-weight:400}
+.verdict{font-size:15px;font-weight:600;padding:4px 12px;border-radius:20px;background:#eff5ff;color:var(--accent)}
+.verdict.veto{background:#fdecea;color:var(--bad)}
+.sec{display:flex;gap:14px;flex-wrap:wrap;margin-top:14px}
+.sec div{background:var(--bg);border-radius:8px;padding:8px 14px;font-size:13.5px;color:var(--mid)}
+.sec b{display:block;color:var(--ink);font-size:17px;font-weight:600}
+table{width:100%;border-collapse:collapse;font-size:14px}
+th,td{text-align:left;padding:9px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+th{color:var(--mid);font-weight:500;font-size:13px;background:#fafbfc}
+td.num{font-variant-numeric:tabular-nums;white-space:nowrap}
+.q{color:#3f4650;background:#fafbfc;border-left:2px solid var(--line);
+padding:2px 8px;margin-top:4px;display:inline-block;font-size:13.5px}
+.hit{background:#fdecea;border:1px solid #f5c6c2;border-radius:10px;padding:14px 16px;margin-bottom:10px}
+.hit.negt{background:#fff8e8;border-color:#f3d9a4}
+.hit .tag{font-size:12px;font-weight:600;color:var(--bad);letter-spacing:.3px}
+.hit.negt .tag{color:#a8721a}
+.hit .why{font-size:13.5px;color:var(--mid);margin-top:4px}
+.badge{display:inline-block;font-size:12px;padding:1px 8px;border-radius:10px;
+background:#eef1f4;color:var(--mid);margin-left:6px}
+.badge.est{background:#fff4e0;color:#a8721a}
+.dlg{font-size:14px;line-height:1.9}
+.dlg .row{display:flex;gap:10px;padding:3px 0}
+.dlg .t{color:var(--light);font-size:12px;min-width:44px;text-align:right;font-variant-numeric:tabular-nums}
+.dlg .who{min-width:34px;color:var(--mid);font-size:13px}
+.dlg .row.agent .who{color:var(--accent)}
+.dlg .row.hit-line{background:#fdecea;border-radius:5px}
+.note{font-size:13px;color:var(--mid);background:#fafbfc;border-left:3px solid var(--line);
+padding:10px 14px;border-radius:0 6px 6px 0}
+.veto-box{background:#fdecea;border:1px solid #f5c6c2;border-radius:10px;padding:14px 16px;margin-bottom:14px}
+.veto-box b{color:var(--bad)}
+.empty{color:var(--light);font-size:14px;padding:6px 0}
+footer{color:var(--light);font-size:12.5px;text-align:center;margin-top:26px}
+</style></head><body><div class="wrap"><div class="card">
+<h1>C20261020-0004 · 会员续费</h1>
+<div class="sub">2026-10-20 16:37:11 ｜ 时长 118 秒 ｜ 坐席 A05 ｜ 外呼</div>
+<div class="scorebar" style="margin-top:16px">
+  <div class="score">0<small> / 100</small></div>
+  <div class="verdict veto">违规·需人工复核</div>
+</div>
+<div class="sec"></div></div><div class="card"><h2>红线违规（一票否决）</h2>
+<div class="veto-box"><b>本通判定为违规，必须转人工复核。</b>
+<div class="sub" style="margin-top:6px">红线项不做分数折中：漏放一次，代价是处罚和诉讼；误拦一次，代价只是人工看一眼。</div>
+<div style="margin-top:6px">82.0s 命中「验证码」：电话中索要验证码 / 密码 / 完整证件号，是电诈的典型特征，正规业务不应如此<div class="q">…下不过需要您提供一下验证码，我这边帮您在系统里…</div></div><div style="margin-top:6px">96.8s 命中「官方客服」：非官方身份声称公检法 / 银行官方，属冒充<div class="q">…证身份您放心我这边是官方客服不会乱用。</div></div></div></div><div class="card"><h2>红线检测明细</h2><div class="hit"><span class="tag">违规</span>
+<span class="badge">索取敏感信息</span><span class="badge">82.0s</span><span class="badge">同句 2 次</span>
+<div style="margin-top:6px">命中「<b>验证码</b>」</div>
+<div class="q">…下不过需要您提供一下验证码，我这边帮您在系统里…</div>
+<div class="why">电话中索要验证码 / 密码 / 完整证件号，是电诈的典型特征，正规业务不应如此</div></div><div class="hit"><span class="tag">违规</span>
+<span class="badge">冒充官方 / 公检法</span><span class="badge">96.8s</span>
+<div style="margin-top:6px">命中「<b>官方客服</b>」</div>
+<div class="q">…证身份您放心我这边是官方客服不会乱用。</div>
+<div class="why">非官方身份声称公检法 / 银行官方，属冒充</div></div><div class="note">客户自己提到相关词 2 次，未计入违规——红线只扫坐席说的话，客户问"你们保本吗"不是违规。</div></div><div class="card"><h2>扣分明细</h2><table><tr><th style='width:60px'>扣分</th><th style='width:90px'>板块</th><th>项目与依据</th></tr></table></div><div class="card"><h2>合规与沟通检查</h2><table><tr><th style='width:38px'></th><th style='width:180px'>项目</th><th style='width:70px'>权重</th><th>结果</th></tr><tr><td style='color:var(--ok);font-weight:700'>✓</td><td>开场自报公司与身份</td><td class='num'>10</td><td>在 0.0s 说清了身份<div class="q">您好我这边是云享会员客服中心的通知您的会员还有三天到期了现在续费的话可以享受八折优惠而且会额外赠送三个月的视频平台权益这个活动只针对老用户开放名额有限您看要不要现在就直接帮您办理一下续费手续？</div></td></tr><tr><td style='color:var(--bad);font-weight:700'>✗</td><td>确认对方是否为本人</td><td class='num'>10</td><td>没有确认接听人是否为本人，存在骚扰非目标人的风险</td></tr><tr><td style='color:var(--bad);font-weight:700'>✗</td><td>告知通话录音</td><td class='num'>5</td><td>这通电话被录音，但坐席全程没有告知</td></tr><tr><td style='color:var(--bad);font-weight:700'>✗</td><td>客户拒绝后停止推销</td><td class='num'>15</td><td>客户在 104.2s 明确拒绝，之后坐席仍有 1 次推销动作<div class="q">我先不弄了，我自己看看。</div><div class="q">那行吧。那您考虑一下续费的事，我明天再联系您。</div></td></tr><tr><td style='color:var(--bad);font-weight:700'>✗</td><td>没有打断客户<span class="badge est">估算</span></td><td class='num'>15</td><td>估算有 2 处抢话，最长重叠 0.9 秒<div class="q">等一下，你是说……</div><div class="q">我想问一下能不能……</div></td></tr><tr><td style='color:var(--bad);font-weight:700'>✗</td><td>单次说话不过长<span class="badge est">估算</span></td><td class='num'>10</td><td>有 1 次单轮超过 90 字，客户插不进话<div class="q">您好我这边是云享会员客服中心的通知您的会员还有三天到期了现在续费的话可以享受八折优惠而且会额外赠送三个月的视频平台权益这个活动只针对老用户开放名额有限您看要不要现在就直接帮您办理一下续费手续？</div></td></tr><tr><td style='color:var(--ok);font-weight:700'>✓</td><td>说话配比（参考）<span class="badge est">估算</span></td><td class='num'>参考</td><td>坐席占 83%</td></tr><tr><td style='color:var(--bad);font-weight:700'>✗</td><td>有礼貌的结束语</td><td class='num'>5</td><td>结尾没有结束语，直接挂断</td></tr></table><div class="note" style="margin-top:12px">坐席说话 83%（坐席 429 字 / 客户 88 字）。这个数字只作参考，不参与打分——外呼场景坐席本来话就多，拿它扣分会把好电话也判差。</div></div><div class="card"><h2>语义打标</h2><table>
+<tr><th style="width:120px">客户意图</th><td>已在别处解决
+<div class="q">我先不弄了，我自己看看。</div></td></tr>
+<tr><th>客户情绪</th><td>负向
+<div class="q">我就是要关掉，我不想自动扣钱。</div></td></tr>
+<tr><th>下一步</th><td>模糊
+<div class="q">那您考虑一下续费的事，我明天再联系您。</div></td></tr>
+</table><h2 style='margin-top:18px;font-size:14px;border:none;padding:0'>客户异议与坐席处理</h2><table><tr><th style='width:90px'>类型</th><th>客户原话</th><th style='width:90px'>处理</th><th>坐席原话</th></tr><tr><td>不需要</td><td><div class='q' style='margin:0'>我就是要关掉，我不想自动扣钱。</div></td><td>敷衍带过</td><td><div class='q' style='margin:0'>好的好的那我这边给您登记一下不过需要您提供一下验证码</div></td></tr><tr><td>信任</td><td><div class='q' style='margin:0'>验证码？关自动续费要验证码吗？</div></td><td>敷衍带过</td><td><div class='q' style='margin:0'>需要的需要的系统要验证身份您放心我这边是官方客服不会乱用。</div></td></tr></table><div class="note" style="margin-top:12px">坐席推销会员续费，客户要求关闭自动续费，坐席索要验证码被拒，客户自行处理。</div></div><div class="card"><h2>对话全文</h2><div class="dlg"><div class="row agent"><div class="t">0.0s</div><div class="who">坐席</div><div>您好我这边是云享会员客服中心的通知您的会员还有三天到期了现在续费的话可以享受八折优惠而且会额外赠送三个月的视频平台权益这个活动只针对老用户开放名额有限您看要不要现在就直接帮您办理一下续费手续？</div></div><div class="row"><div class="t">22.4s</div><div class="who">客户</div><div>等一下，你是说……</div></div><div class="row agent"><div class="t">23.9s</div><div class="who">坐席</div><div>对的就是八折续费加送三个月权益这个真的挺划算的很多老用户都办了这个活动到月底就结束了过期就没有了这个价格了您看现在办还是？</div></div><div class="row"><div class="t">36.5s</div><div class="who">客户</div><div>我想问一下能不能……</div></div><div class="row agent"><div class="t">37.8s</div><div class="who">坐席</div><div>可以的可以的您说的都可以我们这边都能处理您先告诉我您是要办一年还是两年的一年是二百八十八两年是四百八十八两年更划算平均下来一个月才二十块钱。</div></div><div class="row"><div class="t">52.1s</div><div class="who">客户</div><div>我不是要问这个。</div></div><div class="row agent"><div class="t">54.0s</div><div class="who">坐席</div><div>哦那您问您问。</div></div><div class="row"><div class="t">55.6s</div><div class="who">客户</div><div>我是想问，我原来那个自动续费怎么关掉？</div></div><div class="row agent"><div class="t">60.2s</div><div class="who">坐席</div><div>自动续费啊这个得在您手机上的那个应用里面操作我这边看不到您手机上的设置您自己找一下设置里面应该有不过话说回来您既然都要续费了就不用关了嘛关掉反而麻烦到时候忘了续费权益就断了。</div></div><div class="row"><div class="t">78.4s</div><div class="who">客户</div><div>我就是要关掉，我不想自动扣钱。</div></div><div class="row agent hit-line"><div class="t">82.0s</div><div class="who">坐席</div><div>好的好的那我这边给您登记一下不过需要您提供一下验证码，我这边帮您在系统里操作，您把收到的六位数验证码念给我就行。</div></div><div class="row"><div class="t">93.5s</div><div class="who">客户</div><div>验证码？关自动续费要验证码吗？</div></div><div class="row agent hit-line"><div class="t">96.8s</div><div class="who">坐席</div><div>需要的需要的系统要验证身份您放心我这边是官方客服不会乱用。</div></div><div class="row"><div class="t">104.2s</div><div class="who">客户</div><div>我先不弄了，我自己看看。</div></div><div class="row agent"><div class="t">107.5s</div><div class="who">坐席</div><div>那行吧。那您考虑一下续费的事，我明天再联系您。</div></div></div></div><footer>由外呼质检器生成 · 红线段为确定性规则，打标段由模型产出并已做原文校验</footer>
+</div></body></html>
