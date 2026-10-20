@@ -3,3 +3,4 @@ audio/*.wav
 logs/*.jsonl
 __pycache__/
 *.pyc
+.env
