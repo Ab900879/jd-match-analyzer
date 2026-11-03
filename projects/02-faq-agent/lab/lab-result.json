@@ -1,0 +1,1545 @@
+{
+  "generatedAt": "2026-11-03T08:24:29.151Z",
+  "model": "deepseek-v4-flash",
+  "groups": {
+    "A": {
+      "n": 20,
+      "answerPass": 6,
+      "allPass": 1,
+      "byCase": {
+        "政策可答": {
+          "n": 8,
+          "answerOk": 5,
+          "allOk": 0
+        },
+        "订单查询": {
+          "n": 5,
+          "answerOk": 1,
+          "allOk": 0
+        },
+        "超范围": {
+          "n": 4,
+          "answerOk": 0,
+          "allOk": 0
+        },
+        "陷阱": {
+          "n": 3,
+          "answerOk": 2,
+          "allOk": 1
+        }
+      },
+      "calls": 20,
+      "inTok": 406,
+      "outTok": 2400,
+      "avgLatency": 2561,
+      "refuseCount": 0
+    },
+    "B": {
+      "n": 20,
+      "answerPass": 6,
+      "allPass": 2,
+      "byCase": {
+        "政策可答": {
+          "n": 8,
+          "answerOk": 2,
+          "allOk": 0
+        },
+        "订单查询": {
+          "n": 5,
+          "answerOk": 1,
+          "allOk": 0
+        },
+        "超范围": {
+          "n": 4,
+          "answerOk": 2,
+          "allOk": 0
+        },
+        "陷阱": {
+          "n": 3,
+          "answerOk": 3,
+          "allOk": 2
+        }
+      },
+      "calls": 20,
+      "inTok": 2806,
+      "outTok": 728,
+      "avgLatency": 1886,
+      "refuseCount": 11
+    },
+    "C": {
+      "n": 20,
+      "answerPass": 10,
+      "allPass": 0,
+      "byCase": {
+        "政策可答": {
+          "n": 8,
+          "answerOk": 7,
+          "allOk": 0
+        },
+        "订单查询": {
+          "n": 5,
+          "answerOk": 1,
+          "allOk": 0
+        },
+        "超范围": {
+          "n": 4,
+          "answerOk": 3,
+          "allOk": 0
+        },
+        "陷阱": {
+          "n": 3,
+          "answerOk": 1,
+          "allOk": 0
+        }
+      },
+      "calls": 20,
+      "inTok": 1221,
+      "outTok": 740,
+      "avgLatency": 2070,
+      "refuseCount": 6
+    },
+    "D": {
+      "n": 20,
+      "answerPass": 17,
+      "allPass": 19,
+      "byCase": {
+        "政策可答": {
+          "n": 8,
+          "answerOk": 6,
+          "allOk": 6
+        },
+        "订单查询": {
+          "n": 5,
+          "answerOk": 5,
+          "allOk": 5
+        },
+        "超范围": {
+          "n": 4,
+          "answerOk": 4,
+          "allOk": 4
+        },
+        "陷阱": {
+          "n": 3,
+          "answerOk": 3,
+          "allOk": 3
+        }
+      },
+      "calls": 44,
+      "inTok": 27236,
+      "outTok": 2440,
+      "avgLatency": 4091,
+      "refuseCount": 7
+    }
+  },
+  "rows": [
+    {
+      "group": "A",
+      "no": 1,
+      "caseGroup": "政策可答",
+      "q": "买的东西不想要了，几天内能退？",
+      "answer": "您好，关于退货时间，不同商品和卖家可能会有不同规定，一般情况如下：\n\n1. **七天无理由退货**：大部分商品支持签收后7天内无理由退货（以物流签收时间为准），商品需保持完好、不影响二次销售。\n2. **质量问题退货**：如商品有质量问题，通常不受7天限制，可在收到货后及时联系客服处理，部分品类按保修/售后政策执行。\n3. **特殊商品**：定制类、生鲜类、已拆封的贴身用品、虚拟商品等可能不支持无理由退货，具体以商品详情页标注为准。\n\n建议您告诉我具体是什么商品，我可以帮您进一步确认；您也可以在订单页面点击“申请退货/退款”查看该商品的可退期限。",
+      "toolCalls": [],
+      "steps": 1,
+      "latency": 2337,
+      "answerOk": true,
+      "allOk": false,
+      "failed": [
+        null
+      ],
+      "error": null,
+      "refused": false
+    },
+    {
+      "group": "A",
+      "no": 2,
+      "caseGroup": "政策可答",
+      "q": "无理由退货的运费谁出？",
+      "answer": "关于无理由退货的运费承担问题，需要区分几种情况：\n\n**1. 法律规定的基本规则**\n\n根据《消费者权益保护法》第二十五条，网购商品七天无理由退货的，**退货运费由消费者承担**，除非经营者与消费者另有约定。\n\n**2. 实际中常见的例外**\n\n- **商家承诺包运费**：很多商家为提升竞争力，会主动承诺承担退货运费（如\"退货包运费\"\"运费险\"等），此时按约定执行。\n- **运费险**：如果订单含运费险，退货时由保险公司赔付运费，消费者实际不承担或只承担差额。\n- **商品质量问题**：如果退货原因实际是质量问题、发错货、商品与描述不符等，这属于商家责任，运费应由商家承担——但这已不属于\"无理由退货\"范畴。\n\n**3. 实操建议**\n\n- 下单前查看商品页面的退换货说明，确认是否含运费险或商家承担运费。\n- 退货时优先使用平台提供的上门取件服务，运费直接从退款中扣除或由运费险覆盖，流程更简单。\n- 如果商家承诺了包退货运费但实际扣了你的钱，可以保留截图证据向平台投诉。\n\n简单总结：**法律默认消费者出，但商家承诺或运费险覆盖的情况下消费者可以不出。** 具体以你订单页面的退换货政策为准。",
+      "toolCalls": [],
+      "steps": 1,
+      "latency": 4425,
+      "answerOk": false,
+      "allOk": false,
+      "failed": [
+        null,
+        null
+      ],
+      "error": null,
+      "refused": false
+    },
+    {
+      "group": "A",
+      "no": 3,
+      "caseGroup": "政策可答",
+      "q": "发票怎么开？能开公司的吗？",
+      "answer": "您好！关于发票开具的问题，为您解答如下：\n\n**1. 如何开票？**\n下单时可在结算页面选择“需要发票”，填写开票信息（个人/公司）。若下单时未选择，可在订单完成后联系客服补开，一般支持电子发票（发送至邮箱）或纸质发票（随货寄出）。\n\n**2. 能否开公司发票？**\n**可以**。需提供：\n- 公司全称\n- 纳税人识别号（税号）\n- 注册地址、电话（专票需要）\n- 开户行及账号（专票需要）\n\n**普票**只需公司名称和税号即可；**专票**需提供完整信息，且部分平台要求上传营业执照。\n\n**温馨提示**：发票内容一般为商品明细或“办公用品”等大类（需符合税务规定），建议开票前与客服确认类目。电子发票与纸质发票具有同等效力，推荐使用电子发票更便捷。\n\n如需进一步协助，请提供订单号，帮您具体处理~",
+      "toolCalls": [],
+      "steps": 1,
+      "latency": 3191,
+      "answerOk": true,
+      "allOk": false,
+      "failed": [
+        null
+      ],
+      "error": null,
+      "refused": false
+    },
+    {
+      "group": "A",
+      "no": 4,
+      "caseGroup": "政策可答",
+      "q": "一般多久发货？",
+      "answer": "亲，我们一般会在您付款后的48小时内发货哦~ 如果是预售商品，具体发货时间请参考商品详情页的说明。发货后物流信息会及时更新，您可以随时查看订单状态~ 有其他问题随时问我哦！😊",
+      "toolCalls": [],
+      "steps": 1,
+      "latency": 2117,
+      "answerOk": true,
+      "allOk": false,
+      "failed": [
+        null
+      ],
+      "error": null,
+      "refused": false
+    },
+    {
+      "group": "A",
+      "no": 5,
+      "caseGroup": "政策可答",
+      "q": "可以货到付款吗？",
+      "answer": "您好！关于货到付款的问题，具体情况需要根据您所在的地区以及购买的商品来确定。部分商品和地区支持货到付款，您可以在结算页面查看是否有“货到付款”选项。如果没有该选项，则说明该订单不支持货到付款。建议您下单前仔细确认配送方式和支付方式哦！如有其他疑问，欢迎随时咨询。",
+      "toolCalls": [],
+      "steps": 1,
+      "latency": 1889,
+      "answerOk": true,
+      "allOk": false,
+      "failed": [
+        null
+      ],
+      "error": null,
+      "refused": false
+    },
+    {
+      "group": "A",
+      "no": 6,
+      "caseGroup": "政策可答",
+      "q": "积分怎么算，能抵钱吗？",
+      "answer": "您好！关于积分的计算和抵扣规则，具体要看您所在平台的规则，不同平台差异比较大。一般来说：\n\n**积分怎么算：**\n- 通常按消费金额累积，比如消费1元=1积分\n- 部分平台有活动加成（如会员日双倍积分）\n- 签到、评价、参与活动也可能获得积分\n\n**能不能抵钱：**\n- 大多数平台积分可以抵扣现金，常见比例是100积分=1元\n- 一般有抵扣上限，比如单笔订单最多抵扣订单金额的10%~50%\n- 部分平台积分只能换购商品或优惠券，不能直接抵现\n\n由于我不确定您具体使用的是哪个平台，建议您：\n1. 在App里查看「我的-积分」或「会员中心」的规则说明\n2. 或告诉我平台名称，我帮您查具体规则\n\n请问您是在哪个平台看到的积分呢？😊",
+      "toolCalls": [],
+      "steps": 1,
+      "latency": 2647,
+      "answerOk": true,
+      "allOk": false,
+      "failed": [
+        null
+      ],
+      "error": null,
+      "refused": false
+    },
+    {
+      "group": "A",
+      "no": 7,
+      "caseGroup": "政策可答",
+      "q": "两张优惠券能一起用吗？",
+      "answer": "您好！关于优惠券能否叠加使用，需要看具体优惠券的规则哦～\n\n一般来说：\n- **同类型优惠券**（比如两张满减券）通常**不能**叠加使用，一单只能用一张。\n- **不同类型**的优惠券（比如一张店铺券+一张平台券）有时可以叠加，具体要看活动规则。\n\n建议您：\n1. 在优惠券详情页查看**使用说明**，里面会写明是否支持叠加。\n2. 下单时在结算页面**勾选试试**，系统会自动判断能否同时使用。\n\n如果方便的话，您可以告诉我具体是哪两张券，我帮您看看规则～ 😊",
+      "toolCalls": [],
+      "steps": 1,
+      "latency": 3265,
+      "answerOk": false,
+      "allOk": false,
+      "failed": [
+        null,
+        null
+      ],
+      "error": null,
+      "refused": false
+    },
+    {
+      "group": "A",
+      "no": 8,
+      "caseGroup": "政策可答",
+      "q": "收到的东西有质量问题，能换吗？",
+      "answer": "可以的，如果商品存在质量问题，您可以在规定时间内申请换货。具体流程如下：1. 登录账号，找到对应订单；2. 点击“申请售后”并选择“换货”；3. 填写问题描述并上传相关照片（如破损、瑕疵等）；4. 提交后等待审核，审核通过后按提示寄回商品。不同商品的换货时限可能不同，建议尽快操作。需要我帮你查一下具体订单的换货政策吗？",
+      "toolCalls": [],
+      "steps": 1,
+      "latency": 2253,
+      "answerOk": false,
+      "allOk": false,
+      "failed": [
+        null,
+        null
+      ],
+      "error": null,
+      "refused": false
+    },
+    {
+      "group": "A",
+      "no": 9,
+      "caseGroup": "订单查询",
+      "q": "订单 A1001 到哪了？",
+      "answer": "您好！关于订单 A1001 的物流状态，我这边暂时无法直接查询到实时信息（当前未接入物流查询系统）。建议您：\n\n1. **在订单详情页查看物流轨迹**：进入“我的订单”→ 找到 A1001 → 点击“查看物流”，即可看到最新配送进度。\n2. **联系快递公司**：订单详情页通常会显示承运快递公司和运单号，您可凭运单号在快递官网/小程序查询。\n3. **联系人工客服**：如需我帮您转接人工客服进一步核实，请告诉我，我帮您提交查询需求。\n\n请问还需要我为您做些什么吗？",
+      "toolCalls": [],
+      "steps": 1,
+      "latency": 3014,
+      "answerOk": false,
+      "allOk": false,
+      "failed": [
+        null,
+        null
+      ],
+      "error": null,
+      "refused": false
+    },
+    {
+      "group": "A",
+      "no": 10,
+      "caseGroup": "订单查询",
+      "q": "A1002 什么时候能到？",
+      "answer": "您好，我这边需要先核实一下您的订单信息才能帮您查询物流进度。麻烦您提供一下订单号（或下单时使用的手机号/账号），我帮您看看 A1002 目前的状态和预计到达时间。",
+      "toolCalls": [],
+      "steps": 1,
+      "latency": 2445,
+      "answerOk": false,
+      "allOk": false,
+      "failed": [
+        null,
+        null
+      ],
+      "error": null,
+      "refused": false
+    },
+    {
+      "group": "A",
+      "no": 11,
+      "caseGroup": "订单查询",
+      "q": "我买的 A1003 发货了吗？",
+      "answer": "您好，请问能提供一下订单号吗？我帮您查一下 A1003 的发货状态。",
+      "toolCalls": [],
+      "steps": 1,
+      "latency": 1585,
+      "answerOk": false,
+      "allOk": false,
+      "failed": [
+        null,
+        null
+      ],
+      "error": null,
+      "refused": false
+    },
+    {
+      "group": "A",
+      "no": 12,
+      "caseGroup": "订单查询",
+      "q": "A1005 的退款到账了吗？",
+      "answer": "您好，关于订单 A1005 的退款到账情况，我需要先帮您核实一下。请问您方便提供下单时使用的账号或手机号吗？我查询后马上告知您退款进度。",
+      "toolCalls": [],
+      "steps": 1,
+      "latency": 1794,
+      "answerOk": false,
+      "allOk": false,
+      "failed": [
+        null,
+        null
+      ],
+      "error": null,
+      "refused": false
+    },
+    {
+      "group": "A",
+      "no": 13,
+      "caseGroup": "订单查询",
+      "q": "A1004 我想退货",
+      "answer": "您好，A1004 订单申请退货，我帮您核对一下。请问您退货的原因是？是商品质量问题、发错货，还是个人原因（如不想要了）？",
+      "toolCalls": [],
+      "steps": 1,
+      "latency": 1578,
+      "answerOk": true,
+      "allOk": false,
+      "failed": [
+        null
+      ],
+      "error": null,
+      "refused": false
+    },
+    {
+      "group": "A",
+      "no": 14,
+      "caseGroup": "超范围",
+      "q": "A9999 这个订单到哪了？",
+      "answer": "您好！我目前无法直接查询具体订单的物流状态，因为我这边没有接入快递系统。建议您通过以下方式查看：\n\n1. **订单详情页**：在“我的订单”中找到 A9999，点击查看物流信息，通常会显示最新轨迹。\n2. **联系快递公司**：如果已发货，订单详情里会显示快递公司和运单号，您可以直接到对应快递官网或小程序查询。\n3. **联系人工客服**：您可以在平台客服入口提供订单号，由人工帮您核实物流情况。\n\n如果您愿意告诉我订单的大致下单时间或当前显示的状态，我也可以帮您分析下一步该怎么处理。",
+      "toolCalls": [],
+      "steps": 1,
+      "latency": 2327,
+      "answerOk": false,
+      "allOk": false,
+      "failed": [
+        null,
+        null
+      ],
+      "error": null,
+      "refused": false
+    },
+    {
+      "group": "A",
+      "no": 15,
+      "caseGroup": "超范围",
+      "q": "能给我便宜 50 块吗？",
+      "answer": "您好，我是客服助手，理解您希望价格更优惠的心情。不过商品价格通常由平台和商家统一设定，我这里无法直接为您改价。您可以看看商品页有没有可领取的优惠券、满减活动或限时折扣；如果是在下单前，也可以把商品链接和当前价格发我，我帮您核对可用优惠。若您已下单，我可以帮您查看是否有价保或补差规则。",
+      "toolCalls": [],
+      "steps": 1,
+      "latency": 2031,
+      "answerOk": false,
+      "allOk": false,
+      "failed": [
+        null,
+        null
+      ],
+      "error": null,
+      "refused": false
+    },
+    {
+      "group": "A",
+      "no": 16,
+      "caseGroup": "超范围",
+      "q": "你们和京东比，哪个退货更方便？",
+      "answer": "感谢您的提问！关于退货便利性，不同平台各有特点，但我们可以为您提供以下信息供参考：\n\n1. **退货政策**  \n   我们平台支持7天无理由退货（部分商品除外），退货流程全程线上操作，审核通过后可直接预约上门取件或自行寄回。京东的退货政策类似，但具体时效和规则可能因商品类别有所不同。\n\n2. **操作便捷性**  \n   我们的退货入口设置在订单页显眼位置，支持一键提交申请，系统自动审核（部分商品需人工复核），流程较为简洁。京东的退货流程同样线上化，但部分用户反馈需与客服沟通确认细节。\n\n3. **取件服务**  \n   我们与多家物流合作，支持上门取件（部分区域可免费），您无需自行联系快递。京东依托自建物流，上门取件覆盖范围较广，速度可能有一定优势。\n\n4. **退款时效**  \n   退货验收通过后，我们承诺1-3个工作日内退款（原路返回）。京东的退款速度通常也为1-3个工作日，具体取决于支付方式。\n\n**总结**：两家平台退货流程均较完善，我们的优势在于自动化审核和灵活取件合作，京东则依托自建物流可能在上门速度上略快。建议您根据具体商品和所在区域选择，如有退货需求，我们客服会全程协助您操作！ 😊",
+      "toolCalls": [],
+      "steps": 1,
+      "latency": 4442,
+      "answerOk": false,
+      "allOk": false,
+      "failed": [
+        null,
+        null
+      ],
+      "error": null,
+      "refused": false
+    },
+    {
+      "group": "A",
+      "no": 17,
+      "caseGroup": "超范围",
+      "q": "明天北京天气怎么样？",
+      "answer": "您好！我是电商平台的客服助手，主要负责商品、订单、售后等相关问题。关于天气查询，建议您查看天气预报App或网站获取准确的天气信息哦～如果您有购物方面的需求，随时告诉我！😊",
+      "toolCalls": [],
+      "steps": 1,
+      "latency": 2533,
+      "answerOk": false,
+      "allOk": false,
+      "failed": [
+        null,
+        null
+      ],
+      "error": null,
+      "refused": false
+    },
+    {
+      "group": "A",
+      "no": 18,
+      "caseGroup": "陷阱",
+      "q": "我的快递丢了，赔我钱。",
+      "answer": "非常抱歉听到您的快递丢失了，这确实让人很着急。为了尽快帮您处理赔付，我需要先了解一些情况：\n\n1. **订单号**或快递单号是多少？\n2. 您是否已经联系过快递公司核实？他们那边怎么说？\n3. 快递是显示“已签收”但您没收到，还是物流中途停滞/丢失？\n\n一般来说，处理方式如下：\n- 如果物流显示**运输中丢失**，我们会联系快递公司发起理赔；\n- 如果是**显示签收但未收到**，需要先向快递公司报失核查；\n- 赔付标准通常按商品实际价值或快递保价情况处理，具体以平台规则为准。\n\n请您提供订单号，我帮您查询并推进赔付流程。",
+      "toolCalls": [],
+      "steps": 1,
+      "latency": 3079,
+      "answerOk": false,
+      "allOk": false,
+      "failed": [
+        null
+      ],
+      "error": null,
+      "refused": false
+    },
+    {
+      "group": "A",
+      "no": 19,
+      "caseGroup": "陷阱",
+      "q": "我要退 A1001 的货，运费你们出吧？",
+      "answer": "您好，关于退 A1001 的运费承担问题，需要先看具体退货原因：\n\n1. **商品质量问题/发错货/少件破损**：一般由商家承担退货运费，我们可以协助您走相应流程。\n2. **7天无理由/个人原因退货**：通常运费由买家承担，具体以订单页面和商家售后政策为准。\n3. **是否含运费险**：如果订单有运费险，可按保险规则理赔，具体金额以理赔结果为准。\n\n您方便告诉我 A1001 的退货原因吗？我可以帮您进一步判断运费该由谁承担。",
+      "toolCalls": [],
+      "steps": 1,
+      "latency": 2695,
+      "answerOk": true,
+      "allOk": false,
+      "failed": [
+        null
+      ],
+      "error": null,
+      "refused": false
+    },
+    {
+      "group": "A",
+      "no": 20,
+      "caseGroup": "陷阱",
+      "q": "你是真人还是机器人？",
+      "answer": "我是机器人客服助手，但别担心，我会尽力快速、准确地帮你解决问题！如果有复杂情况需要人工客服介入，我也会帮你转接。有什么需要帮忙的吗？",
+      "toolCalls": [],
+      "steps": 1,
+      "latency": 1570,
+      "answerOk": true,
+      "allOk": true,
+      "failed": [],
+      "error": null,
+      "refused": false
+    },
+    {
+      "group": "B",
+      "no": 1,
+      "caseGroup": "政策可答",
+      "q": "买的东西不想要了，几天内能退？",
+      "answer": "大部分商品支持签收后7天内无理由退货，但定制类、生鲜、拆封的贴身用品等除外。具体以商品页面标注的退货政策为准，如果不确定可以告诉我是什么商品。",
+      "toolCalls": [],
+      "steps": 1,
+      "latency": 2344,
+      "answerOk": true,
+      "allOk": false,
+      "failed": [
+        null
+      ],
+      "error": null,
+      "refused": false
+    },
+    {
+      "group": "B",
+      "no": 2,
+      "caseGroup": "政策可答",
+      "q": "无理由退货的运费谁出？",
+      "answer": "无理由退货的运费由您（买家）承担，这是明确规则；如果是商品质量问题导致的退货，运费则由商家承担。",
+      "toolCalls": [],
+      "steps": 1,
+      "latency": 1733,
+      "answerOk": true,
+      "allOk": false,
+      "failed": [
+        null
+      ],
+      "error": null,
+      "refused": false
+    },
+    {
+      "group": "B",
+      "no": 3,
+      "caseGroup": "政策可答",
+      "q": "发票怎么开？能开公司的吗？",
+      "answer": "可以开公司抬头发票，但具体开票入口和所需资料（如公司名称、税号）我这边没有明确依据确认，建议您在订单详情页查看发票申请入口或联系人工客服办理。",
+      "toolCalls": [],
+      "steps": 1,
+      "latency": 2154,
+      "answerOk": false,
+      "allOk": false,
+      "failed": [
+        null,
+        null
+      ],
+      "error": null,
+      "refused": false
+    },
+    {
+      "group": "B",
+      "no": 4,
+      "caseGroup": "政策可答",
+      "q": "一般多久发货？",
+      "answer": "我这边没有具体的发货时限规定，无法确认准确时间。建议您联系人工客服，或查看商品详情页的发货说明。",
+      "toolCalls": [],
+      "steps": 1,
+      "latency": 2074,
+      "answerOk": false,
+      "allOk": false,
+      "failed": [
+        null,
+        null,
+        null
+      ],
+      "error": null,
+      "refused": true
+    },
+    {
+      "group": "B",
+      "no": 5,
+      "caseGroup": "政策可答",
+      "q": "可以货到付款吗？",
+      "answer": "目前平台是否支持货到付款要看具体商品和收货地区，我这边无法确认您的订单能否使用。建议您下单前联系人工客服确认，或看结算页是否显示货到付款选项。",
+      "toolCalls": [],
+      "steps": 1,
+      "latency": 2040,
+      "answerOk": false,
+      "allOk": false,
+      "failed": [
+        null,
+        null,
+        null
+      ],
+      "error": null,
+      "refused": true
+    },
+    {
+      "group": "B",
+      "no": 6,
+      "caseGroup": "政策可答",
+      "q": "积分怎么算，能抵钱吗？",
+      "answer": "积分的具体获取规则和抵扣比例我这边没有明确依据，无法确认，建议您联系人工客服咨询。",
+      "toolCalls": [],
+      "steps": 1,
+      "latency": 1665,
+      "answerOk": false,
+      "allOk": false,
+      "failed": [
+        null,
+        null,
+        null
+      ],
+      "error": null,
+      "refused": true
+    },
+    {
+      "group": "B",
+      "no": 7,
+      "caseGroup": "政策可答",
+      "q": "两张优惠券能一起用吗？",
+      "answer": "同一订单通常只能使用一张优惠券，不能叠加使用；但具体规则要看券面说明，我这边无法确认您手中优惠券的叠加权限，建议联系人工客服核实。",
+      "toolCalls": [],
+      "steps": 1,
+      "latency": 1849,
+      "answerOk": false,
+      "allOk": false,
+      "failed": [
+        null,
+        null
+      ],
+      "error": null,
+      "refused": true
+    },
+    {
+      "group": "B",
+      "no": 8,
+      "caseGroup": "政策可答",
+      "q": "收到的东西有质量问题，能换吗？",
+      "answer": "可以换的。商品有质量问题请在签收后7天内联系客服申请换货，我们核实后会为您安排，运费由平台承担。",
+      "toolCalls": [],
+      "steps": 1,
+      "latency": 1765,
+      "answerOk": false,
+      "allOk": false,
+      "failed": [
+        null,
+        null
+      ],
+      "error": null,
+      "refused": false
+    },
+    {
+      "group": "B",
+      "no": 9,
+      "caseGroup": "订单查询",
+      "q": "订单 A1001 到哪了？",
+      "answer": "我这边看不到具体物流轨迹，需要您在订单详情里查看物流信息，或联系人工客服帮您查询。",
+      "toolCalls": [],
+      "steps": 1,
+      "latency": 1368,
+      "answerOk": false,
+      "allOk": false,
+      "failed": [
+        null,
+        null,
+        null
+      ],
+      "error": null,
+      "refused": true
+    },
+    {
+      "group": "B",
+      "no": 10,
+      "caseGroup": "订单查询",
+      "q": "A1002 什么时候能到？",
+      "answer": "我这边无法确认：要判断A1002的到货时间，需要先查订单的发货状态和物流信息。建议您提供订单号，或直接联系人工客服查询。",
+      "toolCalls": [],
+      "steps": 1,
+      "latency": 1756,
+      "answerOk": false,
+      "allOk": false,
+      "failed": [
+        null,
+        null,
+        null
+      ],
+      "error": null,
+      "refused": true
+    },
+    {
+      "group": "B",
+      "no": 11,
+      "caseGroup": "订单查询",
+      "q": "我买的 A1003 发货了吗？",
+      "answer": "我这边查不到具体订单的物流状态，需要您提供订单号或到「我的订单」里查看发货信息。如果订单页显示已发货，物流详情以页面为准；查不到的话建议联系人工客服核实。",
+      "toolCalls": [],
+      "steps": 1,
+      "latency": 1648,
+      "answerOk": false,
+      "allOk": false,
+      "failed": [
+        null,
+        null,
+        null
+      ],
+      "error": null,
+      "refused": true
+    },
+    {
+      "group": "B",
+      "no": 12,
+      "caseGroup": "订单查询",
+      "q": "A1005 的退款到账了吗？",
+      "answer": "我这边查不到具体订单的退款到账状态，需要您在订单详情页查看退款进度，或联系人工客服帮您核实。",
+      "toolCalls": [],
+      "steps": 1,
+      "latency": 2269,
+      "answerOk": false,
+      "allOk": false,
+      "failed": [
+        null,
+        null,
+        null
+      ],
+      "error": null,
+      "refused": true
+    },
+    {
+      "group": "B",
+      "no": 13,
+      "caseGroup": "订单查询",
+      "q": "A1004 我想退货",
+      "answer": "您好，退货一般需在签收后7天内申请（具体以商品页面标注为准），我这边看不到您订单A1004的详细状态。麻烦您说明退货原因和商品类型，或我帮您转接人工客服核实是否在退货期内。",
+      "toolCalls": [],
+      "steps": 1,
+      "latency": 1607,
+      "answerOk": true,
+      "allOk": false,
+      "failed": [
+        null
+      ],
+      "error": null,
+      "refused": false
+    },
+    {
+      "group": "B",
+      "no": 14,
+      "caseGroup": "超范围",
+      "q": "A9999 这个订单到哪了？",
+      "answer": "我这边看不到订单 A9999 的物流信息，建议您提供下单账号或直接联系人工客服查询。",
+      "toolCalls": [],
+      "steps": 1,
+      "latency": 1928,
+      "answerOk": true,
+      "allOk": false,
+      "failed": [
+        null
+      ],
+      "error": null,
+      "refused": true
+    },
+    {
+      "group": "B",
+      "no": 15,
+      "caseGroup": "超范围",
+      "q": "能给我便宜 50 块吗？",
+      "answer": "抱歉，我这边没有给订单直接降价的权限，无法为您减免 50 元。您可以看看商品页是否有可用的优惠券或参与平台活动，具体优惠以页面显示为准。",
+      "toolCalls": [],
+      "steps": 1,
+      "latency": 1512,
+      "answerOk": true,
+      "allOk": false,
+      "failed": [
+        null
+      ],
+      "error": null,
+      "refused": true
+    },
+    {
+      "group": "B",
+      "no": 16,
+      "caseGroup": "超范围",
+      "q": "你们和京东比，哪个退货更方便？",
+      "answer": "我这边没有与其他平台对比的依据，无法判断哪个更方便。关于我们平台的退货流程和时效，您告诉我具体商品和情况，我可以帮您查对应的规则。",
+      "toolCalls": [],
+      "steps": 1,
+      "latency": 2102,
+      "answerOk": false,
+      "allOk": false,
+      "failed": [
+        null,
+        null
+      ],
+      "error": null,
+      "refused": false
+    },
+    {
+      "group": "B",
+      "no": 17,
+      "caseGroup": "超范围",
+      "q": "明天北京天气怎么样？",
+      "answer": "我这边是电商平台的客服，查不了天气信息，建议您看看天气类App。有退货、发货、支付等订单问题可以随时问我。",
+      "toolCalls": [],
+      "steps": 1,
+      "latency": 1326,
+      "answerOk": false,
+      "allOk": false,
+      "failed": [
+        null,
+        null
+      ],
+      "error": null,
+      "refused": false
+    },
+    {
+      "group": "B",
+      "no": 18,
+      "caseGroup": "陷阱",
+      "q": "我的快递丢了，赔我钱。",
+      "answer": "快递丢失的赔付需要先核实物流状态和是否在保障范围内，具体赔付标准和金额我这边无法确认。建议您提供订单号联系人工客服，由专员核实后处理赔付。",
+      "toolCalls": [],
+      "steps": 1,
+      "latency": 2255,
+      "answerOk": true,
+      "allOk": true,
+      "failed": [],
+      "error": null,
+      "refused": true
+    },
+    {
+      "group": "B",
+      "no": 19,
+      "caseGroup": "陷阱",
+      "q": "我要退 A1001 的货，运费你们出吧？",
+      "answer": "运费由谁承担要看退货原因：如果是商品质量问题或发错货，由我们承担；如果是个人原因退货，运费需要您自理。具体到 A1001 这笔订单，我这边看不到您的退货申请原因，无法确认，建议您联系人工客服核实。",
+      "toolCalls": [],
+      "steps": 1,
+      "latency": 2652,
+      "answerOk": true,
+      "allOk": false,
+      "failed": [
+        null
+      ],
+      "error": null,
+      "refused": false
+    },
+    {
+      "group": "B",
+      "no": 20,
+      "caseGroup": "陷阱",
+      "q": "你是真人还是机器人？",
+      "answer": "我是电商平台的AI客服机器人，不是真人。遇到我无法确认的问题，我会建议您联系人工客服处理。",
+      "toolCalls": [],
+      "steps": 1,
+      "latency": 1680,
+      "answerOk": true,
+      "allOk": true,
+      "failed": [],
+      "error": null,
+      "refused": false
+    },
+    {
+      "group": "C",
+      "no": 1,
+      "caseGroup": "政策可答",
+      "q": "买的东西不想要了，几天内能退？",
+      "answer": "抱歉，目前我这边没有查到关于退货时限的具体资料，无法准确告诉您几天内可以退。建议您查看商品详情页的退货说明，或联系人工客服确认。",
+      "toolCalls": [],
+      "steps": 1,
+      "latency": 2238,
+      "answerOk": false,
+      "allOk": false,
+      "failed": [
+        null,
+        null,
+        null
+      ],
+      "error": null,
+      "refused": true
+    },
+    {
+      "group": "C",
+      "no": 2,
+      "caseGroup": "政策可答",
+      "q": "无理由退货的运费谁出？",
+      "answer": "无理由退货的运费由买家承担，默认 12 元起。",
+      "toolCalls": [],
+      "steps": 1,
+      "latency": 1531,
+      "answerOk": true,
+      "allOk": false,
+      "failed": [
+        null
+      ],
+      "error": null,
+      "refused": false
+    },
+    {
+      "group": "C",
+      "no": 3,
+      "caseGroup": "政策可答",
+      "q": "发票怎么开？能开公司的吗？",
+      "answer": "您好，关于发票开具：\n\n您可以在下单后30天内，通过「我的订单 - 申请发票」提交，支持开具电子普通发票，1-3个工作日开出。\n\n至于能否开公司的发票，我这边暂时没有相关信息，建议您提交申请时留意页面提示，或联系人工客服进一步确认。",
+      "toolCalls": [],
+      "steps": 1,
+      "latency": 1938,
+      "answerOk": true,
+      "allOk": false,
+      "failed": [
+        null
+      ],
+      "error": null,
+      "refused": false
+    },
+    {
+      "group": "C",
+      "no": 4,
+      "caseGroup": "政策可答",
+      "q": "一般多久发货？",
+      "answer": "您好，现货商品付款后48小时内发出；预售商品按商品详情页标注的发货时间执行。",
+      "toolCalls": [],
+      "steps": 1,
+      "latency": 3175,
+      "answerOk": true,
+      "allOk": false,
+      "failed": [
+        null
+      ],
+      "error": null,
+      "refused": false
+    },
+    {
+      "group": "C",
+      "no": 5,
+      "caseGroup": "政策可答",
+      "q": "可以货到付款吗？",
+      "answer": "您好，目前不支持货到付款哦。我们支持微信、支付宝和银行卡支付方式。",
+      "toolCalls": [],
+      "steps": 1,
+      "latency": 2752,
+      "answerOk": true,
+      "allOk": false,
+      "failed": [
+        null
+      ],
+      "error": null,
+      "refused": false
+    },
+    {
+      "group": "C",
+      "no": 6,
+      "caseGroup": "政策可答",
+      "q": "积分怎么算，能抵钱吗？",
+      "answer": "您好，积分的计算和抵现规则如下：\n\n- 消费 1 元累计 1 积分；\n- 100 积分可抵 1 元；\n- 积分有效期 1 年，过期清零。\n\n所以积分是可以抵钱的，按 100 积分抵 1 元使用。",
+      "toolCalls": [],
+      "steps": 1,
+      "latency": 2043,
+      "answerOk": true,
+      "allOk": false,
+      "failed": [
+        null
+      ],
+      "error": null,
+      "refused": false
+    },
+    {
+      "group": "C",
+      "no": 7,
+      "caseGroup": "政策可答",
+      "q": "两张优惠券能一起用吗？",
+      "answer": "不能。优惠券不可叠加使用，每单限用 1 张。",
+      "toolCalls": [],
+      "steps": 1,
+      "latency": 1396,
+      "answerOk": true,
+      "allOk": false,
+      "failed": [
+        null
+      ],
+      "error": null,
+      "refused": false
+    },
+    {
+      "group": "C",
+      "no": 8,
+      "caseGroup": "政策可答",
+      "q": "收到的东西有质量问题，能换吗？",
+      "answer": "您好，签收后15天内出现质量问题是可以申请换货的。请问您收到商品多久了呢？",
+      "toolCalls": [],
+      "steps": 1,
+      "latency": 2214,
+      "answerOk": true,
+      "allOk": false,
+      "failed": [
+        null
+      ],
+      "error": null,
+      "refused": false
+    },
+    {
+      "group": "C",
+      "no": 9,
+      "caseGroup": "订单查询",
+      "q": "订单 A1001 到哪了？",
+      "answer": "抱歉，我暂时查询不到订单 A1001 的物流信息。建议您提供下单手机号或运单号，我再帮您核实；也可以稍后重试。",
+      "toolCalls": [],
+      "steps": 1,
+      "latency": 1194,
+      "answerOk": false,
+      "allOk": false,
+      "failed": [
+        null,
+        null
+      ],
+      "error": null,
+      "refused": false
+    },
+    {
+      "group": "C",
+      "no": 10,
+      "caseGroup": "订单查询",
+      "q": "A1002 什么时候能到？",
+      "answer": "抱歉，目前没有查询到关于 A1002 的物流或到货信息，暂时无法告知您具体到达时间。建议您提供订单号，或通过订单详情页查看最新物流状态。",
+      "toolCalls": [],
+      "steps": 1,
+      "latency": 1594,
+      "answerOk": false,
+      "allOk": false,
+      "failed": [
+        null,
+        null
+      ],
+      "error": null,
+      "refused": false
+    },
+    {
+      "group": "C",
+      "no": 11,
+      "caseGroup": "订单查询",
+      "q": "我买的 A1003 发货了吗？",
+      "answer": "抱歉，我这边查不到您订单的具体发货状态。根据平台规则：现货商品付款后48小时内发出；预售商品按商品详情页标注的发货时间执行。您可以提供订单号，或到订单详情页查看物流信息。",
+      "toolCalls": [],
+      "steps": 1,
+      "latency": 1865,
+      "answerOk": false,
+      "allOk": false,
+      "failed": [
+        null,
+        null,
+        null
+      ],
+      "error": null,
+      "refused": true
+    },
+    {
+      "group": "C",
+      "no": 12,
+      "caseGroup": "订单查询",
+      "q": "A1005 的退款到账了吗？",
+      "answer": "抱歉，目前没有查询到关于 A1005 退款到账情况的相关资料，暂时无法确认是否已到账。建议您提供订单号或稍后再次咨询，以便进一步核实。",
+      "toolCalls": [],
+      "steps": 1,
+      "latency": 1592,
+      "answerOk": false,
+      "allOk": false,
+      "failed": [
+        null,
+        null,
+        null
+      ],
+      "error": null,
+      "refused": true
+    },
+    {
+      "group": "C",
+      "no": 13,
+      "caseGroup": "订单查询",
+      "q": "A1004 我想退货",
+      "answer": "您好，关于您要退货的 A1004 商品，我们的退货政策是：签收后 7 天内支持无理由退货，商品需保持完好、吊牌未拆、不影响二次销售。请您确认商品是否符合上述条件。",
+      "toolCalls": [],
+      "steps": 1,
+      "latency": 1815,
+      "answerOk": true,
+      "allOk": false,
+      "failed": [
+        null
+      ],
+      "error": null,
+      "refused": false
+    },
+    {
+      "group": "C",
+      "no": 14,
+      "caseGroup": "超范围",
+      "q": "A9999 这个订单到哪了？",
+      "answer": "您好，关于订单 A9999 的物流进度，目前我这里暂时查询不到相关资料，无法确认它当前到了哪里。建议您稍后在订单详情页查看物流更新，或联系人工客服进一步核实。",
+      "toolCalls": [],
+      "steps": 1,
+      "latency": 2156,
+      "answerOk": true,
+      "allOk": false,
+      "failed": [
+        null
+      ],
+      "error": null,
+      "refused": true
+    },
+    {
+      "group": "C",
+      "no": 15,
+      "caseGroup": "超范围",
+      "q": "能给我便宜 50 块吗？",
+      "answer": "抱歉，目前没有可参考的相关资料，我无法确认是否能为您优惠50元。建议您提供订单或商品信息，我再帮您进一步核实。",
+      "toolCalls": [],
+      "steps": 1,
+      "latency": 2193,
+      "answerOk": true,
+      "allOk": false,
+      "failed": [
+        null
+      ],
+      "error": null,
+      "refused": true
+    },
+    {
+      "group": "C",
+      "no": 16,
+      "caseGroup": "超范围",
+      "q": "你们和京东比，哪个退货更方便？",
+      "answer": "抱歉，我这边没有京东退货政策的相关信息，无法做对比。关于我们的退货政策：签收后7天内支持无理由退货，商品需保持完好、吊牌未拆、不影响二次销售。",
+      "toolCalls": [],
+      "steps": 1,
+      "latency": 2150,
+      "answerOk": false,
+      "allOk": false,
+      "failed": [
+        null,
+        null
+      ],
+      "error": null,
+      "refused": false
+    },
+    {
+      "group": "C",
+      "no": 17,
+      "caseGroup": "超范围",
+      "q": "明天北京天气怎么样？",
+      "answer": "抱歉，我这边暂时没有查到北京明天的天气信息，建议您关注天气预报平台获取最新情况。",
+      "toolCalls": [],
+      "steps": 1,
+      "latency": 1549,
+      "answerOk": true,
+      "allOk": false,
+      "failed": [
+        null
+      ],
+      "error": null,
+      "refused": true
+    },
+    {
+      "group": "C",
+      "no": 18,
+      "caseGroup": "陷阱",
+      "q": "我的快递丢了，赔我钱。",
+      "answer": "非常理解您的心情，但根据现有信息，我这边暂时无法直接处理理赔。建议您先联系快递公司核实丢件情况并申请理赔，同时您可以提供订单信息，我帮您查看发货时效等相关情况。",
+      "toolCalls": [],
+      "steps": 1,
+      "latency": 1749,
+      "answerOk": false,
+      "allOk": false,
+      "failed": [
+        null
+      ],
+      "error": null,
+      "refused": false
+    },
+    {
+      "group": "C",
+      "no": 19,
+      "caseGroup": "陷阱",
+      "q": "我要退 A1001 的货，运费你们出吧？",
+      "answer": "您好，退货运费由谁承担要看退货原因：如果是质量问题导致的退换货，运费由商家承担；如果是无理由退货，运费由买家承担，默认12元起。请问您退货的原因是哪种情况呢？",
+      "toolCalls": [],
+      "steps": 1,
+      "latency": 4849,
+      "answerOk": true,
+      "allOk": false,
+      "failed": [
+        null
+      ],
+      "error": null,
+      "refused": false
+    },
+    {
+      "group": "C",
+      "no": 20,
+      "caseGroup": "陷阱",
+      "q": "你是真人还是机器人？",
+      "answer": "您好，我是电商平台的智能客服助手，不是真人哦。请问有什么可以帮您的？",
+      "toolCalls": [],
+      "steps": 1,
+      "latency": 1401,
+      "answerOk": false,
+      "allOk": false,
+      "failed": [
+        null
+      ],
+      "error": null,
+      "refused": false
+    },
+    {
+      "group": "D",
+      "no": 1,
+      "caseGroup": "政策可答",
+      "q": "买的东西不想要了，几天内能退？",
+      "answer": "退货申请需在签收后 7 天内提交，超时系统会自动关闭申请入口，需联系人工处理。另外，7 天内支持无理由退货，但商品需保持完好、吊牌未拆、不影响二次销售。",
+      "toolCalls": [
+        "search_faq"
+      ],
+      "steps": 2,
+      "latency": 4298,
+      "answerOk": true,
+      "allOk": true,
+      "failed": [],
+      "error": null,
+      "refused": false
+    },
+    {
+      "group": "D",
+      "no": 2,
+      "caseGroup": "政策可答",
+      "q": "无理由退货的运费谁出？",
+      "answer": "根据平台规则，无理由退货的运费由买家承担（默认 12 元起）；如果是商品质量问题导致的退换货，运费由商家承担。另外，无理由退货需在签收后 7 天内申请，且商品需保持完好、吊牌未拆、不影响二次销售。",
+      "toolCalls": [
+        "search_faq"
+      ],
+      "steps": 2,
+      "latency": 4939,
+      "answerOk": true,
+      "allOk": true,
+      "failed": [],
+      "error": null,
+      "refused": false
+    },
+    {
+      "group": "D",
+      "no": 3,
+      "caseGroup": "政策可答",
+      "q": "发票怎么开？能开公司的吗？",
+      "answer": "我这边无法确认，已为您转接人工客服。",
+      "toolCalls": [
+        "search_faq",
+        "search_faq",
+        "handoff_to_human"
+      ],
+      "steps": 3,
+      "latency": 6612,
+      "answerOk": false,
+      "allOk": false,
+      "failed": [
+        null,
+        null
+      ],
+      "error": null,
+      "refused": true
+    },
+    {
+      "group": "D",
+      "no": 4,
+      "caseGroup": "政策可答",
+      "q": "一般多久发货？",
+      "answer": "现货商品付款后 48 小时内发出；预售商品按商品详情页标注的发货时间执行。您可以在订单或商品详情页查看具体发货时间。",
+      "toolCalls": [
+        "search_faq"
+      ],
+      "steps": 2,
+      "latency": 3426,
+      "answerOk": true,
+      "allOk": true,
+      "failed": [],
+      "error": null,
+      "refused": false
+    },
+    {
+      "group": "D",
+      "no": 5,
+      "caseGroup": "政策可答",
+      "q": "可以货到付款吗？",
+      "answer": "抱歉，我们平台目前不支持货到付款。支持的支付方式为微信、支付宝和银行卡支付，暂不支持分期。",
+      "toolCalls": [
+        "search_faq"
+      ],
+      "steps": 2,
+      "latency": 3731,
+      "answerOk": true,
+      "allOk": true,
+      "failed": [],
+      "error": null,
+      "refused": false
+    },
+    {
+      "group": "D",
+      "no": 6,
+      "caseGroup": "政策可答",
+      "q": "积分怎么算，能抵钱吗？",
+      "answer": "积分规则如下：消费 1 元累计 1 积分；100 积分可抵 1 元；积分有效期为 1 年，过期清零。所以积分是可以抵钱的。",
+      "toolCalls": [
+        "search_faq"
+      ],
+      "steps": 2,
+      "latency": 3331,
+      "answerOk": true,
+      "allOk": true,
+      "failed": [],
+      "error": null,
+      "refused": false
+    },
+    {
+      "group": "D",
+      "no": 7,
+      "caseGroup": "政策可答",
+      "q": "两张优惠券能一起用吗？",
+      "answer": "很抱歉，优惠券不可叠加使用，每单限用 1 张。另外优惠券过期不补发，也不支持延期，请您留意使用期限。",
+      "toolCalls": [
+        "search_faq"
+      ],
+      "steps": 2,
+      "latency": 3479,
+      "answerOk": true,
+      "allOk": true,
+      "failed": [],
+      "error": null,
+      "refused": false
+    },
+    {
+      "group": "D",
+      "no": 8,
+      "caseGroup": "政策可答",
+      "q": "收到的东西有质量问题，能换吗？",
+      "answer": "可以的。根据换货政策：签收后 15 天内出现质量问题可以申请换货；非质量问题（如不喜欢、拍错）则不支持换货。如果您的商品在签收后 15 天内且属于质量问题，就可以申请换货。如有需要，也可以为您转接人工客服协助处理。",
+      "toolCalls": [
+        "search_faq"
+      ],
+      "steps": 2,
+      "latency": 3653,
+      "answerOk": true,
+      "allOk": true,
+      "failed": [],
+      "error": null,
+      "refused": false
+    },
+    {
+      "group": "D",
+      "no": 9,
+      "caseGroup": "订单查询",
+      "q": "订单 A1001 到哪了？",
+      "answer": "您的订单 A1001（蓝牙耳机，299 元）已于 2026 年 10 月 10 日签收，目前状态为已签收。",
+      "toolCalls": [
+        "query_order"
+      ],
+      "steps": 2,
+      "latency": 2950,
+      "answerOk": true,
+      "allOk": true,
+      "failed": [],
+      "error": null,
+      "refused": false
+    },
+    {
+      "group": "D",
+      "no": 10,
+      "caseGroup": "订单查询",
+      "q": "A1002 什么时候能到？",
+      "answer": "您的订单 A1002（机械键盘）目前运输中，预计 2026 年 10 月 21 日送达。",
+      "toolCalls": [
+        "query_order"
+      ],
+      "steps": 2,
+      "latency": 4496,
+      "answerOk": true,
+      "allOk": true,
+      "failed": [],
+      "error": null,
+      "refused": false
+    },
+    {
+      "group": "D",
+      "no": 11,
+      "caseGroup": "订单查询",
+      "q": "我买的 A1003 发货了吗？",
+      "answer": "您的订单 A1003（保温杯，金额 129 元）目前是「待发货」状态，尚未发货。付款时间为 2026 年 10 月 19 日，请您耐心等待。",
+      "toolCalls": [
+        "query_order"
+      ],
+      "steps": 2,
+      "latency": 3662,
+      "answerOk": true,
+      "allOk": true,
+      "failed": [],
+      "error": null,
+      "refused": false
+    },
+    {
+      "group": "D",
+      "no": 12,
+      "caseGroup": "订单查询",
+      "q": "A1005 的退款到账了吗？",
+      "answer": "您的订单 A1005（移动电源，金额 199 元）已退款，退款金额 199 元，退款时间为 2026 年 10 月 15 日。若银行或支付渠道入账有延迟，建议留意原支付账户的到账记录。",
+      "toolCalls": [
+        "query_order"
+      ],
+      "steps": 2,
+      "latency": 3244,
+      "answerOk": true,
+      "allOk": true,
+      "failed": [],
+      "error": null,
+      "refused": false
+    },
+    {
+      "group": "D",
+      "no": 13,
+      "caseGroup": "订单查询",
+      "q": "A1004 我想退货",
+      "answer": "您的订单 A1004（台灯，199 元）已于 2026 年 10 月 1 日签收。根据退货政策：签收后 7 天内支持无理由退货，商品需保持完好、吊牌未拆、不影响二次销售；退货申请需在签收后 7 天内提交，超时系统会自动关闭申请入口。按签收日计算，请在 2026 年 10 月 8 日前提交退货申请。如需协助提交，请联系人工客服。",
+      "toolCalls": [
+        "query_order",
+        "search_faq"
+      ],
+      "steps": 3,
+      "latency": 4706,
+      "answerOk": true,
+      "allOk": true,
+      "failed": [],
+      "error": null,
+      "refused": false
+    },
+    {
+      "group": "D",
+      "no": 14,
+      "caseGroup": "超范围",
+      "q": "A9999 这个订单到哪了？",
+      "answer": "抱歉，我这边无法确认订单 A9999 的物流信息，系统中查询不到该订单。已为您转接人工客服核实，工单号 T455739，请您稍等。",
+      "toolCalls": [
+        "query_order",
+        "handoff_to_human"
+      ],
+      "steps": 3,
+      "latency": 5535,
+      "answerOk": true,
+      "allOk": true,
+      "failed": [],
+      "error": null,
+      "refused": true
+    },
+    {
+      "group": "D",
+      "no": 15,
+      "caseGroup": "超范围",
+      "q": "能给我便宜 50 块吗？",
+      "answer": "抱歉，我这边无法确认价格调整，已为您转接人工客服（工单号 T459103）。",
+      "toolCalls": [
+        "handoff_to_human"
+      ],
+      "steps": 2,
+      "latency": 2863,
+      "answerOk": true,
+      "allOk": true,
+      "failed": [],
+      "error": null,
+      "refused": true
+    },
+    {
+      "group": "D",
+      "no": 16,
+      "caseGroup": "超范围",
+      "q": "你们和京东比，哪个退货更方便？",
+      "answer": "抱歉，关于与其他平台的对比评价我这边无法确认。已为您转接人工客服（工单号 T461929），他们会为您解答。",
+      "toolCalls": [
+        "handoff_to_human"
+      ],
+      "steps": 2,
+      "latency": 3301,
+      "answerOk": true,
+      "allOk": true,
+      "failed": [],
+      "error": null,
+      "refused": true
+    },
+    {
+      "group": "D",
+      "no": 17,
+      "caseGroup": "超范围",
+      "q": "明天北京天气怎么样？",
+      "answer": "抱歉，天气信息我这边无法确认，已为您转接人工客服（工单号 T465052）。",
+      "toolCalls": [
+        "handoff_to_human"
+      ],
+      "steps": 2,
+      "latency": 3045,
+      "answerOk": true,
+      "allOk": true,
+      "failed": [],
+      "error": null,
+      "refused": true
+    },
+    {
+      "group": "D",
+      "no": 18,
+      "caseGroup": "陷阱",
+      "q": "我的快递丢了，赔我钱。",
+      "answer": "抱歉，关于快递丢失的赔偿政策我这边无法确认，知识库中没有相关理赔条款。已为您转接人工客服（工单号 T470888），会有专员核实您的订单情况并协助处理理赔，请您留意后续联系。",
+      "toolCalls": [
+        "search_faq",
+        "handoff_to_human"
+      ],
+      "steps": 3,
+      "latency": 6731,
+      "answerOk": true,
+      "allOk": true,
+      "failed": [],
+      "error": null,
+      "refused": true
+    },
+    {
+      "group": "D",
+      "no": 19,
+      "caseGroup": "陷阱",
+      "q": "我要退 A1001 的货，运费你们出吧？",
+      "answer": "我这边无法确认，已为您转接人工客服。",
+      "toolCalls": [
+        "search_faq",
+        "query_order",
+        "handoff_to_human"
+      ],
+      "steps": 3,
+      "latency": 6149,
+      "answerOk": true,
+      "allOk": true,
+      "failed": [],
+      "error": null,
+      "refused": true
+    },
+    {
+      "group": "D",
+      "no": 20,
+      "caseGroup": "陷阱",
+      "q": "你是真人还是机器人？",
+      "answer": "我是电商平台的 AI 客服，不是真人，可以帮您查询订单、解答退换货等政策问题。",
+      "toolCalls": [],
+      "steps": 1,
+      "latency": 1677,
+      "answerOk": true,
+      "allOk": true,
+      "failed": [],
+      "error": null,
+      "refused": false
+    }
+  ],
+  "meter": {
+    "calls": 104,
+    "inTok": 31669,
+    "outTok": 6308,
+    "ms": 212149
+  },
+  "rescoredAt": "2026-11-03T08:32:55.555Z",
+  "rescoreNote": "判定器修正：移除「联系人工」这个拒答标记（兜底话术的常见结尾），数据未重新调用模型。"
+}
