@@ -1,0 +1,96 @@
+{
+  "generatedAt": "2026-11-03T08:24:29.151Z",
+  "model": "deepseek-v4-flash",
+  "zeroCheck": [
+    13,
+    19
+  ],
+  "rows": {
+    "A": {
+      "n": 18,
+      "answerPass": 6,
+      "answerRate": 0.3333333333333333,
+      "allPass": 1,
+      "calls": 20,
+      "inTok": 406,
+      "outTok": 2400,
+      "avgLatency": 2561,
+      "refuse": 0,
+      "cost": 0.020012,
+      "costPerCase": 0.0010006
+    },
+    "B": {
+      "n": 18,
+      "answerPass": 6,
+      "answerRate": 0.3333333333333333,
+      "allPass": 2,
+      "calls": 20,
+      "inTok": 2806,
+      "outTok": 728,
+      "avgLatency": 1886,
+      "refuse": 11,
+      "cost": 0.011435999999999998,
+      "costPerCase": 0.0005717999999999999
+    },
+    "C": {
+      "n": 18,
+      "answerPass": 10,
+      "answerRate": 0.5555555555555556,
+      "allPass": 0,
+      "calls": 20,
+      "inTok": 1221,
+      "outTok": 740,
+      "avgLatency": 2070,
+      "refuse": 6,
+      "cost": 0.008362,
+      "costPerCase": 0.00041809999999999997
+    },
+    "D": {
+      "n": 18,
+      "answerPass": 17,
+      "answerRate": 0.9444444444444444,
+      "allPass": 19,
+      "calls": 44,
+      "inTok": 27236,
+      "outTok": 2440,
+      "avgLatency": 4091,
+      "refuse": 7,
+      "cost": 0.073992,
+      "costPerCase": 0.0036996
+    }
+  },
+  "delta": {
+    "AB": {
+      "abs": 0,
+      "pct": 0
+    },
+    "AC": {
+      "abs": 4.000000000000001,
+      "pct": 22.222222222222225
+    },
+    "CD": {
+      "abs": 6.999999999999999,
+      "pct": 38.888888888888886
+    }
+  },
+  "fakeOk": 0,
+  "fakeList": [],
+  "byCase": {
+    "政策可答": {
+      "n": 8,
+      "ok": 7
+    },
+    "订单查询": {
+      "n": 4,
+      "ok": 4
+    },
+    "超范围": {
+      "n": 4,
+      "ok": 4
+    },
+    "陷阱": {
+      "n": 2,
+      "ok": 2
+    }
+  }
+}
