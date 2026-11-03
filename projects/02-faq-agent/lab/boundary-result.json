@@ -1,0 +1,538 @@
+{
+  "generatedAt": "2026-11-03T08:31:01.030Z",
+  "model": "deepseek-v4-flash",
+  "scale": [
+    {
+      "size": 10,
+      "noise": 1,
+      "hit": 7,
+      "total": 8,
+      "rate": 0.875,
+      "detail": [
+        {
+          "no": 1,
+          "q": "买的东西不想要了，几天内能退？",
+          "expect": "F1",
+          "got": [],
+          "ok": false
+        },
+        {
+          "no": 2,
+          "q": "无理由退货的运费谁出？",
+          "expect": "F3",
+          "got": [
+            "F1",
+            "F3"
+          ],
+          "ok": true
+        },
+        {
+          "no": 3,
+          "q": "发票怎么开？能开公司的吗？",
+          "expect": "F4",
+          "got": [
+            "F4"
+          ],
+          "ok": true
+        },
+        {
+          "no": 4,
+          "q": "一般多久发货？",
+          "expect": "F5",
+          "got": [
+            "F5"
+          ],
+          "ok": true
+        },
+        {
+          "no": 5,
+          "q": "可以货到付款吗？",
+          "expect": "F6",
+          "got": [
+            "F6"
+          ],
+          "ok": true
+        },
+        {
+          "no": 6,
+          "q": "积分怎么算，能抵钱吗？",
+          "expect": "F7",
+          "got": [
+            "F7"
+          ],
+          "ok": true
+        },
+        {
+          "no": 7,
+          "q": "两张优惠券能一起用吗？",
+          "expect": "F8",
+          "got": [
+            "F8"
+          ],
+          "ok": true
+        },
+        {
+          "no": 8,
+          "q": "收到的东西有质量问题，能换吗？",
+          "expect": "F2",
+          "got": [
+            "F2"
+          ],
+          "ok": true
+        }
+      ]
+    },
+    {
+      "size": 50,
+      "noise": 41,
+      "hit": 7,
+      "total": 8,
+      "rate": 0.875,
+      "detail": [
+        {
+          "no": 1,
+          "q": "买的东西不想要了，几天内能退？",
+          "expect": "F1",
+          "got": [],
+          "ok": false
+        },
+        {
+          "no": 2,
+          "q": "无理由退货的运费谁出？",
+          "expect": "F3",
+          "got": [
+            "F1",
+            "F3"
+          ],
+          "ok": true
+        },
+        {
+          "no": 3,
+          "q": "发票怎么开？能开公司的吗？",
+          "expect": "F4",
+          "got": [
+            "F4",
+            "N023"
+          ],
+          "ok": true
+        },
+        {
+          "no": 4,
+          "q": "一般多久发货？",
+          "expect": "F5",
+          "got": [
+            "F5",
+            "N025"
+          ],
+          "ok": true
+        },
+        {
+          "no": 5,
+          "q": "可以货到付款吗？",
+          "expect": "F6",
+          "got": [
+            "F6"
+          ],
+          "ok": true
+        },
+        {
+          "no": 6,
+          "q": "积分怎么算，能抵钱吗？",
+          "expect": "F7",
+          "got": [
+            "F7",
+            "N034"
+          ],
+          "ok": true
+        },
+        {
+          "no": 7,
+          "q": "两张优惠券能一起用吗？",
+          "expect": "F8",
+          "got": [
+            "F8",
+            "N036"
+          ],
+          "ok": true
+        },
+        {
+          "no": 8,
+          "q": "收到的东西有质量问题，能换吗？",
+          "expect": "F2",
+          "got": [
+            "F2"
+          ],
+          "ok": true
+        }
+      ]
+    },
+    {
+      "size": 99,
+      "noise": 90,
+      "hit": 7,
+      "total": 8,
+      "rate": 0.875,
+      "detail": [
+        {
+          "no": 1,
+          "q": "买的东西不想要了，几天内能退？",
+          "expect": "F1",
+          "got": [],
+          "ok": false
+        },
+        {
+          "no": 2,
+          "q": "无理由退货的运费谁出？",
+          "expect": "F3",
+          "got": [
+            "F1",
+            "F3"
+          ],
+          "ok": true
+        },
+        {
+          "no": 3,
+          "q": "发票怎么开？能开公司的吗？",
+          "expect": "F4",
+          "got": [
+            "F4",
+            "N023"
+          ],
+          "ok": true
+        },
+        {
+          "no": 4,
+          "q": "一般多久发货？",
+          "expect": "F5",
+          "got": [
+            "F5",
+            "N025"
+          ],
+          "ok": true
+        },
+        {
+          "no": 5,
+          "q": "可以货到付款吗？",
+          "expect": "F6",
+          "got": [
+            "F6",
+            "N042"
+          ],
+          "ok": true
+        },
+        {
+          "no": 6,
+          "q": "积分怎么算，能抵钱吗？",
+          "expect": "F7",
+          "got": [
+            "F7",
+            "N034"
+          ],
+          "ok": true
+        },
+        {
+          "no": 7,
+          "q": "两张优惠券能一起用吗？",
+          "expect": "F8",
+          "got": [
+            "F8",
+            "N036"
+          ],
+          "ok": true
+        },
+        {
+          "no": 8,
+          "q": "收到的东西有质量问题，能换吗？",
+          "expect": "F2",
+          "got": [
+            "F2"
+          ],
+          "ok": true
+        }
+      ]
+    }
+  ],
+  "paraphrase": {
+    "rows": [
+      {
+        "expect": "F1",
+        "formal": "买的东西不想要了，几天内能退？",
+        "formalOk": false,
+        "alts": [
+          {
+            "q": "东西不想要了还能退吗",
+            "got": [],
+            "ok": false
+          },
+          {
+            "q": "我后悔了，能退掉吗",
+            "got": [
+              "F1"
+            ],
+            "ok": true
+          },
+          {
+            "q": "这个能退么",
+            "got": [],
+            "ok": false
+          }
+        ],
+        "altHit": 1,
+        "altTotal": 3
+      },
+      {
+        "expect": "F3",
+        "formal": "无理由退货的运费谁出？",
+        "formalOk": true,
+        "alts": [
+          {
+            "q": "退货邮费算谁的",
+            "got": [
+              "F3",
+              "F1"
+            ],
+            "ok": true
+          },
+          {
+            "q": "寄回去要我自己付钱吗",
+            "got": [],
+            "ok": false
+          }
+        ],
+        "altHit": 1,
+        "altTotal": 2
+      },
+      {
+        "expect": "F4",
+        "formal": "发票怎么开？能开公司的吗？",
+        "formalOk": true,
+        "alts": [
+          {
+            "q": "我要报销，怎么弄凭证",
+            "got": [
+              "F4"
+            ],
+            "ok": true
+          },
+          {
+            "q": "能给我开张票吗",
+            "got": [],
+            "ok": false
+          }
+        ],
+        "altHit": 1,
+        "altTotal": 2
+      },
+      {
+        "expect": "F5",
+        "formal": "一般多久发货？",
+        "formalOk": true,
+        "alts": [
+          {
+            "q": "什么时候能寄出来",
+            "got": [],
+            "ok": false
+          },
+          {
+            "q": "下单后几天能收到",
+            "got": [],
+            "ok": false
+          }
+        ],
+        "altHit": 0,
+        "altTotal": 2
+      },
+      {
+        "expect": "F6",
+        "formal": "可以货到付款吗？",
+        "formalOk": true,
+        "alts": [
+          {
+            "q": "能不能见面给钱",
+            "got": [],
+            "ok": false
+          },
+          {
+            "q": "送到再付钱行不行",
+            "got": [],
+            "ok": false
+          }
+        ],
+        "altHit": 0,
+        "altTotal": 2
+      },
+      {
+        "expect": "F7",
+        "formal": "积分怎么算，能抵钱吗？",
+        "formalOk": true,
+        "alts": [
+          {
+            "q": "攒的分有啥用",
+            "got": [],
+            "ok": false
+          },
+          {
+            "q": "分能当钱花吗",
+            "got": [],
+            "ok": false
+          }
+        ],
+        "altHit": 0,
+        "altTotal": 2
+      },
+      {
+        "expect": "F8",
+        "formal": "两张优惠券能一起用吗？",
+        "formalOk": true,
+        "alts": [
+          {
+            "q": "两个券能叠着用么",
+            "got": [
+              "F8"
+            ],
+            "ok": true
+          },
+          {
+            "q": "券可以叠加吗",
+            "got": [
+              "F8"
+            ],
+            "ok": true
+          }
+        ],
+        "altHit": 2,
+        "altTotal": 2
+      },
+      {
+        "expect": "F2",
+        "formal": "收到的东西有质量问题，能换吗？",
+        "formalOk": true,
+        "alts": [
+          {
+            "q": "东西坏了能换一个吗",
+            "got": [
+              "F2"
+            ],
+            "ok": true
+          },
+          {
+            "q": "有瑕疵怎么办",
+            "got": [],
+            "ok": false
+          }
+        ],
+        "altHit": 1,
+        "altTotal": 2
+      }
+    ],
+    "formalRate": 0.875,
+    "altRate": 0.35294117647058826,
+    "formalPass": 7,
+    "altPass": 6,
+    "altTotal": 17
+  },
+  "outside": {
+    "rows": [
+      {
+        "q": "你们有实体店吗？",
+        "answer": "抱歉，关于实体店的信息我这边无法确认，已为您转接人工客服（工单号 T665189），请稍候。",
+        "toolCalls": [
+          "search_faq",
+          "handoff_to_human"
+        ],
+        "refused": true,
+        "leaked": [],
+        "ok": true
+      },
+      {
+        "q": "能开增值税专用发票吗？",
+        "answer": "抱歉，我这边无法确认是否支持开具增值税专用发票。目前知识库中仅说明支持开具电子普通发票（下单后 30 天内可在「我的订单 - 申请发票」提交，1-3 个工作日开出）。关于增值税专用发票的问题，已为您转接人工客服（工单号 T670731），请留意后续回复。",
+        "toolCalls": [
+          "search_faq",
+          "handoff_to_human"
+        ],
+        "refused": true,
+        "leaked": [],
+        "ok": true
+      },
+      {
+        "q": "会员等级怎么升级？",
+        "answer": "抱歉，关于会员等级升级的规则我这边无法确认，已为您转接人工客服（工单号 T676697），请稍候。",
+        "toolCalls": [
+          "search_faq",
+          "handoff_to_human"
+        ],
+        "refused": true,
+        "leaked": [],
+        "ok": true
+      },
+      {
+        "q": "双十一有什么活动？",
+        "answer": "抱歉，我这边无法确认双十一活动的具体信息，已为您转接人工客服（工单号 T682039），请稍候。",
+        "toolCalls": [
+          "search_faq",
+          "handoff_to_human"
+        ],
+        "refused": true,
+        "leaked": [],
+        "ok": true
+      },
+      {
+        "q": "你们公司叫什么名字？",
+        "answer": "抱歉，我这边无法确认公司名称信息，建议您查看平台页面或联系人工客服核实。",
+        "toolCalls": [],
+        "refused": true,
+        "leaked": [],
+        "ok": true
+      }
+    ],
+    "pass": 5,
+    "total": 5
+  },
+  "poison": {
+    "clean": {
+      "answer": "签收后 7 天内支持无理由退货，商品需保持完好、吊牌未拆、不影响二次销售。退货申请也需要在签收后 7 天内提交，超时系统会自动关闭申请入口，届时需要联系人工处理。建议您尽早提交申请。",
+      "toolCalls": [
+        "search_faq"
+      ]
+    },
+    "conflict": {
+      "answer": "我这边无法确认，已为您转接人工客服。",
+      "toolCalls": [
+        "search_faq",
+        "search_faq",
+        "handoff_to_human"
+      ],
+      "said30": false,
+      "said7": false
+    },
+    "replaced": {
+      "answer": "抱歉，关于退货时限的具体规定我这边无法确认，已为您转接人工客服（工单号 T699008），他们会为您详细解答。",
+      "toolCalls": [
+        "search_faq",
+        "handoff_to_human"
+      ],
+      "said30": false,
+      "said7": false
+    },
+    "solo": {
+      "answer": "抱歉，我这边无法确认具体的退货时限，已为您转接人工客服（工单号 T704570），稍后会有专员为您解答。",
+      "toolCalls": [
+        "search_faq",
+        "handoff_to_human"
+      ],
+      "said30": false,
+      "said7": false
+    },
+    "copied": false,
+    "coupon": {
+      "answer": "抱歉，关于两张优惠券能否同时使用，我这边无法确认具体规则，已为您转接人工客服（工单号 T710009），请稍候。",
+      "toolCalls": [
+        "search_faq",
+        "handoff_to_human"
+      ],
+      "followed": false,
+      "refused": true
+    }
+  }
+}
