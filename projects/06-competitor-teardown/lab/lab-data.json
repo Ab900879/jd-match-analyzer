@@ -1,0 +1,1226 @@
+{
+  "meta": {
+    "generatedAt": "2026-11-03T11:18:05.944Z",
+    "candidates": [
+      "kimi-k2.5",
+      "glm-5.3-flash",
+      "deepseek-v4-flash"
+    ],
+    "scorer": "minimax-m3.1-flash",
+    "seed": 20261103,
+    "demoIds": [
+      "W01",
+      "W02",
+      "W03",
+      "W04",
+      "W05",
+      "S01",
+      "S02",
+      "S03",
+      "S04",
+      "S05"
+    ]
+  },
+  "answers": [
+    {
+      "taskId": "W01",
+      "scenario": "写作",
+      "model": "kimi-k2.5",
+      "answer": "**本周工作周报**\n\n**完成：** 修复登录页bug；上线XX小功能并监控数据。\n**进行中：** 新版样式设计对接；需求评审及文档编写。\n**风险：** 功能上线后需待下周观察用户转化数据；同事支援事项占用1人日。",
+      "ms": 4253
+    },
+    {
+      "taskId": "W02",
+      "scenario": "写作",
+      "model": "kimi-k2.5",
+      "answer": "🎧 399元降噪耳机｜通勤党狂喜\n\n30小时续航+10分钟快充，180克轻到忘记戴！地铁通勤终于清净了，性价比直接封神💰 #降噪耳机 #学生党好物 #通勤必备",
+      "ms": 3329
+    },
+    {
+      "taskId": "W03",
+      "scenario": "写作",
+      "model": "kimi-k2.5",
+      "answer": "**邮件**\n\n---\n\n主题：关于您反馈问题的回复\n\n感谢您的反馈。我们团队多次尝试复现该问题，目前尚未成功。为协助排查，请您确认：①浏览器版本及是否开启无痕模式；②问题发生的具体步骤与报错截图。\n\n期待您的回复，我们将持续跟进。\n\n---",
+      "ms": 3116
+    },
+    {
+      "taskId": "W04",
+      "scenario": "写作",
+      "model": "kimi-k2.5",
+      "answer": "**客观陈述式**\n某市新增三千普惠托位\n\n**民生关切式**\n2-3岁幼儿托位将扩增\n\n**数字突出式**\n3000托位覆盖12区9月投用",
+      "ms": 2846
+    },
+    {
+      "taskId": "W05",
+      "scenario": "写作",
+      "model": "kimi-k2.5",
+      "answer": "【停水通知】3号楼本周六9:00-17:00停水，市政管网改造。详询88886666。",
+      "ms": 2642
+    },
+    {
+      "taskId": "S01",
+      "scenario": "总结",
+      "model": "kimi-k2.5",
+      "answer": "以下是报销制度的4条要点：\n\n1. **市内交通**：自下月1日起，实报实销上限从每人每月400元调整为**500元**\n\n2. **跨城高铁**：需提前一天在系统里提交行程，否则按二等座票价的一半报销\n\n3. **住宿标准**：一线城市每晚**500元**、其他城市**400元**\n\n4. **招待费**：需要事前审批，单次超过**1000元**的还要部门总监二次确认",
+      "ms": 3578
+    },
+    {
+      "taskId": "S02",
+      "scenario": "总结",
+      "model": "kimi-k2.5",
+      "answer": "**会议纪要**\n\n| 序号 | 决议事项 | 负责人 | 完成时间 |\n|:---|:---|:---|:---|\n| 1 | 输出注册流程简化验收标准，发至工作群 | 产品 | 明天上午 |\n| 2 | 完成短信模板修改 | 运营 | 周四 |\n| 3 | 完成前后端联调；周五启动灰度10%，监控转化率（低于40%回滚） | 研发 | 周四联调 / 周五灰度 |",
+      "ms": 4339
+    },
+    {
+      "taskId": "S03",
+      "scenario": "总结",
+      "model": "kimi-k2.5",
+      "answer": "我来逐一分析这10条评论，然后进行归纳：\n\n| 评论 | 类型 | 内容 |\n|:---|:---|:---|\n| 1 | 优点 | 保温效果好 |\n| 2 | 缺点 | 盖子难拧 |\n| 3 | 缺点 | 容量不足（虚标） |\n| 4 | 优点 | 外观好看 |\n| 5 | 缺点 | 漏水 |\n| 6 | 优点 | 轻便 |\n| 7 | 中性 | 价格评价 |\n| 8 | 缺点 | 说明书简陋 |\n| 9 | 中性/优点 | 耐摔性 |\n| 10 | 中性 | 物流速度 |\n\n---\n\n## 归纳结果\n\n### 优点2条\n1. **保温性能出色** — 早上灌的热水下午仍温（评论1），且杯子轻便易携带（评论6）\n2. **外观设计佳** — 颜值受认可，同事主动询问购买链接（评论4）\n\n### 缺点2条\n1. **密封性与使用体验差** — 盖子难拧、女生单手操作费劲（评论2），且存在漏水问题不适合放包中（评论5）\n2. **产品标注与实际不符** — 容量虚标，标注500ml实测仅约450ml（评论3）\n\n### 中性信息1条\n**物流与售后配套一般** — 发货速度快两天到货（评论10），但说明书过于简陋（评论8）；价格79元属中等价位（评论7）",
+      "ms": 10541
+    },
+    {
+      "taskId": "S04",
+      "scenario": "总结",
+      "model": "kimi-k2.5",
+      "answer": "根据群聊内容，最终确定的方案如下：\n\n| 项目 | 内容 |\n|:---|:---|\n| **时间** | 周六下午2点 |\n| **地点** | 西郊那座山（西郊） |\n| **集合点** | 西郊山脚公交站 |\n| **分工** | 老王带水，老张和小李带吃的 |",
+      "ms": 3141
+    },
+    {
+      "taskId": "S05",
+      "scenario": "总结",
+      "model": "kimi-k2.5",
+      "answer": "根因：主库未加索引的全表扫描引发慢查询堆积，连接池耗尽导致接口超时。\n\n影响范围：订单接口短暂不可用，触发熔断后自动切换备用节点恢复。",
+      "ms": 2527
+    },
+    {
+      "taskId": "W01",
+      "scenario": "写作",
+      "model": "glm-5.3-flash",
+      "answer": "# 工作周报\n\n**本周完成**\n1. 修复登录页bug；上线XX小功能（已发布至生产环境）。\n2. 协助同事解决数个技术问题。\n\n**进行中**\n1. 与设计确认新版样式；参与需求评审会。\n\n**风险**\n1. 新功能上线后暂无用户反馈，需配置数据埋点或收集渠道以验证效果。",
+      "ms": 3717
+    },
+    {
+      "taskId": "W02",
+      "scenario": "写作",
+      "model": "glm-5.3-flash",
+      "answer": "🎧通勤党救星！降噪耳机真香\n\n399元入手这款降噪耳机，音质在线，戴一天耳朵也不累（才180g！）。续航30小时，赶时间快充10分钟能用2小时，出差党狂喜✈️ 同价位里真的很能打，闭眼入～",
+      "ms": 2980
+    },
+    {
+      "taskId": "W03",
+      "scenario": "写作",
+      "model": "glm-5.3-flash",
+      "answer": "您好，感谢您的反馈。\n\n我们多次测试后暂时无法复现您描述的问题，可能与环境配置有关。为了尽快定位原因，麻烦您提供以下信息：设备型号、系统版本、操作步骤截图，以便我们进一步排查。收到后我们会尽快回复。\n\n给您带来不便，敬请谅解。",
+      "ms": 2897
+    },
+    {
+      "taskId": "W04",
+      "scenario": "写作",
+      "model": "glm-5.3-flash",
+      "answer": "# 三个标题\n\n**1. 客观陈述式**\n某市新增3000个普惠托位覆盖12区\n\n**2. 民生关切式**\n2-3岁幼儿托育有指望！托位明年投用\n\n**3. 数字突出式**\n3000托位！明年9月前全市投入使用",
+      "ms": 3708
+    },
+    {
+      "taskId": "W05",
+      "scenario": "写作",
+      "model": "glm-5.3-flash",
+      "answer": "【停水通知】因市政管网改造，3号楼将于本周六上午9点至下午5点停水。请提前储水，带来的不便敬请谅解。咨询电话：88886666。",
+      "ms": 2376
+    },
+    {
+      "taskId": "S01",
+      "scenario": "总结",
+      "model": "glm-5.3-flash",
+      "answer": "**报销制度要点（4条）：**\n\n1. **市内交通报销上限调整**：自下月1日起，实报实销上限从每人每月400元调整为500元。\n\n2. **跨城高铁报销要求**：需提前一天在系统里提交行程，否则按二等座票价的一半报销。\n\n3. **住宿标准**：一线城市每晚500元、其他城市400元。\n\n4. **招待费审批规定**：需要事前审批，单次超过1000元的还需部门总监二次确认。",
+      "ms": 2927
+    },
+    {
+      "taskId": "S02",
+      "scenario": "总结",
+      "model": "glm-5.3-flash",
+      "answer": "# 会议纪要\n\n**议题**：注册流程简化上线安排\n\n## 决议事项\n\n1. **短信模板更新**由运营负责，**本周四前**完成并提交。\n\n2. **前后端开发与联调**由研发负责，前端开发两日内完成，短信接口视供应商进度跟进；**本周四**完成前后端联调，**本周五**启动10%灰度发布；灰度期间监控注册转化率，低于40%即执行回滚。\n\n3. **验收标准**由产品负责，**明日上午**发布至项目群。",
+      "ms": 3768
+    },
+    {
+      "taskId": "S03",
+      "scenario": "总结",
+      "model": "glm-5.3-flash",
+      "answer": "# 商品评论归纳\n\n## ✅ 优点（2条）\n\n1. **保温效果出色**：早上灌的热水到下午还是温的，保温性能可靠。\n2. **外观漂亮且轻便**：颜值高，同事都来问链接；杯身轻，携带不累。\n\n## ❌ 缺点（2条）\n\n1. **存在漏水问题**：放在包里会渗水，且盖子偏难拧，女生单手开启费劲。\n2. **容量不足、做工一般**：标注500ml实测只有约450ml；摔一次就掉漆，说明书也过于简陋。\n\n## ➖ 中性信息（1条）\n\n- **价格79元**，属于中等价位，性价比尚可；发货速度较快，两天送达。",
+      "ms": 4462
+    },
+    {
+      "taskId": "S04",
+      "scenario": "总结",
+      "model": "glm-5.3-flash",
+      "answer": "# 群聊方案归纳\n\n| 项目 | 内容 |\n|------|------|\n| **时间** | 本周六下午2点 |\n| **地点** | 西郊那座山（公交1小时直达，符合老王来回不超过3小时的要求） |\n| **集合点** | 西郊山脚公交站 |\n| **分工** | 老王负责带水；老张、小李负责带吃的 |\n\n**说明**：周六上午小李有课，故定在下午2点集合，三方均无异议，方案最终确定。",
+      "ms": 3491
+    },
+    {
+      "taskId": "S05",
+      "scenario": "总结",
+      "model": "glm-5.3-flash",
+      "answer": "根因：一条未加索引的慢查询引发主库全表扫描，连接池占满（98%），导致订单接口超时。影响：主节点不可用约30秒，熔断切换至备用节点后于10:02:40恢复，订单服务已恢复，但慢查询需修复索引以杜绝复发。",
+      "ms": 2931
+    },
+    {
+      "taskId": "W01",
+      "scenario": "写作",
+      "model": "deepseek-v4-flash",
+      "answer": "**本周完成**\n1. 修复登录页Bug，上线1个小功能。\n2. 输出需求文档，协助同事排查若干问题。\n\n**进行中**\n1. 与设计对齐新版样式。\n2. 需求评审会已开，待细化方案。\n\n**风险**\n1. 上线功能暂无用户反馈数据，待埋点验证。",
+      "ms": 1958
+    },
+    {
+      "taskId": "W02",
+      "scenario": "写作",
+      "model": "deepseek-v4-flash",
+      "answer": "标题：通勤降噪耳机真香🎧\n\n正文：30小时续航+快充10分钟用2小时，180克轻巧不压耳。降噪一开，地铁瞬间安静。399元这配置，日常够用了～",
+      "ms": 1679
+    },
+    {
+      "taskId": "W03",
+      "scenario": "写作",
+      "model": "deepseek-v4-flash",
+      "answer": "您好，关于您反馈的问题，我们暂时无法复现。已多次测试均未出现异常，烦请您先确认操作步骤及运行环境。若方便，请提供问题发生时的截图或录屏，以便我们进一步排查。谢谢！",
+      "ms": 2045
+    },
+    {
+      "taskId": "W04",
+      "scenario": "写作",
+      "model": "deepseek-v4-flash",
+      "answer": "1. 某市新增三千普惠托位（客观陈述式）\n2. 三千托位惠及2-3岁幼儿（民生关切式）\n3. 12区增3000托位明年启用（数字突出式）",
+      "ms": 1663
+    },
+    {
+      "taskId": "W05",
+      "scenario": "写作",
+      "model": "deepseek-v4-flash",
+      "answer": "【停水通知】3号楼业主：本周六9:00-17:00因市政管网改造停水，请提前储水。咨询物业88886666。",
+      "ms": 1759
+    },
+    {
+      "taskId": "S01",
+      "scenario": "总结",
+      "model": "deepseek-v4-flash",
+      "answer": "1. 自下月1日起，市内交通实报实销上限从每人每月400元调整为500元。\n2. 跨城高铁需提前一天在系统里提交行程，否则按二等座票价的一半报销。\n3. 住宿标准一线城市每晚500元、其他城市400元。\n4. 招待费需要事前审批，单次超过1000元的还要部门总监二次确认。",
+      "ms": 1345
+    },
+    {
+      "taskId": "S02",
+      "scenario": "总结",
+      "model": "deepseek-v4-flash",
+      "answer": "**会议纪要**\n\n**决议一：完成注册流程简化相关开发与模板准备**\n- 内容：前端两个工作日内完成改造；运营完成短信模板修改；后端短信接口依赖供应商，需持续跟进。\n- 负责人：研发（前端/后端）、运营\n- 时间：前端2个工作日内完成；运营周四前完成短信模板\n\n**决议二：开展联调与灰度发布**\n- 内容：周四进行联调，周五按10%比例灰度发布。\n- 负责人：产品、研发、运营\n- 时间：周四联调，周五灰度10%\n\n**决议三：明确灰度监控与验收标准**\n- 内容：灰度期间监控转化率，低于40%即回滚；产品出具验收标准并发至群内。\n- 负责人：研发（监控转化率）、产品（出验收标准）\n- 时间：产品明天上午发验收标准；灰度期间持续监控",
+      "ms": 2795
+    },
+    {
+      "taskId": "S03",
+      "scenario": "总结",
+      "model": "deepseek-v4-flash",
+      "answer": "**优点**\n1. 保温效果不错（早上灌的热水下午还温）。\n2. 外观好看，轻便易携带（同事问链接；带着不累）。\n\n**缺点**\n1. 盖子难拧，女生单手费劲。\n2. 存在漏水问题（放包里渗出一点）。\n\n**中性信息**\n容量标注500ml，实测约450ml；价格79元，该价位算可以；说明书简陋；摔后掉漆但未损坏；发货快两天到。",
+      "ms": 2145
+    },
+    {
+      "taskId": "S04",
+      "scenario": "总结",
+      "model": "deepseek-v4-flash",
+      "answer": "最终确定的方案如下：\n\n- **时间**：周六下午2点\n- **地点**：西郊那座山\n- **集合点**：西郊山脚公交站\n- **分工**：老王带水，老张和小李带吃的",
+      "ms": 1918
+    },
+    {
+      "taskId": "S05",
+      "scenario": "总结",
+      "model": "deepseek-v4-flash",
+      "answer": "主库慢查询（未加索引全表扫描）致连接池耗尽、下单接口超时，熔断切备用节点后恢复，影响下单服务。",
+      "ms": 1913
+    }
+  ],
+  "anonOrder": [
+    {
+      "anonId": "答-001",
+      "taskId": "W05",
+      "model": "deepseek-v4-flash"
+    },
+    {
+      "anonId": "答-002",
+      "taskId": "S04",
+      "model": "kimi-k2.5"
+    },
+    {
+      "anonId": "答-003",
+      "taskId": "S04",
+      "model": "deepseek-v4-flash"
+    },
+    {
+      "anonId": "答-004",
+      "taskId": "S03",
+      "model": "glm-5.3-flash"
+    },
+    {
+      "anonId": "答-005",
+      "taskId": "W01",
+      "model": "deepseek-v4-flash"
+    },
+    {
+      "anonId": "答-006",
+      "taskId": "W03",
+      "model": "deepseek-v4-flash"
+    },
+    {
+      "anonId": "答-007",
+      "taskId": "S05",
+      "model": "glm-5.3-flash"
+    },
+    {
+      "anonId": "答-008",
+      "taskId": "W05",
+      "model": "glm-5.3-flash"
+    },
+    {
+      "anonId": "答-009",
+      "taskId": "W03",
+      "model": "kimi-k2.5"
+    },
+    {
+      "anonId": "答-010",
+      "taskId": "W05",
+      "model": "kimi-k2.5"
+    },
+    {
+      "anonId": "答-011",
+      "taskId": "S02",
+      "model": "kimi-k2.5"
+    },
+    {
+      "anonId": "答-012",
+      "taskId": "S01",
+      "model": "kimi-k2.5"
+    },
+    {
+      "anonId": "答-013",
+      "taskId": "S01",
+      "model": "deepseek-v4-flash"
+    },
+    {
+      "anonId": "答-014",
+      "taskId": "W04",
+      "model": "deepseek-v4-flash"
+    },
+    {
+      "anonId": "答-015",
+      "taskId": "W02",
+      "model": "glm-5.3-flash"
+    },
+    {
+      "anonId": "答-016",
+      "taskId": "W04",
+      "model": "kimi-k2.5"
+    },
+    {
+      "anonId": "答-017",
+      "taskId": "S02",
+      "model": "deepseek-v4-flash"
+    },
+    {
+      "anonId": "答-018",
+      "taskId": "S05",
+      "model": "deepseek-v4-flash"
+    },
+    {
+      "anonId": "答-019",
+      "taskId": "W01",
+      "model": "kimi-k2.5"
+    },
+    {
+      "anonId": "答-020",
+      "taskId": "S04",
+      "model": "glm-5.3-flash"
+    },
+    {
+      "anonId": "答-021",
+      "taskId": "W01",
+      "model": "glm-5.3-flash"
+    },
+    {
+      "anonId": "答-022",
+      "taskId": "S05",
+      "model": "kimi-k2.5"
+    },
+    {
+      "anonId": "答-023",
+      "taskId": "S02",
+      "model": "glm-5.3-flash"
+    },
+    {
+      "anonId": "答-024",
+      "taskId": "W02",
+      "model": "kimi-k2.5"
+    },
+    {
+      "anonId": "答-025",
+      "taskId": "S03",
+      "model": "deepseek-v4-flash"
+    },
+    {
+      "anonId": "答-026",
+      "taskId": "W03",
+      "model": "glm-5.3-flash"
+    },
+    {
+      "anonId": "答-027",
+      "taskId": "W04",
+      "model": "glm-5.3-flash"
+    },
+    {
+      "anonId": "答-028",
+      "taskId": "W02",
+      "model": "deepseek-v4-flash"
+    },
+    {
+      "anonId": "答-029",
+      "taskId": "S01",
+      "model": "glm-5.3-flash"
+    },
+    {
+      "anonId": "答-030",
+      "taskId": "S03",
+      "model": "kimi-k2.5"
+    }
+  ],
+  "scores": [
+    {
+      "anonId": "答-001",
+      "taskId": "W05",
+      "model": "deepseek-v4-flash",
+      "score": 2,
+      "reason": "通知不超过60字，完整包含3号楼、本周六9:00至17:00、市政管网改造原因及物业咨询电话88886666，且无事实错误。",
+      "violations": [],
+      "machine": {
+        "pass": true,
+        "violations": [],
+        "skipped": false
+      }
+    },
+    {
+      "anonId": "答-002",
+      "taskId": "S04",
+      "model": "kimi-k2.5",
+      "score": 2,
+      "reason": "四项信息齐全，且时间、地点、集合点及分工均与群聊最终确认内容一致，无事实错误或编造。",
+      "violations": [],
+      "machine": {
+        "pass": true,
+        "violations": [],
+        "skipped": false
+      }
+    },
+    {
+      "anonId": "答-003",
+      "taskId": "S04",
+      "model": "deepseek-v4-flash",
+      "score": 2,
+      "reason": "时间、地点、集合点及分工四项信息均齐全，且与群聊最终确定的方案一致，无事实错误或编造。",
+      "violations": [],
+      "machine": {
+        "pass": true,
+        "violations": [],
+        "skipped": false
+      }
+    },
+    {
+      "anonId": "答-004",
+      "taskId": "S03",
+      "model": "glm-5.3-flash",
+      "score": 2,
+      "reason": "完整归纳了2条优点、2条缺点和1条中性信息，内容均能对应原评论，无明显事实错误或编造。",
+      "violations": [],
+      "machine": {
+        "pass": true,
+        "violations": [],
+        "skipped": false
+      }
+    },
+    {
+      "anonId": "答-005",
+      "taskId": "W01",
+      "model": "deepseek-v4-flash",
+      "score": 1,
+      "reason": "格式、字数和条数均符合要求且整体可用，但将“写文档”具体化为“需求文档”并新增“待埋点验证”，存在轻微事实越界。",
+      "violations": [
+        "“输出需求文档”与原文“写文档”不完全一致，存在具体化补写",
+        "“待埋点验证”为原文未提供的信息"
+      ],
+      "machine": {
+        "pass": true,
+        "violations": [],
+        "skipped": false
+      }
+    },
+    {
+      "anonId": "答-006",
+      "taskId": "W03",
+      "model": "deepseek-v4-flash",
+      "score": 2,
+      "reason": "改写为可直接发送的客服邮件，保留暂时无法复现的立场，字数未超过120字，并以提供问题截图或录屏作为具体下一步动作。",
+      "violations": [],
+      "machine": {
+        "pass": true,
+        "violations": [],
+        "skipped": false
+      }
+    },
+    {
+      "anonId": "答-007",
+      "taskId": "S05",
+      "model": "glm-5.3-flash",
+      "score": 0,
+      "reason": "根因与影响基本符合日志，但正文明显超过60字硬性限制，需大幅精简后才能使用。",
+      "violations": [
+        "字数超过60字"
+      ],
+      "machine": {
+        "pass": false,
+        "violations": [
+          "超字数：101 > 60"
+        ],
+        "skipped": false
+      }
+    },
+    {
+      "anonId": "答-008",
+      "taskId": "W05",
+      "model": "glm-5.3-flash",
+      "score": 1,
+      "reason": "四项必含信息齐全且无事实错误，但全文含标点共64字，略超60字限制。",
+      "violations": [
+        "字数略超：全文含标点共64字，超过60字上限"
+      ],
+      "machine": {
+        "pass": false,
+        "violations": [
+          "超字数：64 > 60"
+        ],
+        "skipped": false
+      }
+    },
+    {
+      "anonId": "答-009",
+      "taskId": "W03",
+      "model": "kimi-k2.5",
+      "score": 2,
+      "reason": "邮件保留了暂时无法复现的立场，正文未超过120字，并以确认浏览器版本、无痕模式、复现步骤及报错截图作为具体下一步动作，可直接使用。",
+      "violations": [],
+      "machine": {
+        "pass": true,
+        "violations": [],
+        "skipped": false
+      }
+    },
+    {
+      "anonId": "答-010",
+      "taskId": "W05",
+      "model": "kimi-k2.5",
+      "score": 2,
+      "reason": "内容不超过60字，3号楼、停水时间、改造原因及咨询电话均齐全，无事实错误，可直接使用。",
+      "violations": [],
+      "machine": {
+        "pass": true,
+        "violations": [],
+        "skipped": false
+      }
+    },
+    {
+      "anonId": "答-011",
+      "taskId": "S02",
+      "model": "kimi-k2.5",
+      "score": 2,
+      "reason": "共输出3条决议，均包含负责人和时间，关键事项及时间安排与原对话一致，无明显事实错误或编造。",
+      "violations": [],
+      "machine": {
+        "pass": true,
+        "violations": [],
+        "skipped": false
+      }
+    },
+    {
+      "anonId": "答-012",
+      "taskId": "S01",
+      "model": "kimi-k2.5",
+      "score": 2,
+      "reason": "准确列出4条要点，金额、调整时间及报销条件均原样保留，无事实错误或编造。",
+      "violations": [],
+      "machine": {
+        "pass": true,
+        "violations": [],
+        "skipped": false
+      }
+    },
+    {
+      "anonId": "答-013",
+      "taskId": "S01",
+      "model": "deepseek-v4-flash",
+      "score": 2,
+      "reason": "完整列出4条要点，金额与时间均原样保留，内容准确，无事实错误或编造。",
+      "violations": [],
+      "machine": {
+        "pass": true,
+        "violations": [],
+        "skipped": false
+      }
+    },
+    {
+      "anonId": "答-014",
+      "taskId": "W04",
+      "model": "deepseek-v4-flash",
+      "score": 2,
+      "reason": "3个标题均不超过18字，分别符合客观陈述、民生关切和数字突出风格，且信息均未明显超出新闻要点。",
+      "violations": [],
+      "machine": {
+        "pass": false,
+        "violations": [
+          "第 2 条超字数：19 > 18",
+          "第 3 条超字数：21 > 18"
+        ],
+        "skipped": false
+      }
+    },
+    {
+      "anonId": "答-015",
+      "taskId": "W02",
+      "model": "glm-5.3-flash",
+      "score": 2,
+      "reason": "标题与正文均未超长，包含价格、重量、续航及快充信息，至少有1个emoji，且未出现绝对化用语，可直接使用。",
+      "violations": [],
+      "machine": {
+        "pass": true,
+        "violations": [],
+        "skipped": false
+      }
+    },
+    {
+      "anonId": "答-017",
+      "taskId": "S02",
+      "model": "deepseek-v4-flash",
+      "score": 1,
+      "reason": "整体满足3条决议且均包含负责人和时间，但第二条将产品、运营均列为联调与灰度负责人，对话中未明确指派，略有越界。",
+      "violations": [
+        "第二条把产品和运营列为联调与灰度发布的负责人，原对话仅明确产品确定安排、研发负责开发与监控，未明确指派运营参与联调或灰度。"
+      ],
+      "machine": {
+        "pass": true,
+        "violations": [],
+        "skipped": false
+      }
+    },
+    {
+      "anonId": "答-018",
+      "taskId": "S05",
+      "model": "deepseek-v4-flash",
+      "score": 1,
+      "reason": "字数合规且包含根因、熔断恢复过程和影响范围，但将连接池“占用98%”表述为“耗尽”略不准确。",
+      "violations": [
+        "“连接池耗尽”与日志中的“连接池占用98%”不完全符合作者原事实。"
+      ],
+      "machine": {
+        "pass": true,
+        "violations": [],
+        "skipped": false
+      }
+    },
+    {
+      "anonId": "答-020",
+      "taskId": "S04",
+      "model": "glm-5.3-flash",
+      "score": 2,
+      "reason": "时间、地点、集合点和分工四项信息齐全，且与群聊最终确定的方案一致，无事实错误或编造。",
+      "violations": [],
+      "machine": {
+        "pass": true,
+        "violations": [],
+        "skipped": false
+      }
+    },
+    {
+      "anonId": "答-023",
+      "taskId": "S02",
+      "model": "glm-5.3-flash",
+      "score": 2,
+      "reason": "共输出3条决议，均包含负责人和时间，且完整准确涵盖短信模板、研发联调与灰度回滚、验收标准等关键信息，可直接使用。",
+      "violations": [],
+      "machine": {
+        "pass": true,
+        "violations": [],
+        "skipped": false
+      }
+    },
+    {
+      "anonId": "答-024",
+      "taskId": "W02",
+      "model": "kimi-k2.5",
+      "score": 1,
+      "reason": "整体可用且满足字数、emoji和价格要求，但快充信息遗漏“10分钟可用2小时”，且“性价比直接封神”表述略显夸张。",
+      "violations": [
+        "未完整呈现快充效果“10分钟用2小时”",
+        "“性价比直接封神”属于略夸张的宣传表述"
+      ],
+      "machine": {
+        "pass": false,
+        "violations": [
+          "标题超字数：16 > 15"
+        ],
+        "skipped": false
+      }
+    },
+    {
+      "anonId": "答-025",
+      "taskId": "S03",
+      "model": "deepseek-v4-flash",
+      "score": 2,
+      "reason": "结果准确归纳了2条优点、2条缺点和1条中性信息，所有表述均有评论依据，无事实错误或编造。",
+      "violations": [],
+      "machine": {
+        "pass": true,
+        "violations": [],
+        "skipped": false
+      }
+    },
+    {
+      "anonId": "答-028",
+      "taskId": "W02",
+      "model": "deepseek-v4-flash",
+      "score": 2,
+      "reason": "标题与正文均未超字数，包含emoji及续航、快充、重量、价格等全部产品信息，且无绝对化用语或明显事实错误，可直接使用。",
+      "violations": [],
+      "machine": {
+        "pass": true,
+        "violations": [],
+        "skipped": false
+      }
+    },
+    {
+      "anonId": "答-029",
+      "taskId": "S01",
+      "model": "glm-5.3-flash",
+      "score": 2,
+      "reason": "完整列出4条制度要点，金额和时间均原样保留，无事实错误或编造，可直接使用。",
+      "violations": [],
+      "machine": {
+        "pass": true,
+        "violations": [],
+        "skipped": false
+      }
+    },
+    {
+      "anonId": "答-030",
+      "taskId": "S03",
+      "model": "kimi-k2.5",
+      "score": 1,
+      "reason": "优点、缺点数量达标且主要归纳准确，但中性信息项混入“说明书过于简陋”等缺点，并擅自概括为未经评论提及的“售后配套一般”，需手动修正。",
+      "violations": [
+        "中性信息应仅归纳中性事实，却将“说明书过于简陋”这一缺点混入",
+        "“售后配套一般”属于无依据的概括，评论仅提到发货快",
+        "“物流……一般”与评论明确评价“发货快、两天到”不完全相符"
+      ],
+      "machine": {
+        "pass": true,
+        "violations": [],
+        "skipped": false
+      }
+    },
+    {
+      "anonId": "答-016",
+      "taskId": "W04",
+      "model": "kimi-k2.5",
+      "score": 1,
+      "reason": "整体满足三条标题及字数、风格要求，但“9月投用”未准确体现“明年9月前全部投入使用”，需手动修正时间表述。",
+      "violations": [
+        "数字突出式标题将“明年9月前全部投入使用”表述为“9月投用”，遗漏“明年”并弱化了“9月前”的时间限定"
+      ],
+      "machine": {
+        "pass": false,
+        "violations": [
+          "条数不符：要求 3 条，实际 6 行"
+        ],
+        "skipped": false
+      }
+    },
+    {
+      "anonId": "答-019",
+      "taskId": "W01",
+      "model": "kimi-k2.5",
+      "score": 0,
+      "reason": "虽满足字数和三段各不超过两条，但新增“监控转化数据、下周观察、占用1人日”等原文没有的信息，且“上线XX小功能”表述不完整，存在明显编造。",
+      "violations": [
+        "段落标题未使用要求的“本周完成”",
+        "编造上线后监控用户转化数据及下周观察事项",
+        "编造同事支援事项占用1人日",
+        "“上线XX小功能”信息不完整"
+      ],
+      "machine": {
+        "pass": true,
+        "violations": [],
+        "skipped": false
+      }
+    },
+    {
+      "anonId": "答-021",
+      "taskId": "W01",
+      "model": "glm-5.3-flash",
+      "score": 1,
+      "reason": "整体结构和条数符合要求，但仍有模糊反馈表述及个别事实夸大，需手动修正。",
+      "violations": [
+        "“新功能上线后暂无用户反馈”仍属于无法核验的模糊表述，未按要求删除或改成可验证结论",
+        "原文仅说“帮同事看了几个问题”，改写为“协助同事解决数个技术问题”夸大了完成结果",
+        "原文仅说“跟设计对了一下”，改写为“与设计确认新版样式”夸大了确认状态"
+      ],
+      "machine": {
+        "pass": true,
+        "violations": [],
+        "skipped": false
+      }
+    },
+    {
+      "anonId": "答-022",
+      "taskId": "S05",
+      "model": "kimi-k2.5",
+      "score": 1,
+      "reason": "基本涵盖根因与影响，但超过60字，且将连接池占用98%表述为耗尽不够准确。",
+      "violations": [
+        "字数超过60字",
+        "将连接池高占用夸大为连接池耗尽"
+      ],
+      "machine": {
+        "pass": false,
+        "violations": [
+          "超字数：65 > 60"
+        ],
+        "skipped": false
+      }
+    },
+    {
+      "anonId": "答-026",
+      "taskId": "W03",
+      "model": "glm-5.3-flash",
+      "score": 1,
+      "reason": "邮件可实际发送且正文不超过120字，也保留了暂时无法复现的立场，但最后以致歉收尾，未按要求在结尾给出具体的下一步动作。",
+      "violations": [
+        "结尾未给出具体的下一步动作"
+      ],
+      "machine": {
+        "pass": true,
+        "violations": [],
+        "skipped": false
+      }
+    },
+    {
+      "anonId": "答-027",
+      "taskId": "W04",
+      "model": "glm-5.3-flash",
+      "score": 2,
+      "reason": "三条标题均符合字数、数量和风格要求，所述信息与新闻要点一致，无明显事实错误或编造。",
+      "violations": [],
+      "machine": {
+        "pass": false,
+        "violations": [
+          "条数不符：要求 3 条，实际 7 行"
+        ],
+        "skipped": false
+      }
+    }
+  ],
+  "rescores": [
+    {
+      "anonId": "答-001",
+      "taskId": "W05",
+      "model": "deepseek-v4-flash",
+      "score": 2,
+      "reason": "不超过60字，3号楼、本周六9:00-17:00、市政管网改造及物业咨询电话四项信息齐全，无事实错误。",
+      "violations": []
+    },
+    {
+      "anonId": "答-002",
+      "taskId": "S04",
+      "model": "kimi-k2.5",
+      "score": 2,
+      "reason": "时间、地点、集合点和分工四项信息齐全，且与群聊最终确认内容一致，无事实错误或编造。",
+      "violations": []
+    },
+    {
+      "anonId": "答-003",
+      "taskId": "S04",
+      "model": "deepseek-v4-flash",
+      "score": 2,
+      "reason": "时间、地点、集合点及分工四项齐全且与群聊最终决定一致，无事实错误或编造。",
+      "violations": []
+    },
+    {
+      "anonId": "答-004",
+      "taskId": "S03",
+      "model": "glm-5.3-flash",
+      "score": 2,
+      "reason": "优点、缺点和中性信息均严格各归纳2条、2条、1条，内容与原评论一致，无明显事实错误或编造。",
+      "violations": []
+    },
+    {
+      "anonId": "答-006",
+      "taskId": "W03",
+      "model": "deepseek-v4-flash",
+      "score": 2,
+      "reason": "改写为可直接发送的客服邮件，保留了“暂时无法复现”的立场，未超过120字，并以确认操作步骤及运行环境、提供截图或录屏作为具体下一步动作。",
+      "violations": []
+    },
+    {
+      "anonId": "答-007",
+      "taskId": "S05",
+      "model": "glm-5.3-flash",
+      "score": 0,
+      "reason": "答案明显超过60字，且将主节点表述为“不可用约30秒”，日志仅能确认熔断切至备用节点并于10:02:40恢复。",
+      "violations": [
+        "字数超过60字",
+        "编造或过度推断主节点不可用及其持续时长"
+      ]
+    },
+    {
+      "anonId": "答-008",
+      "taskId": "W05",
+      "model": "glm-5.3-flash",
+      "score": 2,
+      "reason": "共58字，符合不超过60字要求，且楼栋、停水时间、原因及咨询电话四项信息齐全，无事实错误。",
+      "violations": []
+    },
+    {
+      "anonId": "答-009",
+      "taskId": "W03",
+      "model": "kimi-k2.5",
+      "score": 2,
+      "reason": "邮件保留了暂时无法复现的立场，字数未超120字，并以确认浏览器版本、无痕模式及提供复现步骤和报错截图作为具体下一步动作，可直接使用。",
+      "violations": []
+    },
+    {
+      "anonId": "答-010",
+      "taskId": "W05",
+      "model": "kimi-k2.5",
+      "score": 2,
+      "reason": "内容符合要求，字数不超过60字，完整包含楼栋、停水时间、改造原因和咨询电话，且无事实错误。",
+      "violations": []
+    },
+    {
+      "anonId": "答-011",
+      "taskId": "S02",
+      "model": "kimi-k2.5",
+      "score": 2,
+      "reason": "共输出3条决议，均包含负责人和时间，完整覆盖验收标准、短信模板修改、联调灰度及转化率监控回滚要求，且无明显事实错误。",
+      "violations": []
+    },
+    {
+      "anonId": "答-012",
+      "taskId": "S01",
+      "model": "kimi-k2.5",
+      "score": 2,
+      "reason": "完整列出4条制度要点，金额、时间及关键条件均按原文准确保留，无事实错误或编造。",
+      "violations": []
+    },
+    {
+      "anonId": "答-013",
+      "taskId": "S01",
+      "model": "deepseek-v4-flash",
+      "score": 2,
+      "reason": "准确列出4条要点，所有金额与时间均原样保留，无事实错误或编造，可直接使用。",
+      "violations": []
+    },
+    {
+      "anonId": "答-014",
+      "taskId": "W04",
+      "model": "deepseek-v4-flash",
+      "score": 2,
+      "reason": "共3个标题，均不超过18字，分别符合客观陈述式、民生关切式和数字突出式要求，且信息均来自新闻要点，无明显事实错误或编造。",
+      "violations": []
+    },
+    {
+      "anonId": "答-017",
+      "taskId": "S02",
+      "model": "deepseek-v4-flash",
+      "score": 2,
+      "reason": "输出3条决议，均包含负责人和时间，完整覆盖前端开发、短信模板、联调灰度、转化率监控回滚及验收标准等要求，且无明显事实错误或编造。",
+      "violations": []
+    },
+    {
+      "anonId": "答-018",
+      "taskId": "S05",
+      "model": "deepseek-v4-flash",
+      "score": 1,
+      "reason": "字数合规且涵盖根因、影响及备用节点恢复，但将连接池“占用98%”夸大为“耗尽”，存在轻微事实偏差。",
+      "violations": [
+        "“连接池耗尽”与日志中的“连接池占用98%”不完全相符，属未经证实的程度升级"
+      ]
+    },
+    {
+      "anonId": "答-020",
+      "taskId": "S04",
+      "model": "glm-5.3-flash",
+      "score": 2,
+      "reason": "时间、地点、集合点及分工四项信息齐全，且与群聊最终方案一致，无事实错误或编造。",
+      "violations": []
+    },
+    {
+      "anonId": "答-023",
+      "taskId": "S02",
+      "model": "glm-5.3-flash",
+      "score": 1,
+      "reason": "整体满足3条决议及负责人、时间要求，但将“两个工作日”改写为“两日内”，存在轻微时间口径偏差。",
+      "violations": [
+        "第2条将原话“前端两个工作日能改完”表述为“两日内”，未准确保留工作日口径"
+      ]
+    },
+    {
+      "anonId": "答-025",
+      "taskId": "S03",
+      "model": "deepseek-v4-flash",
+      "score": 1,
+      "reason": "优点、缺点各2条且事实无误，但“中性信息”一条塞入多项内容，且将容量不足、说明书简陋、掉漆等偏缺点信息归为中性，需人工拆分和调整归类。",
+      "violations": [
+        "中性信息未限定为1条信息，而是汇总了容量、价格、说明书、掉漆、发货等多条信息",
+        "部分信息归类不准确：容量实测不足、说明书简陋、摔后掉漆更适合列为缺点"
+      ]
+    },
+    {
+      "anonId": "答-028",
+      "taskId": "W02",
+      "model": "deepseek-v4-flash",
+      "score": 2,
+      "reason": "标题与正文均符合字数限制，含emoji、明确价格及全部产品信息，且未使用绝对化用语。",
+      "violations": []
+    },
+    {
+      "anonId": "答-029",
+      "taskId": "S01",
+      "model": "glm-5.3-flash",
+      "score": 2,
+      "reason": "完整列出4条制度要点，所有金额与时间表述均原样保留，内容准确且无编造。",
+      "violations": []
+    },
+    {
+      "anonId": "答-030",
+      "taskId": "S03",
+      "model": "kimi-k2.5",
+      "score": 1,
+      "reason": "基本满足优点2条、缺点2条、中性信息1条的硬性要求，但中性信息混入“售后配套一般”等无依据表述，且内容杂糅，需手动修正。",
+      "violations": [
+        "“物流与售后配套一般”中的“售后配套一般”无评论依据",
+        "中性信息同时混合物流、说明书和价格，未形成单一明确的中性信息",
+        "优点第1条同时归纳保温效果和轻便易携带，存在信息杂糅"
+      ]
+    },
+    {
+      "anonId": "答-005",
+      "taskId": "W01",
+      "model": "deepseek-v4-flash",
+      "score": 1,
+      "reason": "篇幅、分段和条数均符合要求，但新增了原文未提供的埋点及反馈数据结论，需人工修正。",
+      "violations": [
+        "“上线功能暂无用户反馈数据，待埋点验证”属于新增事实，原文仅称“用户好像没什么反馈”，可整条删除或改为“上线功能反馈情况待确认”"
+      ]
+    },
+    {
+      "anonId": "答-015",
+      "taskId": "W02",
+      "model": "glm-5.3-flash",
+      "score": 2,
+      "reason": "标题与正文均未超字数，包含至少1个emoji，准确呈现价格、重量、续航及快充信息，且无绝对化用语。",
+      "violations": []
+    },
+    {
+      "anonId": "答-016",
+      "taskId": "W04",
+      "model": "kimi-k2.5",
+      "score": 1,
+      "reason": "三条标题数量、字数和风格基本符合要求，但个别表述将“将新增”“明年9月前”简化为已完成或“9月投用”，存在轻微时态和时间范围偏差。",
+      "violations": [
+        "客观陈述式“新增三千普惠托位”易被理解为已经完成新增，未体现“将新增”的计划性质",
+        "数字突出式“9月投用”遗漏“明年9月前”，存在时间信息不准确的风险"
+      ]
+    },
+    {
+      "anonId": "答-019",
+      "taskId": "W01",
+      "model": "kimi-k2.5",
+      "score": 1,
+      "reason": "整体结构和篇幅基本达标，但存在标题不完全符合要求及多处无依据补充，需删改后使用。",
+      "violations": [
+        "首段标题应为“本周完成”，结果写成了“完成”",
+        "“监控数据”“下周观察用户转化数据”无原文依据",
+        "“同事支援事项占用1人日”属于编造的具体工作量，且原文中的同事问题协助更适合列为已完成事项"
+      ]
+    },
+    {
+      "anonId": "答-021",
+      "taskId": "W01",
+      "model": "glm-5.3-flash",
+      "score": 1,
+      "reason": "整体结构、条数和字数符合要求，但保留了“暂无用户反馈”这一不可验证表述，且将“帮同事看问题”改写为“解决”并补充生产环境、埋点等信息，存在轻微事实越界。",
+      "violations": [
+        "“暂无用户反馈”仍属于不可验证的模糊表述，未按要求删除或改成可验证说法",
+        "“协助同事解决数个技术问题”超出原文“帮同事看了几个问题”，可能虚构处理结果",
+        "“已发布至生产环境”及“需配置数据埋点或收集渠道”缺乏原文依据"
+      ]
+    },
+    {
+      "anonId": "答-022",
+      "taskId": "S05",
+      "model": "kimi-k2.5",
+      "score": 1,
+      "reason": "根因与影响范围表述基本正确，但整体约75字超出60字上限，且将连接池“占用98%”说成“耗尽”略有夸大。",
+      "violations": [
+        "字数超出60字上限",
+        "“连接池耗尽”与日志中“占用98%”不完全一致"
+      ]
+    },
+    {
+      "anonId": "答-024",
+      "taskId": "W02",
+      "model": "kimi-k2.5",
+      "score": 1,
+      "reason": "整体结构与字数基本符合要求，但标题按字符计略超15字，且快充结果与部分夸张表述需修正。",
+      "violations": [
+        "标题含emoji、空格及标点共16字，超过15字上限",
+        "仅写“10分钟快充”，遗漏“快充10分钟可用2小时”的关键信息",
+        "“性价比直接封神”属于夸张化绝对表述，存在违反禁用绝对化用语的风险"
+      ]
+    },
+    {
+      "anonId": "答-026",
+      "taskId": "W03",
+      "model": "glm-5.3-flash",
+      "score": 2,
+      "reason": "改写为可直接发送的客服邮件，保留了“暂时无法复现”的立场，全文不超过120字，且结尾明确以收到材料后进一步回复作为下一步动作。",
+      "violations": []
+    },
+    {
+      "anonId": "答-027",
+      "taskId": "W04",
+      "model": "glm-5.3-flash",
+      "score": 2,
+      "reason": "共3个标题，均不超过18字，分别符合客观陈述式、民生关切式和数字突出式要求，且无事实错误或信息编造。",
+      "violations": []
+    }
+  ],
+  "summary": {
+    "byModel": {
+      "kimi-k2.5": {
+        "avgScore": 1.4,
+        "usable": "9/10",
+        "machinePass": "7/10",
+        "avgMs": 4031,
+        "byScene": {
+          "写作": 1.2,
+          "总结": 1.6
+        }
+      },
+      "glm-5.3-flash": {
+        "avgScore": 1.5,
+        "usable": "9/10",
+        "machinePass": "7/10",
+        "avgMs": 3326,
+        "byScene": {
+          "写作": 1.4,
+          "总结": 1.6
+        }
+      },
+      "deepseek-v4-flash": {
+        "avgScore": 1.7,
+        "usable": "10/10",
+        "machinePass": "9/10",
+        "avgMs": 1922,
+        "byScene": {
+          "写作": 1.8,
+          "总结": 1.6
+        }
+      }
+    },
+    "nAnswers": 30,
+    "nScored": 30,
+    "agreement": {
+      "exact": 0.8,
+      "within1": 1,
+      "total": 30
+    },
+    "disagree": [
+      {
+        "anonId": "答-008",
+        "taskId": "W05",
+        "model": "glm-5.3-flash",
+        "r1": 1,
+        "r2": 2
+      },
+      {
+        "anonId": "答-017",
+        "taskId": "S02",
+        "model": "deepseek-v4-flash",
+        "r1": 1,
+        "r2": 2
+      },
+      {
+        "anonId": "答-023",
+        "taskId": "S02",
+        "model": "glm-5.3-flash",
+        "r1": 2,
+        "r2": 1
+      },
+      {
+        "anonId": "答-025",
+        "taskId": "S03",
+        "model": "deepseek-v4-flash",
+        "r1": 2,
+        "r2": 1
+      },
+      {
+        "anonId": "答-019",
+        "taskId": "W01",
+        "model": "kimi-k2.5",
+        "r1": 0,
+        "r2": 1
+      },
+      {
+        "anonId": "答-026",
+        "taskId": "W03",
+        "model": "glm-5.3-flash",
+        "r1": 1,
+        "r2": 2
+      }
+    ],
+    "conflicts": [
+      {
+        "anonId": "答-014",
+        "taskId": "W04",
+        "model": "deepseek-v4-flash",
+        "machinePass": false,
+        "blindScore": 2,
+        "machineViolations": [
+          "第 2 条超字数：19 > 18",
+          "第 3 条超字数：21 > 18"
+        ]
+      },
+      {
+        "anonId": "答-019",
+        "taskId": "W01",
+        "model": "kimi-k2.5",
+        "machinePass": true,
+        "blindScore": 0,
+        "machineViolations": []
+      },
+      {
+        "anonId": "答-027",
+        "taskId": "W04",
+        "model": "glm-5.3-flash",
+        "machinePass": false,
+        "blindScore": 2,
+        "machineViolations": [
+          "条数不符：要求 3 条，实际 7 行"
+        ]
+      }
+    ],
+    "meter": {
+      "calls": 0,
+      "inTok": 0,
+      "outTok": 0
+    }
+  }
+}
